@@ -1,50 +1,71 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { track } from '../analytics/track'
 import { useAuth } from './AuthContext'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+/** "Reenviar" unlocks after this many seconds. */
+export const RESEND_AFTER_S = 30
 
-/** Google or magic link. Shared by "Salve sua jornada" and the Profile. */
+/**
+ * Sign-in without a password: the magic link by e-mail is the main way (Supabase signInWithOtp);
+ * Google stays as a second option. Shared by "Salve sua jornada" and the Profile.
+ */
 export function SignInForm({ origem, tone = 'light' }: { origem: string; tone?: 'light' | 'dark' }) {
   const { sendMagicLink, signInWithGoogle } = useAuth()
   const [email, setEmail] = useState('')
   const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [wait, setWait] = useState(0)
   const dark = tone === 'dark'
 
-  async function submit(e: React.FormEvent) {
-    e.preventDefault()
+  useEffect(() => {
+    if (wait <= 0) return
+    const t = window.setTimeout(() => setWait((s) => s - 1), 1000)
+    return () => window.clearTimeout(t)
+  }, [wait])
+
+  async function send() {
     if (!EMAIL_RE.test(email.trim())) return setState('error')
     setState('sending')
     const r = await sendMagicLink(email.trim())
     if (r.error) return setState('error')
     track('sign_in_requested', { metodo: 'email', origem })
     setState('sent')
+    setWait(RESEND_AFTER_S)
   }
 
   if (state === 'sent')
     return (
       <div role="status" className={`rounded-btn p-4 text-[14.5px] leading-normal ${dark ? 'bg-white/10 text-paper' : 'bg-olive-soft text-[#3C4626]'}`}>
-        <b className="mb-1 block">Confira seu e-mail.</b>
-        Enviamos um link de acesso para <b>{email.trim()}</b>. Abra o link neste mesmo aparelho.
+        <b className="mb-1 block">Pronto!</b>
+        Abra o link que enviamos para <b>{email.trim()}</b>. Pode fechar esta tela.
+        <span className={`mt-2 block text-[13px] ${dark ? 'text-paper/70' : 'text-[#3C4626]/80'}`}>Não chegou? Olhe também em Spam ou Promoções.</span>
+        <span className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1">
+          <button type="button" disabled={wait > 0} onClick={() => void send()} className="min-h-11 font-bold underline underline-offset-2 disabled:no-underline disabled:opacity-60">
+            {wait > 0 ? `Reenviar em ${wait} s` : 'Reenviar'}
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setState('idle')
+              setWait(0)
+            }}
+            className="min-h-11 underline underline-offset-2"
+          >
+            Usar outro e-mail
+          </button>
+        </span>
       </div>
     )
 
   return (
     <div>
-      <button
-        type="button"
-        className="btn"
-        onClick={() => {
-          track('sign_in_requested', { metodo: 'google', origem })
-          void signInWithGoogle()
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          void send()
         }}
+        noValidate
       >
-        <GoogleIcon /> Continuar com Google
-      </button>
-      <div className={`my-4 flex items-center gap-3 text-xs ${dark ? 'text-paper/50' : 'text-ink-3'}`}>
-        <span className="h-px flex-1 bg-current opacity-40" /> ou receba um link por e-mail <span className="h-px flex-1 bg-current opacity-40" />
-      </div>
-      <form onSubmit={submit} noValidate>
         <label htmlFor={`email-${origem}`} className="sr-only">
           Seu e-mail
         </label>
@@ -68,10 +89,24 @@ export function SignInForm({ origem, tone = 'light' }: { origem: string; tone?: 
             Confira o e-mail e tente de novo.
           </p>
         )}
-        <button type="submit" disabled={state === 'sending'} className={`btn btn-ghost border-[1.5px] ${dark ? 'border-white/25 !text-paper' : 'border-line'}`}>
-          {state === 'sending' ? 'Enviando…' : 'Receber link de acesso'}
+        <button type="submit" disabled={state === 'sending'} className="btn">
+          {state === 'sending' ? 'Enviando…' : 'Receber meu link de acesso'}
         </button>
+        <p className={`mt-2 text-center text-[12.5px] ${dark ? 'text-paper/60' : 'text-ink-3'}`}>Sem senha: o acesso chega pelo seu e-mail.</p>
       </form>
+      <div className={`my-4 flex items-center gap-3 text-xs ${dark ? 'text-paper/50' : 'text-ink-3'}`}>
+        <span className="h-px flex-1 bg-current opacity-40" /> ou <span className="h-px flex-1 bg-current opacity-40" />
+      </div>
+      <button
+        type="button"
+        className={`btn btn-ghost border-[1.5px] ${dark ? 'border-white/25 !text-paper' : 'border-line'}`}
+        onClick={() => {
+          track('sign_in_requested', { metodo: 'google', origem })
+          void signInWithGoogle()
+        }}
+      >
+        <GoogleIcon /> Continuar com Google
+      </button>
     </div>
   )
 }

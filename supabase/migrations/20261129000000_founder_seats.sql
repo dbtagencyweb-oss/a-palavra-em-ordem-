@@ -110,3 +110,14 @@ as $$
    where e.user_id = auth.uid() or lower(e.email) = lower(coalesce(auth.jwt() ->> 'email', ''));
 $$;
 grant execute on function public.my_entitlements() to authenticated;
+
+-- ---------- Transparent renewal: e-mails 15 and 3 days before the end ----------
+-- One row per access and mark, so each reminder goes out once (Edge Function renovacao-emails).
+create table if not exists public.renovacao_avisos (
+  entitlement_id uuid not null references public.entitlements (id) on delete cascade,
+  marco          integer not null check (marco in (15, 3)),
+  sent_at        timestamptz not null default now(),
+  primary key (entitlement_id, marco)
+);
+alter table public.renovacao_avisos enable row level security;
+-- No policies: only the server writes and reads it.

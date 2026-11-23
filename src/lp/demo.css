@@ -1,0 +1,32 @@
+/* The few app styles the embedded activity needs (copied from src/index.css; keep in step).
+   Loaded only with the demo chunk. */
+@tailwind components;
+
+@layer components {
+  .lp-demo .pill {
+    @apply min-h-[44px] rounded-full border-[1.5px] border-line bg-card px-4 py-2.5 text-sm font-bold text-ink shadow-pill active:translate-y-px;
+  }
+  .lp-demo .feedback-good {
+    @apply rounded-btn bg-olive-soft px-4 py-3.5 text-sm leading-normal text-[#3C4626];
+  }
+  .lp-demo .feedback-bad {
+    @apply rounded-btn bg-ember-soft px-4 py-3.5 text-sm leading-normal text-[#7A3418];
+  }
+}
+
+@keyframes lp-demo-pulse-ok {
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 4px rgba(93, 107, 59, 0.18);
+  }
+}
+@keyframes lp-demo-shake {
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+.lp-demo .pulse-ok { animation: lp-demo-pulse-ok 0.3s ease-out; }
+.lp-demo .shake { animation: lp-demo-shake 0.35s; }
+@media (prefers-reduced-motion: reduce) {
+  .lp-demo .pulse-ok,
+  .lp-demo .shake { animation: none; }
+}

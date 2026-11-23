@@ -13,7 +13,7 @@
     "test:e2e": "playwright test",
     "check:media": "node scripts/check-media.mjs",
     "media:import": "node scripts/import-media.mjs",
-    "config:sync": "node -e \"const f=require('fs');f.copyFileSync('config/produtos-plataforma.json','supabase/functions/_shared/produtos-plataforma.json');f.copyFileSync('content/oferta.json','supabase/functions/_shared/oferta.json')\"",
+    "config:sync": "node -e \"const f=require('fs');f.copyFileSync('config/produtos-plataforma.json','supabase/functions/_shared/produtos-plataforma.json');f.copyFileSync('content/oferta.json','supabase/functions/_shared/oferta.json');f.copyFileSync('config/checkout.json','supabase/functions/_shared/checkout.json')\"",
     "content:check": "node scripts/content/check.mjs",
     "content:review": "node scripts/content/review.mjs",
     "content:publish": "node scripts/content/publish.mjs",

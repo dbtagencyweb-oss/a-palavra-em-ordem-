@@ -7,6 +7,8 @@ import { usePublico } from './publico'
 import { useWide } from './useWide'
 import { AppInside } from './sections/AppInside'
 import { Audience } from './sections/Audience'
+import { Compare } from './sections/Compare'
+import { Demo } from './sections/Demo'
 import { ExitIntent, Faq, Finale, Offer } from './sections/Closing'
 import { Game } from './sections/Game'
 import { Hero } from './sections/Hero'
@@ -32,10 +34,12 @@ export function Landing() {
         {!wide && <HeroBookBand />}
         <Audience />
         <Pain key={publico ?? 'padrao'} />
+        <Compare />
         <Turn />
         <Mechanism />
         <Game />
         <AppInside />
+        <Demo />
         <Verse />
         <Journey />
         <ForWhom />

@@ -16,7 +16,19 @@ interface AuthApi {
 
 const Ctx = createContext<AuthApi | null>(null)
 
-const redirectTo = () => window.location.origin + '/'
+/**
+ * Where the sign-in link comes back to: the app, keeping the audience and campaign the person came
+ * with (publico, utm_*), so the flow continues where it was (diagnosis pre-selected, or Home), even
+ * when the e-mail is opened on another device.
+ */
+export function redirectTo(search = window.location.search): string {
+  const keep = new URLSearchParams()
+  new URLSearchParams(search).forEach((v, k) => {
+    if (k === 'publico' || k.startsWith('utm_')) keep.set(k, v)
+  })
+  const q = keep.toString()
+  return window.location.origin + '/' + (q ? `?${q}` : '')
+}
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null)

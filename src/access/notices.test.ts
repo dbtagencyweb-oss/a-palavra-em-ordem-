@@ -18,10 +18,11 @@ describe('plan notices', () => {
     const n = planNotices([ent('mensal', { cobranca_falhou_em: at(-1), expires_at: at(2) })], NOW)
     expect(n.atraso).toEqual({ ate: at(2) })
   })
-  it('annual Founder ending within 30 days: renewal notice; lifetime never', () => {
-    expect(planNotices([ent('fundador', { expires_at: at(25) })], NOW).renovacao?.dias).toBe(25)
-    expect(planNotices([ent('fundador', { expires_at: at(45) })], NOW).renovacao).toBeNull()
-    expect(planNotices([ent('fundador', { expires_at: at(25) }), ent('vitalicio', { expires_at: null })], NOW).renovacao).toBeNull()
+  it('annual access ending within 15 days: renewal notice; lifetime never', () => {
+    expect(planNotices([ent('fundador', { expires_at: at(12) })], NOW).renovacao?.dias).toBe(12)
+    expect(planNotices([ent('anual', { expires_at: at(3) })], NOW).renovacao?.dias).toBe(3)
+    expect(planNotices([ent('fundador', { expires_at: at(25) })], NOW).renovacao).toBeNull()
+    expect(planNotices([ent('fundador', { expires_at: at(12) }), ent('vitalicio', { expires_at: null })], NOW).renovacao).toBeNull()
   })
   it('switch to annual after 2 months on the monthly plan, not before, and not for annual buyers', () => {
     expect(planNotices([ent('mensal', { starts_at: at(-62), expires_at: at(20) })], NOW).trocaAnual).toBe(true)

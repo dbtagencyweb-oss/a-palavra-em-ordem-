@@ -1,12 +1,13 @@
 // Plan notices (docs/07, Prompt 7), as a pure rule over the person's entitlements:
 //  - atraso:    a monthly charge failed; access stays for the tolerance days, with a discreet warning.
-//  - renovacao: annual Founder Access ending within 30 days (lifetime never gets it).
+//  - renovacao: annual access ending within 15 days (lifetime never gets it); no automatic charge.
 //  - trocaAnual: on the monthly plan for 2 months or more; offered once, in the Profile.
 import { isLive, type Entitlement } from '../../supabase/functions/_shared/logic-access'
 import checkout from '../../config/checkout.json'
 
 const DAY = 86_400_000
-export const RENOVACAO_DIAS = 30
+/** The renewal notice shows in the last 15 days (the e-mails go out at 15 and 3). */
+export const RENOVACAO_DIAS = 15
 export const TROCA_APOS_DIAS = 60
 
 export interface PlanNotices {

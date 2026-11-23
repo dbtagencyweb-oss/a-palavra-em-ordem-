@@ -58,14 +58,15 @@ const INK = '#5A3E1B'
 const INK_TEXT = '#3B2A14'
 
 /** An era's color, 40% toward grey: ink stamped on paper, not a plastic dot. */
-function desaturate(hex: string, k = 0.4): string {
+export function desaturate(hex: string, k = 0.4): string {
   const n = parseInt(hex.slice(1), 16)
   const c = [(n >> 16) & 255, (n >> 8) & 255, n & 255]
   const grey = 0.3 * c[0] + 0.59 * c[1] + 0.11 * c[2]
   return `rgb(${c.map((v) => Math.round(v + (grey - v) * k)).join(',')})`
 }
 
-const ERAS = eraData.eras.map((e) => ({
+/** The seven eras with their map position and color (also used by the comparison section). */
+export const ERAS = eraData.eras.map((e) => ({
   ...e,
   pos: POS[e.id],
   // Same hues as the mechanism section (Exílio, a dusk tone), softened into ink.
@@ -435,7 +436,7 @@ export function HeroBook({ className = '' }: { className?: string }) {
 /** Below the hero, on screens narrower than 1024px: the book after the buttons, full width. */
 export function HeroBookBand() {
   return (
-    <div className="relative -mt-10 overflow-hidden bg-ink px-4 pb-6 md:-mt-6 md:px-10">
+    <div className="relative overflow-hidden bg-ink px-4 pb-6 md:px-10">
       <HeroBook className="mx-auto max-w-[720px]" />
     </div>
   )

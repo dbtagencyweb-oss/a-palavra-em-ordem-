@@ -1,0 +1,21 @@
+{
+  "_sobre": "Seção 'Sem mapa × Com mapa' da landing page (logo depois da seção de dores). Referência + paráfrase nossa: nenhum texto de tradução protegida. REVISAR (revisão doutrinária) antes de publicar.",
+  "status": "em_revisao",
+  "titulo": "A mesma passagem. Com e sem o mapa.",
+  "sem": {
+    "rotulo": "Sem o mapa",
+    "referencia": "Jeremias 29:10",
+    "parafrase": "Deus fala de setenta anos na Babilônia e de trazer o povo de volta.",
+    "duvidas": [
+      "Que setenta anos?",
+      "O que o povo de Deus fazia na Babilônia?",
+      "Isso vem antes ou depois de Davi?"
+    ]
+  },
+  "com": {
+    "rotulo": "Com o mapa",
+    "eraAtiva": "exilio",
+    "texto": "Você está na era do Exílio. Séculos depois de Davi, Jerusalém foi derrotada e o povo foi levado para a Babilônia. Jeremias escreve para quem está longe de casa: o castigo tem prazo e Deus não esqueceu a promessa.",
+    "rodape": "É isso que você aprende no Dia 5."
+  }
+}

@@ -1,0 +1,43 @@
+<!--
+  E-mail de acesso (link mágico) do Supabase Auth, com a identidade do A Palavra em Ordem.
+  Assunto: Seu acesso ao A Palavra em Ordem
+  Onde colar: Supabase Dashboard → Authentication → Email Templates → "Magic Link" (e o mesmo em
+  "Confirm signup", para quem entra pela primeira vez). {{ .ConfirmationURL }} é o link do Supabase.
+  O logo vem da landing page publicada: troque SEU-DOMINIO pelo domínio real.
+-->
+<!doctype html>
+<html lang="pt-BR">
+  <body style="margin:0;background:#F5EFE3;font-family:Georgia,'Times New Roman',serif;color:#1E2230">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5EFE3;padding:36px 16px">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:480px;text-align:center">
+            <tr>
+              <td style="padding-bottom:26px">
+                <img src="https://SEU-DOMINIO/icons/logo-email.png" width="150" alt="A Palavra em Ordem" style="display:inline-block;border:0;border-radius:12px" />
+              </td>
+            </tr>
+            <tr>
+              <td style="font-size:26px;line-height:1.25;font-weight:bold;padding-bottom:12px">Seu acesso chegou.</td>
+            </tr>
+            <tr>
+              <td style="font-size:17px;line-height:1.55;color:#3A3F4E;padding-bottom:26px">
+                Toque no botão para entrar no A Palavra em Ordem. Sem senha: este link já faz o seu login.
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-bottom:26px">
+                <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#C0552D;color:#ffffff;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-weight:bold;font-size:16px;padding:15px 30px;border-radius:14px">Entrar no A Palavra em Ordem</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#6B6455">
+                O link vale por pouco tempo e só funciona uma vez. Se você não pediu este acesso, pode ignorar este e-mail.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

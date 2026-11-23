@@ -26,9 +26,10 @@
     "botaoCompraSecundario": "Ou garanta o Acesso Fundador · R$ 47/ano",
     "confianca": [
       "Garantia de 30 dias",
-      "Acesso na hora",
+      "Acesso sem senha, pelo seu e-mail",
       "Funciona no celular, sem baixar nada"
     ],
+    "renovacao": "Pagamento único por 1 ano. Sem cobrança automática: avisamos antes de vencer e você decide se quer renovar.",
     "livro": {
       "abrir": "Abrir a Bíblia",
       "fechar": "Fechar a Bíblia"
@@ -352,8 +353,8 @@
     "urgencia": null,
     "urgenciaModelo": "O preço de Fundador vale até [DATA REAL]. Depois disso, o valor passa a ser [VALOR REAL].",
     "botao": "Garantir meu Acesso Fundador",
-    "garantiaTitulo": "30 dias de garantia incondicional.",
-    "garantia": "Se não for para você, devolvemos 100% do valor. Sem perguntas.",
+    "garantiaTitulo": "Garantia incondicional de 30 dias.",
+    "garantia": "Se não fizer sentido para você, devolvemos 100%, sem perguntas.",
     "rodape": "Pagamento seguro · Pix ou cartão · Acesso enviado na hora"
   },
   "faq": {
@@ -381,7 +382,11 @@
       },
       {
         "p": "Renova automaticamente?",
-        "r": null
+        "r": "Não. Pagamento único por 1 ano. Sem cobrança automática: avisamos antes de vencer e você decide se quer renovar."
+      },
+      {
+        "p": "Tem garantia?",
+        "r": "Garantia incondicional de 30 dias. Se não fizer sentido para você, devolvemos 100%, sem perguntas."
       },
       {
         "p": "Posso começar de graça?",

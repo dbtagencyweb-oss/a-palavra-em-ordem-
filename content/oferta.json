@@ -34,9 +34,9 @@
     "precosReferencia": { "mapa-impresso": "R$ 14,90" },
     "preco": "R$ 47/ano",
     "precoDia": "menos de R$ 0,13 por dia",
-    "precoNota": "Pagamento único, sem cobrança automática.",
+    "precoNota": "Pagamento único por 1 ano. Sem cobrança automática: avisamos antes de vencer e você decide se quer renovar.",
     "botao": "Garantir minha vaga de Fundador",
-    "rodape": "Garantia incondicional de 30 dias. Sem cobrança automática."
+    "rodape": "Garantia incondicional de 30 dias. Se não fizer sentido para você, devolvemos 100%, sem perguntas."
   },
   "blocoFechado": {
     "selo": "ACESSO ANUAL",

@@ -237,7 +237,7 @@ export function Hero() {
           {/* No "Ouvir" here for now: the recorded narr-lp-hero speaks the old title. */}
           <p className="lp-reveal text-[17px] font-medium leading-[1.45] text-paper/90 md:text-[22px]">{fixed.subtitulo}</p>
           <HeroCtas />
-          <ul className="lp-reveal mt-2 flex flex-wrap justify-center gap-x-2.5 gap-y-1 text-[11.5px] text-paper/65 md:justify-start">
+          <ul className="lp-reveal mt-1.5 flex flex-wrap justify-center gap-x-2.5 gap-y-0.5 text-[11.5px] text-paper/65 md:mt-2 md:justify-start md:gap-y-1">
             {h.confianca.map((c, i) => (
               <li key={c} className="flex items-center gap-2.5">
                 {i > 0 && <span aria-hidden="true" className="h-1 w-1 rounded-full bg-gold/70" />}
@@ -245,6 +245,7 @@ export function Hero() {
               </li>
             ))}
           </ul>
+          <p className="lp-reveal mt-1 pr-11 text-left text-[11px] leading-snug text-paper/55 md:mt-1.5 md:pr-0">{h.renovacao}</p>
         </div>
       </div>
     </section>
