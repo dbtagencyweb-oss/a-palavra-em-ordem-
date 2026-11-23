@@ -1,0 +1,621 @@
+{
+  "versao": "1.0",
+  "status": "em_revisao",
+  "itens": [
+    {
+      "id": "biblia-em-numeros",
+      "titulo": "A Bíblia em números",
+      "componente": "Numeros",
+      "onde": {
+        "trilha": "mapa-7-dias",
+        "dia": 1,
+        "modo": "na-licao",
+        "depoisDoCard": "d1-c03"
+      },
+      "tambemNaLP": true,
+      "itens": [
+        {
+          "valor": 66,
+          "rotulo": "livros",
+          "detalhe": "39 no Antigo e 27 no Novo Testamento",
+          "fonte": "calculado de livros.json"
+        },
+        {
+          "valor": 1189,
+          "rotulo": "capítulos",
+          "detalhe": "929 no Antigo e 260 no Novo",
+          "fonte": "calculado de livros.json"
+        },
+        {
+          "valor": 31000,
+          "prefixo": "cerca de",
+          "rotulo": "versículos",
+          "detalhe": "o número exato varia um pouco entre as traduções"
+        },
+        {
+          "valor": 40,
+          "prefixo": "cerca de",
+          "rotulo": "autores",
+          "detalhe": "reis, pastores, profetas, pescadores, um médico, um cobrador de impostos"
+        },
+        {
+          "valor": 1500,
+          "prefixo": "cerca de",
+          "rotulo": "anos de escrita",
+          "detalhe": "dos livros de Moisés ao Apocalipse"
+        },
+        {
+          "valor": 3,
+          "rotulo": "línguas",
+          "detalhe": "hebraico, aramaico e grego"
+        },
+        {
+          "valor": 3,
+          "rotulo": "continentes",
+          "detalhe": "Ásia, África e Europa"
+        }
+      ],
+      "fecho": "Uma biblioteca inteira. E uma história só."
+    },
+    {
+      "id": "linguas-da-biblia",
+      "titulo": "As três línguas da Bíblia",
+      "componente": "Linguas",
+      "onde": {
+        "trilha": "mapa-7-dias",
+        "dia": 1,
+        "modo": "para-ir-alem"
+      },
+      "abertura": "A Bíblia não foi escrita em português. Ela chegou até nós a partir de três línguas.",
+      "itens": [
+        {
+          "lingua": "Hebraico",
+          "palavra": "דָּבָר",
+          "transliteracao": "davar",
+          "significado": "palavra",
+          "texto": "A língua da maior parte do Antigo Testamento, escrita da direita para a esquerda."
+        },
+        {
+          "lingua": "Aramaico",
+          "palavra": "מִלָּה",
+          "transliteracao": "millah",
+          "significado": "palavra",
+          "texto": "Língua da região na época do exílio. Aparece em trechos de Daniel e de Esdras, e era a língua do dia a dia de Jesus."
+        },
+        {
+          "lingua": "Grego",
+          "palavra": "λόγος",
+          "transliteracao": "logos",
+          "significado": "palavra, verbo",
+          "texto": "O grego comum do Império Romano, usado em todo o Novo Testamento. É o \"Verbo\" de João 1."
+        }
+      ],
+      "referencias": "Trechos em aramaico: Daniel 2:4b–7:28; Esdras 4:8–6:18 e 7:12-26; Jeremias 10:11."
+    },
+    {
+      "id": "sete-dias-criacao",
+      "titulo": "Os sete dias da criação",
+      "componente": "Ligar",
+      "onde": {
+        "trilha": "mapa-7-dias",
+        "dia": 2,
+        "modo": "para-ir-alem"
+      },
+      "referencia": "Gênesis 1:1–2:3",
+      "instrucao": "Ligue cada dia ao que foi criado nele.",
+      "pares": [
+        {
+          "a": "Dia 1",
+          "b": "A luz, separada das trevas"
+        },
+        {
+          "a": "Dia 2",
+          "b": "O céu, separando as águas"
+        },
+        {
+          "a": "Dia 3",
+          "b": "A terra seca, os mares e as plantas"
+        },
+        {
+          "a": "Dia 4",
+          "b": "O sol, a lua e as estrelas"
+        },
+        {
+          "a": "Dia 5",
+          "b": "As aves e os animais das águas"
+        },
+        {
+          "a": "Dia 6",
+          "b": "Os animais da terra e o ser humano"
+        },
+        {
+          "a": "Dia 7",
+          "b": "O descanso"
+        }
+      ],
+      "observacao": "Repare: os dias 1 a 3 criam os espaços (luz, céu e águas, terra) e os dias 4 a 6 preenchem esses mesmos espaços (astros, aves e peixes, animais e o ser humano).",
+      "acerto": "Isso. E no sétimo dia, Deus descansou: a semana inteira aponta para o descanso nele."
+    },
+    {
+      "id": "hebreu-israelita-judeu",
+      "titulo": "Hebreu, israelita ou judeu?",
+      "componente": "Curiosidade",
+      "onde": {
+        "trilha": "mapa-7-dias",
+        "dia": 3,
+        "modo": "para-ir-alem"
+      },
+      "itens": [
+        {
+          "termo": "Hebreu",
+          "texto": "O nome mais antigo. Abraão é chamado de \"o hebreu\" em Gênesis 14:13.",
+          "referencia": "Gênesis 14:13"
+        },
+        {
+          "termo": "Israelita",
+          "texto": "Descendente de Jacó, que recebeu de Deus o nome Israel. Os doze filhos dele deram origem às doze tribos.",
+          "referencia": "Gênesis 32:28"
+        },
+        {
+          "termo": "Judeu",
+          "texto": "No começo, quem era da tribo ou do reino de Judá. Depois do exílio, o nome passou a valer para todo o povo.",
+          "referencia": "Ester 2:5; Esdras 4:12"
+        }
+      ],
+      "fecho": "Três nomes, o mesmo povo, em momentos diferentes da história."
+    },
+    {
+      "id": "dez-pragas",
+      "titulo": "As dez pragas",
+      "componente": "Ordenar",
+      "onde": {
+        "trilha": "mapa-7-dias",
+        "dia": 4,
+        "modo": "para-ir-alem"
+      },
+      "referencia": "Êxodo 7–12",
+      "instrucao": "Coloque as pragas na ordem em que aconteceram.",
+      "itens": [
+        {
+          "n": 1,
+          "nome": "Água em sangue",
+          "referencia": "Êxodo 7:14-25"
+        },
+        {
+          "n": 2,
+          "nome": "Rãs",
+          "referencia": "Êxodo 8:1-15"
+        },
+        {
+          "n": 3,
+          "nome": "Piolhos",
+          "referencia": "Êxodo 8:16-19"
+        },
+        {
+          "n": 4,
+          "nome": "Moscas",
+          "referencia": "Êxodo 8:20-32"
+        },
+        {
+          "n": 5,
+          "nome": "Peste nos animais",
+          "referencia": "Êxodo 9:1-7"
+        },
+        {
+          "n": 6,
+          "nome": "Úlceras",
+          "referencia": "Êxodo 9:8-12"
+        },
+        {
+          "n": 7,
+          "nome": "Granizo",
+          "referencia": "Êxodo 9:13-35"
+        },
+        {
+          "n": 8,
+          "nome": "Gafanhotos",
+          "referencia": "Êxodo 10:1-20"
+        },
+        {
+          "n": 9,
+          "nome": "Trevas",
+          "referencia": "Êxodo 10:21-29"
+        },
+        {
+          "n": 10,
+          "nome": "A última praga e a Páscoa",
+          "referencia": "Êxodo 11:1–12:30"
+        }
+      ],
+      "observacao": "Muitos estudiosos notam que as pragas atingem coisas que o Egito tratava como divinas, como o rio Nilo e o sol. Deus mostra quem é o Senhor.",
+      "nota_visual": "Ícones simples por praga. Na décima, use a porta marcada da Páscoa (d4-porta-pascoa). Sem imagens de morte.",
+      "acerto": "Isso. Dez sinais até a noite da Páscoa."
+    },
+    {
+      "id": "dez-mandamentos",
+      "titulo": "As duas tábuas",
+      "componente": "Tabuas",
+      "onde": {
+        "trilha": "mapa-7-dias",
+        "dia": 4,
+        "modo": "para-ir-alem"
+      },
+      "referencia": "Êxodo 20:1-17",
+      "abertura": "Antes do primeiro mandamento, Deus diz: \"Eu sou o Senhor, que te tirei do Egito\". A lei vem para quem já foi libertado.",
+      "tabua1": {
+        "titulo": "Amar a Deus",
+        "itens": [
+          "Não ter outros deuses além de Deus",
+          "Não fazer imagens para adorar",
+          "Não usar o nome de Deus em vão",
+          "Lembrar do dia de descanso para o santificar"
+        ]
+      },
+      "tabua2": {
+        "titulo": "Amar o próximo",
+        "itens": [
+          "Honrar pai e mãe",
+          "Não matar",
+          "Não adulterar",
+          "Não furtar",
+          "Não dar falso testemunho",
+          "Não cobiçar o que é do outro"
+        ]
+      },
+      "fecho": "Jesus resumiu tudo em dois mandamentos: amar a Deus de todo o coração e amar o próximo como a si mesmo (Mateus 22:37-40).",
+      "nota_numeracao": "Segue a numeração usada pela maioria das igrejas evangélicas. Católicos e luteranos agrupam os mandamentos de outro jeito."
+    },
+    {
+      "id": "tabernaculo",
+      "titulo": "O tabernáculo",
+      "componente": "Tabernaculo",
+      "onde": [
+        {
+          "trilha": "mapa-7-dias",
+          "dia": 4,
+          "modo": "para-ir-alem"
+        },
+        {
+          "trilha": "jesus-em-ordem",
+          "dia": 2,
+          "modo": "link",
+          "rotulo": "Veja o tabernáculo"
+        }
+      ],
+      "referencia": "Êxodo 25–27; 30; 40",
+      "abertura": "No deserto, Deus mandou construir uma tenda para morar no meio do povo. Cada parte ensinava como um povo pecador podia se aproximar de um Deus santo.",
+      "medidas": {
+        "patio": "100 × 50 côvados (Êxodo 27:18)",
+        "tenda": "30 × 10 côvados",
+        "santoDosSantos": "10 × 10 côvados",
+        "nota": "1 côvado ≈ 45 cm. As medidas internas da tenda são a reconstrução mais aceita a partir de Êxodo 26."
+      },
+      "partes": [
+        {
+          "area": "Pátio",
+          "nome": "Altar de bronze",
+          "texto": "Onde os sacrifícios eram oferecidos. Ninguém entrava sem passar por ele.",
+          "cristo": "Jesus é o sacrifício definitivo, oferecido uma vez por todas.",
+          "referencia": "Êxodo 27:1-8; Hebreus 10:10"
+        },
+        {
+          "area": "Pátio",
+          "nome": "Pia de bronze",
+          "texto": "Os sacerdotes se lavavam antes de servir.",
+          "cristo": "Em Cristo somos lavados e purificados.",
+          "referencia": "Êxodo 30:17-21; Tito 3:5"
+        },
+        {
+          "area": "Lugar Santo",
+          "nome": "Candelabro",
+          "texto": "Sete lâmpadas de azeite, sempre acesas.",
+          "cristo": "\"Eu sou a luz do mundo\".",
+          "referencia": "Êxodo 25:31-40; João 8:12"
+        },
+        {
+          "area": "Lugar Santo",
+          "nome": "Mesa dos pães",
+          "texto": "Doze pães, um por tribo, sempre diante de Deus.",
+          "cristo": "\"Eu sou o pão da vida\".",
+          "referencia": "Êxodo 25:23-30; João 6:35"
+        },
+        {
+          "area": "Lugar Santo",
+          "nome": "Altar do incenso",
+          "texto": "O incenso subia diante do véu, todos os dias.",
+          "cristo": "Jesus intercede por nós; as orações sobem como incenso.",
+          "referencia": "Êxodo 30:1-10; Hebreus 7:25; Apocalipse 8:3-4"
+        },
+        {
+          "area": "Véu",
+          "nome": "O véu",
+          "texto": "Uma cortina grossa separava o Santo dos Santos. Só o sumo sacerdote passava, uma vez por ano.",
+          "cristo": "Na morte de Jesus, o véu do templo se rasgou de alto a baixo: o caminho foi aberto.",
+          "referencia": "Êxodo 26:31-33; Mateus 27:51; Hebreus 10:19-20"
+        },
+        {
+          "area": "Santo dos Santos",
+          "nome": "Arca da aliança",
+          "texto": "Uma caixa coberta de ouro com as tábuas da lei. A tampa se chamava propiciatório.",
+          "cristo": "Jesus é a propiciação pelos nossos pecados.",
+          "referencia": "Êxodo 25:10-22; Romanos 3:25"
+        }
+      ],
+      "fecho": "Em João 1:14, \"habitou entre nós\" pode ser traduzido como \"armou sua tenda entre nós\". Em Jesus, Deus veio morar no meio do seu povo de novo."
+    },
+    {
+      "id": "profetas-por-epoca",
+      "titulo": "Os profetas na linha do tempo",
+      "componente": "LinhaProfetas",
+      "onde": {
+        "trilha": "mapa-7-dias",
+        "dia": 5,
+        "modo": "na-licao",
+        "substituiVisualDoCard": "d5-c05"
+      },
+      "faixas": [
+        {
+          "epoca": "Antes do exílio",
+          "contexto": "Enquanto os reinos de Israel e Judá se afastavam de Deus",
+          "profetas": [
+            {
+              "livro": "jn",
+              "nome": "Jonas",
+              "para": "Nínive"
+            },
+            {
+              "livro": "am",
+              "nome": "Amós",
+              "para": "Israel (norte)"
+            },
+            {
+              "livro": "os",
+              "nome": "Oseias",
+              "para": "Israel (norte)"
+            },
+            {
+              "livro": "is",
+              "nome": "Isaías",
+              "para": "Judá (sul)"
+            },
+            {
+              "livro": "mq",
+              "nome": "Miqueias",
+              "para": "Judá (sul)"
+            },
+            {
+              "livro": "na",
+              "nome": "Naum",
+              "para": "Nínive"
+            },
+            {
+              "livro": "sf",
+              "nome": "Sofonias",
+              "para": "Judá (sul)"
+            },
+            {
+              "livro": "hc",
+              "nome": "Habacuque",
+              "para": "Judá (sul)"
+            },
+            {
+              "livro": "jr",
+              "nome": "Jeremias",
+              "para": "Judá (sul), até a queda"
+            }
+          ]
+        },
+        {
+          "epoca": "Durante o exílio",
+          "contexto": "Com o povo levado para a Babilônia",
+          "profetas": [
+            {
+              "livro": "lm",
+              "nome": "Lamentações",
+              "para": "Sobre a queda de Jerusalém"
+            },
+            {
+              "livro": "ez",
+              "nome": "Ezequiel",
+              "para": "Os exilados"
+            },
+            {
+              "livro": "dn",
+              "nome": "Daniel",
+              "para": "Na corte da Babilônia"
+            }
+          ]
+        },
+        {
+          "epoca": "Depois do exílio",
+          "contexto": "Com o povo de volta, reconstruindo",
+          "profetas": [
+            {
+              "livro": "ag",
+              "nome": "Ageu",
+              "para": "Os que voltaram"
+            },
+            {
+              "livro": "zc",
+              "nome": "Zacarias",
+              "para": "Os que voltaram"
+            },
+            {
+              "livro": "ml",
+              "nome": "Malaquias",
+              "para": "Os que voltaram"
+            }
+          ]
+        }
+      ],
+      "dataDebatida": [
+        {
+          "livro": "jl",
+          "nome": "Joel"
+        },
+        {
+          "livro": "ob",
+          "nome": "Obadias"
+        }
+      ],
+      "notaDataDebatida": "A época de Joel e de Obadias é debatida entre estudiosos; por isso eles aparecem à parte.",
+      "fecho": "Os profetas não vêm depois de Reis: eles falaram durante essa história."
+    },
+    {
+      "id": "quatrocentos-anos",
+      "titulo": "Os 400 anos entre os Testamentos",
+      "componente": "LinhaHorizontal",
+      "onde": [
+        {
+          "trilha": "mapa-7-dias",
+          "dia": 6,
+          "modo": "para-ir-alem"
+        },
+        {
+          "trilha": "jesus-em-ordem",
+          "dia": 4,
+          "modo": "link",
+          "rotulo": "O que aconteceu nesses 400 anos?"
+        }
+      ],
+      "abertura": "Entre Malaquias e o nascimento de Jesus, nenhum livro novo entra no Antigo Testamento. Mas muita coisa muda.",
+      "marcos": [
+        {
+          "data": "c. 430 a.C.",
+          "titulo": "Malaquias",
+          "texto": "O último profeta do Antigo Testamento. O povo vive sob o Império Persa."
+        },
+        {
+          "data": "332 a.C.",
+          "titulo": "Alexandre, o Grande",
+          "texto": "A região passa para o domínio grego. O grego vira a língua comum, a mesma do Novo Testamento."
+        },
+        {
+          "data": "séc. III a.C.",
+          "titulo": "A Septuaginta",
+          "texto": "Em Alexandria, as Escrituras hebraicas são traduzidas para o grego."
+        },
+        {
+          "data": "167–164 a.C.",
+          "titulo": "A revolta dos macabeus",
+          "texto": "Os judeus se levantam contra um rei que profanou o templo. A rededicação do templo é lembrada até hoje no Hanucá."
+        },
+        {
+          "data": "63 a.C.",
+          "titulo": "Roma chega",
+          "texto": "O general Pompeu toma Jerusalém. Começa o domínio romano."
+        },
+        {
+          "data": "37 a.C.",
+          "titulo": "Herodes, o Grande",
+          "texto": "Rei sob Roma, reforma e amplia o templo. É ele quem reina quando Jesus nasce."
+        }
+      ],
+      "tambem": "Nesse período surgem as sinagogas e os grupos que aparecem nos Evangelhos, como os fariseus e os saduceus.",
+      "fecho": "Quando Jesus nasce, o povo fala grego e aramaico, vive sob Roma e espera o Messias."
+    },
+    {
+      "id": "genealogia-mateus",
+      "titulo": "A genealogia de Jesus em Mateus",
+      "componente": "Genealogia",
+      "onde": {
+        "trilha": "jesus-em-ordem",
+        "dia": 3,
+        "modo": "para-ir-alem"
+      },
+      "referencia": "Mateus 1:1-17",
+      "blocos": [
+        {
+          "nome": "De Abraão a Davi",
+          "nomes": [
+            "Abraão",
+            "Isaque",
+            "Jacó",
+            "Judá",
+            "Perez",
+            "Esrom",
+            "Arão",
+            "Aminadabe",
+            "Naassom",
+            "Salmom",
+            "Boaz",
+            "Obede",
+            "Jessé",
+            "Davi"
+          ]
+        },
+        {
+          "nome": "De Davi ao exílio",
+          "nomes": [
+            "Salomão",
+            "Roboão",
+            "Abias",
+            "Asa",
+            "Josafá",
+            "Jorão",
+            "Uzias",
+            "Jotão",
+            "Acaz",
+            "Ezequias",
+            "Manassés",
+            "Amom",
+            "Josias",
+            "Jeconias"
+          ]
+        },
+        {
+          "nome": "Do exílio a Jesus",
+          "nomes": [
+            "Salatiel",
+            "Zorobabel",
+            "Abiúde",
+            "Eliaquim",
+            "Azor",
+            "Sadoque",
+            "Aquim",
+            "Eliúde",
+            "Eleazar",
+            "Matã",
+            "Jacó",
+            "José",
+            "Jesus"
+          ]
+        }
+      ],
+      "mulheres": [
+        {
+          "nome": "Tamar",
+          "ao_lado_de": "Judá",
+          "texto": "Nora de Judá; uma história difícil, contada em Gênesis 38.",
+          "referencia": "Gênesis 38"
+        },
+        {
+          "nome": "Raabe",
+          "ao_lado_de": "Salmom",
+          "texto": "Uma estrangeira de Jericó que protegeu os espias de Israel.",
+          "referencia": "Josué 2"
+        },
+        {
+          "nome": "Rute",
+          "ao_lado_de": "Boaz",
+          "texto": "Uma moabita fiel, bisavó do rei Davi.",
+          "referencia": "Rute 1–4"
+        },
+        {
+          "nome": "A mulher de Urias",
+          "ao_lado_de": "Davi",
+          "texto": "Bate-Seba, mãe de Salomão.",
+          "referencia": "2 Samuel 11–12"
+        },
+        {
+          "nome": "Maria",
+          "ao_lado_de": "José",
+          "texto": "Mãe de Jesus.",
+          "referencia": "Mateus 1:16"
+        }
+      ],
+      "notaContagem": "O terceiro bloco tem 13 nomes nesta lista. Uma explicação comum é que Mateus conta Jeconias nos dois blocos, por ele marcar a passagem para o exílio.",
+      "notaNomes": "A grafia dos nomes varia entre as traduções; confira com a tradução adotada pelo app."
+    }
+  ]
+}

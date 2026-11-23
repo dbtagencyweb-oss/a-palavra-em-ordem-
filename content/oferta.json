@@ -1,0 +1,51 @@
+{
+  "_sobre": "Oferta Fundador com escassez REAL: o número de vendidos vem do banco (função pública fundadores_vendidos, só o número, sem dados pessoais). Nada de contador que reinicia. Quando vendidos >= fundadorLimite, a LP fecha o bloco Fundador sozinha, o preço passa a precoApos e o checkout vai para a oferta anual normal (VITE_HOTMART_CHECKOUT_ANUAL_URL). O webhook usa o mesmo limite: venda de Fundador acima dele dá acesso anual normal e entra na fila fundador_excedentes para revisão. Depois de editar, rode npm run config:sync.",
+  "fundadorLimite": 500,
+  "fundadorPreco": 47,
+  "precoApos": 67,
+  "garantiaDias": 30,
+  "atualizarACadaSegundos": 60,
+  "nomeApos": "Acesso anual",
+  "bumps": {
+    "_sobre": "Order bumps do checkout de Fundador: desligados nesta fase. Para reativar, ponha ativos: true e ligue os bumps na plataforma de pagamento (eles são configurados lá, não no código).",
+    "ativos": false,
+    "itens": ["mapa-impresso", "familia"]
+  },
+  "bloco": {
+    "selo": "ACESSO FUNDADOR · VAGAS LIMITADAS",
+    "titulo": "Seja um dos primeiros 500, e pague R$ 47 para sempre.",
+    "texto": "As vagas de Fundador são limitadas. Quando acabarem, o acesso anual passa a custar R$ 67. Quem entra agora mantém R$ 47 em todas as renovações, enquanto continuar com a gente.",
+    "contador": "{vendidos} de {limite} vagas de Fundador preenchidas",
+    "recebeTitulo": "O que o Fundador recebe",
+    "recebe": [
+      "A trilha \"Mapa da Bíblia em 7 dias\" completa",
+      "Todas as trilhas e módulos lançados durante o ano"
+    ],
+    "bonusTitulo": "Bônus exclusivos de Fundador",
+    "bonus": [
+      { "texto": "Trilha \"Jesus em Ordem\" (30 dias), liberada em etapas", "produto": null },
+      { "texto": "Fichas dos 66 livros: resumo, época e onde cada um se encaixa", "produto": null },
+      { "texto": "\"Para ir além\": 10 conteúdos interativos (Bíblia em números, as 10 pragas, o Tabernáculo, os 400 anos de silêncio, a genealogia de Jesus e mais)", "produto": null },
+      { "texto": "Mapa da Bíblia para imprimir (PDF)", "produto": "mapa-impresso" },
+      { "texto": "Selo e medalha de Fundador no seu perfil", "produto": null }
+    ],
+    "bonusSemPreco": "exclusivo de Fundador",
+    "_bonus": "Preço individual só nos itens com produto definido em docs/06-produtos-e-esteira.md (o valor vem de precosReferencia, abaixo).",
+    "precosReferencia": { "mapa-impresso": "R$ 14,90" },
+    "preco": "R$ 47/ano",
+    "precoDia": "menos de R$ 0,13 por dia",
+    "precoNota": "Pagamento único, sem cobrança automática.",
+    "botao": "Garantir minha vaga de Fundador",
+    "rodape": "Garantia incondicional de 30 dias. Sem cobrança automática."
+  },
+  "blocoFechado": {
+    "selo": "ACESSO ANUAL",
+    "titulo": "Toda a jornada, por R$ 67 por ano.",
+    "texto": "As vagas de Fundador foram preenchidas. O acesso anual inclui todas as trilhas e módulos lançados durante o ano.",
+    "preco": "R$ 67/ano",
+    "precoDia": "menos de R$ 0,19 por dia",
+    "botao": "Garantir meu acesso anual"
+  },
+  "faixa": "Vagas de Fundador: {restantes} restantes · R$ 47 para sempre",
+  "faixaLink": "Ver a oferta"
+}

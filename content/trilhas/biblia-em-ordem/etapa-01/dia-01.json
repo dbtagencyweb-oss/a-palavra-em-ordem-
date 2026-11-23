@@ -1,0 +1,15 @@
+{
+  "status": "rascunho",
+  "n": 1,
+  "formato": "leitura-guiada",
+  "titulo": "Gênesis 1–2",
+  "leitura": "Gênesis 1–2",
+  "capitulos": [
+    {
+      "livro": "gn",
+      "de": 1,
+      "ate": 2
+    }
+  ],
+  "cards": []
+}

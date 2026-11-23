@@ -1,0 +1,54 @@
+{
+  "id": "estudo-romanos",
+  "titulo": "Romanos: o evangelho explicado",
+  "subtitulo": "A carta que organiza a fé cristã, em 8 lições",
+  "descricao": "Paulo escreve a uma igreja que ainda não conhecia e explica, passo a passo, o que é o evangelho: por que todos precisam dele, o que Deus fez em Cristo e como isso muda a vida de cada dia.",
+  "livro": "rm",
+  "capa": "capa-estudo-romanos",
+  "preco": 37,
+  "acesso": [
+    "estudo-romanos"
+  ],
+  "formato": "trilha",
+  "totalDias": 8,
+  "conclusao": {
+    "selo": "Selo da graça",
+    "titulo": "Nenhuma condenação",
+    "mensagem": "Você percorreu a carta inteira, do diagnóstico à vida transformada. Guarde o centro dela: em Cristo já não há condenação, e nada pode separar você do amor de Deus. Não é um peso para carregar. É uma notícia para viver.",
+    "referencia": "Romanos 8:1, 38-39"
+  },
+  "dias": [
+    {
+      "n": 1,
+      "arquivo": "dia-01.json"
+    },
+    {
+      "n": 2,
+      "arquivo": "dia-02.json"
+    },
+    {
+      "n": 3,
+      "arquivo": "dia-03.json"
+    },
+    {
+      "n": 4,
+      "arquivo": "dia-04.json"
+    },
+    {
+      "n": 5,
+      "arquivo": "dia-05.json"
+    },
+    {
+      "n": 6,
+      "arquivo": "dia-06.json"
+    },
+    {
+      "n": 7,
+      "arquivo": "dia-07.json"
+    },
+    {
+      "n": 8,
+      "arquivo": "dia-08.json"
+    }
+  ]
+}

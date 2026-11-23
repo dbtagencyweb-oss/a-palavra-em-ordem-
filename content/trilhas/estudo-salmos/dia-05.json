@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 5,
+  "titulo": "Quando estou ansioso",
+  "passagens": "Salmos 46",
+  "midiaSugerida": {
+    "id": "sl-d05",
+    "prompt": "a calm river flowing through an ancient walled city at dawn while a stormy sea crashes in the distance beyond the walls, no people"
+  },
+  "cards": [
+    {
+      "id": "sl-d05-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Quando tudo treme.",
+      "paragrafos": [
+        "O Salmo 46 imagina o pior: a terra tremendo, montanhas caindo no mar, nações em guerra.",
+        "E mesmo assim diz: não temeremos."
+      ]
+    },
+    {
+      "id": "sl-d05-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Refúgio e fortaleza.",
+      "paragrafos": [
+        "Deus é nosso refúgio e fortaleza, socorro sempre presente na angústia.",
+        "Refúgio é para onde se corre. Fortaleza é o que não cai. Socorro presente é ajuda que não chega atrasada."
+      ]
+    },
+    {
+      "id": "sl-d05-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Aquietem-se.",
+      "paragrafos": [
+        "No meio do barulho, Deus fala: parem e saibam que eu sou Deus.",
+        "Não é uma bronca, é um convite. A ansiedade corre; a fé para um momento e lembra quem está no controle."
+      ]
+    },
+    {
+      "id": "sl-d05-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "As palavras do Salmo 46.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "Refúgio",
+          "b": "Lugar para onde corro"
+        },
+        {
+          "a": "Fortaleza",
+          "b": "O que não cai"
+        },
+        {
+          "a": "Socorro presente",
+          "b": "Ajuda que não chega atrasada"
+        },
+        {
+          "a": "Aquietar-se",
+          "b": "Parar e lembrar quem é Deus"
+        }
+      ],
+      "acerto": "Isso. Palavras para guardar nos dias agitados."
+    },
+    {
+      "id": "sl-d05-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Parem e saibam.",
+      "referencia": "Salmos 46",
+      "resumo": "O salmo declara que Deus é refúgio e força, por isso não precisamos temer, mesmo se a terra tremer. Há um rio que alegra a cidade de Deus. Ele faz cessar as guerras e convida: parem e reconheçam que Ele é Deus.",
+      "observar": "O rio tranquilo contrasta com o mar agitado. A paz vem de onde Deus está."
+    },
+    {
+      "id": "sl-d05-c06",
+      "tipo": "cristo",
+      "texto": "Jesus acalmou o mar com uma palavra e perguntou aos discípulos por que tinham medo. O Deus do Salmo 46 estava no barco com eles."
+    },
+    {
+      "id": "sl-d05-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que \"aquietem-se\" quer dizer no Salmo 46?",
+      "opcoes": [
+        {
+          "texto": "Um convite para parar e lembrar que Deus está no controle.",
+          "correta": true
+        },
+        {
+          "texto": "Uma ordem para nunca sentir nada.",
+          "correta": false
+        },
+        {
+          "texto": "Um castigo para quem está ansioso.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. É convite, não bronca.",
+      "erro": "Releia o card \"Aquietem-se\"."
+    },
+    {
+      "id": "sl-d05-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "O que tem deixado seu coração agitado? Separe um minuto agora, em silêncio, para lembrar: Ele é Deus."
+    },
+    {
+      "id": "sl-d05-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Deus, tu és o meu refúgio e a minha fortaleza. Quando tudo parece tremer, acalma o meu coração. Ensina-me a parar e lembrar que tu estás no controle. Amém."
+    }
+  ]
+}

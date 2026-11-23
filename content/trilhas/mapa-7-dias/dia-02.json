@@ -1,0 +1,138 @@
+{
+  "status": "publicado",
+  "n": 2,
+  "titulo": "Criação, queda e promessa",
+  "base": "Gênesis 1 a 11",
+  "lugar": "Éden",
+  "simbolo": {
+    "id": "arvore",
+    "nome": "A árvore",
+    "texto": "A árvore da vida aparece no jardim do Éden e volta na última página da Bíblia. Guarde-a: você vai reencontrá-la no Dia 7.",
+    "midia": "simbolo-arvore"
+  },
+  "cards": [
+    {
+      "id": "d2-c01",
+      "tipo": "cena",
+      "midia": "d2-criacao",
+      "legenda": "No princípio, Deus."
+    },
+    {
+      "id": "d2-c02",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "No princípio.",
+      "paragrafos": [
+        "Toda história tem um começo. A da Bíblia começa com Deus, antes de qualquer outra coisa.",
+        "E as primeiras páginas já contam o problema que o resto do livro inteiro vai resolver."
+      ]
+    },
+    {
+      "id": "d2-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Tudo era bom.",
+      "midia": "d2-jardim",
+      "paragrafos": [
+        "Deus cria o mundo com ordem e beleza, e repete: \"era bom\".",
+        "O ser humano é feito à imagem de Deus, para viver perto dele, cuidar da criação e se relacionar com o outro. Não havia vergonha, medo nem morte."
+      ]
+    },
+    {
+      "id": "d2-c04",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O mundo se quebra.",
+      "midia": "d2-esconder",
+      "paragrafos": [
+        "O homem e a mulher desconfiam da palavra de Deus e escolhem decidir sozinhos o que é bom e o que é mau. Vêm a vergonha, a culpa, o esconderijo, as relações feridas e, por fim, a morte.",
+        "Mas a primeira coisa que Deus faz depois da queda é procurar: \"Onde você está?\"."
+      ]
+    },
+    {
+      "id": "d2-c05",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O mal se espalha. Deus recomeça.",
+      "midia": "d2-arco-iris",
+      "paragrafos": [
+        "Caim mata o irmão, a violência enche a terra no tempo de Noé, e em Babel a humanidade tenta chegar ao céu por conta própria.",
+        "Em cada cena, porém, Deus preserva e recomeça."
+      ]
+    },
+    {
+      "id": "d2-c06",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "O que cada cena mostra?",
+      "instrucao": "Toque numa cena e depois no que ela mostra.",
+      "pares": [
+        {
+          "a": "Éden",
+          "b": "Tudo era bom"
+        },
+        {
+          "a": "Caim e Abel",
+          "b": "A inveja vira violência"
+        },
+        {
+          "a": "Noé",
+          "b": "Deus preserva no meio do juízo"
+        },
+        {
+          "a": "Babel",
+          "b": "O orgulho de querer chegar ao céu sozinho"
+        }
+      ],
+      "acerto": "Isso. Gênesis 1 a 11 mostra o mundo bom, o mundo quebrado e um Deus que não desiste."
+    },
+    {
+      "id": "d2-c07",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "A primeira promessa.",
+      "referencia": "Gênesis 3:1-15",
+      "resumo": "A serpente põe em dúvida a palavra de Deus, o casal come do fruto e se esconde. Deus os procura, anuncia as consequências e, no meio delas, faz uma promessa: um descendente da mulher vai esmagar a cabeça da serpente.",
+      "observar": "A promessa de resgate aparece no mesmo capítulo da queda."
+    },
+    {
+      "id": "d2-c08",
+      "tipo": "cristo",
+      "texto": "Muitos cristãos, desde a igreja antiga, leem Gênesis 3:15 como o primeiro anúncio do evangelho. Paulo compara Adão e Jesus: por um veio a queda, pelo outro vem a vida (Romanos 5)."
+    },
+    {
+      "id": "d2-c09",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Onde aparece a primeira promessa de resgate?",
+      "opcoes": [
+        {
+          "texto": "Logo depois da queda, em Gênesis 3.",
+          "correta": true
+        },
+        {
+          "texto": "Só no Novo Testamento.",
+          "correta": false
+        },
+        {
+          "texto": "Na história do dilúvio.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Deus anuncia o resgate no mesmo capítulo em que o mundo se quebra.",
+      "erro": "Ainda não. Volte ao card anterior: a promessa vem muito cedo."
+    },
+    {
+      "id": "d2-c10",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Deus perguntou: \"Onde você está?\". Se Ele te fizesse essa pergunta hoje, o que você responderia?"
+    },
+    {
+      "id": "d2-c11",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Pai, obrigado porque, mesmo quando eu me escondo, o Senhor vem me procurar. Que eu não fuja da tua presença. Amém."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "nota": "Frases de ligação do roteiro falado das lições (docs/07, Prompt 8). O conteúdo de cada card é lido como está nos arquivos da trilha; aqui ficam só as entradas entre as partes. Atividades (ordenar, ligar, quiz) e a oferta não entram no áudio. Revisar junto com o conteúdo.",
+  "abertura": "{trilha}. Dia {n}. {titulo}.",
+  "palavra": "Na Palavra: {referencia}.",
+  "observar": "O que observar:",
+  "cristo": "Como isso aponta para Cristo.",
+  "reflexao": "Para refletir.",
+  "oracao": "Vamos orar.",
+  "fim": "Fim do Dia {n}. Até amanhã.",
+  "leitura": "A leitura de hoje é {referencia}. Se puder, pause aqui, leia na sua Bíblia e depois volte.",
+  "contexto": "Onde isso se encaixa.",
+  "observarLeitura": "O que observar.",
+  "pergunta": "Para o seu diário."
+}

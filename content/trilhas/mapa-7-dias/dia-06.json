@@ -1,0 +1,152 @@
+{
+  "status": "publicado",
+  "n": 6,
+  "titulo": "Jesus e os Evangelhos",
+  "base": "Mateus, Marcos, Lucas e João",
+  "lugar": "Galileia",
+  "simbolo": {
+    "id": "cruz",
+    "nome": "A cruz",
+    "texto": "O símbolo de morte que se tornou o maior sinal de esperança, porque o túmulo ficou vazio.",
+    "midia": "simbolo-cruz"
+  },
+  "cards": [
+    {
+      "id": "d6-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "A promessa chega.",
+      "midia": "d6-belem",
+      "paragrafos": [
+        "Cerca de quatro séculos separam o último profeta do Antigo Testamento do nascimento de Jesus. Nesse tempo, Israel vive sob impérios estrangeiros e, no tempo de Jesus, sob Roma.",
+        "O povo ainda espera o Rei prometido a Davi."
+      ]
+    },
+    {
+      "id": "d6-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Quem é Jesus.",
+      "midia": "d6-cruz",
+      "paragrafos": [
+        "Jesus nasce em Belém e cresce em Nazaré. Por volta dos 30 anos, começa a anunciar que o Reino de Deus chegou: ensina, cura, perdoa pecados, chama discípulos e se aproxima de quem era deixado de fora.",
+        "Os líderes religiosos se opõem a Ele. Em Jerusalém, na Páscoa, Jesus é crucificado."
+      ]
+    },
+    {
+      "id": "d6-c03",
+      "tipo": "cena",
+      "midia": "d6-tumulo",
+      "legenda": "No terceiro dia, o túmulo está vazio."
+    },
+    {
+      "id": "d6-c04",
+      "tipo": "movimentos",
+      "rotulo": "Entenda",
+      "titulo": "Quatro retratos da mesma pessoa.",
+      "itens": [
+        {
+          "n": 1,
+          "nome": "Mateus",
+          "texto": "Jesus é o Rei prometido, que cumpre as Escrituras. Pensado para leitores judeus."
+        },
+        {
+          "n": 2,
+          "nome": "Marcos",
+          "texto": "O mais curto e direto, com Jesus em ação."
+        },
+        {
+          "n": 3,
+          "nome": "Lucas",
+          "texto": "Uma pesquisa cuidadosa, com atenção aos pobres, às mulheres e aos de fora."
+        },
+        {
+          "n": 4,
+          "nome": "João",
+          "texto": "Quem Jesus é: o Verbo que se fez carne."
+        }
+      ]
+    },
+    {
+      "id": "d6-c05",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "Ligue cada Evangelho ao seu retrato.",
+      "instrucao": "Toque num Evangelho e depois no retrato.",
+      "pares": [
+        {
+          "a": "Mateus",
+          "b": "O Rei prometido"
+        },
+        {
+          "a": "Marcos",
+          "b": "O Servo em ação"
+        },
+        {
+          "a": "Lucas",
+          "b": "O Salvador de todos"
+        },
+        {
+          "a": "João",
+          "b": "O Verbo que se fez carne"
+        }
+      ],
+      "acerto": "Isso. Quatro olhares, uma só pessoa."
+    },
+    {
+      "id": "d6-c06",
+      "tipo": "cena",
+      "midia": "d6-sinagoga",
+      "legenda": "\"Hoje se cumpriu esta Escritura.\"",
+      "referencia": "Lucas 4:21"
+    },
+    {
+      "id": "d6-c07",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "O texto do Dia 5, cumprido.",
+      "referencia": "Lucas 4:16-21",
+      "resumo": "Na sinagoga de Nazaré, Jesus lê um trecho do profeta Isaías sobre boas-novas aos pobres e liberdade aos presos, fecha o rolo e diz que aquilo se cumpria naquele dia.",
+      "observar": "Jesus pega um texto dos profetas e diz que ele fala dele."
+    },
+    {
+      "id": "d6-c08",
+      "tipo": "cristo",
+      "texto": "Hoje é o centro do mapa. A promessa no Éden, a bênção de Abraão, o cordeiro da Páscoa, o rei de Davi e a nova aliança encontram nele o seu sentido."
+    },
+    {
+      "id": "d6-c09",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Por que existem quatro Evangelhos?",
+      "opcoes": [
+        {
+          "texto": "Porque cada um corrige os erros dos outros.",
+          "correta": false
+        },
+        {
+          "texto": "Porque são quatro retratos da mesma pessoa, escritos com olhares e para públicos diferentes.",
+          "correta": true
+        },
+        {
+          "texto": "Porque a igreja escolheu quatro ao acaso.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Ler os quatro juntos mostra Jesus por inteiro.",
+      "erro": "Não é isso. Pense em quatro fotos da mesma pessoa, de ângulos diferentes."
+    },
+    {
+      "id": "d6-c10",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Se você pudesse caminhar com Jesus como aqueles dois discípulos do Dia 1, que pergunta faria a Ele?"
+    },
+    {
+      "id": "d6-c11",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor Jesus, Tu és o centro de toda a Escritura. Que eu não conheça só histórias sobre Ti, mas conheça a Ti. Amém."
+    }
+  ]
+}

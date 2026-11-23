@@ -1,0 +1,123 @@
+{
+  "status": "em_revisao",
+  "n": 5,
+  "titulo": "O nascimento",
+  "passagens": "Lucas 1:57–2:20; Mateus 1:18-25",
+  "fase": "Nascimento",
+  "marcoLinhaDoTempo": "Nascimento",
+  "simbolo": {
+    "id": "manjedoura",
+    "nome": "A manjedoura",
+    "texto": "O Rei prometido nasceu num lugar de animais. O símbolo de que Ele veio para todos, a começar pelos mais simples."
+  },
+  "midiaSugerida": {
+    "id": "d6-belem",
+    "prompt": "Reaproveitar a imagem d6-belem, já aprovada."
+  },
+  "cards": [
+    {
+      "id": "je-d05-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "O Rei chega sem palácio.",
+      "paragrafos": [
+        "Tudo o que você viu até aqui, de Abraão a Davi, dos profetas ao anjo, converge para uma noite em Belém.",
+        "E o jeito como o Rei chega surpreende todo mundo."
+      ]
+    },
+    {
+      "id": "je-d05-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O sonho de José.",
+      "paragrafos": [
+        "José descobre que Maria está grávida e decide deixá-la em segredo, para não expô-la. Um anjo aparece em sonho: o filho vem do Espírito Santo.",
+        "Ele deveria chamá-lo Jesus, que significa \"o Senhor salva\", porque Ele salvaria o povo dos seus pecados."
+      ]
+    },
+    {
+      "id": "je-d05-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Belém, a cidade de Davi.",
+      "paragrafos": [
+        "Um recenseamento romano leva José e Maria a Belém, a cidade de Davi, como o profeta Miqueias tinha anunciado.",
+        "Não havia lugar para eles. O bebê é colocado numa manjedoura, o cocho onde os animais comiam."
+      ]
+    },
+    {
+      "id": "je-d05-c04",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Os primeiros convidados.",
+      "paragrafos": [
+        "A notícia não vai primeiro ao palácio. Vai a pastores que cuidavam de rebanhos no campo, à noite.",
+        "Anjos anunciam o nascimento do Salvador. Os pastores correm, encontram o menino e saem contando a todos."
+      ]
+    },
+    {
+      "id": "je-d05-c05",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "Coloque a noite em ordem.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "O anjo fala com José",
+        "A viagem a Belém",
+        "O nascimento na manjedoura",
+        "Os anjos aparecem aos pastores",
+        "Os pastores visitam o menino"
+      ],
+      "acerto": "Isso. A história do Natal, em ordem.",
+      "erro": "Quase. A viagem a Belém vem antes do nascimento."
+    },
+    {
+      "id": "je-d05-c06",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Nasceu o Salvador.",
+      "referencia": "Lucas 2:1-20",
+      "resumo": "Por causa do recenseamento, José e Maria vão a Belém, onde Jesus nasce e é colocado numa manjedoura. Anjos anunciam aos pastores, que vão ver o menino e espalham a notícia.",
+      "observar": "O Rei prometido nasce na cidade de Davi, mas sem nenhum sinal de realeza. Deus escolhe o caminho humilde."
+    },
+    {
+      "id": "je-d05-c07",
+      "tipo": "cristo",
+      "texto": "Dois nomes resumem quem Ele é: Jesus, \"o Senhor salva\", e Emanuel, \"Deus conosco\" (Mateus 1:21-23). Salvação e presença, no mesmo bebê."
+    },
+    {
+      "id": "je-d05-c08",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que significa o nome Jesus?",
+      "opcoes": [
+        {
+          "texto": "O Senhor salva.",
+          "correta": true
+        },
+        {
+          "texto": "Rei dos judeus.",
+          "correta": false
+        },
+        {
+          "texto": "Filho de Davi.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. O nome já anuncia a missão.",
+      "erro": "Não é isso. Releia o sonho de José."
+    },
+    {
+      "id": "je-d05-c09",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Os primeiros convidados foram pastores, gente simples. O que isso diz sobre quem pode chegar perto de Jesus?"
+    },
+    {
+      "id": "je-d05-c10",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Jesus, Tu vieste pequeno, simples e perto. Obrigado por não esperar que eu fosse importante para me encontrar. Nasce também em mim. Amém."
+    }
+  ]
+}

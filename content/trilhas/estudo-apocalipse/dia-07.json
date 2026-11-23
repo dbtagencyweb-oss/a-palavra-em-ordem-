@@ -1,0 +1,110 @@
+{
+  "status": "em_revisao",
+  "n": 7,
+  "titulo": "O retorno do Rei",
+  "passagens": "Apocalipse 19–20",
+  "midiaSugerida": {
+    "id": "ap-d07",
+    "prompt": "the sky splitting open above the clouds in a blaze of white and gold light, a white horse with a rider seen only as a tiny distant silhouette from far below and behind"
+  },
+  "cards": [
+    {
+      "id": "ap-d07-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "O céu se abre.",
+      "paragrafos": [
+        "Depois da queda da Babilônia, o céu celebra: aleluia!",
+        "Então João vê o céu aberto e um cavaleiro num cavalo branco, chamado Fiel e Verdadeiro."
+      ]
+    },
+    {
+      "id": "ap-d07-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O Rei vem.",
+      "paragrafos": [
+        "No manto do cavaleiro está escrito: Rei dos reis e Senhor dos senhores. Ele vence pela palavra que sai da sua boca.",
+        "As igrejas cristãs concordam no essencial: Jesus vai voltar de forma visível, e o mal será vencido."
+      ]
+    },
+    {
+      "id": "ap-d07-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Os mil anos.",
+      "paragrafos": [
+        "O capítulo 20 fala de mil anos, e aqui as igrejas divergem. Há três leituras principais, defendidas por cristãos sérios ao longo da história.",
+        "Este estudo não toma partido. O essencial é que Cristo reina e vai voltar."
+      ]
+    },
+    {
+      "id": "ap-d07-c04",
+      "tipo": "movimentos",
+      "rotulo": "Entenda",
+      "titulo": "Três leituras do milênio.",
+      "itens": [
+        {
+          "nome": "Pré-milenismo",
+          "texto": "Cristo volta e depois reina mil anos na terra."
+        },
+        {
+          "nome": "Pós-milenismo",
+          "texto": "O evangelho avança e transforma o mundo; Cristo volta depois desse período."
+        },
+        {
+          "nome": "Amilenismo",
+          "texto": "Os mil anos representam o reinado de Cristo agora, entre a primeira e a segunda vinda."
+        }
+      ]
+    },
+    {
+      "id": "ap-d07-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Fiel e Verdadeiro.",
+      "referencia": "Apocalipse 19:11-16",
+      "resumo": "João vê o céu aberto e um cavaleiro num cavalo branco, chamado Fiel e Verdadeiro, que julga com justiça. Os exércitos do céu o seguem, e no seu manto está escrito: Rei dos reis e Senhor dos senhores.",
+      "observar": "O mesmo Jesus que veio como Cordeiro volta como Rei."
+    },
+    {
+      "id": "ap-d07-c06",
+      "tipo": "cristo",
+      "texto": "Na primeira vinda, Jesus veio humilde, montado num jumento. Na segunda, vem como Rei. Quem o conhece como Cordeiro pode esperar o Rei sem medo."
+    },
+    {
+      "id": "ap-d07-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Em que as igrejas concordam sobre o fim?",
+      "opcoes": [
+        {
+          "texto": "Jesus vai voltar e o mal será vencido.",
+          "correta": true
+        },
+        {
+          "texto": "Na data exata da volta de Cristo.",
+          "correta": false
+        },
+        {
+          "texto": "Em como interpretar os mil anos.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. O essencial une; os detalhes podem esperar.",
+      "erro": "Releia o card \"O Rei vem\"."
+    },
+    {
+      "id": "ap-d07-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Como você se sente ao pensar na volta de Jesus? O que muda na sua vida saber que o Rei vem?"
+    },
+    {
+      "id": "ap-d07-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Vem, Senhor Jesus. Tu és Fiel e Verdadeiro, Rei dos reis. Que eu viva hoje esperando por ti com alegria, e não com medo. Amém."
+    }
+  ]
+}

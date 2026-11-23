@@ -1,0 +1,135 @@
+{
+  "id": "biblia-em-ordem/etapa-01",
+  "titulo": "A Bíblia em Ordem · Etapa 1: Origens",
+  "subtitulo": "Gênesis e Jó, na ordem da história",
+  "acesso": [
+    "fundador",
+    "vitalicio",
+    "mensal",
+    "igreja"
+  ],
+  "formato": "leitura-guiada",
+  "totalDias": 30,
+  "dias": [
+    {
+      "n": 1,
+      "arquivo": "dia-01.json"
+    },
+    {
+      "n": 2,
+      "arquivo": "dia-02.json"
+    },
+    {
+      "n": 3,
+      "arquivo": "dia-03.json"
+    },
+    {
+      "n": 4,
+      "arquivo": "dia-04.json"
+    },
+    {
+      "n": 5,
+      "arquivo": "dia-05.json"
+    },
+    {
+      "n": 6,
+      "arquivo": "dia-06.json"
+    },
+    {
+      "n": 7,
+      "arquivo": "dia-07.json"
+    },
+    {
+      "n": 8,
+      "arquivo": "dia-08.json"
+    },
+    {
+      "n": 9,
+      "arquivo": "dia-09.json"
+    },
+    {
+      "n": 10,
+      "arquivo": "dia-10.json"
+    },
+    {
+      "n": 11,
+      "arquivo": "dia-11.json"
+    },
+    {
+      "n": 12,
+      "arquivo": "dia-12.json"
+    },
+    {
+      "n": 13,
+      "arquivo": "dia-13.json"
+    },
+    {
+      "n": 14,
+      "arquivo": "dia-14.json"
+    },
+    {
+      "n": 15,
+      "arquivo": "dia-15.json"
+    },
+    {
+      "n": 16,
+      "arquivo": "dia-16.json"
+    },
+    {
+      "n": 17,
+      "arquivo": "dia-17.json"
+    },
+    {
+      "n": 18,
+      "arquivo": "dia-18.json"
+    },
+    {
+      "n": 19,
+      "arquivo": "dia-19.json"
+    },
+    {
+      "n": 20,
+      "arquivo": "dia-20.json"
+    },
+    {
+      "n": 21,
+      "arquivo": "dia-21.json"
+    },
+    {
+      "n": 22,
+      "arquivo": "dia-22.json"
+    },
+    {
+      "n": 23,
+      "arquivo": "dia-23.json"
+    },
+    {
+      "n": 24,
+      "arquivo": "dia-24.json"
+    },
+    {
+      "n": 25,
+      "arquivo": "dia-25.json"
+    },
+    {
+      "n": 26,
+      "arquivo": "dia-26.json"
+    },
+    {
+      "n": 27,
+      "arquivo": "dia-27.json"
+    },
+    {
+      "n": 28,
+      "arquivo": "dia-28.json"
+    },
+    {
+      "n": 29,
+      "arquivo": "dia-29.json"
+    },
+    {
+      "n": 30,
+      "arquivo": "dia-30.json"
+    }
+  ]
+}

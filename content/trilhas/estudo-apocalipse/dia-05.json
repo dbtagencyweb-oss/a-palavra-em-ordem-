@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 5,
+  "titulo": "O dragão e as bestas",
+  "passagens": "Apocalipse 12–13",
+  "midiaSugerida": {
+    "id": "ap-d05",
+    "prompt": "a massive dark storm over a raging sea at night, a single bright star shining steadily through a gap in the clouds, no creatures, no people"
+  },
+  "cards": [
+    {
+      "id": "ap-d05-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Por trás da cortina.",
+      "paragrafos": [
+        "O capítulo 12 mostra o conflito por trás da história: um dragão que tenta destruir o filho de uma mulher e o povo de Deus.",
+        "O próprio livro diz quem é o dragão: a antiga serpente, o diabo."
+      ]
+    },
+    {
+      "id": "ap-d05-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "A mulher, o filho e o dragão.",
+      "paragrafos": [
+        "Uma mulher dá à luz um filho que vai governar as nações, e ele é levado para junto de Deus. O dragão é derrotado no céu e lançado à terra.",
+        "Muitos entendem o filho como Cristo, e a mulher como o povo de Deus, de onde o Messias veio."
+      ]
+    },
+    {
+      "id": "ap-d05-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "As duas bestas.",
+      "paragrafos": [
+        "O dragão usa duas bestas: uma ligada a um poder que exige adoração, outra que engana com sinais.",
+        "O número 666 e a marca já foram interpretados de muitas formas. O livro chama à sabedoria e à fidelidade, não à curiosidade."
+      ]
+    },
+    {
+      "id": "ap-d05-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "Personagens de Apocalipse 12 e 13.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "O dragão",
+          "b": "A antiga serpente, o diabo"
+        },
+        {
+          "a": "O filho",
+          "b": "Vai governar as nações"
+        },
+        {
+          "a": "A primeira besta",
+          "b": "Poder que exige adoração"
+        },
+        {
+          "a": "A segunda besta",
+          "b": "Engana com sinais"
+        }
+      ],
+      "acerto": "Isso. O livro mostra quem está por trás do conflito."
+    },
+    {
+      "id": "ap-d05-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Pelo sangue do Cordeiro.",
+      "referencia": "Apocalipse 12:7-12",
+      "resumo": "Há uma batalha no céu, e o dragão é lançado fora. Uma voz anuncia que chegou a salvação e o reino de Deus. Os fiéis venceram o acusador pelo sangue do Cordeiro e pela palavra do seu testemunho.",
+      "observar": "O dragão está furioso porque sabe que lhe resta pouco tempo. Ele já perdeu."
+    },
+    {
+      "id": "ap-d05-c06",
+      "tipo": "cristo",
+      "texto": "O inimigo é real, mas já foi derrotado. A vitória dos fiéis não vem da força deles, e sim do sangue do Cordeiro."
+    },
+    {
+      "id": "ap-d05-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Como os fiéis vencem o dragão?",
+      "opcoes": [
+        {
+          "texto": "Pelo sangue do Cordeiro e pelo testemunho.",
+          "correta": true
+        },
+        {
+          "texto": "Descobrindo quem é a besta.",
+          "correta": false
+        },
+        {
+          "texto": "Com força militar.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. A vitória é de Cristo.",
+      "erro": "Releia o card \"Pelo sangue do Cordeiro\"."
+    },
+    {
+      "id": "ap-d05-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "O livro chama à fidelidade, não à curiosidade. Em que área da sua vida você é chamado a permanecer fiel hoje?"
+    },
+    {
+      "id": "ap-d05-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor Jesus, obrigado porque o inimigo já foi vencido na cruz. Guarda-me fiel a ti e livra-me do engano. Amém."
+    }
+  ]
+}

@@ -1,0 +1,746 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-[#2A2620] font-sans text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-semibold leading-[1.15] tracking-[-0.01em];
+  }
+  button {
+    @apply cursor-pointer;
+  }
+  :focus-visible {
+    outline: 2.5px solid #c4572e;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Phone frame on desktop, full screen on mobile (reference width 390px). */
+  .device {
+    @apply relative mx-auto flex h-[100dvh] w-full max-w-[400px] flex-col overflow-hidden bg-paper;
+  }
+  @media (min-width: 520px) {
+    .device {
+      height: min(820px, 100dvh);
+      border-radius: 36px;
+      box-shadow:
+        0 30px 80px -20px rgba(0, 0, 0, 0.6),
+        0 0 0 10px #15130f;
+    }
+  }
+  .screen {
+    @apply flex flex-1 flex-col overflow-y-auto overflow-x-hidden;
+    scrollbar-width: none;
+  }
+  .screen::-webkit-scrollbar {
+    display: none;
+  }
+
+  .btn {
+    @apply flex min-h-[52px] w-full items-center justify-center gap-2 rounded-btn bg-ink px-5 py-4 text-[15px] font-bold text-paper transition-[transform,opacity] duration-100 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-35;
+  }
+  .btn-ember {
+    @apply bg-ember-button text-white;
+  }
+  .btn-ghost {
+    @apply bg-transparent font-semibold text-ink-2;
+  }
+  /* On dark backgrounds (ink), the original gold passes AA. */
+  .eyebrow-dark {
+    @apply text-gold;
+  }
+  .eyebrow {
+    @apply text-[11px] font-bold uppercase tracking-[0.14em] text-gold-ink;
+  }
+  .l-text {
+    @apply font-serif text-[19.5px] leading-[1.55] text-[#2B2F3D];
+  }
+  .l-text p + p {
+    @apply mt-3.5;
+  }
+  .feedback-good {
+    @apply rounded-btn bg-olive-soft px-4 py-3.5 text-sm leading-normal text-[#3C4626];
+  }
+  .feedback-bad {
+    @apply rounded-btn bg-ember-soft px-4 py-3.5 text-sm leading-normal text-[#7A3418];
+  }
+  .pill {
+    @apply min-h-[44px] rounded-full border-[1.5px] border-line bg-card px-4 py-2.5 text-sm font-bold shadow-pill active:translate-y-px;
+  }
+  .footer-fade {
+    background: linear-gradient(transparent, #f5efe3 30%);
+  }
+}
+
+@keyframes pulse-node {
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(243, 220, 207, 0.5),
+      0 0 0 11.5px rgba(235, 193, 172, 0.4);
+  }
+}
+.node-current {
+  box-shadow:
+    0 0 0 6px #f3dccf,
+    0 0 0 7.5px #ebc1ac;
+  animation: pulse-node 2.2s infinite;
+}
+@keyframes glow {
+  50% {
+    transform: scale(1.12);
+    opacity: 0.7;
+  }
+}
+.lamp-glow {
+  background: radial-gradient(circle, rgba(232, 140, 80, 0.45), transparent 65%);
+  animation: glow 2.4s ease-in-out infinite;
+}
+@keyframes shake {
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+.shake {
+  animation: shake 0.35s;
+}
+
+/* Illustrated map medals (Home). */
+/* The halo breathes on the button; the medal inside swells a little (the button box stays still). */
+@keyframes map-pulse {
+  50% {
+    box-shadow: 0 0 0 9px rgba(246, 201, 154, 0.28), 0 0 22px 6px rgba(246, 201, 154, 0.45);
+  }
+}
+@keyframes map-swell {
+  50% {
+    transform: scale(1.07);
+  }
+}
+.map-node-current {
+  box-shadow: 0 0 0 4px rgba(246, 201, 154, 0.35), 0 0 14px 2px rgba(246, 201, 154, 0.35);
+  animation: map-pulse 2.8s ease-in-out infinite;
+}
+.map-node-current > * {
+  animation: map-swell 2.8s ease-in-out infinite;
+}
+.map-node-done {
+  box-shadow: 0 0 0 2.5px #e9c46a, 0 0 16px 3px rgba(233, 196, 106, 0.55);
+}
+@keyframes map-shine {
+  0%, 78% { transform: translateX(-130%) rotate(20deg); }
+  100% { transform: translateX(130%) rotate(20deg); }
+}
+.map-node-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.map-node-shine::after {
+  content: '';
+  position: absolute;
+  inset: -20% 30%;
+  background: linear-gradient(90deg, transparent, rgba(255, 248, 225, 0.85), transparent);
+  animation: map-shine 6s ease-in-out infinite;
+  animation-delay: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .node-current,
+  .lamp-glow,
+  .flame,
+  .map-node-current,
+  .map-node-current > *,
+  .map-node-shine::after,
+  .shake {
+    animation: none;
+  }
+  .map-node-shine {
+    display: none;
+  }
+}
+
+@keyframes pulse-ok {
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 4px rgba(93, 107, 59, 0.18);
+  }
+}
+.pulse-ok {
+  animation: pulse-ok 0.3s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse-ok {
+    animation: none;
+  }
+}
+
+/* Paper grain: a static, very faint fibre texture over the light screens (no animation, no cost per frame). */
+.device::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.07;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .27 0 0 0 0 .17 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Drop cap for the first paragraph of an opening card. */
+.drop-cap > p:first-child::first-letter {
+  float: left;
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 600;
+  font-size: 3.6em;
+  line-height: 0.82;
+  margin: 0.06em 0.1em 0 -0.02em;
+  color: var(--drop-cap, #8a672b);
+}
+
+/* Candle flame flicker (prayer card). */
+@keyframes flicker {
+  0%, 100% { transform: scaleY(1) skewX(0deg); opacity: 1; }
+  30% { transform: scaleY(1.06) skewX(-2deg); opacity: 0.94; }
+  60% { transform: scaleY(0.96) skewX(2deg); opacity: 1; }
+}
+.flame {
+  transform-origin: 50% 100%;
+  transform-box: fill-box;
+  animation: flicker 2.6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flame { animation: none; }
+}
+
+/* Map atmosphere (MapAtmosphere.tsx): soft glowing particles. */
+@keyframes mote-float {
+  0% { transform: translate(0, 0); opacity: 0; }
+  25% { opacity: 0.6; }
+  50% { transform: translate(6px, -22px); opacity: 0.35; }
+  75% { opacity: 0.6; }
+  100% { transform: translate(-3px, -46px); opacity: 0; }
+}
+.map-mote {
+  background: radial-gradient(circle, rgba(255, 250, 235, 0.95) 0%, rgba(255, 232, 180, 0.6) 45%, rgba(255, 220, 150, 0) 75%);
+  box-shadow: 0 0 5px 1.5px rgba(255, 228, 170, 0.35);
+  mix-blend-mode: screen;
+  animation: mote-float 14s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-mote {
+    animation: none;
+    opacity: 0.35;
+  }
+}
+
+/* Continue card on Home: a thin light running round the border, with a soft glow under it. */
+@property --cont-ang {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes cont-spin {
+  to {
+    --cont-ang: 360deg;
+  }
+}
+.continue-glow {
+  isolation: isolate;
+}
+.continue-glow::before,
+.continue-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: 2;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from var(--cont-ang), rgba(241, 227, 196, 0.18) 0 60%, rgba(214, 170, 92, 0.85) 80%, #fff8e6 88%, #e9c27a 91%, rgba(241, 227, 196, 0.18) 98%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+  animation: cont-spin 6s linear infinite;
+}
+/* The same light, blurred: the glow around it. */
+.continue-glow::after {
+  z-index: -1;
+  padding: 3px;
+  filter: blur(8px);
+  opacity: 0.75;
+}
+.continue-glow.is-floating::after {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .continue-glow::before,
+  .continue-glow::after {
+    animation: none;
+    --cont-ang: 135deg;
+  }
+}
+
+/* "Fundador Vitalício" seal: a slow band of light across the gold (Prompt 7). */
+.seal-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.seal-shine::after {
+  content: '';
+  position: absolute;
+  inset: -40% auto -40% 0;
+  width: 45%;
+  background: linear-gradient(100deg, transparent, rgba(255, 250, 230, 0.85), transparent);
+  transform: translateX(-180%) skewX(-18deg);
+  animation: seal-sweep 4.5s ease-in-out infinite;
+  z-index: -1;
+}
+@keyframes seal-sweep {
+  0%,
+  55% {
+    transform: translateX(-180%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(330%) skewX(-18deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .seal-shine::after {
+    display: none;
+  }
+}
+
+/* Main buttons, the same as the landing page's (.lp-shine): brushed bronze with a warm orange
+   cast and a faint band of light gliding across now and then. .btn gets it everywhere (except
+   .btn-ghost); .btn-shine is for buttons that don't use .btn. Reduced motion: no glide. */
+.btn:not(.btn-ghost),
+.btn-shine {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff8ee;
+  text-shadow: 0 1px 0 rgba(90, 38, 14, 0.45);
+  background-color: #b8582c;
+  background-image:
+    linear-gradient(180deg, rgba(255, 222, 180, 0.38) 0%, rgba(255, 222, 180, 0.08) 38%, rgba(70, 25, 5, 0) 52%, rgba(70, 25, 5, 0.18) 100%),
+    linear-gradient(100deg, #a94a22 0%, #cf6a35 22%, #e08a52 40%, #c55e2e 58%, #a8461f 78%, #c6622f 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 228, 196, 0.7),
+    inset 0 -2px 0 rgba(90, 34, 10, 0.35),
+    inset 0 0 0 1px rgba(120, 50, 18, 0.35),
+    0 10px 26px -10px rgba(170, 72, 30, 0.75);
+}
+.btn:not(.btn-ghost)::after,
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  inset: -50% auto -50% 0;
+  width: 70%;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 226, 190, 0) 25%, rgba(255, 232, 205, 0.22) 50%, rgba(255, 226, 190, 0) 75%, transparent 100%);
+  transform: translateX(-150%) skewX(-16deg);
+  animation: btn-sweep 6.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+.btn:disabled::after,
+.btn-shine:disabled::after {
+  display: none;
+}
+@keyframes btn-sweep {
+  0%,
+  45% {
+    transform: translateX(-150%) skewX(-16deg);
+  }
+  90%,
+  100% {
+    transform: translateX(260%) skewX(-16deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn:not(.btn-ghost)::after,
+  .btn-shine::after {
+    display: none;
+  }
+}
+
+/* ---------- Study reward scroll (ScrollReward) ---------- */
+/* Aged parchment: warm paper, darker burnt edges, a few stains and a fine paper grain; the sides
+   are slightly torn (clip-path). */
+.parchment {
+  background-color: #e8cf9c;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.24 0 0 0 0 0.1 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 30% 18% at 22% 30%, rgba(150, 104, 44, 0.16), transparent 70%),
+    radial-gradient(ellipse 26% 14% at 78% 68%, rgba(150, 104, 44, 0.14), transparent 70%),
+    radial-gradient(ellipse 18% 10% at 64% 18%, rgba(150, 104, 44, 0.1), transparent 70%),
+    radial-gradient(ellipse 70% 60% at 50% 45%, #f6e7c4 0%, #ecd6a6 55%, transparent 100%),
+    linear-gradient(90deg, #b88a4c 0%, #dcbd84 7%, #ecd6a6 20%, #ecd6a6 80%, #dcbd84 93%, #b88a4c 100%);
+  box-shadow:
+    inset 0 14px 18px -12px rgba(92, 58, 22, 0.55),
+    inset 0 -14px 18px -12px rgba(92, 58, 22, 0.55),
+    inset 0 0 26px rgba(120, 78, 30, 0.35);
+  clip-path: polygon(
+    1.5% 0, 98.5% 0, 99.6% 4%, 98.2% 9%, 99.8% 14%, 98.6% 20%, 100% 26%, 98.4% 32%, 99.5% 38%, 98.1% 44%,
+    99.9% 50%, 98.5% 56%, 99.6% 62%, 98.2% 68%, 100% 74%, 98.6% 80%, 99.4% 86%, 98.3% 92%, 99.7% 97%, 98.5% 100%,
+    1.5% 100%, 0.3% 96%, 1.8% 91%, 0.2% 85%, 1.4% 79%, 0% 73%, 1.7% 67%, 0.4% 61%, 1.9% 55%, 0.1% 49%,
+    1.5% 43%, 0.5% 37%, 1.8% 31%, 0% 25%, 1.4% 19%, 0.2% 13%, 1.7% 8%, 0.4% 3%
+  );
+}
+/* A rolled end of the parchment: a paper cylinder, light in the middle and shaded top and bottom. */
+.parchment-roll {
+  background:
+    linear-gradient(180deg, #7a5428 0%, #b98d50 14%, #e6cc96 36%, #f5e6c2 48%, #dfc187 62%, #a8783e 84%, #6a4620 100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Bottom navigation (BottomNav) ---------- */
+/* Dark ink bar, square ends, to the very bottom (safe area included). A notch at the center holds
+   the flame: three mask layers (left, right, and the fixed-size notch in the middle). */
+.nav-bar {
+  position: relative;
+  padding-bottom: env(safe-area-inset-bottom);
+  /* Frosted glass: the screen shows through, softly. */
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 45%),
+    linear-gradient(180deg, rgba(37, 42, 59, 0.72) 0%, rgba(30, 34, 48, 0.8) 50%, rgba(21, 24, 35, 0.88) 100%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgba(226, 197, 128, 0.4);
+  -webkit-mask:
+    linear-gradient(#000, #000) left / calc(50% - 49.5px) 100% no-repeat,
+    linear-gradient(#000, #000) right / calc(50% - 49.5px) 100% no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='200' viewBox='0 0 100 200' preserveAspectRatio='none'%3E%3Cpath d='M0 0C18 0 21 33 50 33C79 33 82 0 100 0V200H0Z'/%3E%3C/svg%3E") center top / 100px 200px no-repeat;
+  mask:
+    linear-gradient(#000, #000) left / calc(50% - 49.5px) 100% no-repeat,
+    linear-gradient(#000, #000) right / calc(50% - 49.5px) 100% no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='200' viewBox='0 0 100 200' preserveAspectRatio='none'%3E%3Cpath d='M0 0C18 0 21 33 50 33C79 33 82 0 100 0V200H0Z'/%3E%3C/svg%3E") center top / 100px 200px no-repeat;
+}
+.nav-tab {
+  color: rgba(226, 197, 128, 0.62);
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.18s ease;
+}
+.nav-tab.is-active {
+  color: #f1d58f;
+}
+.nav-tab.is-active svg {
+  filter: drop-shadow(0 0 7px rgba(226, 197, 128, 0.55));
+}
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 26px;
+  height: 3px;
+  margin-left: -13px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(90deg, rgba(226, 197, 128, 0.45), #f1d58f, rgba(226, 197, 128, 0.45));
+  box-shadow: 0 0 10px rgba(241, 213, 143, 0.8);
+}
+/* The flame button: dark glass with a gold rim, breathing a warm glow. */
+.nav-flame {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 34% 22%, rgba(255, 255, 255, 0.24) 0%, transparent 44%),
+    radial-gradient(circle at 50% 60%, rgba(58, 63, 85, 0.55) 0%, rgba(30, 34, 48, 0.62) 60%, rgba(18, 20, 29, 0.72) 100%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  backdrop-filter: blur(12px) saturate(150%);
+  border: 1.5px solid rgba(226, 197, 128, 0.5);
+  border-top-color: rgba(241, 213, 143, 0.8);
+  animation: nav-flame-pulse 2.8s ease-in-out infinite;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-flame.is-lit {
+  animation: none;
+  border-color: rgba(241, 213, 143, 0.9);
+  box-shadow:
+    0 0 0 4px rgba(226, 197, 128, 0.22),
+    0 0 26px rgba(242, 190, 110, 0.6),
+    0 12px 28px rgba(12, 14, 22, 0.55);
+}
+@keyframes nav-flame-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 3px rgba(226, 197, 128, 0.16),
+      0 0 14px rgba(242, 190, 110, 0.22),
+      0 12px 28px rgba(12, 14, 22, 0.55);
+  }
+  50% {
+    box-shadow:
+      0 0 0 7px rgba(226, 197, 128, 0.08),
+      0 0 30px rgba(242, 190, 110, 0.42),
+      0 12px 28px rgba(12, 14, 22, 0.55);
+  }
+}
+.nav-flame-ripple {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(242, 190, 110, 0.45);
+  animation: nav-flame-ripple 0.7s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes nav-flame-ripple {
+  from {
+    transform: scale(0.4);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-flame,
+  .nav-flame-ripple {
+    animation: none;
+  }
+}
+
+/* ---------- Home header (Gatedo-style pill) ---------- */
+.app-header {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 55%),
+    linear-gradient(180deg, rgba(42, 47, 66, 0.58) 0%, rgba(30, 34, 48, 0.62) 60%, rgba(24, 27, 39, 0.66) 100%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  border-top: 1px solid rgba(226, 197, 128, 0.75);
+  box-shadow:
+    0 10px 26px -10px rgba(20, 22, 32, 0.45),
+    inset 0 1px 0 rgba(241, 213, 143, 0.18);
+}
+
+/* Play buttons (the round "start the lesson" buttons): the landing page's bronze purchase button,
+   with its light sweep, plus a soft pulse that invites the tap. Reduced motion: static. */
+.play-shine {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff8ee;
+  background-color: #b8582c;
+  background-image:
+    linear-gradient(180deg, rgba(255, 222, 180, 0.38) 0%, rgba(255, 222, 180, 0.08) 38%, rgba(70, 25, 5, 0) 52%, rgba(70, 25, 5, 0.18) 100%),
+    linear-gradient(100deg, #a94a22 0%, #cf6a35 22%, #e08a52 40%, #c55e2e 58%, #a8461f 78%, #c6622f 100%);
+  animation: play-pulse 2.4s ease-in-out infinite;
+}
+.play-shine::after {
+  content: '';
+  position: absolute;
+  inset: -50% auto -50% 0;
+  width: 70%;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 232, 205, 0.26) 50%, transparent 100%);
+  transform: translateX(-150%) skewX(-16deg);
+  animation: btn-sweep 6.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+.play-shine > * {
+  position: relative;
+  z-index: 2;
+}
+@keyframes play-pulse {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 228, 196, 0.7),
+      inset 0 -2px 0 rgba(90, 34, 10, 0.35),
+      0 0 0 0 rgba(224, 138, 82, 0.55),
+      0 6px 16px -6px rgba(170, 72, 30, 0.75);
+  }
+  60% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 228, 196, 0.7),
+      inset 0 -2px 0 rgba(90, 34, 10, 0.35),
+      0 0 0 9px rgba(224, 138, 82, 0),
+      0 6px 16px -6px rgba(170, 72, 30, 0.75);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .play-shine,
+  .play-shine::after {
+    animation: none;
+  }
+}
+
+/* ---------- Glittering trail on the map (JourneyMap) ---------- */
+.spark-twinkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spark-twinkle 2.4s ease-in-out infinite;
+}
+.spark-float {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spark-float 3s ease-in-out infinite;
+}
+@keyframes spark-twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+/* Drift up a little and fade, like a bubble rising from the trail. */
+@keyframes spark-float {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.6);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-14px) scale(1.1);
+  }
+}
+/* Appearing behind the walker, in step with the footprints. */
+.spark-in {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spark-in 0.5s ease-out var(--in) both;
+}
+@keyframes spark-in {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.spark-fade {
+  animation: spark-fade 0.6s ease-out both;
+}
+@keyframes spark-fade {
+  from {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spark-twinkle,
+  .spark-float,
+  .spark-in {
+    animation: none;
+  }
+}
+
+/* ---------- Home list cards (Coleção, Bíblia em Ordem, Estudos) ---------- */
+/* A soft shadow, longer below; on hover/focus the card lifts a little, and it presses on tap. */
+.home-tile {
+  box-shadow:
+    0 1px 2px rgba(60, 45, 20, 0.06),
+    0 10px 22px -12px rgba(60, 45, 20, 0.28);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+.home-tile:hover,
+.home-tile:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(184, 137, 58, 0.45);
+  box-shadow:
+    0 2px 4px rgba(60, 45, 20, 0.08),
+    0 16px 28px -12px rgba(60, 45, 20, 0.36);
+}
+.home-tile:active {
+  transform: translateY(0) scale(0.985);
+}
+.home-tile:hover .icon-3d,
+.home-tile:focus-visible .icon-3d {
+  transform: translateY(-1px) rotate(-4deg) scale(1.05);
+}
+
+/* Icon tiles with volume, like the bronze buttons: a lit top, a darker lip below, a soft drop. */
+.icon-3d {
+  position: relative;
+  color: #fff8ee;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 240, 215, 0.6),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.18),
+    0 6px 14px -6px var(--icon-drop);
+}
+.icon-3d::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.06) 45%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.12) 100%);
+  pointer-events: none;
+}
+.icon-3d > * {
+  position: relative;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+.icon-3d-gold {
+  --icon-drop: rgba(138, 103, 43, 0.7);
+  background: linear-gradient(135deg, #d9b263 0%, #b8893a 55%, #8a672b 100%);
+}
+.icon-3d-ember {
+  --icon-drop: rgba(170, 72, 30, 0.7);
+  background: linear-gradient(135deg, #e08a52 0%, #c55e2e 55%, #a8461f 100%);
+}
+.icon-3d-olive {
+  --icon-drop: rgba(70, 82, 40, 0.7);
+  background: linear-gradient(135deg, #8a9a5b 0%, #5d6b3b 55%, #46522c 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-tile,
+  .icon-3d {
+    transition: none;
+  }
+  .home-tile:hover,
+  .home-tile:hover .icon-3d {
+    transform: none;
+  }
+}
+
+/* Narration subtitles (docs/05): each sentence fades up; the speaker's waves pulse while it speaks. */
+.narr-cue {
+  animation: narr-cue-in 0.35s ease-out both;
+}
+@keyframes narr-cue-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+.narr-wave {
+  animation: narr-wave 1.1s ease-in-out infinite;
+}
+.narr-wave-2 {
+  animation-delay: 0.25s;
+}
+@keyframes narr-wave {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .narr-cue { animation: narr-cue-fade 0.2s linear both; }
+  .narr-wave { animation: none; }
+  @keyframes narr-cue-fade { from { opacity: 0; } to { opacity: 1; } }
+}

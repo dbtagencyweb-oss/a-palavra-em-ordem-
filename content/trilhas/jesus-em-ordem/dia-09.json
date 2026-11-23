@@ -1,0 +1,117 @@
+{
+  "status": "em_revisao",
+  "n": 9,
+  "titulo": "A tentação no deserto",
+  "passagens": "Mateus 4:1-11; Lucas 4:1-13",
+  "fase": "Preparação",
+  "midiaSugerida": {
+    "id": "je-d09-deserto",
+    "prompt": "The barren Judean wilderness at midday, bare rocks and dry hills shimmering in the heat, one solitary small figure seen from far behind walking alone. No other people."
+  },
+  "cards": [
+    {
+      "id": "je-d09-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Logo depois da voz do céu, o deserto.",
+      "paragrafos": [
+        "Jesus acabou de ouvir: \"meu Filho amado\". Logo em seguida, o Espírito o leva ao deserto.",
+        "Antes de começar a missão, Ele é provado."
+      ]
+    },
+    {
+      "id": "je-d09-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Três tentações.",
+      "paragrafos": [
+        "Depois de 40 dias de jejum, o diabo tenta Jesus três vezes: transformar pedras em pão, jogar-se do alto do templo para ser salvo por anjos e receber todos os reinos do mundo em troca de adorá-lo.",
+        "Fome, prova e poder."
+      ]
+    },
+    {
+      "id": "je-d09-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Onde Israel caiu, Jesus ficou firme.",
+      "paragrafos": [
+        "Jesus responde as três vezes com o livro de Deuteronômio, as palavras de Moisés ao povo no deserto.",
+        "Os 40 dias de Jesus lembram os 40 anos de Israel no deserto, do Dia 4 do mapa. O povo caiu; o Filho permaneceu fiel."
+      ]
+    },
+    {
+      "id": "je-d09-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "Tentação e resposta.",
+      "instrucao": "Toque na tentação e depois na resposta de Jesus.",
+      "pares": [
+        {
+          "a": "Pedras em pão",
+          "b": "Nem só de pão viverá o homem"
+        },
+        {
+          "a": "Pular do templo",
+          "b": "Não ponha o Senhor à prova"
+        },
+        {
+          "a": "Os reinos do mundo",
+          "b": "Adore só a Deus"
+        },
+        {
+          "a": "Os 40 dias",
+          "b": "Lembram os 40 anos de Israel no deserto"
+        }
+      ],
+      "acerto": "Isso. Para cada tentação, uma verdade."
+    },
+    {
+      "id": "je-d09-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Está escrito.",
+      "referencia": "Mateus 4:1-11",
+      "resumo": "No deserto, o diabo tenta Jesus três vezes. Jesus responde sempre com a Escritura, até o diabo ir embora.",
+      "observar": "O diabo também cita a Bíblia (o Salmo 91), mas fora do sentido. Jesus responde com o texto no lugar certo. Ler em ordem e no contexto faz diferença."
+    },
+    {
+      "id": "je-d09-c06",
+      "tipo": "cristo",
+      "texto": "Jesus foi tentado como nós em tudo, mas sem pecado (Hebreus 4:15). Por isso Ele entende as nossas lutas e pode nos ajudar nelas."
+    },
+    {
+      "id": "je-d09-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "De que livro vêm as três respostas de Jesus?",
+      "opcoes": [
+        {
+          "texto": "Deuteronômio",
+          "correta": true
+        },
+        {
+          "texto": "Salmos",
+          "correta": false
+        },
+        {
+          "texto": "Gênesis",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. As palavras de Moisés no deserto, na boca de Jesus no deserto.",
+      "erro": "Não é isso. Pense no livro que fecha o Pentateuco."
+    },
+    {
+      "id": "je-d09-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Qual tentação mais insiste com você hoje? Que verdade de Deus pode responder a ela?"
+    },
+    {
+      "id": "je-d09-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Jesus, Tu venceste no deserto. Quando a tentação vier, lembra-me da tua Palavra e dá-me força para ficar firme. Amém."
+    }
+  ]
+}

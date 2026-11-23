@@ -1,0 +1,40 @@
+{
+  "id": "biblia-em-ordem",
+  "titulo": "A Bíblia em Ordem",
+  "subtitulo": "A leitura completa na ordem da história, com novas etapas todo mês",
+  "nota": "Uma etapa por pasta (etapa-XX). publicadaEm = data em que a etapa foi liberada (ISO); null = ainda não liberada. previsao = data prevista para as próximas (preencher; null mostra \"em breve\"). Ao preencher publicadaEm de uma etapa nova, os Fundadores recebem o aviso \"Nova etapa liberada\".",
+  "etapas": [
+    {
+      "n": 1,
+      "id": "etapa-01",
+      "nome": "Origens",
+      "livros": "Gênesis e Jó",
+      "publicadaEm": null,
+      "previsao": null
+    },
+    {
+      "n": 2,
+      "id": "etapa-02",
+      "nome": "Libertação",
+      "livros": "Êxodo a Deuteronômio",
+      "publicadaEm": null,
+      "previsao": null
+    },
+    {
+      "n": 3,
+      "id": "etapa-03",
+      "nome": "A terra",
+      "livros": "Josué a Rute",
+      "publicadaEm": null,
+      "previsao": null
+    },
+    {
+      "n": 4,
+      "id": "etapa-04",
+      "nome": "O reino",
+      "livros": "Samuel, Reis e Salmos",
+      "publicadaEm": null,
+      "previsao": null
+    }
+  ]
+}

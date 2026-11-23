@@ -1,0 +1,20 @@
+node_modules
+dist
+*.local
+.DS_Store
+test-results
+playwright-report
+
+# Raw generated images (converted by npm run media:import)
+media-bruta/
+
+# Paid downloads (npm run print:export); uploaded to private storage, never public
+private/
+
+# Screenshots and previews saved at the project root while working (not part of the app)
+/*.png
+desktop.ini
+*.tsbuildinfo
+
+# Candidate audio files (raw, before choosing); the chosen ones live in public/audio
+assets-audio-candidatos/

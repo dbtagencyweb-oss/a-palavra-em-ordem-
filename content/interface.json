@@ -1,0 +1,232 @@
+{
+  "nota": "Textos de interface copiados literalmente de reference/prototipo.html. Revisar junto com o conteúdo das lições.",
+  "abertura": {
+    "frase": "um passo por dia, em ordem",
+    "pular": "Pular"
+  },
+  "boasVindas": {
+    "marca": "A Palavra em Ordem",
+    "titulo": "Você não precisa entender tudo de uma vez.",
+    "texto": "Um passo por dia, em ordem, do começo ao fim da grande história. Cinco minutos bastam.",
+    "botao": "Começar minha jornada",
+    "botaoSecundario": "Já tenho conta"
+  },
+  "diagnostico": {
+    "titulo": "O que mais parece com você hoje?",
+    "texto": "Isso ajusta o ponto de partida. Não existe resposta errada.",
+    "opcoes": [
+      {
+        "id": "comecando",
+        "texto": "Estou começando a conhecer a Bíblia agora",
+        "recTitulo": "Você está no lugar certo para começar.",
+        "recTexto": "Não precisa saber nada antes. Em 7 dias, você vai ver a história inteira da Bíblia, do começo ao fim, de um jeito simples."
+      },
+      {
+        "id": "perco",
+        "texto": "Tento ler a Bíblia, mas me perco.",
+        "recTitulo": "Faltava o mapa, não a vontade.",
+        "recTexto": "Antes de ler mais, você vai ver a Bíblia inteira de cima. Com o mapa na mão, cada livro passa a ter lugar."
+      },
+      {
+        "id": "comeco",
+        "texto": "Não sei por onde começar.",
+        "recTitulo": "Começar pelo começo certo.",
+        "recTexto": "O começo certo não é Gênesis 1, é entender como a Bíblia está montada. Em 7 dias você terá a visão do todo."
+      },
+      {
+        "id": "ordem",
+        "texto": "Quero entender a ordem dos acontecimentos.",
+        "recTitulo": "Você veio ao lugar certo.",
+        "recTexto": "Os livros da Bíblia não estão na ordem em que as coisas aconteceram. Nos próximos 7 dias você vai ver a linha da história inteira."
+      },
+      {
+        "id": "constancia",
+        "texto": "Quero voltar a ter constância.",
+        "recTitulo": "Um passo por dia é o suficiente.",
+        "recTexto": "Lições curtas, uma por dia. A lâmpada acende a cada dia cumprido, e a Graça protege você quando um dia escapar."
+      },
+      {
+        "id": "profundo",
+        "texto": "Quero estudar com mais profundidade.",
+        "recTitulo": "Profundidade começa pela estrutura.",
+        "recTexto": "Quem enxerga o todo entende melhor cada parte. Os 7 dias montam a base para os estudos por livro."
+      }
+    ]
+  },
+  "proximaTrilha": {
+    "rotulo": "Próxima trilha",
+    "titulo": "Jesus em Ordem",
+    "texto": "Os quatro Evangelhos lidos na sequência dos acontecimentos, em 30 dias. Do nascimento à ressurreição, sem se perder entre Mateus, Marcos, Lucas e João.",
+    "botao": "Conhecer o Acesso Fundador",
+    "resumo": "Os quatro Evangelhos na ordem dos acontecimentos, em 30 dias"
+  },
+  "oferta": {
+    "rotulo": "Acesso Fundador",
+    "titulo": "Toda a jornada, liberada aos poucos.",
+    "preco": "R$ 47",
+    "precoNota": "por ano · preço de fundador",
+    "itens": [
+      "Jesus em Ordem: os 4 Evangelhos em 30 dias",
+      "A Bíblia em Ordem: plano cronológico, novas etapas a cada mês",
+      "Áudio de cada lição e Diário completo",
+      "GuiaVerbo assim que for lançado"
+    ],
+    "botao": "Quero ser Fundador",
+    "botaoSecundario": "Agora não",
+    "aviso": "Protótipo: preço e oferta ainda a validar."
+  },
+  "conclusao": {
+    "verso": "“Lâmpada para os meus pés é a tua palavra.” — Salmo 119:105"
+  },
+  "diario": {
+    "titulo": "Diário Espiritual",
+    "texto": "Registre o que a Palavra está organizando dentro de você.",
+    "abas": [
+      "Meus registros",
+      "Novo registro"
+    ],
+    "campos": [
+      {
+        "id": "aprendi",
+        "pergunta": "O que aprendi hoje?",
+        "rotulo": "Aprendi"
+      },
+      {
+        "id": "versiculo",
+        "pergunta": "Qual versículo me marcou?",
+        "rotulo": "Versículo"
+      },
+      {
+        "id": "duvida",
+        "pergunta": "Que dúvida quero estudar depois?",
+        "rotulo": "Dúvida"
+      },
+      {
+        "id": "oracao",
+        "pergunta": "Pelo que quero orar?",
+        "rotulo": "Oração"
+      },
+      {
+        "id": "decisao",
+        "pergunta": "Que decisão prática levo comigo?",
+        "rotulo": "Decisão"
+      }
+    ],
+    "botao": "Salvar registro",
+    "vazio": "Nenhum registro ainda. Conclua o Dia 1 ou escreva um novo registro.",
+    "etiquetaLivre": "Registro livre"
+  },
+  "guiaVerbo": {
+    "titulo": "GuiaVerbo",
+    "texto": "Apoio para estudar a Bíblia com mais clareza, a partir do conteúdo da sua jornada.",
+    "aviso": "Use o GuiaVerbo como apoio de estudo. Ele não substitui a leitura da Bíblia, a oração, a comunidade cristã ou a orientação pastoral.",
+    "comandos": [
+      "Quero entender uma passagem",
+      "Onde isso se encaixa na história?",
+      "Resuma este livro",
+      "Monte um plano de leitura",
+      "Transforme minha dúvida em estudo",
+      "Me dê uma reflexão guiada"
+    ],
+    "emBreve": "em breve",
+    "fase": {
+      "rotulo": "Fase 2.",
+      "texto": "O GuiaVerbo entra depois que a base de conteúdo estiver pronta: ele responde a partir das fichas dos livros e das lições do app, com um limite diário de perguntas."
+    }
+  },
+  "plano": {
+    "titulo": "Meu plano",
+    "nomes": {
+      "gratuito": "Gratuito",
+      "fundador": "Acesso Fundador",
+      "anual": "Acesso anual",
+      "vitalicio": "Fundador Vitalício",
+      "mensal": "Plano Mensal",
+      "igreja": "Licença Igreja"
+    },
+    "selos": {
+      "fundador": "Fundador",
+      "vitalicio": "Fundador Vitalício"
+    },
+    "gratuitoTexto": "Você tem o Mapa da Bíblia em 7 dias. As próximas trilhas fazem parte do Acesso Fundador.",
+    "vence": "Vence em",
+    "semVencimento": "Sem vencimento",
+    "cancelado": "Cancelado. Acesso até",
+    "incluso": "Também incluso",
+    "produtos": {
+      "mapa-impresso": "Mapa da Bíblia para imprimir",
+      "familia": "Acesso Família (+2 pessoas)",
+      "audio": "Modo Áudio",
+      "estudo-romanos": "Estudo: Romanos",
+      "estudo-salmos": "Estudo: Salmos",
+      "estudo-apocalipse": "Estudo: Apocalipse"
+    },
+    "verOferta": "Conhecer o Acesso Fundador"
+  },
+  "obrigado": {
+    "titulo": "Obrigado. Sua jornada continua.",
+    "texto": "Sua compra foi aprovada. Veja o próximo passo de cada item.",
+    "aguardando": "Ainda não encontramos sua compra. Ela costuma aparecer em alguns segundos.",
+    "entrarTitulo": "Entre com o e-mail da compra",
+    "entrarTexto": "Use o mesmo e-mail que você usou no pagamento. Seu acesso aparece assim que você entrar.",
+    "verificar": "Verificar de novo",
+    "passos": {
+      "principal": {
+        "titulo": "Sua jornada completa está liberada",
+        "texto": "Trilhas, A Bíblia em Ordem e tudo o que for lançado.",
+        "botao": "Entrar no app"
+      },
+      "mapa-impresso": {
+        "titulo": "Mapa da Bíblia para imprimir",
+        "texto": "O PDF A3, o A4 e os papéis de parede.",
+        "botao": "Baixar o mapa"
+      },
+      "familia": {
+        "titulo": "Acesso Família",
+        "texto": "Convide até 2 pessoas para ler com você.",
+        "botao": "Convidar a família",
+        "emBreve": "Os convites chegam em breve no seu Perfil."
+      },
+      "audio": {
+        "titulo": "Modo Áudio",
+        "texto": "A narração completa das lições.",
+        "botao": "Entrar no app"
+      }
+    }
+  },
+  "familia": {
+    "titulo": "Minha família",
+    "textoDono": "Convide até 2 pessoas. Cada uma tem a própria conta, o próprio progresso e o próprio diário.",
+    "textoMembro": "Você lê junto com a família de {dono}. Seu progresso e seu diário continuam só seus.",
+    "vaga": "Vaga {n}",
+    "vagaLivre": "Vaga livre",
+    "convidar": "Convidar",
+    "convitePendente": "Convite enviado, aguardando",
+    "enviarDeNovo": "Enviar pelo WhatsApp",
+    "copiar": "Copiar link",
+    "copiado": "Link copiado",
+    "cancelar": "Cancelar convite",
+    "remover": "Remover",
+    "confirmarRemover": "Remover {nome} da família? Isso usa 1 das 2 trocas do ano.",
+    "trocas": "Trocas usadas no ano: {n} de 2",
+    "lampadasTitulo": "Lâmpadas da família",
+    "compartilhar": "Mostrar minha lâmpada para a família",
+    "compartilharDica": "Só os dias de lâmpada acesa. Nunca o diário nem as respostas.",
+    "conviteTitulo": "Você foi convidado para a jornada",
+    "conviteTexto": "Alguém quer ler a Bíblia inteira em ordem com você. Entre com seu e-mail para aceitar.",
+    "conviteAceito": "Pronto. Agora você lê junto com {dono}.",
+    "conviteErro": "Não foi possível aceitar este convite: {motivo}",
+    "comecar": "Começar a jornada"
+  },
+  "avisosPlano": {
+    "atraso": "Não conseguimos renovar seu plano mensal. Atualize o pagamento até {data} para manter o acesso.",
+    "atrasoBotao": "Atualizar pagamento",
+    "renovacao": "Seu Acesso Fundador vence em {data}.",
+    "renovacaoHoje": "Seu Acesso Fundador vence hoje.",
+    "renovacaoBotao": "Renovar",
+    "trocaTitulo": "Pague R$ 47 pelo ano e economize",
+    "trocaTexto": "No plano mensal, um ano sai por R$ 118,80. No Acesso Fundador anual, R$ 47, com o mesmo acesso.",
+    "trocaBotao": "Trocar pelo anual",
+    "agoraNao": "Agora não"
+  }
+}

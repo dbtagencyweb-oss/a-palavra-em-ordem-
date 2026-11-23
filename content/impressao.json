@@ -1,0 +1,30 @@
+{
+  "nota": "Textos do Mapa para imprimir (docs/07, Prompt 5). As citações bíblicas são curtas e precisam ser conferidas na tradução que o app adotar antes de vender o produto.",
+  "poster": {
+    "titulo": "A Bíblia em Ordem",
+    "subtitulo": "A grande história em 7 eras, do Éden à Nova Jerusalém",
+    "intro": "66 livros, uma história só. Cada livro aparece na era em que se passa.",
+    "legendaPrincipal": "Livro desta era",
+    "legendaContinua": "Continua de outra era",
+    "rodape": "A Palavra em Ordem · Um passo por dia, em ordem"
+  },
+  "wallpapers": {
+    "mapa": { "titulo": "A Bíblia em Ordem", "subtitulo": "Do Éden à Nova Jerusalém" },
+    "lampada": { "citacao": "Lâmpada para os meus pés é a tua palavra.", "referencia": "Salmo 119:105" },
+    "cidade": { "citacao": "E Deus limpará de seus olhos toda a lágrima.", "referencia": "Apocalipse 21:4" }
+  },
+  "downloads": {
+    "titulo": "Mapa da Bíblia para imprimir",
+    "texto": "O pôster em A3 para a parede, a versão A4 para a Bíblia ou o caderno e 3 papéis de parede para o celular.",
+    "semAcesso": "Este conteúdo faz parte do Mapa da Bíblia para imprimir.",
+    "entrar": "Entre com o e-mail da compra para baixar.",
+    "aviso": "Os links valem por 10 minutos. Se expirar, toque de novo.",
+    "arquivos": [
+      { "arquivo": "mapa-a3.pdf", "nome": "Pôster A3 (PDF)", "detalhe": "Para imprimir em gráfica e pendurar na parede" },
+      { "arquivo": "mapa-a4.pdf", "nome": "Mapa A4 (PDF)", "detalhe": "Para imprimir em casa e guardar na Bíblia" },
+      { "arquivo": "wallpaper-1.png", "nome": "Papel de parede: o mapa", "detalhe": "1080 × 1920" },
+      { "arquivo": "wallpaper-2.png", "nome": "Papel de parede: a lâmpada", "detalhe": "Salmo 119:105 · 1080 × 1920" },
+      { "arquivo": "wallpaper-3.png", "nome": "Papel de parede: a cidade", "detalhe": "Apocalipse 21:4 · 1080 × 1920" }
+    ]
+  }
+}

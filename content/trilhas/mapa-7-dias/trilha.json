@@ -1,0 +1,84 @@
+{
+  "id": "mapa-7-dias",
+  "titulo": "Mapa da Bíblia em 7 dias",
+  "subtitulo": "Uma visão simples da grande história bíblica",
+  "gratis": true,
+  "duracaoPorDia": "5 a 7 minutos",
+  "versaoConteudo": "1.0 (revisado)",
+  "linkLeitura": {
+    "modelo": "https://www.bible.com/pt/bible/129/{LIVRO}.{CAP}.NVI",
+    "nota": "Trocar pela tradução que a igreja usar; o app nunca reproduz o texto bíblico."
+  },
+  "acesso": [
+    "free"
+  ],
+  "formato": "trilha",
+  "totalDias": 7,
+  "simbolos": [
+    {
+      "dia": 1,
+      "id": "lampada",
+      "nome": "A lâmpada"
+    },
+    {
+      "dia": 2,
+      "id": "arvore",
+      "nome": "A árvore"
+    },
+    {
+      "dia": 3,
+      "id": "estrelas",
+      "nome": "As estrelas"
+    },
+    {
+      "dia": 4,
+      "id": "cordeiro",
+      "nome": "O cordeiro"
+    },
+    {
+      "dia": 5,
+      "id": "coroa",
+      "nome": "A coroa"
+    },
+    {
+      "dia": 6,
+      "id": "cruz",
+      "nome": "A cruz"
+    },
+    {
+      "dia": 7,
+      "id": "cidade",
+      "nome": "A cidade"
+    }
+  ],
+  "dias": [
+    {
+      "n": 1,
+      "arquivo": "dia-01.json"
+    },
+    {
+      "n": 2,
+      "arquivo": "dia-02.json"
+    },
+    {
+      "n": 3,
+      "arquivo": "dia-03.json"
+    },
+    {
+      "n": 4,
+      "arquivo": "dia-04.json"
+    },
+    {
+      "n": 5,
+      "arquivo": "dia-05.json"
+    },
+    {
+      "n": 6,
+      "arquivo": "dia-06.json"
+    },
+    {
+      "n": 7,
+      "arquivo": "dia-07.json"
+    }
+  ]
+}

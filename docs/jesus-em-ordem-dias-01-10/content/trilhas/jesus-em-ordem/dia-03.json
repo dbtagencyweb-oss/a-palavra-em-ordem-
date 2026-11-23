@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 3,
+  "titulo": "Duas genealogias, uma promessa",
+  "passagens": "Mateus 1:1-17; Lucas 3:23-38",
+  "fase": "Preparação",
+  "midiaSugerida": {
+    "id": "je-d03-arvore",
+    "prompt": "An old parchment scroll unrolled on a stone table with long columns of handwritten names, and through the window an ancient olive tree with deep roots and many branches at sunrise. No people."
+  },
+  "cards": [
+    {
+      "id": "je-d03-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "A lista que quase todo mundo pula.",
+      "paragrafos": [
+        "O Novo Testamento abre com uma lista de nomes. Muita gente pula direto para o versículo 18.",
+        "Mas essa lista é uma ponte: ela liga tudo o que você viu no mapa ao nascimento de Jesus."
+      ]
+    },
+    {
+      "id": "je-d03-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Mateus: de Abraão a Jesus.",
+      "paragrafos": [
+        "Mateus começa em Abraão, passa por Davi e chega a Jesus, em três blocos de 14 gerações.",
+        "A mensagem é direta: Jesus é o filho de Abraão, por quem todas as famílias seriam abençoadas, e o filho de Davi, o rei prometido. Os Dias 3 e 5 do mapa se encontram aqui."
+      ]
+    },
+    {
+      "id": "je-d03-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "As surpresas da lista.",
+      "paragrafos": [
+        "Mateus inclui mulheres, algo raro nas genealogias da época: Tamar, Raabe, Rute e \"a mulher de Urias\", Bate-Seba. Histórias difíceis, algumas de estrangeiras.",
+        "A árvore de Jesus tem graça desde a raiz."
+      ]
+    },
+    {
+      "id": "je-d03-c04",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Lucas volta até Adão.",
+      "paragrafos": [
+        "Lucas faz o caminho inverso, de Jesus até Adão. A ideia: Jesus veio para toda a humanidade, não só para um povo.",
+        "As duas listas têm nomes diferentes depois de Davi. Há explicações conhecidas, como uma seguir a linha de José e a outra a de Maria, mas nenhuma é unânime."
+      ]
+    },
+    {
+      "id": "je-d03-c05",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "Os três blocos de Mateus.",
+      "instrucao": "Coloque os marcos em ordem.",
+      "itens": [
+        "Abraão",
+        "Davi",
+        "Exílio na Babilônia",
+        "Jesus"
+      ],
+      "acerto": "Isso. Mateus resume o Antigo Testamento inteiro em quatro marcos.",
+      "erro": "Quase. Davi vem antes do exílio."
+    },
+    {
+      "id": "je-d03-c06",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Filho de Davi, filho de Abraão.",
+      "referencia": "Mateus 1:1-17",
+      "resumo": "Mateus apresenta a linhagem de Jesus desde Abraão, passando pelos reis de Judá e pelo exílio, até José, marido de Maria.",
+      "observar": "A contagem 14, 14 e 14 organiza a história em três grandes fases: patriarcas, reis e exílio."
+    },
+    {
+      "id": "je-d03-c07",
+      "tipo": "cristo",
+      "texto": "A genealogia mostra que Jesus não surgiu do nada. Ele é o cumprimento de promessas feitas séculos antes: a Abraão, uma bênção para o mundo; a Davi, um rei para sempre."
+    },
+    {
+      "id": "je-d03-c08",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Até quem a genealogia de Lucas volta?",
+      "opcoes": [
+        {
+          "texto": "Adão",
+          "correta": true
+        },
+        {
+          "texto": "Abraão",
+          "correta": false
+        },
+        {
+          "texto": "Davi",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Lucas mostra Jesus ligado à humanidade inteira.",
+      "erro": "Não é isso. Lucas vai mais longe do que Mateus."
+    },
+    {
+      "id": "je-d03-c09",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Deus incluiu na história de Jesus pessoas com passados difíceis. Que parte da sua história você acha que Deus não pode usar?"
+    },
+    {
+      "id": "je-d03-c10",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Pai, obrigado porque a tua graça entra até nas histórias mais quebradas. Eu entrego a ti também a minha história. Amém."
+    }
+  ]
+}

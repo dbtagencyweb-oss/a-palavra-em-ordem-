@@ -1,0 +1,15 @@
+{
+  "status": "rascunho",
+  "n": 2,
+  "formato": "leitura-guiada",
+  "titulo": "Gênesis 3",
+  "leitura": "Gênesis 3",
+  "capitulos": [
+    {
+      "livro": "gn",
+      "de": 3,
+      "ate": 3
+    }
+  ],
+  "cards": []
+}

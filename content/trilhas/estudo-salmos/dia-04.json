@@ -1,0 +1,107 @@
+{
+  "status": "em_revisao",
+  "n": 4,
+  "titulo": "Quando estou cansado",
+  "passagens": "Salmos 23",
+  "midiaSugerida": {
+    "id": "sl-d04",
+    "prompt": "a shepherd seen from behind with a staff leading a small flock of sheep beside still water in a green valley at golden hour"
+  },
+  "cards": [
+    {
+      "id": "sl-d04-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "O salmo mais conhecido.",
+      "paragrafos": [
+        "Muita gente sabe o começo do Salmo 23 de cor: o Senhor é o meu pastor.",
+        "Davi, que tinha cuidado de ovelhas, olha para Deus e diz: é assim que Ele cuida de mim."
+      ]
+    },
+    {
+      "id": "sl-d04-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Pastos verdes, águas tranquilas.",
+      "paragrafos": [
+        "Um bom pastor sabe quando as ovelhas precisam parar. Ele as faz descansar e as leva a águas calmas.",
+        "Deus não é só quem dá tarefas. Ele também restaura as forças."
+      ]
+    },
+    {
+      "id": "sl-d04-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Pelo vale escuro.",
+      "paragrafos": [
+        "O salmo não promete só paisagens bonitas. Ele fala do vale da sombra da morte.",
+        "E ali Davi muda o jeito de falar: deixa de dizer \"Ele\" e passa a dizer \"tu estás comigo\". No vale, Deus fica mais perto."
+      ]
+    },
+    {
+      "id": "sl-d04-c04",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "O caminho do Salmo 23.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Pastos verdes",
+        "Águas tranquilas",
+        "Caminhos certos",
+        "O vale escuro",
+        "A mesa preparada",
+        "A casa do Senhor"
+      ],
+      "acerto": "Isso. Do descanso até a casa, o Pastor vai junto.",
+      "erro": "Quase. Siga o caminho do salmo, do pasto até a casa."
+    },
+    {
+      "id": "sl-d04-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "O Senhor é o meu pastor.",
+      "referencia": "Salmos 23",
+      "resumo": "Davi descreve Deus como o pastor que supre, faz descansar, restaura e guia. Mesmo no vale mais escuro, não teme, porque Deus está com ele. E termina certo de que a bondade e o amor de Deus o acompanharão a vida toda.",
+      "observar": "Repare na mudança de \"Ele\" para \"tu\" no meio do salmo."
+    },
+    {
+      "id": "sl-d04-c06",
+      "tipo": "cristo",
+      "texto": "Jesus disse: eu sou o bom pastor, que dá a vida pelas ovelhas. O pastor do Salmo 23 tem nome no Evangelho."
+    },
+    {
+      "id": "sl-d04-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que o pastor faz com a ovelha cansada?",
+      "opcoes": [
+        {
+          "texto": "Faz descansar e restaura as forças.",
+          "correta": true
+        },
+        {
+          "texto": "Exige que ela ande mais rápido.",
+          "correta": false
+        },
+        {
+          "texto": "Deixa que ela se vire sozinha.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Descansar também é confiar.",
+      "erro": "Releia o card \"Pastos verdes, águas tranquilas\"."
+    },
+    {
+      "id": "sl-d04-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Do que você está cansado hoje? O que significaria deixar o Pastor fazer você descansar?"
+    },
+    {
+      "id": "sl-d04-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, tu és o meu pastor. Estou cansado e preciso de descanso. Leva-me às águas tranquilas e restaura as minhas forças. No vale, fica comigo. Amém."
+    }
+  ]
+}

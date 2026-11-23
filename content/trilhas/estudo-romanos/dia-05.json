@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 5,
+  "titulo": "A luta interior",
+  "passagens": "Romanos 7",
+  "midiaSugerida": {
+    "id": "rm-d05",
+    "prompt": "an old bronze mirror on a stone table beside a clay water basin, soft window light in a dim room, quiet and contemplative, no people"
+  },
+  "cards": [
+    {
+      "id": "rm-d05-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Quem nunca sentiu isso?",
+      "paragrafos": [
+        "Querer fazer o certo e acabar fazendo o contrário.",
+        "Em Romanos 7, Paulo descreve essa luta com uma honestidade que surpreende."
+      ]
+    },
+    {
+      "id": "rm-d05-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "A lei é boa.",
+      "paragrafos": [
+        "Paulo não culpa a lei de Deus. Ela é santa, justa e boa.",
+        "O problema é que a lei mostra o pecado, mas não dá força para vencê-lo. Ela é como um espelho: revela a mancha, mas não lava o rosto."
+      ]
+    },
+    {
+      "id": "rm-d05-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Quem vai me livrar?",
+      "paragrafos": [
+        "Paulo chega ao limite e pergunta quem vai livrá-lo. E responde com gratidão: graças a Deus, por Jesus Cristo.",
+        "Há quem entenda que ele fala de antes da conversão e quem entenda que fala da vida cristã. A resposta, nos dois casos, é a mesma: Jesus."
+      ]
+    },
+    {
+      "id": "rm-d05-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "Lei, pecado e graça.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "A lei",
+          "b": "Mostra o que é certo"
+        },
+        {
+          "a": "O pecado",
+          "b": "Usa até o que é bom para enganar"
+        },
+        {
+          "a": "O esforço sozinho",
+          "b": "Não consegue vencer a luta"
+        },
+        {
+          "a": "Jesus Cristo",
+          "b": "Quem nos livra"
+        }
+      ],
+      "acerto": "Isso. A lei revela, só Cristo resgata."
+    },
+    {
+      "id": "rm-d05-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Graças a Deus.",
+      "referencia": "Romanos 7:14-25",
+      "resumo": "Paulo descreve o conflito entre querer o bem e praticar o mal e reconhece que, sozinho, não consegue vencer. Então agradece a Deus pela libertação que vem por meio de Jesus Cristo.",
+      "observar": "A luta não é sinal de que Deus desistiu de você. Muitas vezes, é sinal de que a consciência está viva."
+    },
+    {
+      "id": "rm-d05-c06",
+      "tipo": "cristo",
+      "texto": "A lei aponta o problema; Jesus é a resposta. Paulo não termina no desespero, termina em gratidão, porque Cristo faz o que nenhum esforço humano consegue."
+    },
+    {
+      "id": "rm-d05-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Qual é a função da lei, segundo Paulo?",
+      "opcoes": [
+        {
+          "texto": "Mostrar o pecado, como um espelho.",
+          "correta": true
+        },
+        {
+          "texto": "Dar força para nunca mais pecar.",
+          "correta": false
+        },
+        {
+          "texto": "Substituir a fé em Jesus.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. O espelho mostra, mas não lava.",
+      "erro": "Releia o card \"A lei é boa\"."
+    },
+    {
+      "id": "rm-d05-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Em que área você sente essa luta entre querer e conseguir? Você tem levado isso a Deus ou tentado resolver só com força de vontade?"
+    },
+    {
+      "id": "rm-d05-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, tu conheces as minhas lutas. Eu quero fazer o bem e muitas vezes falho. Não me deixes desanimar. Obrigado porque em Jesus há livramento. Amém."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 2,
+  "titulo": "As sete igrejas",
+  "passagens": "Apocalipse 2–3",
+  "midiaSugerida": {
+    "id": "ap-d02",
+    "prompt": "seven golden oil lamps on tall stands arranged in a gentle arc in a dark stone hall, each flame glowing warmly, no people"
+  },
+  "cards": [
+    {
+      "id": "ap-d02-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Sete cartas.",
+      "paragrafos": [
+        "Antes das grandes visões, Jesus manda recados bem concretos a sete igrejas reais.",
+        "Cada uma recebe elogio, correção ou encorajamento, conforme a sua situação."
+      ]
+    },
+    {
+      "id": "ap-d02-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Um modelo que se repete.",
+      "paragrafos": [
+        "As cartas seguem um padrão: Jesus se apresenta, diz \"conheço as tuas obras\", elogia, corrige e faz uma promessa a quem vencer.",
+        "E todas terminam com o mesmo convite: quem tem ouvidos, ouça."
+      ]
+    },
+    {
+      "id": "ap-d02-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Igrejas parecidas com as nossas.",
+      "paragrafos": [
+        "Éfeso tinha boa doutrina, mas perdeu o primeiro amor. Esmirna era pobre e perseguida, mas rica diante de Deus. Laodiceia era rica e morna.",
+        "Há quem leia as cartas também como retrato de fases da história da igreja. Em qualquer leitura, elas falam a todas as igrejas."
+      ]
+    },
+    {
+      "id": "ap-d02-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "Cada igreja, uma palavra.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "Éfeso",
+          "b": "Abandonou o primeiro amor"
+        },
+        {
+          "a": "Esmirna",
+          "b": "Pobre, perseguida e fiel"
+        },
+        {
+          "a": "Filadélfia",
+          "b": "Pouca força, mas guardou a palavra"
+        },
+        {
+          "a": "Laodiceia",
+          "b": "Nem fria nem quente"
+        }
+      ],
+      "acerto": "Isso. Jesus conhece cada igreja pelo nome."
+    },
+    {
+      "id": "ap-d02-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Conheço as tuas obras.",
+      "referencia": "Apocalipse 2–3",
+      "resumo": "Jesus escreve a Éfeso, Esmirna, Pérgamo, Tiatira, Sardes, Filadélfia e Laodiceia. Conhece cada uma, reconhece o que fazem de bom, corrige o que precisa mudar e promete recompensas a quem permanecer fiel.",
+      "observar": "À igreja morna, Jesus diz: estou à porta e bato. A correção vem com um convite."
+    },
+    {
+      "id": "ap-d02-c06",
+      "tipo": "cristo",
+      "texto": "Jesus anda no meio das igrejas. Ele não as abandona nos problemas; Ele as chama de volta ao amor."
+    },
+    {
+      "id": "ap-d02-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que Jesus diz à igreja de Éfeso?",
+      "opcoes": [
+        {
+          "texto": "Que perdeu o primeiro amor e precisa voltar.",
+          "correta": true
+        },
+        {
+          "texto": "Que era pobre, mas rica diante de Deus.",
+          "correta": false
+        },
+        {
+          "texto": "Que estava morna.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Doutrina sem amor não basta.",
+      "erro": "Releia o card \"Igrejas parecidas com as nossas\"."
+    },
+    {
+      "id": "ap-d02-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Se Jesus escrevesse uma carta para você hoje, o que Ele elogiaria? E o que Ele chamaria você a mudar?"
+    },
+    {
+      "id": "ap-d02-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, tu conheces as minhas obras. Obrigado pelo que tens feito em mim. Devolve-me o primeiro amor e dá-me ouvidos para ouvir. Amém."
+    }
+  ]
+}

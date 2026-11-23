@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 8,
+  "titulo": "Todas as coisas novas",
+  "passagens": "Apocalipse 21–22",
+  "midiaSugerida": {
+    "id": "ap-d08",
+    "prompt": "a radiant city of light descending from golden clouds over a renewed green earth, a crystal river flowing through it lined with fruit trees, no people"
+  },
+  "cards": [
+    {
+      "id": "ap-d08-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "O fim é um começo.",
+      "paragrafos": [
+        "A Bíblia começou num jardim, com Deus perto do ser humano. Termina numa cidade-jardim, com Deus morando com o seu povo.",
+        "É o fim que dá sentido a toda a jornada."
+      ]
+    },
+    {
+      "id": "ap-d08-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Novo céu e nova terra.",
+      "paragrafos": [
+        "João vê um novo céu, uma nova terra e a nova Jerusalém descendo do céu.",
+        "Uma voz anuncia que Deus vai morar com o seu povo. Ele enxugará toda lágrima. Não haverá mais morte, nem choro, nem dor."
+      ]
+    },
+    {
+      "id": "ap-d08-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O jardim de volta.",
+      "paragrafos": [
+        "No meio da cidade corre o rio da água da vida, e ali está a árvore da vida, que tinha ficado para trás no Éden.",
+        "A maldição acaba. O povo de Deus verá a sua face. Não haverá mais noite, porque o Senhor é a luz."
+      ]
+    },
+    {
+      "id": "ap-d08-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "Do Éden à nova Jerusalém.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "A árvore da vida",
+          "b": "Volta a estar ao alcance"
+        },
+        {
+          "a": "A maldição",
+          "b": "Não existe mais"
+        },
+        {
+          "a": "As lágrimas",
+          "b": "Deus enxuga todas"
+        },
+        {
+          "a": "A noite",
+          "b": "Acabou: o Senhor é a luz"
+        }
+      ],
+      "acerto": "Isso. O que se perdeu no Éden é restaurado."
+    },
+    {
+      "id": "ap-d08-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Faço novas todas as coisas.",
+      "referencia": "Apocalipse 21:1-7; 22:1-5",
+      "resumo": "João vê o novo céu, a nova terra e a cidade santa. Deus passa a morar com o seu povo, enxuga as lágrimas e acaba com a morte e a dor. O rio e a árvore da vida estão ali, e a maldição não existe mais.",
+      "observar": "A última palavra da Bíblia não é medo, é casa: Deus e o seu povo juntos para sempre."
+    },
+    {
+      "id": "ap-d08-c06",
+      "tipo": "cristo",
+      "texto": "O livro termina com Jesus dizendo: venho em breve. E a igreja responde: vem, Senhor Jesus. A história inteira caminha para esse encontro."
+    },
+    {
+      "id": "ap-d08-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Como a Bíblia termina?",
+      "opcoes": [
+        {
+          "texto": "Com Deus morando com o seu povo numa criação renovada.",
+          "correta": true
+        },
+        {
+          "texto": "Com a destruição de tudo.",
+          "correta": false
+        },
+        {
+          "texto": "Com todos esquecendo a terra para sempre.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. O fim é um novo começo.",
+      "erro": "Releia o card \"Novo céu e nova terra\"."
+    },
+    {
+      "id": "ap-d08-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Depois deste estudo, como você vê o Apocalipse? Que esperança dele você quer levar para o seu dia?"
+    },
+    {
+      "id": "ap-d08-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Deus, obrigado porque a história termina contigo morando com o teu povo. Enxuga as minhas lágrimas e enche-me de esperança. Vem, Senhor Jesus. Amém."
+    }
+  ]
+}

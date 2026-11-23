@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 6,
+  "titulo": "Quando sinto que Deus está longe",
+  "passagens": "Salmos 42",
+  "midiaSugerida": {
+    "id": "sl-d06",
+    "prompt": "a deer drinking from a small stream in a misty forest at dawn, soft light filtering through the trees"
+  },
+  "cards": [
+    {
+      "id": "sl-d06-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Sede de Deus.",
+      "paragrafos": [
+        "O Salmo 42 começa com uma imagem: como a corça anseia por águas, assim a minha alma anseia por Deus.",
+        "Quem escreve está longe de casa, longe do templo, e sente Deus distante."
+      ]
+    },
+    {
+      "id": "sl-d06-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Lágrimas e lembranças.",
+      "paragrafos": [
+        "O salmista diz que as lágrimas viraram seu alimento. E ouve: onde está o seu Deus?",
+        "Ele se lembra de quando ia com a multidão à casa de Deus, entre cânticos. A saudade dói."
+      ]
+    },
+    {
+      "id": "sl-d06-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Falando com a própria alma.",
+      "paragrafos": [
+        "Duas vezes ele pergunta: por que você está abatida, minha alma? Espere em Deus.",
+        "Ele não só ouve os sentimentos; fala com eles e os aponta para Deus."
+      ]
+    },
+    {
+      "id": "sl-d06-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "As imagens do Salmo 42.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "A corça",
+          "b": "Sede de Deus"
+        },
+        {
+          "a": "As lágrimas",
+          "b": "Tristeza dia e noite"
+        },
+        {
+          "a": "A lembrança",
+          "b": "Os dias de festa na casa de Deus"
+        },
+        {
+          "a": "A alma abatida",
+          "b": "Convidada a esperar em Deus"
+        }
+      ],
+      "acerto": "Isso. Sentimentos reais, levados a Deus."
+    },
+    {
+      "id": "sl-d06-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Espere em Deus.",
+      "referencia": "Salmos 42",
+      "resumo": "O salmista tem sede de Deus e sente que Ele está distante. Lembra os dias de adoração com o povo, chora e ouve zombarias. Mesmo assim, fala com a própria alma: por que está abatida? Espere em Deus, pois ainda vou louvá-lo.",
+      "observar": "Sentir Deus longe não é o mesmo que Deus estar longe."
+    },
+    {
+      "id": "sl-d06-c06",
+      "tipo": "cristo",
+      "texto": "Jesus prometeu água viva a quem tem sede e disse que nunca deixaria os seus. A sede do Salmo 42 encontra resposta nele."
+    },
+    {
+      "id": "sl-d06-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que o salmista faz quando a alma está abatida?",
+      "opcoes": [
+        {
+          "texto": "Fala com ela e a convida a esperar em Deus.",
+          "correta": true
+        },
+        {
+          "texto": "Finge que está tudo bem.",
+          "correta": false
+        },
+        {
+          "texto": "Desiste de orar.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Ele lembra a si mesmo quem Deus é.",
+      "erro": "Releia o card \"Falando com a própria alma\"."
+    },
+    {
+      "id": "sl-d06-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Se você pudesse falar com a sua própria alma hoje, o que diria a ela?"
+    },
+    {
+      "id": "sl-d06-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, a minha alma tem sede de ti. Quando eu te sentir longe, lembra-me de que tu estás perto. Alma minha, espere em Deus. Amém."
+    }
+  ]
+}

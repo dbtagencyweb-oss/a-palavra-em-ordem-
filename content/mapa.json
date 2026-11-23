@@ -1,0 +1,13 @@
+{
+  "_comoAjustar": "Cada trecho é uma imagem mapa-dN (lido de baixo para cima: Dia 1 embaixo, Dia 7 no topo). x e y são porcentagens dentro do trecho do próprio dia: x 0 = borda esquerda, 100 = direita; y 0 = topo do trecho, 100 = base. Evite y abaixo de 20 ou acima de 100 menos a emenda (hoje 75): ali o trecho se funde com o vizinho, sob a névoa. 'rotulo' diz de que lado do nó fica o cartão de texto. Para o cartão caber na tela: rótulo à direita pede x até 46; à esquerda, x a partir de 54.",
+  "emenda": 25,
+  "nos": [
+    { "dia": 1, "x": 46, "y": 52, "rotulo": "direita", "_onde": "na trilha de terra, abaixo da pedra com os rolos" },
+    { "dia": 2, "x": 54, "y": 42, "rotulo": "esquerda", "_onde": "na trilha entre as árvores, com o rio livre à direita" },
+    { "dia": 3, "x": 46, "y": 55, "rotulo": "direita", "_onde": "no caminho entre as tendas" },
+    { "dia": 4, "x": 46, "y": 52, "rotulo": "direita", "_onde": "no leito de areia que desce da montanha" },
+    { "dia": 5, "x": 58, "y": 55, "rotulo": "esquerda", "_onde": "na estrada que sobe para o portão da Babilônia" },
+    { "dia": 6, "x": 57, "y": 40, "rotulo": "esquerda", "_onde": "na estrada acima dos barcos do lago" },
+    { "dia": 7, "x": 62, "y": 58, "rotulo": "esquerda", "_onde": "na estrada de luz, ao lado do rio, com a cidade livre acima" }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "status": "publicado",
+  "n": 3,
+  "titulo": "Abraão, Israel e aliança",
+  "base": "Gênesis 12 a 50",
+  "lugar": "Canaã",
+  "simbolo": {
+    "id": "estrelas",
+    "nome": "As estrelas",
+    "texto": "Deus mostrou o céu a Abraão para falar de uma promessa grande demais para ser contada.",
+    "midia": "simbolo-estrelas"
+  },
+  "cards": [
+    {
+      "id": "d3-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Um plano para o mundo, começando por uma família.",
+      "paragrafos": [
+        "Depois de Babel, a Bíblia muda de escala. Em vez da humanidade inteira, ela passa a acompanhar um homem e sua família.",
+        "Parece que a história ficou menor. Na verdade, ela ficou mais focada."
+      ]
+    },
+    {
+      "id": "d3-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O chamado de Abraão.",
+      "midia": "d3-caravana",
+      "paragrafos": [
+        "Deus chama Abrão para deixar sua terra e ir para um lugar que ainda não conhecia. Ele promete três coisas: uma terra, uma descendência numerosa e uma bênção que alcançaria todas as famílias da terra.",
+        "Abraão creu, e Deus considerou isso como justiça."
+      ]
+    },
+    {
+      "id": "d3-c03",
+      "tipo": "cena",
+      "midia": "d3-estrelas",
+      "legenda": "\"Olhe para o céu e conte as estrelas, se puder.\"",
+      "referencia": "Gênesis 15:5"
+    },
+    {
+      "id": "d3-c04",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "De uma família, um povo.",
+      "midia": "d3-jose",
+      "paragrafos": [
+        "A promessa passa de pai para filho: Abraão, Isaque, Jacó. Deus muda o nome de Jacó para Israel, e os doze filhos dele dão origem às doze tribos.",
+        "José, um desses filhos, é vendido pelos irmãos, vai parar no Egito e acaba salvando a própria família da fome. O livro termina com Israel morando no Egito."
+      ]
+    },
+    {
+      "id": "d3-c05",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "Coloque as gerações em ordem.",
+      "instrucao": "Toque do mais antigo para o mais novo.",
+      "itens": [
+        "Abraão",
+        "Isaque",
+        "Jacó",
+        "José"
+      ],
+      "acerto": "São os patriarcas. Com eles, a promessa atravessa quatro gerações.",
+      "erro": "Quase. Abraão é o avô de Jacó."
+    },
+    {
+      "id": "d3-c06",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Uma bênção para todos.",
+      "referencia": "Gênesis 12:1-3 e 15:5-6",
+      "resumo": "Deus chama Abrão e faz a promessa; depois o leva para fora, mostra as estrelas e diz que sua descendência seria assim.",
+      "observar": "A bênção não era só para Abraão, mas, por meio dele, para todas as famílias da terra."
+    },
+    {
+      "id": "d3-c07",
+      "tipo": "cristo",
+      "texto": "O Evangelho de Mateus começa chamando Jesus de \"filho de Abraão\". Paulo ensina que a bênção prometida a Abraão chega a todos os povos por meio de Cristo (Gálatas 3)."
+    },
+    {
+      "id": "d3-c08",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Por que Deus escolheu uma família?",
+      "opcoes": [
+        {
+          "texto": "Para abençoar apenas aquela família.",
+          "correta": false
+        },
+        {
+          "texto": "Para, por meio dela, abençoar todas as famílias da terra.",
+          "correta": true
+        },
+        {
+          "texto": "Porque ela era melhor do que as outras.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. A escolha de Abraão é o começo de um plano para o mundo inteiro.",
+      "erro": "Não é isso. Releia a promessa: ela fala de \"todas as famílias da terra\"."
+    },
+    {
+      "id": "d3-c09",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Abraão saiu sem saber exatamente para onde ia. Que passo de confiança está diante de você hoje?"
+    },
+    {
+      "id": "d3-c10",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Deus de Abraão, ensina-me a confiar no Senhor mesmo quando eu não vejo o caminho inteiro. Que a minha vida também seja bênção para outros. Amém."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 7,
+  "titulo": "Israel e as nações",
+  "passagens": "Romanos 9–11",
+  "midiaSugerida": {
+    "id": "rm-d07",
+    "prompt": "an ancient gnarled olive tree on a hillside at golden hour, a few young grafted branches with fresh green leaves, Mediterranean landscape, no people"
+  },
+  "cards": [
+    {
+      "id": "rm-d07-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "E as promessas a Israel?",
+      "paragrafos": [
+        "Se o evangelho chegou a todos, o que aconteceu com Israel, o povo que recebeu as promessas?",
+        "Paulo, judeu, escreve esses capítulos com o coração apertado."
+      ]
+    },
+    {
+      "id": "rm-d07-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Deus é fiel.",
+      "paragrafos": [
+        "Paulo mostra que a palavra de Deus não falhou. Desde o início, Deus age por promessa e misericórdia, não por mérito humano.",
+        "Ele mesmo reconhece mistérios aqui, e as igrejas leem alguns detalhes desses capítulos de formas diferentes."
+      ]
+    },
+    {
+      "id": "rm-d07-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "A oliveira.",
+      "paragrafos": [
+        "Paulo usa a imagem de uma oliveira: Israel são os ramos naturais, e os não judeus que creem foram enxertados nela.",
+        "Ninguém tem motivo para orgulho. Todos estão de pé pela fé, e Deus ainda tem planos para o seu povo."
+      ]
+    },
+    {
+      "id": "rm-d07-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "A imagem da oliveira.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "A oliveira",
+          "b": "O povo de Deus e suas promessas"
+        },
+        {
+          "a": "Ramos naturais",
+          "b": "Israel"
+        },
+        {
+          "a": "Ramos enxertados",
+          "b": "Os não judeus que creem"
+        },
+        {
+          "a": "A raiz",
+          "b": "As promessas feitas a Abraão"
+        }
+      ],
+      "acerto": "Isso. Todos se apoiam na mesma raiz."
+    },
+    {
+      "id": "rm-d07-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Ó profundidade!",
+      "referencia": "Romanos 11:25-36",
+      "resumo": "Paulo fala do plano de Deus para Israel e para as nações e termina em louvor: a sabedoria e o conhecimento de Deus são profundos demais para nós, porque dele, por meio dele e para ele são todas as coisas.",
+      "observar": "Depois de três capítulos difíceis, Paulo termina em adoração, não em discussão."
+    },
+    {
+      "id": "rm-d07-c06",
+      "tipo": "cristo",
+      "texto": "As promessas feitas a Abraão se cumprem em Jesus, o descendente que traz bênção a todas as famílias da terra. Nele, judeus e não judeus se tornam um só povo."
+    },
+    {
+      "id": "rm-d07-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que a imagem da oliveira ensina?",
+      "opcoes": [
+        {
+          "texto": "Que todos os que creem se apoiam nas mesmas promessas, sem motivo para orgulho.",
+          "correta": true
+        },
+        {
+          "texto": "Que os não judeus são melhores que Israel.",
+          "correta": false
+        },
+        {
+          "texto": "Que as promessas de Deus falharam.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. A raiz sustenta todos os ramos.",
+      "erro": "Releia o card \"A oliveira\"."
+    },
+    {
+      "id": "rm-d07-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Paulo termina um assunto difícil em adoração. Há alguma pergunta sobre Deus que você ainda não entende? Consegue confiar nele mesmo assim?"
+    },
+    {
+      "id": "rm-d07-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Deus fiel, as tuas promessas não falham. Obrigado por me incluir no teu povo pela fé. Quando eu não entender os teus caminhos, ensina-me a te adorar e a confiar. Amém."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "status": "em_revisao",
+  "n": 6,
+  "titulo": "A queda da Babilônia",
+  "passagens": "Apocalipse 17–18",
+  "midiaSugerida": {
+    "id": "ap-d06",
+    "prompt": "a luxurious ancient city with golden towers crumbling into dust and smoke at sunset, seen from a distant hill, no people visible"
+  },
+  "cards": [
+    {
+      "id": "ap-d06-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Uma cidade sedutora.",
+      "paragrafos": [
+        "Babilônia foi a cidade que levou Judá ao exílio. No Apocalipse, ela vira símbolo.",
+        "Representa todo sistema que seduz pelo luxo e pelo poder e se volta contra Deus e o seu povo."
+      ]
+    },
+    {
+      "id": "ap-d06-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Quem é a Babilônia?",
+      "paragrafos": [
+        "Para os primeiros leitores, ela lembrava Roma, a cidade das sete colinas, rica e perseguidora.",
+        "Muitos também a veem como imagem de qualquer cultura que troca Deus por riqueza e poder, em todas as épocas."
+      ]
+    },
+    {
+      "id": "ap-d06-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Caiu!",
+      "paragrafos": [
+        "O capítulo 18 anuncia: caiu a grande Babilônia. Reis e comerciantes choram, porque o que parecia eterno acabou numa hora.",
+        "E um chamado ecoa: saia dela, meu povo. Não participe dos seus pecados."
+      ]
+    },
+    {
+      "id": "ap-d06-c04",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "A história da Babilônia.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Seduz com luxo e poder",
+        "Persegue o povo de Deus",
+        "É julgada",
+        "Cai de repente",
+        "O céu se alegra"
+      ],
+      "acerto": "Isso. O que parecia invencível caiu.",
+      "erro": "Quase. Primeiro a sedução, depois a queda."
+    },
+    {
+      "id": "ap-d06-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Saia dela, meu povo.",
+      "referencia": "Apocalipse 18:1-8",
+      "resumo": "Um anjo anuncia a queda da Babilônia, que corrompeu as nações com seu luxo. Uma voz chama o povo de Deus a sair dela para não participar dos seus pecados, porque o seu julgamento chegou.",
+      "observar": "O chamado não é para fugir do mundo, e sim para não se deixar moldar por ele."
+    },
+    {
+      "id": "ap-d06-c06",
+      "tipo": "cristo",
+      "texto": "O Cordeiro vence os reis que se unem contra Ele, porque é Senhor dos senhores e Rei dos reis. Os poderes deste mundo passam; o reino de Jesus permanece."
+    },
+    {
+      "id": "ap-d06-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que a Babilônia representa no Apocalipse?",
+      "opcoes": [
+        {
+          "texto": "Poderes que seduzem pelo luxo e se voltam contra Deus.",
+          "correta": true
+        },
+        {
+          "texto": "Só a cidade antiga, sem nenhum outro sentido.",
+          "correta": false
+        },
+        {
+          "texto": "A igreja fiel.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Um símbolo que atravessa os séculos.",
+      "erro": "Releia o card \"Quem é a Babilônia?\"."
+    },
+    {
+      "id": "ap-d06-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Que \"Babilônia\" tenta seduzir você hoje: dinheiro, status, aparência? O que significaria sair dela?"
+    },
+    {
+      "id": "ap-d06-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, livra-me de amar o que passa. Dá-me um coração livre do que me afasta de ti. Quero pertencer ao teu reino, que não acaba. Amém."
+    }
+  ]
+}

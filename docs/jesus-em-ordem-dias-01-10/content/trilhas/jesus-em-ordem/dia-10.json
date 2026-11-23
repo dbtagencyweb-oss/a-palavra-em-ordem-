@@ -1,0 +1,123 @@
+{
+  "status": "em_revisao",
+  "n": 10,
+  "titulo": "Os primeiros discípulos e o vinho em Caná",
+  "passagens": "João 1:35–2:12",
+  "fase": "Ministério na Galileia",
+  "marcoLinhaDoTempo": "Início do ministério",
+  "simbolo": {
+    "id": "cantaro",
+    "nome": "O cântaro",
+    "texto": "Seis talhas de pedra, cheias de água, viraram o melhor vinho da festa. O primeiro sinal de Jesus: com Ele, algo novo começa."
+  },
+  "midiaSugerida": {
+    "id": "je-d10-cana",
+    "prompt": "Six large stone water jars standing in the courtyard of a village house during a wedding feast in the evening, festive lamps and decorations, red wine being poured from a jar into a cup. People in the background small and blurred."
+  },
+  "cards": [
+    {
+      "id": "je-d10-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Venham e vejam.",
+      "paragrafos": [
+        "Até aqui, Jesus andou praticamente sozinho. Hoje, isso muda.",
+        "Tudo começa com João Batista apontando para Ele."
+      ]
+    },
+    {
+      "id": "je-d10-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Os primeiros a seguir.",
+      "paragrafos": [
+        "João vê Jesus passar e diz: eis o Cordeiro de Deus. Dois discípulos dele começam a seguir Jesus. Um deles, André, chama o irmão, Simão, a quem Jesus dá o nome de Pedro.",
+        "Filipe chama Natanael, que duvida: pode vir algo bom de Nazaré? Filipe só responde: venha e veja."
+      ]
+    },
+    {
+      "id": "je-d10-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O vinho acabou.",
+      "paragrafos": [
+        "Pouco depois, Jesus e os discípulos vão a um casamento em Caná. O vinho acaba no meio da festa, o que seria uma vergonha para a família.",
+        "Maria avisa Jesus e diz aos serventes: façam tudo o que ele mandar."
+      ]
+    },
+    {
+      "id": "je-d10-c04",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O primeiro sinal.",
+      "paragrafos": [
+        "Havia seis talhas de pedra, usadas nos rituais de purificação. Jesus manda enchê-las de água. Quando servem, é vinho, e o melhor da festa.",
+        "João chama esse milagre de sinal: algo que aponta para quem Jesus é. E os discípulos creram nele."
+      ]
+    },
+    {
+      "id": "je-d10-c05",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "Coloque os encontros em ordem.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "João aponta o Cordeiro",
+        "Dois discípulos seguem Jesus",
+        "André chama Pedro",
+        "Filipe chama Natanael",
+        "O casamento em Caná"
+      ],
+      "acerto": "Isso. Um convite puxa o outro.",
+      "erro": "Quase. André é um dos dois primeiros, e só depois chama Pedro."
+    },
+    {
+      "id": "je-d10-c06",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Façam tudo o que ele mandar.",
+      "referencia": "João 2:1-11",
+      "resumo": "Num casamento em Caná, o vinho acaba. A pedido de Maria, Jesus transforma em vinho a água de seis talhas de pedra, e os discípulos creem nele.",
+      "observar": "As talhas eram usadas para rituais de purificação. Jesus as enche de vinho novo: o antigo dá lugar a algo melhor."
+    },
+    {
+      "id": "je-d10-c07",
+      "tipo": "cristo",
+      "texto": "João Batista chama Jesus de \"Cordeiro de Deus\", o símbolo da Páscoa que você colecionou no Dia 4 do mapa. E o primeiro sinal acontece numa festa: Jesus traz alegria onde ela tinha acabado."
+    },
+    {
+      "id": "je-d10-c08",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Como o Evangelho de João chama os milagres de Jesus?",
+      "opcoes": [
+        {
+          "texto": "Sinais",
+          "correta": true
+        },
+        {
+          "texto": "Profecias",
+          "correta": false
+        },
+        {
+          "texto": "Parábolas",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Cada sinal aponta para quem Jesus é.",
+      "erro": "Não é isso. Releia o card \"O primeiro sinal\"."
+    },
+    {
+      "id": "je-d10-c09",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Natanael duvidou, e Filipe só disse: venha e veja. Quem você poderia convidar para essa jornada?"
+    },
+    {
+      "id": "je-d10-c10",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Jesus, Tu transformas o que acabou em algo melhor. Onde a alegria faltou na minha vida, faze o teu sinal. E ensina-me a convidar outros a virem e verem. Amém."
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "status": "publicado",
+  "n": 7,
+  "titulo": "Igreja, cartas e esperança",
+  "base": "Atos, as Cartas e Apocalipse",
+  "lugar": "Nova Jerusalém",
+  "simbolo": {
+    "id": "cidade",
+    "nome": "A cidade",
+    "texto": "A Nova Jerusalém: o ponto final do mapa.",
+    "midia": "simbolo-cidade"
+  },
+  "marco": {
+    "id": "mapa-completo",
+    "nome": "O mapa completo",
+    "texto": "Você viu a Bíblia inteira, do Éden à Nova Jerusalém. Agora cada livro que você abrir tem lugar."
+  },
+  "cards": [
+    {
+      "id": "d7-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "A história não termina na ressurreição.",
+      "paragrafos": [
+        "Depois que Jesus ressuscita, a Bíblia ainda tem 23 livros.",
+        "Eles contam o que acontece com quem creu nele, e como a história inteira vai terminar."
+      ]
+    },
+    {
+      "id": "d7-c02",
+      "tipo": "cena",
+      "midia": "d7-pentecostes",
+      "legenda": "O Espírito vem, e a igreja nasce.",
+      "referencia": "Atos 2"
+    },
+    {
+      "id": "d7-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "A igreja nasce e se espalha.",
+      "paragrafos": [
+        "Jesus sobe ao céu e promete o Espírito Santo. No dia de Pentecostes, o Espírito vem sobre os discípulos, e a igreja nasce em Jerusalém.",
+        "O livro de Atos mostra a mensagem saindo de Jerusalém para a Judeia, Samaria e até Roma, levada por pessoas como Pedro e Paulo."
+      ]
+    },
+    {
+      "id": "d7-c04",
+      "tipo": "mapa",
+      "rotulo": "Mapa",
+      "titulo": "Onde entram as cartas.",
+      "midia": "d7-paulo",
+      "livros": [
+        "rm",
+        "1co",
+        "2co",
+        "gl",
+        "ef",
+        "fp",
+        "cl",
+        "1ts",
+        "2ts",
+        "1tm",
+        "2tm",
+        "tt",
+        "fm",
+        "hb",
+        "tg",
+        "1pe",
+        "2pe",
+        "1jo",
+        "2jo",
+        "3jo",
+        "jd"
+      ],
+      "paragrafos": [
+        "Como os profetas, as cartas não aconteceram depois de Atos: a maioria foi escrita durante essa história, para igrejas e pessoas que Paulo e outros apóstolos conheciam.",
+        "As cartas de Paulo estão organizadas mais ou menos por tamanho, não pela data em que foram escritas."
+      ]
+    },
+    {
+      "id": "d7-c05",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Como tudo termina.",
+      "paragrafos": [
+        "O Apocalipse foi escrito a igrejas que sofriam, para lembrar que Jesus reina e vai voltar. Nas últimas páginas, Deus faz novo céu e nova terra, vem habitar com o seu povo e enxuga toda lágrima.",
+        "E lá estão de novo o rio e a árvore da vida do Éden. O jardim virou uma cidade cheia de gente de todos os povos, aquilo que Deus prometeu a Abraão."
+      ]
+    },
+    {
+      "id": "d7-c06",
+      "tipo": "cena",
+      "midia": "d7-cidade",
+      "legenda": "A história termina onde começou, mas melhor.",
+      "referencia": "Apocalipse 21-22"
+    },
+    {
+      "id": "d7-c07",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "Coloque o mapa inteiro em ordem.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Criação",
+        "Abraão",
+        "Êxodo",
+        "Reis",
+        "Exílio",
+        "Jesus",
+        "Igreja",
+        "Nova criação"
+      ],
+      "acerto": "Você acabou de colocar a Bíblia inteira em ordem.",
+      "erro": "Quase. Volte ao seu mapa na Home se precisar."
+    },
+    {
+      "id": "d7-c08",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "O fim que lembra o começo.",
+      "referencia": "Apocalipse 21:1-5 e 22:1-2",
+      "resumo": "Novo céu e nova terra, Deus habitando com os homens, nada de morte nem de dor; o rio da vida e a árvore da vida.",
+      "observar": "Compare com Gênesis 2. As mesmas imagens abrem e fecham a Bíblia."
+    },
+    {
+      "id": "d7-c09",
+      "tipo": "cristo",
+      "texto": "No Apocalipse, o centro de tudo é o Cordeiro: o mesmo símbolo da Páscoa do Dia 4, agora no trono."
+    },
+    {
+      "id": "d7-c10",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Como as cartas de Paulo estão organizadas na Bíblia?",
+      "opcoes": [
+        {
+          "texto": "Pela data em que foram escritas.",
+          "correta": false
+        },
+        {
+          "texto": "Mais ou menos por tamanho, das maiores para as menores.",
+          "correta": true
+        },
+        {
+          "texto": "Pela importância de cada igreja.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Por isso Romanos vem primeiro, mesmo não sendo a carta mais antiga.",
+      "erro": "Não é isso. A ordem tem a ver com o tamanho."
+    },
+    {
+      "id": "d7-c11",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Você acabou de ver a Bíblia inteira de cima. Que parte da história você quer conhecer de perto agora?"
+    },
+    {
+      "id": "d7-c12",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Deus eterno, obrigado porque a tua história tem um fim cheio de esperança, e porque Tu me colocaste nela. Continua a guiar os meus passos pela tua Palavra. Amém."
+    }
+  ]
+}

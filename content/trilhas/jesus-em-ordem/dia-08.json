@@ -1,0 +1,128 @@
+{
+  "status": "em_revisao",
+  "n": 8,
+  "titulo": "João Batista e o batismo",
+  "passagens": "Mateus 3; Marcos 1:1-11; Lucas 3:1-22",
+  "fase": "Preparação",
+  "marcoLinhaDoTempo": "Batismo",
+  "midiaSugerida": {
+    "id": "je-d08-jordao",
+    "prompt": "The Jordan river at dawn. A rugged man in a rough camel-hair garment stands waist-deep in the water; a second figure, seen only from behind, stands before him. A white dove descends in a soft beam of light from parted clouds."
+  },
+  "cards": [
+    {
+      "id": "je-d08-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Uma voz no deserto.",
+      "paragrafos": [
+        "Cerca de 30 anos depois de Belém, uma voz começa a chamar a atenção de todo o país.",
+        "Ela não vem do templo nem do palácio. Vem do deserto, perto do rio Jordão."
+      ]
+    },
+    {
+      "id": "je-d08-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "João Batista.",
+      "paragrafos": [
+        "Vestido com roupas de pelo de camelo, João prega: arrependam-se, porque o Reino dos céus está próximo. Multidões vão até ele para ser batizadas.",
+        "Os Evangelhos o ligam ao profeta Isaías: uma voz no deserto, preparando o caminho do Senhor."
+      ]
+    },
+    {
+      "id": "je-d08-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Jesus na fila.",
+      "paragrafos": [
+        "Um dia, Jesus chega para ser batizado. João resiste: eu é que preciso ser batizado por ti.",
+        "Jesus insiste. Ele, que não tinha pecado, entra na água ao lado dos pecadores."
+      ]
+    },
+    {
+      "id": "je-d08-c04",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O céu se abre.",
+      "paragrafos": [
+        "Quando Jesus sai da água, o céu se abre, o Espírito desce sobre Ele como uma pomba, e uma voz diz: este é o meu Filho amado.",
+        "O Pai, o Filho e o Espírito aparecem juntos na mesma cena."
+      ]
+    },
+    {
+      "id": "je-d08-c05",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "O que cada um representa?",
+      "instrucao": "Toque num elemento e depois no seu significado.",
+      "pares": [
+        {
+          "a": "João Batista",
+          "b": "Preparava o caminho"
+        },
+        {
+          "a": "A pomba",
+          "b": "O Espírito descendo sobre Jesus"
+        },
+        {
+          "a": "A voz",
+          "b": "O Pai chamando-o de Filho amado"
+        },
+        {
+          "a": "O rio Jordão",
+          "b": "O mesmo rio que Israel atravessou ao entrar na terra"
+        }
+      ],
+      "acerto": "Isso. Tudo nessa cena tem história."
+    },
+    {
+      "id": "je-d08-c06",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Meu Filho amado.",
+      "referencia": "Mateus 3:13-17",
+      "resumo": "Jesus vai ao Jordão para ser batizado por João. Ao sair da água, o Espírito desce sobre Ele e a voz do Pai declara que Ele é o Filho amado.",
+      "observar": "Antes de qualquer milagre ou sermão, o Pai já diz que ama o Filho e se alegra nele."
+    },
+    {
+      "id": "je-d08-c07",
+      "tipo": "cristo",
+      "texto": "Jesus começa a missão do lado dos que precisavam de perdão, na fila do arrependimento. É um sinal do que Ele faria na cruz: tomar o lugar dos outros."
+    },
+    {
+      "id": "je-d08-c08",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Por que João não queria batizar Jesus?",
+      "opcoes": [
+        {
+          "texto": "Ele achava que era ele quem precisava ser batizado por Jesus.",
+          "correta": true
+        },
+        {
+          "texto": "Porque Jesus não era judeu.",
+          "correta": false
+        },
+        {
+          "texto": "Porque o rio estava cheio demais.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. João sabia quem Jesus era.",
+      "erro": "Releia o card \"Jesus na fila\"."
+    },
+    {
+      "id": "je-d08-c09",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "O Pai declarou seu amor antes de qualquer obra. Você vive buscando aprovação, ou a partir do amor de Deus?"
+    },
+    {
+      "id": "je-d08-c10",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Pai, obrigado porque o teu amor vem antes de qualquer coisa que eu faça. Que eu viva como filho amado, e não como alguém que precisa provar o próprio valor. Amém."
+    }
+  ]
+}

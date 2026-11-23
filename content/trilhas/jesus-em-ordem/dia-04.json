@@ -1,0 +1,127 @@
+{
+  "status": "em_revisao",
+  "n": 4,
+  "titulo": "Dois anúncios: Zacarias e Maria",
+  "passagens": "Lucas 1:5-56",
+  "fase": "Preparação",
+  "midiaSugerida": {
+    "id": "je-d04-anuncio",
+    "prompt": "A young woman in simple long robes and a head covering, seen from the side, sitting in a small stone house in a hill village, looking up toward a soft bright light entering through the window. Quiet, reverent mood."
+  },
+  "cards": [
+    {
+      "id": "je-d04-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Depois de séculos de silêncio.",
+      "paragrafos": [
+        "Lembra do fim do Antigo Testamento, com o povo esperando? Cerca de quatro séculos depois, no templo de Jerusalém, a espera termina.",
+        "Um anjo fala com um sacerdote idoso chamado Zacarias."
+      ]
+    },
+    {
+      "id": "je-d04-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O anúncio a Zacarias.",
+      "paragrafos": [
+        "Zacarias e Isabel eram idosos e não tinham filhos. O anjo Gabriel anuncia que eles teriam um filho, João, que prepararia o povo para o Senhor.",
+        "Zacarias duvida e fica sem falar até o menino nascer."
+      ]
+    },
+    {
+      "id": "je-d04-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O anúncio a Maria.",
+      "paragrafos": [
+        "Seis meses depois, Gabriel vai a Nazaré, a uma jovem chamada Maria, prometida em casamento a José. Ela teria um filho pelo Espírito Santo e o chamaria Jesus.",
+        "Maria pergunta como aquilo aconteceria, ouve a resposta e diz: aqui está a serva do Senhor."
+      ]
+    },
+    {
+      "id": "je-d04-c04",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O encontro das duas mães.",
+      "paragrafos": [
+        "Maria visita Isabel. Quando ela chega, o bebê salta no ventre de Isabel, que a chama de mãe do meu Senhor.",
+        "Maria então canta: Deus derruba os poderosos e levanta os humildes. É o cântico conhecido como Magnificat."
+      ]
+    },
+    {
+      "id": "je-d04-c05",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "Quem fez o quê?",
+      "instrucao": "Toque num nome e depois no que ele fez.",
+      "pares": [
+        {
+          "a": "Zacarias",
+          "b": "Duvidou e ficou sem falar"
+        },
+        {
+          "a": "Maria",
+          "b": "Perguntou como e confiou"
+        },
+        {
+          "a": "Isabel",
+          "b": "Reconheceu Maria como mãe do Senhor"
+        },
+        {
+          "a": "João",
+          "b": "Prepararia o caminho"
+        }
+      ],
+      "acerto": "Isso. Duas promessas, duas reações diferentes."
+    },
+    {
+      "id": "je-d04-c06",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Aqui está a serva do Senhor.",
+      "referencia": "Lucas 1:26-38",
+      "resumo": "Gabriel anuncia a Maria que ela daria à luz o Filho do Altíssimo, que receberia o trono de Davi. Maria pergunta como e, depois de ouvir, aceita.",
+      "observar": "Compare: Zacarias pede uma prova; Maria pergunta como e confia. Perguntar não é falta de fé."
+    },
+    {
+      "id": "je-d04-c07",
+      "tipo": "cristo",
+      "texto": "O anjo diz que Jesus receberia o trono de Davi e que o reino dele não teria fim (Lucas 1:32-33). É a promessa do Dia 5 do mapa, agora com nome."
+    },
+    {
+      "id": "je-d04-c08",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Qual seria a missão de João?",
+      "opcoes": [
+        {
+          "texto": "Preparar o caminho para o Senhor.",
+          "correta": true
+        },
+        {
+          "texto": "Ser rei de Israel.",
+          "correta": false
+        },
+        {
+          "texto": "Escrever um dos Evangelhos.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. E atenção: este é João Batista, não o apóstolo João que escreveu o quarto Evangelho.",
+      "erro": "Releia o anúncio a Zacarias. E cuidado para não confundir os dois Joões."
+    },
+    {
+      "id": "je-d04-c09",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Maria disse sim sem entender tudo. Em que área da sua vida Deus está pedindo o seu sim?"
+    },
+    {
+      "id": "je-d04-c10",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, como Maria, eu nem sempre entendo os teus caminhos. Mesmo assim, aqui estou. Faça-se em mim segundo a tua palavra. Amém."
+    }
+  ]
+}

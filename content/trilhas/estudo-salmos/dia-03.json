@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 3,
+  "titulo": "Quando errei",
+  "passagens": "Salmos 51",
+  "midiaSugerida": {
+    "id": "sl-d03",
+    "prompt": "clear water being poured from a clay jar into an open stone basin in morning light, droplets catching the sun, dark background, no people"
+  },
+  "cards": [
+    {
+      "id": "sl-d03-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Depois da queda.",
+      "paragrafos": [
+        "O Salmo 51 foi escrito depois do pior erro de Davi: o adultério com Bate-Seba e a morte de Urias.",
+        "O profeta Natã o confrontou. Davi não se defendeu. Ele orou."
+      ]
+    },
+    {
+      "id": "sl-d03-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Sem desculpas.",
+      "paragrafos": [
+        "Davi chama o erro pelo nome: pecado, transgressão, culpa. Não culpa os outros nem diminui o que fez.",
+        "E se apoia na única coisa possível: a misericórdia de Deus."
+      ]
+    },
+    {
+      "id": "sl-d03-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Um coração novo.",
+      "paragrafos": [
+        "Davi não pede só perdão; pede transformação: cria em mim um coração puro.",
+        "Ele entende que Deus não quer rituais vazios, mas um coração quebrantado e sincero. E esse coração Deus não despreza."
+      ]
+    },
+    {
+      "id": "sl-d03-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "O pedido de Davi.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "Lava-me",
+          "b": "Tira a culpa do pecado"
+        },
+        {
+          "a": "Cria em mim",
+          "b": "Um coração puro"
+        },
+        {
+          "a": "Não me afastes",
+          "b": "Da tua presença"
+        },
+        {
+          "a": "Devolve-me",
+          "b": "A alegria da salvação"
+        }
+      ],
+      "acerto": "Isso. Perdão, transformação e alegria de volta."
+    },
+    {
+      "id": "sl-d03-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Cria em mim um coração puro.",
+      "referencia": "Salmos 51:1-17",
+      "resumo": "Davi pede que Deus, por sua misericórdia, apague suas transgressões. Reconhece o pecado, pede um coração puro e um espírito firme, e a alegria da salvação de volta. Ele sabe que Deus aceita um coração arrependido.",
+      "observar": "O salmo começa na misericórdia de Deus, não no esforço de Davi."
+    },
+    {
+      "id": "sl-d03-c06",
+      "tipo": "cristo",
+      "texto": "Davi pediu para ser lavado. Em Jesus, esse pedido tem resposta completa: Ele nos purifica de todo pecado e nos dá um coração novo."
+    },
+    {
+      "id": "sl-d03-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que Deus não despreza, segundo o Salmo 51?",
+      "opcoes": [
+        {
+          "texto": "Um coração quebrantado e arrependido.",
+          "correta": true
+        },
+        {
+          "texto": "Um sacrifício caro.",
+          "correta": false
+        },
+        {
+          "texto": "Uma vida sem nenhum erro.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Deus recebe quem volta sincero.",
+      "erro": "Releia o card \"Um coração novo\"."
+    },
+    {
+      "id": "sl-d03-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Existe algum erro que você ainda carrega sem ter levado a Deus? Ele não despreza um coração sincero."
+    },
+    {
+      "id": "sl-d03-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Deus de misericórdia, reconheço meus erros sem desculpas. Lava-me e cria em mim um coração puro. Devolve-me a alegria de ser teu. Amém."
+    }
+  ]
+}

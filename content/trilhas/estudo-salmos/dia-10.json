@@ -1,0 +1,106 @@
+{
+  "status": "em_revisao",
+  "n": 10,
+  "titulo": "Quando quero recomeçar",
+  "passagens": "Salmos 40",
+  "midiaSugerida": {
+    "id": "sl-d10",
+    "prompt": "a person seen from behind standing on a solid rock above a misty valley at sunrise, a bright new day opening ahead"
+  },
+  "cards": [
+    {
+      "id": "sl-d10-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Do poço para a rocha.",
+      "paragrafos": [
+        "No Salmo 40, Davi lembra de quando estava num poço de lama, sem conseguir sair.",
+        "Ele esperou no Senhor. E Deus se inclinou, ouviu e o tirou de lá."
+      ]
+    },
+    {
+      "id": "sl-d10-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Pés firmes.",
+      "paragrafos": [
+        "Deus pôs os pés de Davi sobre uma rocha e firmou os seus passos.",
+        "E pôs na sua boca um cântico novo. O recomeço não apaga o passado, mas muda a direção."
+      ]
+    },
+    {
+      "id": "sl-d10-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Contar o que Deus fez.",
+      "paragrafos": [
+        "Davi não guarda a história para si. Ele conta a muitos o que Deus fez.",
+        "E entende que Deus não quer só ofertas: quer um coração que se alegra em fazer a vontade dele."
+      ]
+    },
+    {
+      "id": "sl-d10-c04",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "O caminho do recomeço.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Esperar no Senhor",
+        "Deus ouve",
+        "Tira do poço",
+        "Firma os pés na rocha",
+        "Dá um cântico novo"
+      ],
+      "acerto": "Isso. Esse é o caminho que o salmo descreve.",
+      "erro": "Quase. Tudo começa com esperar no Senhor."
+    },
+    {
+      "id": "sl-d10-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Um cântico novo.",
+      "referencia": "Salmos 40:1-10",
+      "resumo": "Davi esperou com paciência pelo Senhor, que ouviu o seu clamor, o tirou de um poço de lama e firmou os seus pés numa rocha. Deus lhe deu um cântico novo, e Davi anuncia a outros a fidelidade de Deus.",
+      "observar": "Repare na ordem: primeiro Deus age, depois vem o cântico, depois o testemunho."
+    },
+    {
+      "id": "sl-d10-c06",
+      "tipo": "cristo",
+      "texto": "A carta aos Hebreus aplica parte deste salmo a Jesus, que veio para fazer a vontade do Pai. Por meio dele, todo recomeço com Deus é possível."
+    },
+    {
+      "id": "sl-d10-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que Deus faz no Salmo 40?",
+      "opcoes": [
+        {
+          "texto": "Tira Davi do poço e firma os seus pés na rocha.",
+          "correta": true
+        },
+        {
+          "texto": "Deixa Davi tentar sair sozinho.",
+          "correta": false
+        },
+        {
+          "texto": "Apaga tudo o que aconteceu antes.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Deus levanta e dá firmeza.",
+      "erro": "Releia o card \"Pés firmes\"."
+    },
+    {
+      "id": "sl-d10-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "De que poço você quer sair? Qual seria o primeiro passo do seu recomeço com Deus? E, destes 10 salmos, qual você quer guardar?"
+    },
+    {
+      "id": "sl-d10-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, eu espero em ti. Tira-me do poço, firma os meus pés na rocha e põe um cântico novo na minha boca. Quero recomeçar contigo hoje. Amém."
+    }
+  ]
+}

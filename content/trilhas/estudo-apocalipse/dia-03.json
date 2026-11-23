@@ -1,0 +1,106 @@
+{
+  "status": "em_revisao",
+  "n": 3,
+  "titulo": "O trono e o Cordeiro",
+  "passagens": "Apocalipse 4–5",
+  "midiaSugerida": {
+    "id": "ap-d03",
+    "prompt": "an open doorway in the clouds radiating brilliant white and gold light, a rainbow arching around a source of light too bright to look at, no figures"
+  },
+  "cards": [
+    {
+      "id": "ap-d03-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Uma porta aberta no céu.",
+      "paragrafos": [
+        "Depois das cartas, João vê uma porta aberta no céu e é convidado a subir.",
+        "Antes de mostrar qualquer conflito na terra, o livro mostra quem está no trono."
+      ]
+    },
+    {
+      "id": "ap-d03-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O trono.",
+      "paragrafos": [
+        "João vê um trono, e quem está sentado nele é descrito só com luz e cores de pedras preciosas, cercado por um arco-íris.",
+        "Ao redor, seres celestiais e anciãos adoram sem parar: santo, santo, santo."
+      ]
+    },
+    {
+      "id": "ap-d03-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O Cordeiro.",
+      "paragrafos": [
+        "Surge um livro selado que ninguém consegue abrir, e João chora. Então ouve falar do Leão da tribo de Judá.",
+        "Ele olha e vê um Cordeiro que parecia ter sido morto. Só Ele é digno de abrir o livro."
+      ]
+    },
+    {
+      "id": "ap-d03-c04",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "A cena do trono.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Uma porta aberta no céu",
+        "O trono e a adoração",
+        "O livro selado",
+        "O Cordeiro digno",
+        "Toda a criação louva"
+      ],
+      "acerto": "Isso. A cena termina em louvor de toda a criação.",
+      "erro": "Quase. O Cordeiro aparece depois do livro selado."
+    },
+    {
+      "id": "ap-d03-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Digno é o Cordeiro.",
+      "referencia": "Apocalipse 4–5",
+      "resumo": "João vê o trono de Deus cercado de luz e adoração. Um livro selado só pode ser aberto pelo Cordeiro, que foi morto e com o seu sangue resgatou pessoas de toda tribo, língua, povo e nação. Todo o céu e toda a criação o louvam.",
+      "observar": "Esperava-se um leão; apareceu um Cordeiro. Deus vence pelo sacrifício."
+    },
+    {
+      "id": "ap-d03-c06",
+      "tipo": "cristo",
+      "texto": "O Cordeiro é Jesus. O centro do universo não é uma força, é o Salvador que deu a vida. É Ele quem tem a história nas mãos."
+    },
+    {
+      "id": "ap-d03-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Por que o Cordeiro é digno de abrir o livro?",
+      "opcoes": [
+        {
+          "texto": "Porque foi morto e resgatou pessoas de todos os povos.",
+          "correta": true
+        },
+        {
+          "texto": "Porque era o mais forte de todos.",
+          "correta": false
+        },
+        {
+          "texto": "Porque ninguém mais quis abrir.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. A vitória vem pela cruz.",
+      "erro": "Releia o card \"O Cordeiro\"."
+    },
+    {
+      "id": "ap-d03-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Antes de qualquer notícia difícil, o Apocalipse mostra o trono. O que muda em você saber que Deus continua no trono?"
+    },
+    {
+      "id": "ap-d03-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Santo, santo, santo é o Senhor. Digno é o Cordeiro que foi morto. Obrigado porque a minha história e a do mundo estão nas tuas mãos. Amém."
+    }
+  ]
+}

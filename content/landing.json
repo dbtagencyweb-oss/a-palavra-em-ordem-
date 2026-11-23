@@ -1,0 +1,406 @@
+{
+  "nota": "Textos da landing page de vendas (docs/04-landing-page.md). Revisar junto com o conteúdo do app. Campos entre colchetes precisam de valor real antes de publicar.",
+  "meta": {
+    "titulo": "A Palavra em Ordem · Acesso Fundador",
+    "descricao": "A Bíblia inteira na sequência da história, um passo por dia, em 5 minutos. Acesso Fundador por R$ 47/ano."
+  },
+  "preco": {
+    "botaoCompra": "Quero o Acesso Fundador · R$ 47/ano",
+    "barraFixa": {
+      "preco": "R$ 47/ano",
+      "detalhe": "Acesso Fundador",
+      "botao": "Garantir"
+    }
+  },
+  "chrome": {
+    "passos": "passos",
+    "somLigar": "Ligar som",
+    "somDesligar": "Desligar som",
+    "progresso": "Sua jornada pela página"
+  },
+  "hero": {
+    "_publicos": "Eyebrow, título e subtítulo do hero ficam em content/lp-publicos.json (versões de público).",
+    "botaoPrincipal": "Quero o Acesso Fundador · R$ 47/ano",
+    "botaoSecundario": "Prefiro começar pelos 7 dias grátis",
+    "_origem": "Hero: sem parâmetro (tráfego frio), o botão principal é o início grátis (campo cta do público em lp-publicos.json) e o link secundário é botaoCompraSecundario. Com ?origem=rt (retargeting), o principal é botaoPrincipal e o secundário é o cta grátis.",
+    "botaoCompraSecundario": "Ou garanta o Acesso Fundador · R$ 47/ano",
+    "confianca": [
+      "Garantia de 30 dias",
+      "Acesso na hora",
+      "Funciona no celular, sem baixar nada"
+    ],
+    "livro": {
+      "abrir": "Abrir a Bíblia",
+      "fechar": "Fechar a Bíblia"
+    }
+  },
+  "dor": {
+    "rotulo": "A dor",
+    "frases": [
+      {
+        "texto": "Você abre em Gênesis decidido: *dessa vez eu vou até o fim.*"
+      },
+      {
+        "texto": "Os primeiros capítulos voam."
+      },
+      {
+        "texto": "Aí chegam as leis, as genealogias, os reis com nomes parecidos."
+      },
+      {
+        "texto": "Você não sabe mais quem veio antes de quem."
+      },
+      {
+        "texto": "A leitura para. A culpa fica."
+      },
+      {
+        "texto": "Não é falta de fé.",
+        "destaque": true
+      },
+      {
+        "texto": "É falta de mapa.",
+        "destaque": true
+      }
+    ]
+  },
+  "virada": {
+    "titulo": "A Bíblia não está em ordem cronológica.",
+    "texto": "São 66 livros agrupados por tipo: lei, história, poesia, profecia e carta. Quem lê de capa a capa pula séculos sem perceber. Ninguém te contou isso, e é por isso que parecia difícil.",
+    "quiz": {
+      "pergunta": "Quem veio primeiro?",
+      "instrucao": "Toque em um cartão",
+      "opcoes": [
+        {
+          "id": "abraao",
+          "nome": "Abraão",
+          "imagem": "era-d3",
+          "certa": true
+        },
+        {
+          "id": "moises",
+          "nome": "Moisés",
+          "imagem": "era-d4"
+        }
+      ],
+      "acerto": "Isso. Abraão veio séculos antes de Moisés. Agora imagine enxergar a Bíblia inteira assim.",
+      "erro": "Quase todo mundo hesita aqui. É exatamente isso que o mapa resolve.",
+      "passosAcerto": 10,
+      "passosTentativa": 5
+    }
+  },
+  "mecanismo": {
+    "titulo": "Nós colocamos a Palavra em ordem.",
+    "legenda": "Uma história só. Do Éden à Nova Jerusalém.",
+    "rotuloInicio": "Como está na sua Bíblia",
+    "rotuloFim": "Na ordem da história",
+    "nota": "Agrupamento ilustrativo para a animação: cada livro no bloco da história em que se passa ou foi escrito. Livros que atravessam épocas (Gênesis, Salmos) ficam no bloco principal. Revisar antes de publicar.",
+    "blocos": [
+      {
+        "nome": "Criação",
+        "dia": 2,
+        "livros": [
+          "gn"
+        ]
+      },
+      {
+        "nome": "Abraão",
+        "dia": 3,
+        "livros": [
+          "job"
+        ]
+      },
+      {
+        "nome": "Êxodo",
+        "dia": 4,
+        "livros": [
+          "ex",
+          "lv",
+          "nm",
+          "dt"
+        ]
+      },
+      {
+        "nome": "Reis",
+        "dia": 5,
+        "livros": [
+          "js",
+          "jz",
+          "rt",
+          "1sm",
+          "2sm",
+          "sl",
+          "1rs",
+          "pv",
+          "ec",
+          "ct",
+          "2rs",
+          "1cr",
+          "2cr",
+          "os",
+          "jl",
+          "am",
+          "ob",
+          "jn",
+          "mq",
+          "is",
+          "na",
+          "sf",
+          "hc",
+          "jr",
+          "lm"
+        ]
+      },
+      {
+        "nome": "Exílio",
+        "dia": 5,
+        "livros": [
+          "ez",
+          "dn",
+          "et",
+          "ed",
+          "ag",
+          "zc",
+          "ne",
+          "ml"
+        ]
+      },
+      {
+        "nome": "Jesus",
+        "dia": 6,
+        "livros": [
+          "mt",
+          "mc",
+          "lc",
+          "jo"
+        ]
+      },
+      {
+        "nome": "Igreja",
+        "dia": 7,
+        "livros": [
+          "at",
+          "tg",
+          "gl",
+          "1ts",
+          "2ts",
+          "1co",
+          "2co",
+          "rm",
+          "ef",
+          "fp",
+          "cl",
+          "fm",
+          "1tm",
+          "tt",
+          "2tm",
+          "1pe",
+          "2pe",
+          "hb",
+          "jd",
+          "1jo",
+          "2jo",
+          "3jo",
+          "ap"
+        ]
+      }
+    ]
+  },
+  "jogo": {
+    "titulo": "Experimente 1 minuto do app.",
+    "instrucao": "Coloque a história da Bíblia em ordem.",
+    "ordem": [
+      "Criação",
+      "Queda",
+      "Redenção",
+      "Restauração"
+    ],
+    "embaralhado": [
+      "Redenção",
+      "Criação",
+      "Restauração",
+      "Queda"
+    ],
+    "vaga": "toque abaixo",
+    "acerto": "Você acabou de entender o esqueleto da Bíblia inteira. Imagine 7 dias assim.",
+    "botaoAcerto": "Quero continuar a jornada",
+    "erro": "Quase. O que vem primeiro, o mundo bom ou o mundo quebrado?",
+    "recomecar": "Recomeçar",
+    "passos": 10
+  },
+  "app": {
+    "titulo": "O app por dentro",
+    "passos": [
+      {
+        "titulo": "Um mapa que você percorre.",
+        "texto": "Cada dia concluído deixa suas pegadas no caminho, do Éden à Nova Jerusalém.",
+        "tour": "lp-app-tour"
+      },
+      {
+        "titulo": "Lições de 5 minutos.",
+        "texto": "Um card, uma ideia. Leitura leve, sem enrolação.",
+        "tela": "app-licao"
+      },
+      {
+        "titulo": "Cenas que você não esquece.",
+        "texto": "O mar se abrindo, a sarça, o túmulo vazio, em vídeo, nos momentos marcantes.",
+        "video": "d4-mar-aberto"
+      },
+      {
+        "titulo": "Toque, arraste, acerte.",
+        "texto": "Atividades que fixam na memória o que você leu.",
+        "tela": "app-atividade"
+      },
+      {
+        "titulo": "A lâmpada acesa.",
+        "texto": "Cada dia cumprido acende sua lâmpada. Perdeu um dia? A Graça protege sua sequência.",
+        "tela": "app-lampada"
+      },
+      {
+        "titulo": "Sua coleção de símbolos.",
+        "texto": "A lâmpada, a árvore, as estrelas, o cordeiro, a coroa, a cruz, a cidade.",
+        "tela": "app-simbolos",
+        "medalhas": true
+      },
+      {
+        "titulo": "Seu diário com Deus.",
+        "texto": "O que você aprendeu, o versículo que marcou, pelo que quer orar.",
+        "tela": "app-diario"
+      }
+    ],
+    "medalhas": [
+      "lampada",
+      "arvore",
+      "estrelas",
+      "cordeiro",
+      "coroa",
+      "cruz",
+      "cidade"
+    ]
+  },
+  "versiculo": {
+    "citacao": "Não ardia o nosso coração quando ele nos abria as Escrituras?",
+    "referencia": "Lucas 24:32",
+    "texto": "Foi o que dois discípulos sentiram quando Jesus mostrou como toda a Escritura se ligava. É isso que acontece quando a Bíblia faz sentido.",
+    "video": "d1-labirinto",
+    "notaRevisao": "Confirmar a redação na tradução que o app adotar."
+  },
+  "jornada": {
+    "titulo": "A jornada completa",
+    "etapas": [
+      {
+        "titulo": "Mapa da Bíblia em 7 dias",
+        "texto": "A visão do todo.",
+        "imagens": [
+          "era-d1",
+          "era-d2",
+          "era-d3",
+          "era-d4",
+          "era-d5",
+          "era-d6",
+          "era-d7"
+        ],
+        "selo": "Grátis para começar"
+      },
+      {
+        "titulo": "Jesus em Ordem",
+        "texto": "Os quatro Evangelhos na sequência dos acontecimentos, em 30 dias.",
+        "imagens": [
+          "capa-jesus-em-ordem"
+        ]
+      },
+      {
+        "titulo": "A Bíblia em Ordem",
+        "texto": "A leitura completa na ordem da história, com novas etapas todo mês.",
+        "imagens": [
+          "era-d5"
+        ]
+      },
+      {
+        "titulo": "GuiaVerbo",
+        "texto": "Um assistente de estudo para tirar dúvidas, em breve para Fundadores.",
+        "imagens": [],
+        "selo": "Em breve"
+      }
+    ]
+  },
+  "paraQuem": {
+    "titulo": "É para você se:",
+    "sim": [
+      "Já tentou ler a Bíblia inteira e parou no meio.",
+      "Ouve nomes como Abraão, Moisés e Davi, mas não sabe a ordem.",
+      "Chegou à fé há pouco e quer começar do jeito certo.",
+      "Quer voltar a ter constância, um dia de cada vez."
+    ],
+    "naoTitulo": "Não é para você se:",
+    "nao": "procura um substituto para a igreja, a oração ou o seu pastor. O app é um apoio para a sua leitura, não um lugar no lugar deles."
+  },
+  "oferta": {
+    "eyebrow": "ACESSO FUNDADOR",
+    "titulo": "Toda a jornada, liberada aos poucos, pelo menor preço que ela vai ter.",
+    "itens": [
+      "Mapa da Bíblia em 7 dias",
+      "Jesus em Ordem: 30 dias pelos Evangelhos",
+      "A Bíblia em Ordem: novas etapas todo mês durante o ano",
+      "Cenas em vídeo, áudio das lições e atividades interativas",
+      "Diário Espiritual, lâmpada acesa e coleção de símbolos",
+      "GuiaVerbo assim que for lançado"
+    ],
+    "preco": "R$ 47",
+    "periodo": "por ano",
+    "precoDia": "menos de 13 centavos por dia",
+    "porQueTitulo": "Por que \"Fundador\"",
+    "porQue": "O app está sendo construído agora. Quem entra nesta fase paga o menor preço que ele vai ter, recebe tudo o que for lançado durante o ano e ajuda a decidir os próximos passos.",
+    "urgencia": null,
+    "urgenciaModelo": "O preço de Fundador vale até [DATA REAL]. Depois disso, o valor passa a ser [VALOR REAL].",
+    "botao": "Garantir meu Acesso Fundador",
+    "garantiaTitulo": "30 dias de garantia incondicional.",
+    "garantia": "Se não for para você, devolvemos 100% do valor. Sem perguntas.",
+    "rodape": "Pagamento seguro · Pix ou cartão · Acesso enviado na hora"
+  },
+  "faq": {
+    "titulo": "Perguntas frequentes",
+    "itens": [
+      {
+        "p": "Preciso baixar algum aplicativo?",
+        "r": "Não. Abre direto no navegador do celular e pode ser adicionado à tela inicial como um app."
+      },
+      {
+        "p": "Serve para quem nunca leu a Bíblia?",
+        "r": "Sim. Foi feito para quem está começando."
+      },
+      {
+        "p": "É de alguma denominação?",
+        "r": "Não. O conteúdo é cristão e interdenominacional."
+      },
+      {
+        "p": "E se eu ficar alguns dias sem ler?",
+        "r": "A jornada espera por você. A Graça protege sua sequência um dia por semana."
+      },
+      {
+        "p": "O app substitui a leitura da Bíblia?",
+        "r": "Não. Ele organiza o caminho e indica a passagem para você ler na sua Bíblia."
+      },
+      {
+        "p": "Renova automaticamente?",
+        "r": null
+      },
+      {
+        "p": "Posso começar de graça?",
+        "r": "Pode. Os 7 primeiros dias são grátis. Mas o preço de Fundador é para quem entra agora."
+      }
+    ],
+    "notaRevisao": "Itens com resposta null não aparecem na página até serem definidos."
+  },
+  "fechamento": {
+    "titulo": "Hoje pode ser o seu Dia 1.",
+    "citacao": "Lâmpada para os meus pés é a tua palavra.",
+    "referencia": "Salmo 119:105",
+    "botaoPrincipal": "Quero o Acesso Fundador · R$ 47/ano",
+    "botaoSecundario": "Começar os 7 dias grátis"
+  },
+  "saida": {
+    "titulo": "Antes de ir: comece de graça.",
+    "texto": "Os 7 primeiros dias do mapa, sem cartão.",
+    "botao": "Começar os 7 dias grátis",
+    "fechar": "Fechar"
+  }
+}

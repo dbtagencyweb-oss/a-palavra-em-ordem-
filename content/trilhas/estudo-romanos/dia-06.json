@@ -1,0 +1,106 @@
+{
+  "status": "em_revisao",
+  "n": 6,
+  "titulo": "Nenhuma condenação",
+  "passagens": "Romanos 8",
+  "midiaSugerida": {
+    "id": "rm-d06",
+    "prompt": "a broken iron chain lying open on a stone floor in a beam of warm morning light coming through an open doorway, no people"
+  },
+  "cards": [
+    {
+      "id": "rm-d06-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Um dos capítulos mais amados.",
+      "paragrafos": [
+        "Romanos 8 começa com uma frase que muda tudo: já não há condenação para quem está em Cristo Jesus.",
+        "E termina dizendo que nada pode nos separar do amor de Deus."
+      ]
+    },
+    {
+      "id": "rm-d06-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Vida no Espírito.",
+      "paragrafos": [
+        "O que a lei não conseguia fazer, Deus fez enviando o seu Filho.",
+        "Agora o Espírito Santo habita em quem crê, dá vida, ajuda na fraqueza e até intercede quando não sabemos orar."
+      ]
+    },
+    {
+      "id": "rm-d06-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Filhos e herdeiros.",
+      "paragrafos": [
+        "O Espírito confirma que somos filhos de Deus, e podemos chamá-lo de Pai.",
+        "Paulo não esconde o sofrimento: a criação inteira geme. Mas diz que essa dor não se compara com a glória que será revelada."
+      ]
+    },
+    {
+      "id": "rm-d06-c04",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "O caminho de Romanos 8.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Nenhuma condenação",
+        "Vida pelo Espírito",
+        "Filhos e herdeiros de Deus",
+        "Esperança no sofrimento",
+        "Nada nos separa do amor de Deus"
+      ],
+      "acerto": "Isso. Do perdão até a segurança no amor.",
+      "erro": "Quase. Começa sem condenação e termina sem separação."
+    },
+    {
+      "id": "rm-d06-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Nada pode nos separar.",
+      "referencia": "Romanos 8:28-39",
+      "resumo": "Paulo afirma que Deus age em todas as coisas para o bem dos que o amam. Se Deus é por nós, quem será contra nós? Nada, nem a morte nem o futuro, pode nos separar do amor de Deus em Cristo.",
+      "observar": "A promessa não é ausência de dor. É a presença do amor no meio dela."
+    },
+    {
+      "id": "rm-d06-c06",
+      "tipo": "cristo",
+      "texto": "O amor que nos segura não é um sentimento vago. É o amor de Deus que está em Cristo Jesus, que morreu, ressuscitou e intercede por nós."
+    },
+    {
+      "id": "rm-d06-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que Romanos 8 promete a quem está em Cristo?",
+      "opcoes": [
+        {
+          "texto": "Que nada pode separá-lo do amor de Deus.",
+          "correta": true
+        },
+        {
+          "texto": "Que nunca vai sofrer nada.",
+          "correta": false
+        },
+        {
+          "texto": "Que precisa merecer o amor de Deus todo dia.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Pode haver dor, mas nunca separação.",
+      "erro": "Releia o card \"Nada pode nos separar\"."
+    },
+    {
+      "id": "rm-d06-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Qual medo ou culpa tem tentado convencer você de que Deus se afastou? Lembre: nenhuma condenação, nenhuma separação."
+    },
+    {
+      "id": "rm-d06-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Pai, obrigado porque não há condenação para mim em Cristo. Quando eu não souber orar, que o teu Espírito ore por mim. Firma meu coração no teu amor. Amém."
+    }
+  ]
+}

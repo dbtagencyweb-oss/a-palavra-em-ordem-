@@ -1,0 +1,141 @@
+{
+  "status": "publicado",
+  "n": 1,
+  "titulo": "A Bíblia não é um labirinto",
+  "base": "Visão do todo",
+  "lugar": "Visão do todo",
+  "simbolo": {
+    "id": "lampada",
+    "nome": "A lâmpada",
+    "texto": "\"Lâmpada para os meus pés é a tua palavra\" (Salmo 119:105). A Palavra não ilumina a estrada inteira de uma vez, mas o próximo passo.",
+    "midia": "simbolo-lampada"
+  },
+  "marco": {
+    "id": "mapa-nas-maos",
+    "nome": "O mapa nas mãos",
+    "texto": "Você viu a Bíblia inteira de cima."
+  },
+  "cards": [
+    {
+      "id": "d1-c01",
+      "tipo": "cena",
+      "midia": "d1-labirinto",
+      "legenda": "Muita gente ama a Bíblia e se perde nela."
+    },
+    {
+      "id": "d1-c02",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Você não está sozinho.",
+      "paragrafos": [
+        "Se você já abriu a Bíblia decidido a ler do começo ao fim e parou no meio do caminho, saiba: isso acontece com muita gente.",
+        "Não é falta de fé. Na maioria das vezes, é falta de mapa.",
+        "Hoje você vai receber esse mapa."
+      ]
+    },
+    {
+      "id": "d1-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "A Bíblia é uma biblioteca.",
+      "paragrafos": [
+        "São 66 livros, escritos por dezenas de autores ao longo de mais de mil anos: reis, pastores, profetas, pescadores, um médico, um cobrador de impostos.",
+        "Tem lei, poesia, história, profecia e carta. E os livros estão agrupados por tipo, não pela ordem dos acontecimentos.",
+        "Por isso ler de capa a capa confunde tanto."
+      ]
+    },
+    {
+      "id": "d1-c04",
+      "tipo": "movimentos",
+      "rotulo": "Entenda",
+      "titulo": "Mas é uma história só.",
+      "itens": [
+        {
+          "n": 1,
+          "nome": "Criação",
+          "texto": "Deus faz todas as coisas, e tudo é bom."
+        },
+        {
+          "n": 2,
+          "nome": "Queda",
+          "texto": "O ser humano se afasta de Deus, e o mundo se quebra."
+        },
+        {
+          "n": 3,
+          "nome": "Redenção",
+          "texto": "Deus promete um resgate e o cumpre em Jesus."
+        },
+        {
+          "n": 4,
+          "nome": "Restauração",
+          "texto": "No fim, tudo será feito novo."
+        }
+      ]
+    },
+    {
+      "id": "d1-c05",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "Coloque a história em ordem.",
+      "instrucao": "Toque nos passos na sequência certa.",
+      "itens": [
+        "Criação",
+        "Queda",
+        "Redenção",
+        "Restauração"
+      ],
+      "acerto": "Isso. Guarde essa sequência: ela é o esqueleto da Bíblia inteira.",
+      "erro": "Quase. O que vem primeiro, o mundo bom ou o mundo quebrado?"
+    },
+    {
+      "id": "d1-c06",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Um caminho de 11 quilômetros.",
+      "referencia": "Lucas 24:13-27",
+      "midia": "d1-emaus",
+      "resumo": "Depois da ressurreição, Jesus caminha com dois discípulos desanimados. Começando por Moisés e passando pelos profetas, Ele mostra como toda a Escritura falava dele.",
+      "observar": "Eles conheciam os textos. O que faltava era ver a ligação entre eles. É exatamente isso que esta jornada faz."
+    },
+    {
+      "id": "d1-c07",
+      "tipo": "cristo",
+      "texto": "O próprio Jesus ensina a ler a Bíblia inteira tendo-o como centro. É assim que esta jornada vai caminhar."
+    },
+    {
+      "id": "d1-c08",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Por que tanta gente se perde ao ler a Bíblia de capa a capa?",
+      "opcoes": [
+        {
+          "texto": "Porque as partes da Bíblia não têm relação entre si.",
+          "correta": false
+        },
+        {
+          "texto": "Porque os livros estão agrupados por tipo, e não na ordem dos acontecimentos.",
+          "correta": true
+        },
+        {
+          "texto": "Porque só especialistas conseguem entender.",
+          "correta": false
+        }
+      ],
+      "acerto": "Exato. A Bíblia não está em ordem cronológica. Quando você conhece a linha da história, cada livro encontra o seu lugar.",
+      "erro": "Não é isso. As partes se ligam, e não é preciso ser especialista. Tente outra opção."
+    },
+    {
+      "id": "d1-c09",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Em que ponto você costuma parar?",
+      "apoio": "Pode ser um livro, um momento da vida, um tipo de texto."
+    },
+    {
+      "id": "d1-c10",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, eu quero conhecer a tua Palavra. Onde eu me perder, guia os meus passos. Abre os meus olhos como abriste os daqueles dois no caminho. Amém."
+    }
+  ]
+}

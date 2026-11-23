@@ -1,0 +1,62 @@
+{
+  "id": "estudo-salmos",
+  "titulo": "Salmos para os dias difíceis",
+  "subtitulo": "Dez salmos para quando a vida aperta",
+  "descricao": "Medo, solidão, culpa, cansaço, ansiedade. Os salmos dão palavras para o que a gente sente e levam essas palavras até Deus. Em cada lição, um salmo e um jeito de orar com ele.",
+  "livro": "sl",
+  "capa": "capa-estudo-salmos",
+  "preco": 37,
+  "acesso": [
+    "estudo-salmos"
+  ],
+  "formato": "trilha",
+  "totalDias": 10,
+  "conclusao": {
+    "selo": "Selo do cântico",
+    "titulo": "O Senhor é o seu pastor",
+    "mensagem": "Medo, solidão, culpa, cansaço: nestes dez salmos você levou tudo isso a Deus. Quando os dias difíceis voltarem, você já conhece o caminho. Ele continua sendo a sua luz, o seu refúgio e o seu pastor.",
+    "referencia": "Salmos 23; 27; 46"
+  },
+  "dias": [
+    {
+      "n": 1,
+      "arquivo": "dia-01.json"
+    },
+    {
+      "n": 2,
+      "arquivo": "dia-02.json"
+    },
+    {
+      "n": 3,
+      "arquivo": "dia-03.json"
+    },
+    {
+      "n": 4,
+      "arquivo": "dia-04.json"
+    },
+    {
+      "n": 5,
+      "arquivo": "dia-05.json"
+    },
+    {
+      "n": 6,
+      "arquivo": "dia-06.json"
+    },
+    {
+      "n": 7,
+      "arquivo": "dia-07.json"
+    },
+    {
+      "n": 8,
+      "arquivo": "dia-08.json"
+    },
+    {
+      "n": 9,
+      "arquivo": "dia-09.json"
+    },
+    {
+      "n": 10,
+      "arquivo": "dia-10.json"
+    }
+  ]
+}

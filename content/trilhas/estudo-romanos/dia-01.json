@@ -1,0 +1,106 @@
+{
+  "status": "em_revisao",
+  "n": 1,
+  "titulo": "Por que Paulo escreveu a Roma",
+  "passagens": "Romanos 1:1-17; 15:20-29",
+  "midiaSugerida": {
+    "id": "rm-d01",
+    "prompt": "an ancient Roman house at night, oil lamps, a small group seated in shadow listening as a rolled letter is read aloud by a man seen from behind, warm gold light"
+  },
+  "cards": [
+    {
+      "id": "rm-d01-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Uma carta para quem Paulo nunca tinha visto.",
+      "paragrafos": [
+        "Paulo já tinha levado o evangelho a boa parte do Império, mas ainda não conhecia a igreja de Roma.",
+        "Ele escreve para se apresentar, pedir apoio para uma viagem até a Espanha e explicar com calma a mensagem que pregava."
+      ]
+    },
+    {
+      "id": "rm-d01-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Quem eram os cristãos de Roma.",
+      "paragrafos": [
+        "Uma igreja com judeus e não judeus, que se reunia em casas. Nem sempre era fácil conviver: costumes, comida e história diferentes.",
+        "Paulo quer mostrar que o mesmo evangelho une os dois grupos."
+      ]
+    },
+    {
+      "id": "rm-d01-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O tema da carta.",
+      "paragrafos": [
+        "Logo no início Paulo resume tudo: ele não se envergonha do evangelho, porque é poder de Deus para salvar todo aquele que crê.",
+        "Nele se revela a justiça de Deus, recebida pela fé, do começo ao fim."
+      ]
+    },
+    {
+      "id": "rm-d01-c04",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "O caminho da carta.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Todos precisam de salvação (1–3)",
+        "Deus justifica pela fé (4–5)",
+        "Vida nova em Cristo (6–8)",
+        "Israel e as nações (9–11)",
+        "Como viver o evangelho (12–16)"
+      ],
+      "acerto": "Isso. Esse é o mapa das próximas lições.",
+      "erro": "Quase. A carta mostra o problema antes de chegar à solução."
+    },
+    {
+      "id": "rm-d01-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Não me envergonho do evangelho.",
+      "referencia": "Romanos 1:16-17",
+      "resumo": "Paulo declara que o evangelho é o poder de Deus para salvar todo aquele que crê, primeiro o judeu e também o grego, porque nele a justiça de Deus é revelada pela fé.",
+      "observar": "Repare em \"todo aquele\". A carta vai mostrar que ninguém está longe demais e ninguém está acima da necessidade."
+    },
+    {
+      "id": "rm-d01-c06",
+      "tipo": "cristo",
+      "texto": "Paulo abre a carta apresentando Jesus: descendente de Davi e declarado Filho de Deus com poder pela ressurreição. O evangelho não é uma ideia, é uma pessoa."
+    },
+    {
+      "id": "rm-d01-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Qual é o tema central de Romanos?",
+      "opcoes": [
+        {
+          "texto": "O evangelho como poder de Deus para salvar quem crê.",
+          "correta": true
+        },
+        {
+          "texto": "Regras para a igreja se organizar em Roma.",
+          "correta": false
+        },
+        {
+          "texto": "A história do Império Romano.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Tudo na carta gira em torno do evangelho.",
+      "erro": "Releia o card \"O tema da carta\"."
+    },
+    {
+      "id": "rm-d01-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Em que momento você já sentiu receio de falar da sua fé? O que mudaria se você visse o evangelho como poder, e não como peso?"
+    },
+    {
+      "id": "rm-d01-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, obrigado pelo evangelho que alcança todo aquele que crê. Tira de mim a vergonha e me dá alegria em conhecer a tua mensagem. Abre meu entendimento nesta carta. Amém."
+    }
+  ]
+}

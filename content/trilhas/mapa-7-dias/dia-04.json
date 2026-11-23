@@ -1,0 +1,151 @@
+{
+  "status": "publicado",
+  "n": 4,
+  "titulo": "Êxodo, lei e caminhada",
+  "base": "Êxodo a Deuteronômio",
+  "lugar": "Sinai",
+  "simbolo": {
+    "id": "cordeiro",
+    "nome": "O cordeiro",
+    "texto": "O cordeiro da Páscoa é um dos símbolos que mais atravessam a Bíblia: do Êxodo ao Apocalipse.",
+    "midia": "simbolo-cordeiro"
+  },
+  "cards": [
+    {
+      "id": "d4-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "De família a nação escravizada.",
+      "paragrafos": [
+        "Gerações depois de José, os descendentes de Jacó se multiplicaram no Egito. Um novo faraó passou a vê-los como ameaça e os escravizou.",
+        "O povo clamou, e a Bíblia diz que Deus ouviu."
+      ]
+    },
+    {
+      "id": "d4-c02",
+      "tipo": "cena",
+      "midia": "d4-sarca",
+      "legenda": "Uma sarça que queimava sem se consumir.",
+      "referencia": "Êxodo 3"
+    },
+    {
+      "id": "d4-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Deus liberta.",
+      "midia": "d4-porta-pascoa",
+      "paragrafos": [
+        "Deus envia Moisés ao faraó. Depois das pragas, vem a noite da Páscoa: cada família sacrifica um cordeiro e marca a porta com o sangue, e a morte passa por cima daquelas casas.",
+        "O povo sai do Egito e atravessa o Mar Vermelho a pé enxuto."
+      ]
+    },
+    {
+      "id": "d4-c04",
+      "tipo": "cena",
+      "midia": "d4-mar-aberto",
+      "legenda": "O mar se abre, e o povo passa.",
+      "referencia": "Êxodo 14"
+    },
+    {
+      "id": "d4-c05",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Primeiro o resgate, depois a lei.",
+      "midia": "d4-sinai",
+      "paragrafos": [
+        "No monte Sinai, Deus faz aliança com Israel e dá os Dez Mandamentos. Antes de qualquer mandamento, Ele diz: \"Eu sou o Senhor, que te tirei do Egito\".",
+        "Deus libertou primeiro e depois ensinou a viver como povo livre. Por causa da incredulidade, aquela geração caminhou 40 anos no deserto, e o povo só entrou na terra com Josué."
+      ]
+    },
+    {
+      "id": "d4-c06",
+      "tipo": "texto",
+      "rotulo": "Na caminhada",
+      "titulo": "A serpente de bronze.",
+      "midia": "d4-serpente-bronze",
+      "revisar": true,
+      "paragrafos": [
+        "No deserto, o povo é atacado por serpentes. Deus manda Moisés fazer uma serpente de bronze e erguê-la numa haste: quem olhasse para ela vivia (Números 21:4-9).",
+        "Séculos depois, Jesus usa essa cena para falar de si mesmo: assim como a serpente foi levantada, o Filho do Homem também seria levantado (João 3:14-15)."
+      ]
+    },
+    {
+      "id": "d4-c07",
+      "tipo": "mapa",
+      "rotulo": "Mapa",
+      "titulo": "O Pentateuco.",
+      "livros": [
+        "gn",
+        "ex",
+        "lv",
+        "nm",
+        "dt"
+      ],
+      "paragrafos": [
+        "Os cinco primeiros livros formam um bloco: Gênesis (origens), Êxodo (libertação), Levítico (como um povo pecador se aproxima de um Deus santo), Números (o deserto) e Deuteronômio (Moisés relembra tudo antes de morrer).",
+        "Se você já parou de ler em Levítico, agora sabe onde ele se encaixa."
+      ]
+    },
+    {
+      "id": "d4-c08",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "Coloque a caminhada em ordem.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Escravidão no Egito",
+        "Páscoa",
+        "Mar Vermelho",
+        "Aliança no Sinai",
+        "Deserto",
+        "Entrada na terra"
+      ],
+      "acerto": "Isso. Do Egito à terra prometida, passo a passo.",
+      "erro": "Quase. Lembre: a lei veio depois da saída do Egito."
+    },
+    {
+      "id": "d4-c09",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "A porta marcada.",
+      "referencia": "Êxodo 12:1-13 e 20:1-3",
+      "resumo": "As instruções da primeira Páscoa e o início dos Dez Mandamentos.",
+      "observar": "O sangue na porta não dependia de quão boa era a família, mas de confiar na palavra de Deus."
+    },
+    {
+      "id": "d4-c10",
+      "tipo": "cristo",
+      "texto": "João Batista chama Jesus de \"Cordeiro de Deus\". Jesus morre em Jerusalém durante a festa da Páscoa, e Paulo o chama de \"nosso Cordeiro pascal\" (1 Coríntios 5:7)."
+    },
+    {
+      "id": "d4-c11",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "No Sinai, o que veio primeiro?",
+      "opcoes": [
+        {
+          "texto": "A lei; a libertação veio como recompensa pela obediência.",
+          "correta": false
+        },
+        {
+          "texto": "A libertação; a lei veio depois, para o povo já resgatado.",
+          "correta": true
+        }
+      ],
+      "acerto": "Exato. Deus resgata primeiro e depois ensina a viver.",
+      "erro": "Releia o começo dos Dez Mandamentos: Deus lembra o que já tinha feito."
+    },
+    {
+      "id": "d4-c12",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "De que \"Egito\" Deus já tirou você? E de qual você ainda pede para sair?"
+    },
+    {
+      "id": "d4-c13",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, Tu ouves o clamor de quem está preso. Obrigado por me resgatar antes de eu merecer. Ensina-me a viver como alguém livre. Amém."
+    }
+  ]
+}

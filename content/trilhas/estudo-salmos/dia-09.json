@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 9,
+  "titulo": "Quando não sei orar",
+  "passagens": "Salmos 139",
+  "midiaSugerida": {
+    "id": "sl-d09",
+    "prompt": "a starry night sky over a dark sea and distant mountains, faint dawn light on the horizon, vast and intimate at once, no people"
+  },
+  "cards": [
+    {
+      "id": "sl-d09-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Conhecido por inteiro.",
+      "paragrafos": [
+        "O Salmo 139 começa assim: Senhor, tu me sondas e me conheces.",
+        "Quando faltam palavras para orar, ajuda lembrar que Deus já sabe o que vai no coração."
+      ]
+    },
+    {
+      "id": "sl-d09-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Antes da palavra.",
+      "paragrafos": [
+        "Davi diz que Deus sabe quando ele se senta e quando se levanta, e conhece o que ele vai dizer antes que a palavra chegue à língua.",
+        "Orar não é informar Deus. É estar com quem já nos conhece."
+      ]
+    },
+    {
+      "id": "sl-d09-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Para onde eu iria?",
+      "paragrafos": [
+        "Não há lugar onde Deus não esteja: nem no céu, nem no fundo do mar, nem na escuridão.",
+        "E Davi louva: tu me formaste no ventre da minha mãe. Fui feito de modo especial e admirável."
+      ]
+    },
+    {
+      "id": "sl-d09-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "O que Deus conhece.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "Meus passos",
+          "b": "Quando me sento e quando me levanto"
+        },
+        {
+          "a": "Minhas palavras",
+          "b": "Antes de eu dizê-las"
+        },
+        {
+          "a": "Meus caminhos",
+          "b": "Até nos lugares mais escuros"
+        },
+        {
+          "a": "Meu começo",
+          "b": "Desde o ventre da minha mãe"
+        }
+      ],
+      "acerto": "Isso. Nada em você é desconhecido para Ele."
+    },
+    {
+      "id": "sl-d09-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Sonda-me.",
+      "referencia": "Salmos 139",
+      "resumo": "Davi reconhece que Deus o conhece por completo, está presente em todo lugar e o formou com cuidado desde o ventre. No fim, pede: sonda-me, conhece o meu coração, vê se há em mim algo errado e guia-me pelo caminho eterno.",
+      "observar": "Ser conhecido por Deus deixa de dar medo e passa a dar descanso."
+    },
+    {
+      "id": "sl-d09-c06",
+      "tipo": "cristo",
+      "texto": "O Espírito Santo, que Jesus prometeu, intercede por nós quando não sabemos orar. Mesmo um suspiro sincero chega até Deus."
+    },
+    {
+      "id": "sl-d09-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Por que é possível orar mesmo sem palavras?",
+      "opcoes": [
+        {
+          "texto": "Porque Deus já conhece o que vai no coração.",
+          "correta": true
+        },
+        {
+          "texto": "Porque a oração não importa.",
+          "correta": false
+        },
+        {
+          "texto": "Porque Deus só ouve orações longas.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Ele entende antes da palavra.",
+      "erro": "Releia o card \"Antes da palavra\"."
+    },
+    {
+      "id": "sl-d09-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Se for difícil orar hoje, diga apenas: Senhor, tu me conheces. E fique um momento em silêncio."
+    },
+    {
+      "id": "sl-d09-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, tu me conheces melhor do que eu mesmo. Às vezes não sei o que dizer, mas sei que tu entendes. Sonda o meu coração e guia-me pelo teu caminho. Amém."
+    }
+  ]
+}

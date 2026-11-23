@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 8,
+  "titulo": "Uma vida transformada",
+  "passagens": "Romanos 12–16",
+  "midiaSugerida": {
+    "id": "rm-d08",
+    "prompt": "a small group of people seen from behind sharing bread at a long wooden table in an ancient courtyard at sunset, warm light, sense of community"
+  },
+  "cards": [
+    {
+      "id": "rm-d08-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Depois da doutrina, a vida.",
+      "paragrafos": [
+        "Onze capítulos explicando o que Deus fez. Agora Paulo pergunta: e como vivemos à luz disso?",
+        "A resposta começa com uma palavra: portanto."
+      ]
+    },
+    {
+      "id": "rm-d08-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Sacrifício vivo.",
+      "paragrafos": [
+        "Pelas misericórdias de Deus, Paulo pede que entreguemos a vida inteira a Ele, como um sacrifício vivo.",
+        "E que a mente seja renovada, em vez de seguir o molde deste mundo."
+      ]
+    },
+    {
+      "id": "rm-d08-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Amor na prática.",
+      "paragrafos": [
+        "O resto da carta é amor concreto: usar os dons para servir, amar sem fingimento, abençoar quem persegue, não pagar o mal com o mal.",
+        "E acolher quem pensa diferente em questões secundárias, como comida e dias especiais."
+      ]
+    },
+    {
+      "id": "rm-d08-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "Como vive quem foi transformado.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "O corpo",
+          "b": "Oferecido a Deus como sacrifício vivo"
+        },
+        {
+          "a": "A mente",
+          "b": "Renovada, não moldada pelo mundo"
+        },
+        {
+          "a": "Os dons",
+          "b": "Usados para servir à igreja"
+        },
+        {
+          "a": "O inimigo",
+          "b": "Recebe o bem em vez de vingança"
+        }
+      ],
+      "acerto": "Isso. O evangelho chega ao dia a dia."
+    },
+    {
+      "id": "rm-d08-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Mente renovada.",
+      "referencia": "Romanos 12",
+      "resumo": "Paulo pede que os cristãos ofereçam a vida a Deus e sejam transformados pela renovação da mente. Depois descreve o amor na prática: servir com os dons, alegrar-se com quem se alegra, chorar com quem chora e vencer o mal com o bem.",
+      "observar": "A transformação começa por dentro e aparece por fora, nos relacionamentos."
+    },
+    {
+      "id": "rm-d08-c06",
+      "tipo": "cristo",
+      "texto": "Paulo diz para nos revestirmos do Senhor Jesus Cristo. A vida transformada não é imitar regras, é deixar o caráter de Jesus aparecer em nós."
+    },
+    {
+      "id": "rm-d08-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Por que os conselhos práticos vêm no fim da carta?",
+      "opcoes": [
+        {
+          "texto": "Porque a vida nova é resposta ao que Deus já fez.",
+          "correta": true
+        },
+        {
+          "texto": "Porque são menos importantes.",
+          "correta": false
+        },
+        {
+          "texto": "Porque a salvação depende deles.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Primeiro a graça, depois a resposta.",
+      "erro": "Lembre do \"portanto\" no começo do capítulo 12."
+    },
+    {
+      "id": "rm-d08-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "De tudo o que você viu em Romanos, o que mais mudou o seu jeito de ver Deus? Que passo prático você quer dar a partir de agora?"
+    },
+    {
+      "id": "rm-d08-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, entrego minha vida a ti, por inteiro. Renova a minha mente e muda o meu jeito de amar as pessoas. Que o evangelho que aprendi em Romanos apareça na minha vida. Amém."
+    }
+  ]
+}

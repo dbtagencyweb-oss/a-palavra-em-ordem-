@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 3,
+  "titulo": "Justificados pela fé",
+  "passagens": "Romanos 4–5",
+  "midiaSugerida": {
+    "id": "rm-d03",
+    "prompt": "an old man seen from behind standing outside a tent at night in the desert, looking up at a sky full of countless stars, warm lamp light from the tent"
+  },
+  "cards": [
+    {
+      "id": "rm-d03-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Uma palavra de tribunal.",
+      "paragrafos": [
+        "\"Justificar\" vem do tribunal: é o juiz declarar alguém justo.",
+        "Paulo diz que Deus faz isso com quem crê. Não por mérito, mas por graça."
+      ]
+    },
+    {
+      "id": "rm-d03-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O exemplo de Abraão.",
+      "paragrafos": [
+        "Para mostrar que isso não é novidade, Paulo volta a Abraão. Ele creu na promessa de Deus, e isso lhe foi contado como justiça.",
+        "E foi antes da circuncisão e antes da lei. Abraão é pai de todos os que creem."
+      ]
+    },
+    {
+      "id": "rm-d03-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Paz com Deus.",
+      "paragrafos": [
+        "No capítulo 5, Paulo mostra os frutos: paz com Deus, acesso à graça e uma esperança que não decepciona.",
+        "E a prova do amor de Deus: Cristo morreu por nós quando ainda éramos pecadores."
+      ]
+    },
+    {
+      "id": "rm-d03-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "As palavras de Romanos 4 e 5.",
+      "instrucao": "Toque numa palavra e depois no que ela significa.",
+      "pares": [
+        {
+          "a": "Justificar",
+          "b": "Ser declarado justo por Deus"
+        },
+        {
+          "a": "Graça",
+          "b": "Favor que não merecemos"
+        },
+        {
+          "a": "Fé",
+          "b": "Confiar na promessa de Deus"
+        },
+        {
+          "a": "Paz",
+          "b": "Fim da inimizade com Deus"
+        }
+      ],
+      "acerto": "Isso. Essas palavras são a base do evangelho."
+    },
+    {
+      "id": "rm-d03-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Paz com Deus.",
+      "referencia": "Romanos 5:1-11",
+      "resumo": "Justificados pela fé, temos paz com Deus por meio de Jesus. Até o sofrimento pode produzir perseverança e esperança, porque o amor de Deus foi derramado em nós. Cristo morreu por nós quando ainda éramos fracos.",
+      "observar": "Deus não esperou que melhorássemos para nos amar. O amor veio primeiro."
+    },
+    {
+      "id": "rm-d03-c06",
+      "tipo": "cristo",
+      "texto": "Abraão olhou para a frente e confiou numa promessa. Nós olhamos para trás e confiamos no que Jesus já fez: morreu por nossos pecados e ressuscitou para nos justificar."
+    },
+    {
+      "id": "rm-d03-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Como Abraão foi considerado justo?",
+      "opcoes": [
+        {
+          "texto": "Ele creu na promessa de Deus.",
+          "correta": true
+        },
+        {
+          "texto": "Ele cumpriu toda a lei de Moisés.",
+          "correta": false
+        },
+        {
+          "texto": "Ele foi circuncidado primeiro.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. E a lei nem existia ainda.",
+      "erro": "Releia o card \"O exemplo de Abraão\": a fé veio antes de tudo."
+    },
+    {
+      "id": "rm-d03-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Você às vezes sente que precisa merecer o amor de Deus? Como seria viver hoje sabendo que já está em paz com Ele?"
+    },
+    {
+      "id": "rm-d03-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Pai, obrigado porque não preciso conquistar o teu amor. Em Jesus eu tenho paz contigo. Ensina-me a descansar nessa graça e a confiar nas tuas promessas como Abraão. Amém."
+    }
+  ]
+}

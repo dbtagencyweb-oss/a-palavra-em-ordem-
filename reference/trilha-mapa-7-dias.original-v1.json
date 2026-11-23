@@ -1,0 +1,1025 @@
+{
+  "id": "mapa-7-dias",
+  "titulo": "Mapa da Bíblia em 7 dias",
+  "subtitulo": "Uma visão simples da grande história bíblica",
+  "gratis": true,
+  "duracaoPorDia": "5 a 7 minutos",
+  "versaoConteudo": "1.0 (revisado)",
+  "linkLeitura": {
+    "modelo": "https://www.bible.com/pt/bible/129/{LIVRO}.{CAP}.NVI",
+    "nota": "Trocar pela tradução que a igreja usar; o app nunca reproduz o texto bíblico."
+  },
+  "dias": [
+    {
+      "n": 1,
+      "titulo": "A Bíblia não é um labirinto",
+      "base": "Visão do todo",
+      "lugar": "Visão do todo",
+      "simbolo": {
+        "id": "lampada",
+        "nome": "A lâmpada",
+        "texto": "\"Lâmpada para os meus pés é a tua palavra\" (Salmo 119:105). A Palavra não ilumina a estrada inteira de uma vez, mas o próximo passo.",
+        "midia": "simbolo-lampada"
+      },
+      "marco": {
+        "id": "mapa-nas-maos",
+        "nome": "O mapa nas mãos",
+        "texto": "Você viu a Bíblia inteira de cima."
+      },
+      "cards": [
+        {
+          "id": "d1-c01",
+          "tipo": "cena",
+          "midia": "d1-labirinto",
+          "legenda": "Muita gente ama a Bíblia e se perde nela."
+        },
+        {
+          "id": "d1-c02",
+          "tipo": "abertura",
+          "rotulo": "Abertura",
+          "titulo": "Você não está sozinho.",
+          "paragrafos": [
+            "Se você já abriu a Bíblia decidido a ler do começo ao fim e parou no meio do caminho, saiba: isso acontece com muita gente.",
+            "Não é falta de fé. Na maioria das vezes, é falta de mapa.",
+            "Hoje você vai receber esse mapa."
+          ]
+        },
+        {
+          "id": "d1-c03",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "A Bíblia é uma biblioteca.",
+          "paragrafos": [
+            "São 66 livros, escritos por dezenas de autores ao longo de mais de mil anos: reis, pastores, profetas, pescadores, um médico, um cobrador de impostos.",
+            "Tem lei, poesia, história, profecia e carta. E os livros estão agrupados por tipo, não pela ordem dos acontecimentos.",
+            "Por isso ler de capa a capa confunde tanto."
+          ]
+        },
+        {
+          "id": "d1-c04",
+          "tipo": "movimentos",
+          "rotulo": "Entenda",
+          "titulo": "Mas é uma história só.",
+          "itens": [
+            {
+              "n": 1,
+              "nome": "Criação",
+              "texto": "Deus faz todas as coisas, e tudo é bom."
+            },
+            {
+              "n": 2,
+              "nome": "Queda",
+              "texto": "O ser humano se afasta de Deus, e o mundo se quebra."
+            },
+            {
+              "n": 3,
+              "nome": "Redenção",
+              "texto": "Deus promete um resgate e o cumpre em Jesus."
+            },
+            {
+              "n": 4,
+              "nome": "Restauração",
+              "texto": "No fim, tudo será feito novo."
+            }
+          ]
+        },
+        {
+          "id": "d1-c05",
+          "tipo": "ordenar",
+          "rotulo": "Pratique",
+          "titulo": "Coloque a história em ordem.",
+          "instrucao": "Toque nos passos na sequência certa.",
+          "itens": [
+            "Criação",
+            "Queda",
+            "Redenção",
+            "Restauração"
+          ],
+          "acerto": "Isso. Guarde essa sequência: ela é o esqueleto da Bíblia inteira.",
+          "erro": "Quase. O que vem primeiro, o mundo bom ou o mundo quebrado?"
+        },
+        {
+          "id": "d1-c06",
+          "tipo": "palavra",
+          "rotulo": "Na Palavra",
+          "titulo": "Um caminho de 11 quilômetros.",
+          "referencia": "Lucas 24:13-27",
+          "midia": "d1-emaus",
+          "resumo": "Depois da ressurreição, Jesus caminha com dois discípulos desanimados. Começando por Moisés e passando pelos profetas, Ele mostra como toda a Escritura falava dele.",
+          "observar": "Eles conheciam os textos. O que faltava era ver a ligação entre eles. É exatamente isso que esta jornada faz."
+        },
+        {
+          "id": "d1-c07",
+          "tipo": "cristo",
+          "texto": "O próprio Jesus ensina a ler a Bíblia inteira tendo-o como centro. É assim que esta jornada vai caminhar."
+        },
+        {
+          "id": "d1-c08",
+          "tipo": "quiz",
+          "rotulo": "Fixe",
+          "pergunta": "Por que tanta gente se perde ao ler a Bíblia de capa a capa?",
+          "opcoes": [
+            {
+              "texto": "Porque as partes da Bíblia não têm relação entre si.",
+              "correta": false
+            },
+            {
+              "texto": "Porque os livros estão agrupados por tipo, e não na ordem dos acontecimentos.",
+              "correta": true
+            },
+            {
+              "texto": "Porque só especialistas conseguem entender.",
+              "correta": false
+            }
+          ],
+          "acerto": "Exato. A Bíblia não está em ordem cronológica. Quando você conhece a linha da história, cada livro encontra o seu lugar.",
+          "erro": "Não é isso. As partes se ligam, e não é preciso ser especialista. Tente outra opção."
+        },
+        {
+          "id": "d1-c09",
+          "tipo": "reflexao",
+          "rotulo": "Reflita",
+          "pergunta": "Em que ponto você costuma parar?",
+          "apoio": "Pode ser um livro, um momento da vida, um tipo de texto."
+        },
+        {
+          "id": "d1-c10",
+          "tipo": "oracao",
+          "rotulo": "Oração",
+          "texto": "Senhor, eu quero conhecer a tua Palavra. Onde eu me perder, guia os meus passos. Abre os meus olhos como abriste os daqueles dois no caminho. Amém."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "titulo": "Criação, queda e promessa",
+      "base": "Gênesis 1 a 11",
+      "lugar": "Éden",
+      "simbolo": {
+        "id": "arvore",
+        "nome": "A árvore",
+        "texto": "A árvore da vida aparece no jardim do Éden e volta na última página da Bíblia. Guarde-a: você vai reencontrá-la no Dia 7.",
+        "midia": "simbolo-arvore"
+      },
+      "cards": [
+        {
+          "id": "d2-c01",
+          "tipo": "cena",
+          "midia": "d2-criacao",
+          "legenda": "No princípio, Deus."
+        },
+        {
+          "id": "d2-c02",
+          "tipo": "abertura",
+          "rotulo": "Abertura",
+          "titulo": "No princípio.",
+          "paragrafos": [
+            "Toda história tem um começo. A da Bíblia começa com Deus, antes de qualquer outra coisa.",
+            "E as primeiras páginas já contam o problema que o resto do livro inteiro vai resolver."
+          ]
+        },
+        {
+          "id": "d2-c03",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "Tudo era bom.",
+          "midia": "d2-jardim",
+          "paragrafos": [
+            "Deus cria o mundo com ordem e beleza, e repete: \"era bom\".",
+            "O ser humano é feito à imagem de Deus, para viver perto dele, cuidar da criação e se relacionar com o outro. Não havia vergonha, medo nem morte."
+          ]
+        },
+        {
+          "id": "d2-c04",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "O mundo se quebra.",
+          "midia": "d2-esconder",
+          "paragrafos": [
+            "O homem e a mulher desconfiam da palavra de Deus e escolhem decidir sozinhos o que é bom e o que é mau. Vêm a vergonha, a culpa, o esconderijo, as relações feridas e, por fim, a morte.",
+            "Mas a primeira coisa que Deus faz depois da queda é procurar: \"Onde você está?\"."
+          ]
+        },
+        {
+          "id": "d2-c05",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "O mal se espalha. Deus recomeça.",
+          "midia": "d2-arco-iris",
+          "paragrafos": [
+            "Caim mata o irmão, a violência enche a terra no tempo de Noé, e em Babel a humanidade tenta chegar ao céu por conta própria.",
+            "Em cada cena, porém, Deus preserva e recomeça."
+          ]
+        },
+        {
+          "id": "d2-c06",
+          "tipo": "ligar",
+          "rotulo": "Pratique",
+          "titulo": "O que cada cena mostra?",
+          "instrucao": "Toque numa cena e depois no que ela mostra.",
+          "pares": [
+            {
+              "a": "Éden",
+              "b": "Tudo era bom"
+            },
+            {
+              "a": "Caim e Abel",
+              "b": "A inveja vira violência"
+            },
+            {
+              "a": "Noé",
+              "b": "Deus preserva no meio do juízo"
+            },
+            {
+              "a": "Babel",
+              "b": "O orgulho de querer chegar ao céu sozinho"
+            }
+          ],
+          "acerto": "Isso. Gênesis 1 a 11 mostra o mundo bom, o mundo quebrado e um Deus que não desiste."
+        },
+        {
+          "id": "d2-c07",
+          "tipo": "palavra",
+          "rotulo": "Na Palavra",
+          "titulo": "A primeira promessa.",
+          "referencia": "Gênesis 3:1-15",
+          "resumo": "A serpente põe em dúvida a palavra de Deus, o casal come do fruto e se esconde. Deus os procura, anuncia as consequências e, no meio delas, faz uma promessa: um descendente da mulher vai esmagar a cabeça da serpente.",
+          "observar": "A promessa de resgate aparece no mesmo capítulo da queda."
+        },
+        {
+          "id": "d2-c08",
+          "tipo": "cristo",
+          "texto": "Muitos cristãos, desde a igreja antiga, leem Gênesis 3:15 como o primeiro anúncio do evangelho. Paulo compara Adão e Jesus: por um veio a queda, pelo outro vem a vida (Romanos 5)."
+        },
+        {
+          "id": "d2-c09",
+          "tipo": "quiz",
+          "rotulo": "Fixe",
+          "pergunta": "Onde aparece a primeira promessa de resgate?",
+          "opcoes": [
+            {
+              "texto": "Logo depois da queda, em Gênesis 3.",
+              "correta": true
+            },
+            {
+              "texto": "Só no Novo Testamento.",
+              "correta": false
+            },
+            {
+              "texto": "Na história do dilúvio.",
+              "correta": false
+            }
+          ],
+          "acerto": "Isso. Deus anuncia o resgate no mesmo capítulo em que o mundo se quebra.",
+          "erro": "Ainda não. Volte ao card anterior: a promessa vem muito cedo."
+        },
+        {
+          "id": "d2-c10",
+          "tipo": "reflexao",
+          "rotulo": "Reflita",
+          "pergunta": "Deus perguntou: \"Onde você está?\". Se Ele te fizesse essa pergunta hoje, o que você responderia?"
+        },
+        {
+          "id": "d2-c11",
+          "tipo": "oracao",
+          "rotulo": "Oração",
+          "texto": "Pai, obrigado porque, mesmo quando eu me escondo, o Senhor vem me procurar. Que eu não fuja da tua presença. Amém."
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "titulo": "Abraão, Israel e aliança",
+      "base": "Gênesis 12 a 50",
+      "lugar": "Canaã",
+      "simbolo": {
+        "id": "estrelas",
+        "nome": "As estrelas",
+        "texto": "Deus mostrou o céu a Abraão para falar de uma promessa grande demais para ser contada.",
+        "midia": "simbolo-estrelas"
+      },
+      "cards": [
+        {
+          "id": "d3-c01",
+          "tipo": "abertura",
+          "rotulo": "Abertura",
+          "titulo": "Um plano para o mundo, começando por uma família.",
+          "paragrafos": [
+            "Depois de Babel, a Bíblia muda de escala. Em vez da humanidade inteira, ela passa a acompanhar um homem e sua família.",
+            "Parece que a história ficou menor. Na verdade, ela ficou mais focada."
+          ]
+        },
+        {
+          "id": "d3-c02",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "O chamado de Abraão.",
+          "midia": "d3-caravana",
+          "paragrafos": [
+            "Deus chama Abrão para deixar sua terra e ir para um lugar que ainda não conhecia. Ele promete três coisas: uma terra, uma descendência numerosa e uma bênção que alcançaria todas as famílias da terra.",
+            "Abraão creu, e Deus considerou isso como justiça."
+          ]
+        },
+        {
+          "id": "d3-c03",
+          "tipo": "cena",
+          "midia": "d3-estrelas",
+          "legenda": "\"Olhe para o céu e conte as estrelas, se puder.\"",
+          "referencia": "Gênesis 15:5"
+        },
+        {
+          "id": "d3-c04",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "De uma família, um povo.",
+          "midia": "d3-jose",
+          "paragrafos": [
+            "A promessa passa de pai para filho: Abraão, Isaque, Jacó. Deus muda o nome de Jacó para Israel, e os doze filhos dele dão origem às doze tribos.",
+            "José, um desses filhos, é vendido pelos irmãos, vai parar no Egito e acaba salvando a própria família da fome. O livro termina com Israel morando no Egito."
+          ]
+        },
+        {
+          "id": "d3-c05",
+          "tipo": "ordenar",
+          "rotulo": "Pratique",
+          "titulo": "Coloque as gerações em ordem.",
+          "instrucao": "Toque do mais antigo para o mais novo.",
+          "itens": [
+            "Abraão",
+            "Isaque",
+            "Jacó",
+            "José"
+          ],
+          "acerto": "São os patriarcas. Com eles, a promessa atravessa quatro gerações.",
+          "erro": "Quase. Abraão é o avô de Jacó."
+        },
+        {
+          "id": "d3-c06",
+          "tipo": "palavra",
+          "rotulo": "Na Palavra",
+          "titulo": "Uma bênção para todos.",
+          "referencia": "Gênesis 12:1-3 e 15:5-6",
+          "resumo": "Deus chama Abrão e faz a promessa; depois o leva para fora, mostra as estrelas e diz que sua descendência seria assim.",
+          "observar": "A bênção não era só para Abraão, mas, por meio dele, para todas as famílias da terra."
+        },
+        {
+          "id": "d3-c07",
+          "tipo": "cristo",
+          "texto": "O Evangelho de Mateus começa chamando Jesus de \"filho de Abraão\". Paulo ensina que a bênção prometida a Abraão chega a todos os povos por meio de Cristo (Gálatas 3)."
+        },
+        {
+          "id": "d3-c08",
+          "tipo": "quiz",
+          "rotulo": "Fixe",
+          "pergunta": "Por que Deus escolheu uma família?",
+          "opcoes": [
+            {
+              "texto": "Para abençoar apenas aquela família.",
+              "correta": false
+            },
+            {
+              "texto": "Para, por meio dela, abençoar todas as famílias da terra.",
+              "correta": true
+            },
+            {
+              "texto": "Porque ela era melhor do que as outras.",
+              "correta": false
+            }
+          ],
+          "acerto": "Isso. A escolha de Abraão é o começo de um plano para o mundo inteiro.",
+          "erro": "Não é isso. Releia a promessa: ela fala de \"todas as famílias da terra\"."
+        },
+        {
+          "id": "d3-c09",
+          "tipo": "reflexao",
+          "rotulo": "Reflita",
+          "pergunta": "Abraão saiu sem saber exatamente para onde ia. Que passo de confiança está diante de você hoje?"
+        },
+        {
+          "id": "d3-c10",
+          "tipo": "oracao",
+          "rotulo": "Oração",
+          "texto": "Deus de Abraão, ensina-me a confiar no Senhor mesmo quando eu não vejo o caminho inteiro. Que a minha vida também seja bênção para outros. Amém."
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "titulo": "Êxodo, lei e caminhada",
+      "base": "Êxodo a Deuteronômio",
+      "lugar": "Sinai",
+      "simbolo": {
+        "id": "cordeiro",
+        "nome": "O cordeiro",
+        "texto": "O cordeiro da Páscoa é um dos símbolos que mais atravessam a Bíblia: do Êxodo ao Apocalipse.",
+        "midia": "simbolo-cordeiro"
+      },
+      "cards": [
+        {
+          "id": "d4-c01",
+          "tipo": "abertura",
+          "rotulo": "Abertura",
+          "titulo": "De família a nação escravizada.",
+          "paragrafos": [
+            "Gerações depois de José, os descendentes de Jacó se multiplicaram no Egito. Um novo faraó passou a vê-los como ameaça e os escravizou.",
+            "O povo clamou, e a Bíblia diz que Deus ouviu."
+          ]
+        },
+        {
+          "id": "d4-c02",
+          "tipo": "cena",
+          "midia": "d4-sarca",
+          "legenda": "Uma sarça que queimava sem se consumir.",
+          "referencia": "Êxodo 3"
+        },
+        {
+          "id": "d4-c03",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "Deus liberta.",
+          "midia": "d4-porta-pascoa",
+          "paragrafos": [
+            "Deus envia Moisés ao faraó. Depois das pragas, vem a noite da Páscoa: cada família sacrifica um cordeiro e marca a porta com o sangue, e a morte passa por cima daquelas casas.",
+            "O povo sai do Egito e atravessa o Mar Vermelho a pé enxuto."
+          ]
+        },
+        {
+          "id": "d4-c04",
+          "tipo": "cena",
+          "midia": "d4-mar-aberto",
+          "legenda": "O mar se abre, e o povo passa.",
+          "referencia": "Êxodo 14"
+        },
+        {
+          "id": "d4-c05",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "Primeiro o resgate, depois a lei.",
+          "midia": "d4-sinai",
+          "paragrafos": [
+            "No monte Sinai, Deus faz aliança com Israel e dá os Dez Mandamentos. Antes de qualquer mandamento, Ele diz: \"Eu sou o Senhor, que te tirei do Egito\".",
+            "Deus libertou primeiro e depois ensinou a viver como povo livre. Por causa da incredulidade, aquela geração caminhou 40 anos no deserto, e o povo só entrou na terra com Josué."
+          ]
+        },
+        {
+          "id": "d4-c06",
+          "tipo": "texto",
+          "rotulo": "Na caminhada",
+          "titulo": "A serpente de bronze.",
+          "midia": "d4-serpente-bronze",
+          "revisar": true,
+          "paragrafos": [
+            "No deserto, o povo é atacado por serpentes. Deus manda Moisés fazer uma serpente de bronze e erguê-la numa haste: quem olhasse para ela vivia (Números 21:4-9).",
+            "Séculos depois, Jesus usa essa cena para falar de si mesmo: assim como a serpente foi levantada, o Filho do Homem também seria levantado (João 3:14-15)."
+          ]
+        },
+        {
+          "id": "d4-c07",
+          "tipo": "mapa",
+          "rotulo": "Mapa",
+          "titulo": "O Pentateuco.",
+          "livros": [
+            "gn",
+            "ex",
+            "lv",
+            "nm",
+            "dt"
+          ],
+          "paragrafos": [
+            "Os cinco primeiros livros formam um bloco: Gênesis (origens), Êxodo (libertação), Levítico (como um povo pecador se aproxima de um Deus santo), Números (o deserto) e Deuteronômio (Moisés relembra tudo antes de morrer).",
+            "Se você já parou de ler em Levítico, agora sabe onde ele se encaixa."
+          ]
+        },
+        {
+          "id": "d4-c08",
+          "tipo": "ordenar",
+          "rotulo": "Pratique",
+          "titulo": "Coloque a caminhada em ordem.",
+          "instrucao": "Toque na sequência certa.",
+          "itens": [
+            "Escravidão no Egito",
+            "Páscoa",
+            "Mar Vermelho",
+            "Aliança no Sinai",
+            "Deserto",
+            "Entrada na terra"
+          ],
+          "acerto": "Isso. Do Egito à terra prometida, passo a passo.",
+          "erro": "Quase. Lembre: a lei veio depois da saída do Egito."
+        },
+        {
+          "id": "d4-c09",
+          "tipo": "palavra",
+          "rotulo": "Na Palavra",
+          "titulo": "A porta marcada.",
+          "referencia": "Êxodo 12:1-13 e 20:1-3",
+          "resumo": "As instruções da primeira Páscoa e o início dos Dez Mandamentos.",
+          "observar": "O sangue na porta não dependia de quão boa era a família, mas de confiar na palavra de Deus."
+        },
+        {
+          "id": "d4-c10",
+          "tipo": "cristo",
+          "texto": "João Batista chama Jesus de \"Cordeiro de Deus\". Jesus morre em Jerusalém durante a festa da Páscoa, e Paulo o chama de \"nosso Cordeiro pascal\" (1 Coríntios 5:7)."
+        },
+        {
+          "id": "d4-c11",
+          "tipo": "quiz",
+          "rotulo": "Fixe",
+          "pergunta": "No Sinai, o que veio primeiro?",
+          "opcoes": [
+            {
+              "texto": "A lei; a libertação veio como recompensa pela obediência.",
+              "correta": false
+            },
+            {
+              "texto": "A libertação; a lei veio depois, para o povo já resgatado.",
+              "correta": true
+            }
+          ],
+          "acerto": "Exato. Deus resgata primeiro e depois ensina a viver.",
+          "erro": "Releia o começo dos Dez Mandamentos: Deus lembra o que já tinha feito."
+        },
+        {
+          "id": "d4-c12",
+          "tipo": "reflexao",
+          "rotulo": "Reflita",
+          "pergunta": "De que \"Egito\" Deus já tirou você? E de qual você ainda pede para sair?"
+        },
+        {
+          "id": "d4-c13",
+          "tipo": "oracao",
+          "rotulo": "Oração",
+          "texto": "Senhor, Tu ouves o clamor de quem está preso. Obrigado por me resgatar antes de eu merecer. Ensina-me a viver como alguém livre. Amém."
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "titulo": "Reino, profetas e exílio",
+      "base": "Josué a Ester, Salmos e Provérbios, e os Profetas",
+      "lugar": "Jerusalém e Babilônia",
+      "simbolo": {
+        "id": "coroa",
+        "nome": "A coroa",
+        "texto": "A promessa de um rei para sempre fica em aberto no fim do Antigo Testamento.",
+        "midia": "simbolo-coroa"
+      },
+      "cards": [
+        {
+          "id": "d5-c01",
+          "tipo": "abertura",
+          "rotulo": "Abertura",
+          "titulo": "A parte em que quase todo mundo se perde.",
+          "paragrafos": [
+            "Hoje você vai ver em cinco minutos o trecho que mais confunde quem lê a Bíblia de capa a capa: reis, reinos divididos e profetas.",
+            "Respire: é uma linha só."
+          ]
+        },
+        {
+          "id": "d5-c02",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "De juízes a reis.",
+          "midia": "d5-coroa",
+          "paragrafos": [
+            "Na terra prometida, Israel vive um ciclo: se afasta de Deus, é oprimido, clama, e Deus levanta um juiz para libertá-lo. Depois, o povo pede um rei: Saul, depois Davi, por volta do ano 1000 a.C., e depois Salomão, que constrói o templo.",
+            "Deus promete a Davi um descendente cujo reino não teria fim. Nesse tempo nascem boa parte dos Salmos, ligados a Davi, e dos Provérbios, ligados a Salomão."
+          ]
+        },
+        {
+          "id": "d5-c03",
+          "tipo": "cena",
+          "midia": "d5-templo",
+          "legenda": "O templo de Salomão, em Jerusalém."
+        },
+        {
+          "id": "d5-c04",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "O reino se divide e cai.",
+          "midia": "d5-exilio",
+          "paragrafos": [
+            "Depois de Salomão, o reino se parte em dois: Israel, ao norte, e Judá, ao sul, com Jerusalém. O norte cai diante da Assíria em 722 a.C.; Judá cai diante da Babilônia em 586 a.C., o templo é destruído e o povo vai para o exílio.",
+            "Décadas depois, um grupo volta e reconstrói o templo e os muros de Jerusalém: são as histórias de Esdras e Neemias."
+          ]
+        },
+        {
+          "id": "d5-c05",
+          "tipo": "mapa",
+          "rotulo": "Mapa",
+          "titulo": "Onde entram os profetas.",
+          "livros": [
+            "is",
+            "jr",
+            "lm",
+            "ez",
+            "dn",
+            "os",
+            "jl",
+            "am",
+            "ob",
+            "jn",
+            "mq",
+            "na",
+            "hc",
+            "sf",
+            "ag",
+            "zc",
+            "ml"
+          ],
+          "paragrafos": [
+            "Os livros dos profetas estão no fim do Antigo Testamento, mas não aconteceram depois de Reis. Eles falaram durante essa mesma história: alertando os reis, chamando o povo de volta e consolando os exilados.",
+            "E \"Maiores\" e \"Menores\" se refere ao tamanho dos livros, não à importância dos profetas."
+          ]
+        },
+        {
+          "id": "d5-c06",
+          "tipo": "ordenar",
+          "rotulo": "Pratique",
+          "titulo": "Coloque o reino em ordem.",
+          "instrucao": "Toque na sequência certa.",
+          "itens": [
+            "Juízes",
+            "Reis Saul, Davi e Salomão",
+            "Reino dividido",
+            "Exílio na Babilônia",
+            "Volta a Jerusalém"
+          ],
+          "acerto": "Isso. Agora os livros de Josué a Ester têm uma linha.",
+          "erro": "Quase. O reino só se divide depois de Salomão."
+        },
+        {
+          "id": "d5-c07",
+          "tipo": "palavra",
+          "rotulo": "Na Palavra",
+          "titulo": "Duas promessas.",
+          "referencia": "2 Samuel 7:12-16 e Jeremias 31:31-34",
+          "midia": "d5-muralhas",
+          "resumo": "Deus promete a Davi um reino eterno; séculos depois, no meio da crise, promete uma nova aliança, escrita no coração.",
+          "observar": "Nenhum rei depois de Davi cumpriu essa promessa. O povo terminou o Antigo Testamento esperando."
+        },
+        {
+          "id": "d5-c08",
+          "tipo": "cristo",
+          "texto": "No anúncio a Maria, o anjo diz que Jesus receberia o trono de Davi e que seu reino não teria fim (Lucas 1:32-33). Na última ceia, Jesus fala do cálice da nova aliança."
+        },
+        {
+          "id": "d5-c09",
+          "tipo": "quiz",
+          "rotulo": "Fixe",
+          "pergunta": "Qual é a diferença entre Profetas Maiores e Menores?",
+          "opcoes": [
+            {
+              "texto": "A importância de cada profeta.",
+              "correta": false
+            },
+            {
+              "texto": "O tamanho dos livros.",
+              "correta": true
+            },
+            {
+              "texto": "A época em que viveram.",
+              "correta": false
+            }
+          ],
+          "acerto": "Isso. Jonas é \"menor\" só porque o livro é curto.",
+          "erro": "Não é isso. A diferença é bem mais simples."
+        },
+        {
+          "id": "d5-c10",
+          "tipo": "reflexao",
+          "rotulo": "Reflita",
+          "pergunta": "Os profetas chamavam o povo de volta para Deus. Para o que Deus está chamando você de volta?"
+        },
+        {
+          "id": "d5-c11",
+          "tipo": "oracao",
+          "rotulo": "Oração",
+          "texto": "Senhor, Tu foste fiel mesmo quando o teu povo não foi. Traz o meu coração de volta para Ti e escreve a tua Palavra nele. Amém."
+        },
+        {
+          "id": "d5-c12",
+          "tipo": "oferta",
+          "texto": "Amanhã a promessa encontra seu cumprimento. Depois do mapa, a jornada continua com Jesus em Ordem: os quatro Evangelhos lidos na sequência dos acontecimentos, em 30 dias.",
+          "botao": "Conhecer o Acesso Fundador",
+          "botaoSecundario": "Agora não"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "titulo": "Jesus e os Evangelhos",
+      "base": "Mateus, Marcos, Lucas e João",
+      "lugar": "Galileia",
+      "simbolo": {
+        "id": "cruz",
+        "nome": "A cruz",
+        "texto": "O símbolo de morte que se tornou o maior sinal de esperança, porque o túmulo ficou vazio.",
+        "midia": "simbolo-cruz"
+      },
+      "cards": [
+        {
+          "id": "d6-c01",
+          "tipo": "abertura",
+          "rotulo": "Abertura",
+          "titulo": "A promessa chega.",
+          "midia": "d6-belem",
+          "paragrafos": [
+            "Cerca de quatro séculos separam o último profeta do Antigo Testamento do nascimento de Jesus. Nesse tempo, Israel vive sob impérios estrangeiros e, no tempo de Jesus, sob Roma.",
+            "O povo ainda espera o Rei prometido a Davi."
+          ]
+        },
+        {
+          "id": "d6-c02",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "Quem é Jesus.",
+          "midia": "d6-cruz",
+          "paragrafos": [
+            "Jesus nasce em Belém e cresce em Nazaré. Por volta dos 30 anos, começa a anunciar que o Reino de Deus chegou: ensina, cura, perdoa pecados, chama discípulos e se aproxima de quem era deixado de fora.",
+            "Os líderes religiosos se opõem a Ele. Em Jerusalém, na Páscoa, Jesus é crucificado."
+          ]
+        },
+        {
+          "id": "d6-c03",
+          "tipo": "cena",
+          "midia": "d6-tumulo",
+          "legenda": "No terceiro dia, o túmulo está vazio."
+        },
+        {
+          "id": "d6-c04",
+          "tipo": "movimentos",
+          "rotulo": "Entenda",
+          "titulo": "Quatro retratos da mesma pessoa.",
+          "itens": [
+            {
+              "n": 1,
+              "nome": "Mateus",
+              "texto": "Jesus é o Rei prometido, que cumpre as Escrituras. Pensado para leitores judeus."
+            },
+            {
+              "n": 2,
+              "nome": "Marcos",
+              "texto": "O mais curto e direto, com Jesus em ação."
+            },
+            {
+              "n": 3,
+              "nome": "Lucas",
+              "texto": "Uma pesquisa cuidadosa, com atenção aos pobres, às mulheres e aos de fora."
+            },
+            {
+              "n": 4,
+              "nome": "João",
+              "texto": "Quem Jesus é: o Verbo que se fez carne."
+            }
+          ]
+        },
+        {
+          "id": "d6-c05",
+          "tipo": "ligar",
+          "rotulo": "Pratique",
+          "titulo": "Ligue cada Evangelho ao seu retrato.",
+          "instrucao": "Toque num Evangelho e depois no retrato.",
+          "pares": [
+            {
+              "a": "Mateus",
+              "b": "O Rei prometido"
+            },
+            {
+              "a": "Marcos",
+              "b": "O Servo em ação"
+            },
+            {
+              "a": "Lucas",
+              "b": "O Salvador de todos"
+            },
+            {
+              "a": "João",
+              "b": "O Verbo que se fez carne"
+            }
+          ],
+          "acerto": "Isso. Quatro olhares, uma só pessoa."
+        },
+        {
+          "id": "d6-c06",
+          "tipo": "cena",
+          "midia": "d6-sinagoga",
+          "legenda": "\"Hoje se cumpriu esta Escritura.\"",
+          "referencia": "Lucas 4:21"
+        },
+        {
+          "id": "d6-c07",
+          "tipo": "palavra",
+          "rotulo": "Na Palavra",
+          "titulo": "O texto do Dia 5, cumprido.",
+          "referencia": "Lucas 4:16-21",
+          "resumo": "Na sinagoga de Nazaré, Jesus lê um trecho do profeta Isaías sobre boas-novas aos pobres e liberdade aos presos, fecha o rolo e diz que aquilo se cumpria naquele dia.",
+          "observar": "Jesus pega um texto dos profetas e diz que ele fala dele."
+        },
+        {
+          "id": "d6-c08",
+          "tipo": "cristo",
+          "texto": "Hoje é o centro do mapa. A promessa no Éden, a bênção de Abraão, o cordeiro da Páscoa, o rei de Davi e a nova aliança encontram nele o seu sentido."
+        },
+        {
+          "id": "d6-c09",
+          "tipo": "quiz",
+          "rotulo": "Fixe",
+          "pergunta": "Por que existem quatro Evangelhos?",
+          "opcoes": [
+            {
+              "texto": "Porque cada um corrige os erros dos outros.",
+              "correta": false
+            },
+            {
+              "texto": "Porque são quatro retratos da mesma pessoa, escritos com olhares e para públicos diferentes.",
+              "correta": true
+            },
+            {
+              "texto": "Porque a igreja escolheu quatro ao acaso.",
+              "correta": false
+            }
+          ],
+          "acerto": "Isso. Ler os quatro juntos mostra Jesus por inteiro.",
+          "erro": "Não é isso. Pense em quatro fotos da mesma pessoa, de ângulos diferentes."
+        },
+        {
+          "id": "d6-c10",
+          "tipo": "reflexao",
+          "rotulo": "Reflita",
+          "pergunta": "Se você pudesse caminhar com Jesus como aqueles dois discípulos do Dia 1, que pergunta faria a Ele?"
+        },
+        {
+          "id": "d6-c11",
+          "tipo": "oracao",
+          "rotulo": "Oração",
+          "texto": "Senhor Jesus, Tu és o centro de toda a Escritura. Que eu não conheça só histórias sobre Ti, mas conheça a Ti. Amém."
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "titulo": "Igreja, cartas e esperança",
+      "base": "Atos, as Cartas e Apocalipse",
+      "lugar": "Nova Jerusalém",
+      "simbolo": {
+        "id": "cidade",
+        "nome": "A cidade",
+        "texto": "A Nova Jerusalém: o ponto final do mapa.",
+        "midia": "simbolo-cidade"
+      },
+      "marco": {
+        "id": "mapa-completo",
+        "nome": "O mapa completo",
+        "texto": "Você viu a Bíblia inteira, do Éden à Nova Jerusalém. Agora cada livro que você abrir tem lugar."
+      },
+      "cards": [
+        {
+          "id": "d7-c01",
+          "tipo": "abertura",
+          "rotulo": "Abertura",
+          "titulo": "A história não termina na ressurreição.",
+          "paragrafos": [
+            "Depois que Jesus ressuscita, a Bíblia ainda tem 23 livros.",
+            "Eles contam o que acontece com quem creu nele, e como a história inteira vai terminar."
+          ]
+        },
+        {
+          "id": "d7-c02",
+          "tipo": "cena",
+          "midia": "d7-pentecostes",
+          "legenda": "O Espírito vem, e a igreja nasce.",
+          "referencia": "Atos 2"
+        },
+        {
+          "id": "d7-c03",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "A igreja nasce e se espalha.",
+          "paragrafos": [
+            "Jesus sobe ao céu e promete o Espírito Santo. No dia de Pentecostes, o Espírito vem sobre os discípulos, e a igreja nasce em Jerusalém.",
+            "O livro de Atos mostra a mensagem saindo de Jerusalém para a Judeia, Samaria e até Roma, levada por pessoas como Pedro e Paulo."
+          ]
+        },
+        {
+          "id": "d7-c04",
+          "tipo": "mapa",
+          "rotulo": "Mapa",
+          "titulo": "Onde entram as cartas.",
+          "midia": "d7-paulo",
+          "livros": [
+            "rm",
+            "1co",
+            "2co",
+            "gl",
+            "ef",
+            "fp",
+            "cl",
+            "1ts",
+            "2ts",
+            "1tm",
+            "2tm",
+            "tt",
+            "fm",
+            "hb",
+            "tg",
+            "1pe",
+            "2pe",
+            "1jo",
+            "2jo",
+            "3jo",
+            "jd"
+          ],
+          "paragrafos": [
+            "Como os profetas, as cartas não aconteceram depois de Atos: a maioria foi escrita durante essa história, para igrejas e pessoas que Paulo e outros apóstolos conheciam.",
+            "As cartas de Paulo estão organizadas mais ou menos por tamanho, não pela data em que foram escritas."
+          ]
+        },
+        {
+          "id": "d7-c05",
+          "tipo": "texto",
+          "rotulo": "Entenda",
+          "titulo": "Como tudo termina.",
+          "paragrafos": [
+            "O Apocalipse foi escrito a igrejas que sofriam, para lembrar que Jesus reina e vai voltar. Nas últimas páginas, Deus faz novo céu e nova terra, vem habitar com o seu povo e enxuga toda lágrima.",
+            "E lá estão de novo o rio e a árvore da vida do Éden. O jardim virou uma cidade cheia de gente de todos os povos, aquilo que Deus prometeu a Abraão."
+          ]
+        },
+        {
+          "id": "d7-c06",
+          "tipo": "cena",
+          "midia": "d7-cidade",
+          "legenda": "A história termina onde começou, mas melhor.",
+          "referencia": "Apocalipse 21-22"
+        },
+        {
+          "id": "d7-c07",
+          "tipo": "ordenar",
+          "rotulo": "Pratique",
+          "titulo": "Coloque o mapa inteiro em ordem.",
+          "instrucao": "Toque na sequência certa.",
+          "itens": [
+            "Criação",
+            "Abraão",
+            "Êxodo",
+            "Reis",
+            "Exílio",
+            "Jesus",
+            "Igreja",
+            "Nova criação"
+          ],
+          "acerto": "Você acabou de colocar a Bíblia inteira em ordem.",
+          "erro": "Quase. Volte ao seu mapa na Home se precisar."
+        },
+        {
+          "id": "d7-c08",
+          "tipo": "palavra",
+          "rotulo": "Na Palavra",
+          "titulo": "O fim que lembra o começo.",
+          "referencia": "Apocalipse 21:1-5 e 22:1-2",
+          "resumo": "Novo céu e nova terra, Deus habitando com os homens, nada de morte nem de dor; o rio da vida e a árvore da vida.",
+          "observar": "Compare com Gênesis 2. As mesmas imagens abrem e fecham a Bíblia."
+        },
+        {
+          "id": "d7-c09",
+          "tipo": "cristo",
+          "texto": "No Apocalipse, o centro de tudo é o Cordeiro: o mesmo símbolo da Páscoa do Dia 4, agora no trono."
+        },
+        {
+          "id": "d7-c10",
+          "tipo": "quiz",
+          "rotulo": "Fixe",
+          "pergunta": "Como as cartas de Paulo estão organizadas na Bíblia?",
+          "opcoes": [
+            {
+              "texto": "Pela data em que foram escritas.",
+              "correta": false
+            },
+            {
+              "texto": "Mais ou menos por tamanho, das maiores para as menores.",
+              "correta": true
+            },
+            {
+              "texto": "Pela importância de cada igreja.",
+              "correta": false
+            }
+          ],
+          "acerto": "Isso. Por isso Romanos vem primeiro, mesmo não sendo a carta mais antiga.",
+          "erro": "Não é isso. A ordem tem a ver com o tamanho."
+        },
+        {
+          "id": "d7-c11",
+          "tipo": "reflexao",
+          "rotulo": "Reflita",
+          "pergunta": "Você acabou de ver a Bíblia inteira de cima. Que parte da história você quer conhecer de perto agora?"
+        },
+        {
+          "id": "d7-c12",
+          "tipo": "oracao",
+          "rotulo": "Oração",
+          "texto": "Deus eterno, obrigado porque a tua história tem um fim cheio de esperança, e porque Tu me colocaste nela. Continua a guiar os meus passos pela tua Palavra. Amém."
+        }
+      ]
+    }
+  ]
+}

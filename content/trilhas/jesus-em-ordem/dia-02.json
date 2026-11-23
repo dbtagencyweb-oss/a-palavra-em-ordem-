@@ -1,0 +1,117 @@
+{
+  "status": "em_revisao",
+  "n": 2,
+  "titulo": "O Verbo antes de tudo",
+  "passagens": "João 1:1-18",
+  "fase": "Preparação",
+  "midiaSugerida": {
+    "id": "je-d02-verbo",
+    "prompt": "A single soft beam of light descending from a starry night sky onto a small humble village of stone houses in the hills, as if light came to dwell among the houses. No people."
+  },
+  "cards": [
+    {
+      "id": "je-d02-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "João não começa em Belém.",
+      "paragrafos": [
+        "Mateus e Lucas começam pelo nascimento. João volta muito antes: antes do tempo, antes da criação.",
+        "E começa com as mesmas palavras da primeira página da Bíblia: no princípio."
+      ]
+    },
+    {
+      "id": "je-d02-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Quem é o Verbo.",
+      "paragrafos": [
+        "\"Verbo\" traduz a palavra grega logos: a Palavra. João diz que a Palavra já existia no princípio, estava com Deus e era Deus.",
+        "Tudo foi feito por meio dela. Ela é vida e luz, e a escuridão não consegue apagá-la."
+      ]
+    },
+    {
+      "id": "je-d02-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "A Palavra se fez gente.",
+      "paragrafos": [
+        "Então vem a frase mais surpreendente: o Verbo se fez carne e habitou entre nós.",
+        "\"Habitou\" pode ser traduzido como \"armou sua tenda\". Lembra o tabernáculo no deserto, do Dia 4 do mapa: Deus morando no meio do povo. Agora, em uma pessoa."
+      ]
+    },
+    {
+      "id": "je-d02-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "Gênesis e João conversam.",
+      "instrucao": "Toque numa palavra e depois no que ela significa em João 1.",
+      "pares": [
+        {
+          "a": "No princípio",
+          "b": "As primeiras palavras de Gênesis e de João"
+        },
+        {
+          "a": "A luz",
+          "b": "Brilha nas trevas e não é vencida"
+        },
+        {
+          "a": "O tabernáculo",
+          "b": "Deus armando sua tenda entre nós"
+        },
+        {
+          "a": "O Verbo",
+          "b": "A Palavra eterna que se fez pessoa"
+        }
+      ],
+      "acerto": "Isso. João reconta a criação para mostrar quem Jesus é."
+    },
+    {
+      "id": "je-d02-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "No princípio era o Verbo.",
+      "referencia": "João 1:1-14",
+      "resumo": "João apresenta Jesus como a Palavra eterna, que estava com Deus, por meio de quem tudo foi criado, e que veio ao mundo como ser humano, cheio de graça e de verdade.",
+      "observar": "João escolhe começar com as mesmas palavras de Gênesis 1. Ele está dizendo: com Jesus, algo novo começa."
+    },
+    {
+      "id": "je-d02-c06",
+      "tipo": "cristo",
+      "texto": "Este app se chama A Palavra em Ordem. João diz que, no centro de toda a Palavra, existe uma pessoa: Jesus. Ler a Bíblia é, no fim, conhecê-lo."
+    },
+    {
+      "id": "je-d02-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que significa \"o Verbo se fez carne\"?",
+      "opcoes": [
+        {
+          "texto": "A Palavra eterna de Deus se tornou um ser humano, Jesus.",
+          "correta": true
+        },
+        {
+          "texto": "Jesus começou a existir quando nasceu em Belém.",
+          "correta": false
+        },
+        {
+          "texto": "A Bíblia foi escrita em papel.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. O Filho já existia, e em Belém Ele se fez humano.",
+      "erro": "Releia o card \"Quem é o Verbo\": ele já existia no princípio."
+    },
+    {
+      "id": "je-d02-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Deus escolheu se aproximar morando entre nós. Em que lugar da sua vida você precisa sentir Deus perto hoje?"
+    },
+    {
+      "id": "je-d02-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Jesus, Palavra viva, obrigado por não ficar distante. Tu vieste morar entre nós. Ilumina os lugares escuros da minha vida com a tua luz. Amém."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 1,
+  "titulo": "Quando tenho medo",
+  "passagens": "Salmos 27",
+  "midiaSugerida": {
+    "id": "sl-d01",
+    "prompt": "a single oil lamp glowing at the entrance of an ancient stone fortress at night, dark valley below, warm protective light, no people"
+  },
+  "cards": [
+    {
+      "id": "sl-d01-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "O medo chega sem pedir licença.",
+      "paragrafos": [
+        "Davi conhecia o medo: inimigos, perseguição, noites sem saber o que viria.",
+        "No Salmo 27, ele não nega o medo. Ele o coloca diante de Deus."
+      ]
+    },
+    {
+      "id": "sl-d01-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Luz e fortaleza.",
+      "paragrafos": [
+        "O salmo começa com duas imagens: o Senhor é minha luz e minha fortaleza.",
+        "Luz para quando não vejo o caminho. Fortaleza para quando me sinto exposto. E Davi pergunta: de quem terei medo?"
+      ]
+    },
+    {
+      "id": "sl-d01-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Uma coisa só.",
+      "paragrafos": [
+        "No meio do perigo, Davi pede uma coisa só: estar perto de Deus e contemplar a sua bondade.",
+        "O medo diminui quando a atenção muda: do tamanho do problema para o tamanho de Deus."
+      ]
+    },
+    {
+      "id": "sl-d01-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "As imagens do Salmo 27.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "Luz",
+          "b": "Mostra o caminho no escuro"
+        },
+        {
+          "a": "Fortaleza",
+          "b": "Protege quando me sinto exposto"
+        },
+        {
+          "a": "A casa do Senhor",
+          "b": "O lugar onde quero estar"
+        },
+        {
+          "a": "Esperar",
+          "b": "Confiar enquanto a resposta não vem"
+        }
+      ],
+      "acerto": "Isso. Cada imagem responde a um medo."
+    },
+    {
+      "id": "sl-d01-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "O Senhor é minha luz.",
+      "referencia": "Salmos 27",
+      "resumo": "Davi declara que o Senhor é sua luz e salvação, e por isso não precisa temer. Mesmo cercado, deseja acima de tudo estar na presença de Deus. E termina aconselhando a si mesmo: espere no Senhor, seja forte e tenha coragem.",
+      "observar": "Coragem não é ausência de medo. É esperar em Deus com ele."
+    },
+    {
+      "id": "sl-d01-c06",
+      "tipo": "cristo",
+      "texto": "Jesus disse ser a luz do mundo: quem o segue não anda nas trevas. O medo pode visitar, mas não precisa morar."
+    },
+    {
+      "id": "sl-d01-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que Davi pede no meio do perigo?",
+      "opcoes": [
+        {
+          "texto": "Estar perto de Deus e contemplar a sua bondade.",
+          "correta": true
+        },
+        {
+          "texto": "Que todos os problemas sumam na hora.",
+          "correta": false
+        },
+        {
+          "texto": "Que ninguém perceba o seu medo.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. A presença de Deus vem antes da solução.",
+      "erro": "Releia o card \"Uma coisa só\"."
+    },
+    {
+      "id": "sl-d01-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Qual é o seu maior medo hoje? Experimente dizer devagar: o Senhor é a minha luz. De quem terei medo?"
+    },
+    {
+      "id": "sl-d01-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, tu és a minha luz e a minha fortaleza. Tu conheces os medos que eu carrego. Fica perto de mim e me dá coragem para esperar em ti. Amém."
+    }
+  ]
+}

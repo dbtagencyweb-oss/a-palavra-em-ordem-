@@ -1,0 +1,105 @@
+{
+  "status": "em_revisao",
+  "n": 4,
+  "titulo": "Mortos para o pecado",
+  "passagens": "Romanos 6",
+  "midiaSugerida": {
+    "id": "rm-d04",
+    "prompt": "a calm river at sunrise with gentle ripples spreading from the center of the water, light breaking through morning mist, no people"
+  },
+  "cards": [
+    {
+      "id": "rm-d04-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Uma pergunta perigosa.",
+      "paragrafos": [
+        "Se a graça é tão grande, então posso continuar pecando à vontade?",
+        "Paulo responde com firmeza: de jeito nenhum. E explica por quê."
+      ]
+    },
+    {
+      "id": "rm-d04-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O batismo conta uma história.",
+      "paragrafos": [
+        "Paulo usa o batismo como imagem: quem está unido a Cristo morreu com Ele para a vida antiga e ressuscitou com Ele para uma vida nova.",
+        "O velho jeito de viver não é mais o dono da casa."
+      ]
+    },
+    {
+      "id": "rm-d04-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Mudança de senhor.",
+      "paragrafos": [
+        "Antes, o pecado mandava. Agora, quem crê pertence a Deus.",
+        "Por isso Paulo diz: considerem-se mortos para o pecado e vivos para Deus. Não é fingir. É viver de acordo com o que Deus já fez."
+      ]
+    },
+    {
+      "id": "rm-d04-c04",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "A história do batismo.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Unidos a Cristo",
+        "Mortos para a vida antiga",
+        "Sepultados com Ele",
+        "Ressuscitados para uma vida nova"
+      ],
+      "acerto": "Isso. A vida nova vem depois de deixar a antiga.",
+      "erro": "Quase. Primeiro a morte para o velho, depois a vida nova."
+    },
+    {
+      "id": "rm-d04-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Vivos para Deus.",
+      "referencia": "Romanos 6:1-14",
+      "resumo": "Quem foi unido a Cristo na morte também está unido a Ele na ressurreição. Por isso o pecado não deve mais reinar em quem crê, que agora pode se oferecer a Deus como alguém que voltou da morte para a vida.",
+      "observar": "A graça não é licença para pecar. É a força para viver diferente."
+    },
+    {
+      "id": "rm-d04-c06",
+      "tipo": "cristo",
+      "texto": "Jesus morreu uma vez por todas e agora vive para Deus. Quem está nele participa dessa vitória: a morte não tem mais a última palavra."
+    },
+    {
+      "id": "rm-d04-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Para Paulo, a graça significa que…",
+      "opcoes": [
+        {
+          "texto": "Estamos livres do domínio do pecado para viver para Deus.",
+          "correta": true
+        },
+        {
+          "texto": "Podemos pecar à vontade, porque seremos perdoados.",
+          "correta": false
+        },
+        {
+          "texto": "Precisamos ganhar a salvação com esforço.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. A graça liberta, não dá licença.",
+      "erro": "Releia o card \"Mudança de senhor\"."
+    },
+    {
+      "id": "rm-d04-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Que hábito antigo ainda tenta mandar na sua vida? Como seria tratá-lo como algo que já não é o seu dono?"
+    },
+    {
+      "id": "rm-d04-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor Jesus, obrigado porque morri contigo para o velho e vivo contigo para o novo. Quando o pecado tentar mandar em mim, lembra-me de quem eu sou agora. Amém."
+    }
+  ]
+}

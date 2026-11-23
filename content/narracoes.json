@@ -1,0 +1,21 @@
+{
+  "_sobre": "Narrações em voz (docs/05-narracoes.md). Texto exatamente como no roteiro. Arquivo: public/audio/narr/<id>.mp3 (ou .wav). status: pronto quando o arquivo existe, pendente até lá. npm run check:media confere.",
+  "itens": [
+    { "id": "narr-intro-luz", "voz": "principal", "onde": { "tela": "abertura" }, "status": "pronto", "texto": "Uma lâmpada se acende. Um caminho aparece. Esta é a história inteira da Bíblia. Em ordem." },
+    { "id": "narr-d1-labirinto", "voz": "principal", "onde": { "card": "d1-c01" }, "status": "pronto", "texto": "Muita gente ama a Bíblia e se perde nela. Não é falta de fé. É falta de mapa." },
+    { "id": "narr-d2-criacao", "voz": "principal", "onde": { "card": "d2-c01" }, "status": "pronto", "texto": "No princípio, tudo era escuro e sem forma. Então Deus disse: haja luz. E houve luz." },
+    { "id": "narr-d3-estrelas", "voz": "principal", "onde": { "card": "d3-c03" }, "status": "pronto", "texto": "Deus levou Abraão para fora da tenda e disse: olhe para o céu e conte as estrelas, se puder. Assim será a sua descendência." },
+    { "id": "narr-d4-sarca", "voz": "principal", "onde": { "card": "d4-c02" }, "status": "pronto", "texto": "No deserto, Moisés viu uma sarça que ardia e não se consumia. Ali, Deus o chamou pelo nome." },
+    { "id": "narr-d4-mar-aberto", "voz": "principal", "onde": { "card": "d4-c04" }, "status": "pronto", "texto": "À frente, o mar. Atrás, o exército do faraó. E Deus abriu um caminho onde não havia caminho." },
+    { "id": "narr-d5-templo", "voz": "principal", "onde": { "card": "d5-c03" }, "status": "pronto", "texto": "Salomão construiu o templo em Jerusalém. Por séculos, ali o povo buscou a presença de Deus." },
+    { "id": "narr-d6-sinagoga", "voz": "principal", "onde": { "card": "d6-c06" }, "status": "pronto", "texto": "Em Nazaré, Jesus abriu o livro do profeta Isaías, leu diante de todos e disse: hoje isto se cumpriu." },
+    { "id": "narr-d6-tumulo", "voz": "principal", "onde": { "card": "d6-c03" }, "status": "pronto", "texto": "No primeiro dia da semana, bem cedo, elas foram ao túmulo. A pedra tinha sido removida. Ele não está aqui. Ressuscitou." },
+    { "id": "narr-d7-pentecostes", "voz": "principal", "onde": { "card": "d7-c02" }, "status": "pronto", "texto": "De repente, veio do céu um som como de um vento forte. O Espírito encheu cada um deles. Ali, a igreja nasceu." },
+    { "id": "narr-d7-cidade", "voz": "principal", "onde": { "card": "d7-c06" }, "status": "pronto", "texto": "No fim, Deus fará novas todas as coisas. Não haverá mais lágrima nem dor. E a árvore da vida estará de novo ao nosso alcance." },
+    { "id": "narr-conclusao", "voz": "principal", "onde": { "tela": "conclusao" }, "status": "pronto", "texto": "Lâmpada para os meus pés é a tua palavra. Até amanhã." },
+    { "id": "narr-conclusao-final", "voz": "principal", "onde": { "tela": "conclusao-final" }, "status": "pronto", "texto": "Você viu a história inteira. Do Éden à Nova Jerusalém. Agora, cada livro que você abrir tem o seu lugar." },
+    { "id": "narr-lp-hero", "voz": "principal", "onde": { "lp": "hero" }, "status": "pronto", "texto": "Você ama a Palavra. Só nunca recebeu o mapa." },
+    { "id": "narr-lp-versiculo", "voz": "principal", "onde": { "lp": "versiculo" }, "status": "pronto", "texto": "Dois discípulos caminhavam sem entender. Então Jesus abriu as Escrituras para eles. E depois disseram: não ardia o nosso coração?" },
+    { "id": "narr-lp-fechamento", "voz": "principal", "onde": { "lp": "fechamento" }, "status": "pronto", "texto": "Lâmpada para os meus pés é a tua palavra. Hoje pode ser o seu Dia 1." }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "status": "em_revisao",
+  "n": 4,
+  "titulo": "Selos, trombetas e taças: como ler os símbolos",
+  "passagens": "Apocalipse 6; 8–9; 16",
+  "midiaSugerida": {
+    "id": "ap-d04",
+    "prompt": "an ancient scroll with seven broken wax seals lying on a stone table, beside it a ram horn trumpet and a golden bowl, dramatic warm light, no people"
+  },
+  "cards": [
+    {
+      "id": "ap-d04-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "A parte que mais assusta.",
+      "paragrafos": [
+        "Selos abertos, trombetas tocando, taças derramadas. Para muita gente, aqui o livro fica confuso.",
+        "Com algumas chaves de leitura, ele fica mais claro."
+      ]
+    },
+    {
+      "id": "ap-d04-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Chave 1: imagens antigas.",
+      "paragrafos": [
+        "Muitas imagens já apareciam em Êxodo, Daniel, Ezequiel e Zacarias. As pragas das trombetas lembram as pragas do Egito.",
+        "Quem conhece o Antigo Testamento lê o Apocalipse com mais tranquilidade."
+      ]
+    },
+    {
+      "id": "ap-d04-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Chave 2: os números falam.",
+      "paragrafos": [
+        "Sete costuma indicar plenitude. Doze lembra o povo de Deus. Os números comunicam mais do que contam.",
+        "Sobre selos, trombetas e taças, há quem leia uma sequência de eventos e quem veja a mesma história contada várias vezes, cada vez mais intensa."
+      ]
+    },
+    {
+      "id": "ap-d04-c04",
+      "tipo": "movimentos",
+      "rotulo": "Entenda",
+      "titulo": "Quatro formas de ler o livro.",
+      "itens": [
+        {
+          "nome": "Futurista",
+          "texto": "A maior parte ainda vai acontecer, perto da volta de Cristo."
+        },
+        {
+          "nome": "Preterista",
+          "texto": "Muito se cumpriu no primeiro século, nas perseguições e na queda de Jerusalém."
+        },
+        {
+          "nome": "Historicista",
+          "texto": "O livro descreve a história da igreja, do primeiro século até o fim."
+        },
+        {
+          "nome": "Idealista",
+          "texto": "As imagens mostram a luta entre o bem e o mal em todas as épocas."
+        }
+      ]
+    },
+    {
+      "id": "ap-d04-c05",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "A linguagem do Apocalipse.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "Sete",
+          "b": "Plenitude, algo completo"
+        },
+        {
+          "a": "Doze",
+          "b": "O povo de Deus"
+        },
+        {
+          "a": "As pragas",
+          "b": "Lembram o Egito do Êxodo"
+        },
+        {
+          "a": "As trombetas",
+          "b": "Avisos que chamam ao arrependimento"
+        }
+      ],
+      "acerto": "Isso. Os símbolos são uma linguagem."
+    },
+    {
+      "id": "ap-d04-c06",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Até quando?",
+      "referencia": "Apocalipse 6:9-11",
+      "resumo": "Ao ser aberto o quinto selo, João vê os que morreram por causa da fé clamando a Deus por justiça. Eles recebem vestes brancas e ouvem que devem descansar mais um pouco.",
+      "observar": "No meio dos juízos, o livro mostra que Deus ouve quem sofre e não esquece nenhum deles."
+    },
+    {
+      "id": "ap-d04-c07",
+      "tipo": "cristo",
+      "texto": "Quem abre os selos é o Cordeiro. Mesmo nas cenas mais difíceis, a história não está fora de controle: está nas mãos de Jesus."
+    },
+    {
+      "id": "ap-d04-c08",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Qual destas é uma boa chave para ler os símbolos?",
+      "opcoes": [
+        {
+          "texto": "Procurar de onde a imagem vem no Antigo Testamento.",
+          "correta": true
+        },
+        {
+          "texto": "Ligar cada símbolo a uma notícia de hoje.",
+          "correta": false
+        },
+        {
+          "texto": "Ler tudo ao pé da letra, sem exceção.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. A Bíblia ajuda a explicar a Bíblia.",
+      "erro": "Releia o card \"Chave 1: imagens antigas\"."
+    },
+    {
+      "id": "ap-d04-c09",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Qual dessas chaves de leitura ajudou mais você? O que muda saber que é o Cordeiro quem abre os selos?"
+    },
+    {
+      "id": "ap-d04-c10",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, há coisas neste livro que ainda não entendo. Dá-me humildade e paz para ler. Obrigado porque tu ouves o clamor de quem sofre. Amém."
+    }
+  ]
+}

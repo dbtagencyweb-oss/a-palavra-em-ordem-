@@ -1,0 +1,127 @@
+{
+  "status": "em_revisao",
+  "n": 6,
+  "titulo": "Os magos e a fuga para o Egito",
+  "passagens": "Mateus 2; Lucas 2:21-40",
+  "fase": "Nascimento",
+  "midiaSugerida": {
+    "id": "je-d06-magos",
+    "prompt": "A small caravan of travelers on camels crossing a vast desert at night under one very bright star, seen from behind and small in the frame. Deep blue night, warm starlight."
+  },
+  "cards": [
+    {
+      "id": "je-d06-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Enquanto isso, longe dali.",
+      "paragrafos": [
+        "Em Belém, pastores. No templo, dois idosos esperando. E, em algum lugar do Oriente, estudiosos olhando para o céu.",
+        "Todos vão encontrar o mesmo menino."
+      ]
+    },
+    {
+      "id": "je-d06-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "No templo: Simeão e Ana.",
+      "paragrafos": [
+        "Com cerca de 40 dias, Jesus é levado ao templo para ser apresentado, como mandava a lei. Ali, um homem idoso, Simeão, toma o menino nos braços.",
+        "Ele diz que já pode partir em paz: viu a salvação, luz para as nações. A profetisa Ana também reconhece quem Ele é."
+      ]
+    },
+    {
+      "id": "je-d06-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Os magos.",
+      "paragrafos": [
+        "Magos do Oriente seguem uma estrela até Jerusalém e perguntam pelo rei dos judeus que tinha nascido. O rei Herodes fica perturbado.",
+        "Eles encontram o menino numa casa, em Belém, e oferecem ouro, incenso e mirra. Provavelmente, já algum tempo depois do nascimento."
+      ]
+    },
+    {
+      "id": "je-d06-c04",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "A fuga para o Egito.",
+      "paragrafos": [
+        "Herodes vê no menino um rival e tenta eliminá-lo. Avisado em sonho, José foge com Maria e Jesus para o Egito.",
+        "Depois da morte de Herodes, a família volta e vai morar em Nazaré."
+      ]
+    },
+    {
+      "id": "je-d06-c05",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "Quem é quem?",
+      "instrucao": "Toque num nome e depois na sua atitude.",
+      "pares": [
+        {
+          "a": "Simeão",
+          "b": "Viu a salvação e pôde partir em paz"
+        },
+        {
+          "a": "Os magos",
+          "b": "Vieram de longe para adorar"
+        },
+        {
+          "a": "Herodes",
+          "b": "Viu um rival e quis destruí-lo"
+        },
+        {
+          "a": "José",
+          "b": "Obedeceu ao sonho e protegeu a família"
+        }
+      ],
+      "acerto": "Isso. Diante do mesmo menino, adoração ou medo de perder o trono."
+    },
+    {
+      "id": "je-d06-c06",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Vimos a sua estrela.",
+      "referencia": "Mateus 2:1-15",
+      "resumo": "Os magos seguem a estrela, passam por Herodes, encontram Jesus em Belém e voltam por outro caminho. José leva a família para o Egito.",
+      "observar": "Os magos encontram o menino numa casa, não no estábulo. O presépio junta numa cena só momentos que aconteceram em dias diferentes."
+    },
+    {
+      "id": "je-d06-c07",
+      "tipo": "cristo",
+      "texto": "Mateus lembra o profeta: \"do Egito chamei o meu filho\". Jesus refaz o caminho de Israel, que desceu ao Egito e foi chamado de volta no Êxodo, o Dia 4 do mapa."
+    },
+    {
+      "id": "je-d06-c08",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Quantos magos a Bíblia diz que vieram?",
+      "opcoes": [
+        {
+          "texto": "O texto não diz.",
+          "correta": true
+        },
+        {
+          "texto": "Três.",
+          "correta": false
+        },
+        {
+          "texto": "Doze.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Foram três presentes, e daí veio a tradição dos três reis.",
+      "erro": "Releia com atenção: o número de presentes é dito, o de magos não."
+    },
+    {
+      "id": "je-d06-c09",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Os magos fizeram uma longa viagem para encontrar Jesus. O que você está disposto a deixar para buscá-lo?"
+    },
+    {
+      "id": "je-d06-c10",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, como os magos, eu quero te encontrar e te adorar. Guia os meus passos, mesmo quando o caminho for longo. Amém."
+    }
+  ]
+}

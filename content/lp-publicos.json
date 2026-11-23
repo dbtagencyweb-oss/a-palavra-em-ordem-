@@ -1,0 +1,104 @@
+{
+  "_sobre": "Textos da landing page por público. 'padrao' = sem parâmetro na URL. ?p=inicio ou ?p=crente abre a versão correspondente e esconde o seletor. Trechos entre *asteriscos* recebem o destaque dourado (Fraunces itálico, degradê #F1E3C4→#B8893A, traço desenhado e brilho único). Só 'Bíblia' leva destaque, uma vez por título.",
+  "versao": 1,
+
+  "seletor": {
+    "titulo": "Escolha o seu ponto de partida",
+    "subtitulo": "O caminho se ajusta a você.",
+    "promessaGeral": "Em 7 dias, você vê a Bíblia inteira em ordem.",
+    "opcoes": [
+      { "id": "inicio", "rotulo": "Estou conhecendo a Bíblia", "apoio": "Quero entender do começo, sem complicação." },
+      { "id": "crente", "rotulo": "Já leio, mas me perco", "apoio": "Quero constância e entender a ordem das coisas." }
+    ],
+    "storageKey": "lp_publico"
+  },
+
+  "publicos": {
+    "padrao": {
+      "eyebrow": "5 MINUTOS POR DIA · EM ORDEM",
+      "titulo": "Nunca leu a *Bíblia*, ou já tentou e parou no meio?",
+      "subtitulo": "A Bíblia não é um labirinto. Você só nunca recebeu o mapa.",
+      "cta": "Começar os 7 dias grátis",
+      "microcopy": "Grátis, sem cartão. Leva 5 minutos por dia.",
+      "dores": {
+        "titulo": "Talvez você se reconheça aqui",
+        "itens": [
+          "Abriu a Bíblia e não soube por onde começar.",
+          "Começou a ler do início e parou em algum lugar no meio.",
+          "Lê um trecho aqui e outro ali, mas não consegue juntar a história."
+        ]
+      },
+      "objecao": {
+        "pergunta": "E se eu não tiver constância?",
+        "resposta": "Você não precisa ser disciplinado para começar. São 5 minutos por dia, e se perder um dia, a sua Graça da semana segura a sua lâmpada acesa."
+      },
+      "pixelPublico": "padrao"
+    },
+
+    "inicio": {
+      "eyebrow": "PARA QUEM ESTÁ COMEÇANDO",
+      "titulo": "A *Bíblia* explicada do começo, sem complicação.",
+      "subtitulo": "A história inteira, na ordem em que aconteceu, em 5 minutos por dia. Sem linguagem difícil e sem precisar saber nada antes.",
+      "cta": "Começar do começo, grátis",
+      "microcopy": "Grátis, sem cartão. Você decide se quer continuar.",
+      "dores": {
+        "titulo": "Se você sente algo assim, este é o seu lugar",
+        "itens": [
+          "Você tem curiosidade, mas não sabe por onde começar.",
+          "Abriu a Bíblia e ela pareceu um livro difícil, cheio de nomes.",
+          "Quer entender por conta própria, no seu ritmo, sem pressão."
+        ]
+      },
+      "promessa": "Em 7 dias, você vai ver a história inteira da Bíblia, do começo ao fim, de um jeito simples.",
+      "objecao": {
+        "pergunta": "É de alguma igreja? Vão me cobrar alguma coisa?",
+        "resposta": "Não é de nenhuma igreja específica. Os 7 dias são grátis e sem cartão. No fim, você decide se quer continuar."
+      },
+      "glossarioLeve": true,
+      "pixelPublico": "inicio"
+    },
+
+    "crente": {
+      "eyebrow": "PARA QUEM JÁ LÊ, MAS SE PERDE",
+      "titulo": "A *Bíblia* não é um labirinto. Você só nunca recebeu o mapa.",
+      "subtitulo": "Em 5 minutos por dia, você entende onde cada livro se encaixa e finalmente lê com constância.",
+      "cta": "Receber o mapa, grátis",
+      "microcopy": "Grátis, sem cartão. 7 dias para ver a Bíblia inteira em ordem.",
+      "dores": {
+        "titulo": "Não é falta de fé. É falta de mapa.",
+        "itens": [
+          "Já começou a ler a Bíblia inteira e parou no meio.",
+          "Lê, mas não sabe quem veio antes de quem.",
+          "A correria consome o seu tempo com Deus."
+        ]
+      },
+      "promessa": "Em 7 dias, você entende a sequência de Gênesis a Apocalipse e vê Cristo do começo ao fim.",
+      "objecao": {
+        "pergunta": "Não é só mais um plano de leitura que eu vou largar?",
+        "resposta": "Não é mais um plano de leitura: é um caminho que você vê crescer, com a lâmpada acesa a cada dia. Lições curtas, com atividades, e um limite diário que respeita o seu ritmo."
+      },
+      "glossarioLeve": false,
+      "pixelPublico": "crente"
+    }
+  },
+
+  "diagnosticoApp": {
+    "_sobre": "Opção nova no diagnóstico do app. Vem pré-selecionada quando a UTM traz publico=inicio.",
+    "novaOpcao": {
+      "id": "comecando",
+      "rotulo": "Estou começando a conhecer a Bíblia agora",
+      "recomendacao": {
+        "titulo": "Você está no lugar certo para começar.",
+        "texto": "Não precisa saber nada antes. Em 7 dias, você vai ver a história inteira da Bíblia, do começo ao fim, de um jeito simples."
+      }
+    },
+    "mapaUtm": { "inicio": "comecando", "crente": null, "padrao": null }
+  },
+
+  "regras": [
+    "Não afirmar nem insinuar a fé de quem lê (política da Meta): falar da Bíblia, não da crença da pessoa.",
+    "Na versão 'inicio', evitar jargão de igreja: 'irmão', 'Palavra' (no sentido de Bíblia), 'edificar', 'ungido'.",
+    "Sem escassez falsa, sem depoimentos inventados, sem promessas espirituais.",
+    "Não reproduzir trechos de traduções da Bíblia; citações só muito curtas e com referência."
+  ]
+}

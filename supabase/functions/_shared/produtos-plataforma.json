@@ -1,0 +1,41 @@
+{
+  "nota": "Ligue cada produto/oferta da plataforma ao código do app (docs/06). Troque as chaves PREENCHER_... pelos ids reais. Uma oferta (código de oferta ou de plano) vale mais que o id do produto, então um mesmo produto pode ter oferta anual e mensal. Depois de editar, rode npm run config:sync antes de publicar a função de pagamento. Estudos por livro: o preço de Fundador (30% menos) é uma segunda oferta do mesmo produto; as duas dão o mesmo estudo.",
+  "hotmart": {
+    "produtos": {
+      "PREENCHER_ID_PRODUTO_FUNDADOR": "fundador",
+      "PREENCHER_ID_PRODUTO_ANUAL": "anual",
+      "PREENCHER_ID_PRODUTO_MAPA_IMPRESSO": "mapa-impresso",
+      "PREENCHER_ID_PRODUTO_FAMILIA": "familia",
+      "PREENCHER_ID_PRODUTO_VITALICIO": "vitalicio",
+      "PREENCHER_ID_PRODUTO_AUDIO": "audio",
+      "PREENCHER_ID_PRODUTO_ESTUDO_ROMANOS": "estudo-romanos",
+      "PREENCHER_ID_PRODUTO_ESTUDO_SALMOS": "estudo-salmos",
+      "PREENCHER_ID_PRODUTO_ESTUDO_APOCALIPSE": "estudo-apocalipse",
+      "PREENCHER_ID_PRODUTO_IGREJA_30": "igreja",
+      "PREENCHER_ID_PRODUTO_IGREJA_100": "igreja-100"
+    },
+    "ofertas": {
+      "PREENCHER_CODIGO_OFERTA_MENSAL": "mensal",
+      "PREENCHER_CODIGO_OFERTA_ESTUDO_ROMANOS_FUNDADOR": "estudo-romanos",
+      "PREENCHER_CODIGO_OFERTA_ESTUDO_SALMOS_FUNDADOR": "estudo-salmos",
+      "PREENCHER_CODIGO_OFERTA_ESTUDO_APOCALIPSE_FUNDADOR": "estudo-apocalipse"
+    }
+  },
+  "kiwify": {
+    "produtos": {
+      "PREENCHER_ID_PRODUTO_FUNDADOR": "fundador",
+      "PREENCHER_ID_PRODUTO_ANUAL": "anual",
+      "PREENCHER_ID_PRODUTO_MAPA_IMPRESSO": "mapa-impresso",
+      "PREENCHER_ID_PRODUTO_FAMILIA": "familia",
+      "PREENCHER_ID_PRODUTO_VITALICIO": "vitalicio",
+      "PREENCHER_ID_PRODUTO_AUDIO": "audio",
+      "PREENCHER_ID_PRODUTO_MENSAL": "mensal",
+      "PREENCHER_ID_PRODUTO_ESTUDO_ROMANOS": "estudo-romanos",
+      "PREENCHER_ID_PRODUTO_ESTUDO_SALMOS": "estudo-salmos",
+      "PREENCHER_ID_PRODUTO_ESTUDO_APOCALIPSE": "estudo-apocalipse",
+      "PREENCHER_ID_PRODUTO_IGREJA_30": "igreja",
+      "PREENCHER_ID_PRODUTO_IGREJA_100": "igreja-100"
+    },
+    "ofertas": {}
+  }
+}

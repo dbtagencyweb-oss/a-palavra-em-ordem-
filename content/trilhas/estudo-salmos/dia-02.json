@@ -1,0 +1,105 @@
+{
+  "status": "em_revisao",
+  "n": 2,
+  "titulo": "Quando me sinto sozinho",
+  "passagens": "Salmos 13",
+  "midiaSugerida": {
+    "id": "sl-d02",
+    "prompt": "a lone figure seen from far behind sitting on a rock at dusk overlooking an empty desert valley, the first star appearing in the sky"
+  },
+  "cards": [
+    {
+      "id": "sl-d02-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Até quando?",
+      "paragrafos": [
+        "O Salmo 13 começa com quatro perguntas seguidas: até quando, Senhor?",
+        "Davi se sente esquecido. E a Bíblia guarda essa oração para nos ensinar que também podemos orar assim."
+      ]
+    },
+    {
+      "id": "sl-d02-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Uma oração honesta.",
+      "paragrafos": [
+        "Davi não finge. Diz que sente Deus escondido, que carrega tristeza o dia inteiro e que o inimigo parece vencer.",
+        "Deus não se ofende com a sinceridade. A queixa feita a Ele já é um ato de fé."
+      ]
+    },
+    {
+      "id": "sl-d02-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "A virada.",
+      "paragrafos": [
+        "No fim do salmo, nada mudou por fora. Mas Davi decide: eu confio no teu amor.",
+        "Ele lembra o que Deus já fez e canta, mesmo antes de a resposta chegar."
+      ]
+    },
+    {
+      "id": "sl-d02-c04",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "O caminho do Salmo 13.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Queixa: até quando?",
+        "Pedido: olha para mim e responde",
+        "Confiança: eu confio no teu amor",
+        "Louvor: cantarei ao Senhor"
+      ],
+      "acerto": "Isso. Da queixa ao louvor em seis versículos.",
+      "erro": "Quase. Davi começa reclamando e termina cantando."
+    },
+    {
+      "id": "sl-d02-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Até quando, Senhor?",
+      "referencia": "Salmos 13",
+      "resumo": "Davi pergunta a Deus quanto tempo ainda vai se sentir esquecido e pede que Ele responda. Então declara que confia no amor fiel de Deus e que vai cantar, porque o Senhor tem sido bom para ele.",
+      "observar": "A confiança vem antes da mudança das circunstâncias."
+    },
+    {
+      "id": "sl-d02-c06",
+      "tipo": "cristo",
+      "texto": "Na cruz, Jesus também orou com palavras de abandono, tiradas de outro salmo. Ele conhece a solidão por dentro, e por isso nunca nos deixa sozinhos nela."
+    },
+    {
+      "id": "sl-d02-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que muda do começo ao fim do Salmo 13?",
+      "opcoes": [
+        {
+          "texto": "A atitude de Davi: da queixa para a confiança.",
+          "correta": true
+        },
+        {
+          "texto": "Os inimigos de Davi desaparecem.",
+          "correta": false
+        },
+        {
+          "texto": "Davi para de orar.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. A situação era a mesma; o coração, não.",
+      "erro": "Releia o card \"A virada\"."
+    },
+    {
+      "id": "sl-d02-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Você tem algum \"até quando\" guardado? Que tal dizê-lo a Deus com sinceridade, como Davi fez?"
+    },
+    {
+      "id": "sl-d02-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, às vezes me sinto esquecido e sozinho. Mesmo assim, escolho confiar no teu amor. Lembra-me do que já fizeste por mim e põe um cântico no meu coração. Amém."
+    }
+  ]
+}

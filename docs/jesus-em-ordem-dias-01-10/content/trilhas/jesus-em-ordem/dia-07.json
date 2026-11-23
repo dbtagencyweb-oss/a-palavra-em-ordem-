@@ -1,0 +1,117 @@
+{
+  "status": "em_revisao",
+  "n": 7,
+  "titulo": "Aos 12 anos, no templo",
+  "passagens": "Lucas 2:41-52",
+  "fase": "Preparação",
+  "midiaSugerida": {
+    "id": "je-d07-templo",
+    "prompt": "A boy of about twelve, seen from behind, sitting among elderly teachers in long robes in the sunlit stone courts of an ancient temple, columns and warm light. The boy's face is not visible."
+  },
+  "cards": [
+    {
+      "id": "je-d07-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Uma única cena da adolescência.",
+      "paragrafos": [
+        "Entre o bebê em Belém e o homem no rio Jordão, os Evangelhos guardam só uma cena.",
+        "Ela acontece em Jerusalém, durante a Páscoa, quando Jesus tinha 12 anos."
+      ]
+    },
+    {
+      "id": "je-d07-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Três dias de procura.",
+      "paragrafos": [
+        "Depois da festa, a caravana volta para Nazaré. Só depois de um dia de viagem José e Maria percebem que Jesus não está com eles.",
+        "Voltam a Jerusalém e passam três dias procurando. Encontram o menino no templo, ouvindo os mestres e fazendo perguntas. Todos se admiram com as respostas dele."
+      ]
+    },
+    {
+      "id": "je-d07-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "A casa de meu Pai.",
+      "paragrafos": [
+        "Maria pergunta por que ele fez aquilo. Jesus responde: vocês não sabiam que eu devia estar na casa de meu Pai?",
+        "São as primeiras palavras dele registradas nos Evangelhos. Depois, Ele volta com os pais e é obediente a eles."
+      ]
+    },
+    {
+      "id": "je-d07-c04",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Os anos escondidos.",
+      "paragrafos": [
+        "Dos 12 até cerca dos 30 anos, quase nada é contado. Sabemos que Jesus crescia em sabedoria, em estatura e em graça, e que trabalhava como carpinteiro.",
+        "Deus também está no comum, no trabalho e na rotina."
+      ]
+    },
+    {
+      "id": "je-d07-c05",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "Coloque a viagem em ordem.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "A viagem para a Páscoa",
+        "Os pais voltam sem perceber",
+        "Três dias de procura",
+        "Encontrado no templo",
+        "A volta para Nazaré"
+      ],
+      "acerto": "Isso. Uma cena só, cheia de significado.",
+      "erro": "Quase. Primeiro os pais voltam, depois percebem e procuram."
+    },
+    {
+      "id": "je-d07-c06",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Ouvindo e perguntando.",
+      "referencia": "Lucas 2:41-52",
+      "resumo": "Aos 12 anos, Jesus fica no templo de Jerusalém conversando com os mestres. Os pais o encontram depois de três dias, e Ele volta com eles para Nazaré.",
+      "observar": "Antes de ensinar, Jesus ouve e pergunta. Até Ele cresceu aprendendo."
+    },
+    {
+      "id": "je-d07-c07",
+      "tipo": "cristo",
+      "texto": "Ao chamar o templo de \"casa de meu Pai\", Jesus mostra, ainda menino, a relação única que tem com Deus. Anos depois, Ele dirá que o próprio corpo é o templo."
+    },
+    {
+      "id": "je-d07-c08",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Onde José e Maria encontraram Jesus?",
+      "opcoes": [
+        {
+          "texto": "No templo, conversando com os mestres.",
+          "correta": true
+        },
+        {
+          "texto": "Na caravana, com os parentes.",
+          "correta": false
+        },
+        {
+          "texto": "Em casa, em Nazaré.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Na casa de seu Pai.",
+      "erro": "Não é isso. Releia a resposta de Jesus à mãe."
+    },
+    {
+      "id": "je-d07-c09",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Jesus passou anos numa vida comum antes do ministério. Como você vê Deus nas partes comuns da sua rotina?"
+    },
+    {
+      "id": "je-d07-c10",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Pai, ensina-me a crescer como Jesus cresceu: em sabedoria, em graça e no meio da vida comum. Que o meu trabalho de hoje também seja para Ti. Amém."
+    }
+  ]
+}

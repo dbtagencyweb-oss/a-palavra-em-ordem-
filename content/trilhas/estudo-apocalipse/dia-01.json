@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 1,
+  "titulo": "Uma carta para igrejas que sofriam",
+  "passagens": "Apocalipse 1",
+  "midiaSugerida": {
+    "id": "ap-d01",
+    "prompt": "a rocky island in the Aegean sea at sunrise, a small cave entrance glowing with lamplight, calm sea, hopeful light, no people"
+  },
+  "cards": [
+    {
+      "id": "ap-d01-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Respire fundo.",
+      "paragrafos": [
+        "Muita gente tem medo do Apocalipse. Mas ele foi escrito para consolar, não para assustar.",
+        "A palavra \"apocalipse\" significa revelação: tirar o véu e mostrar o que estava escondido."
+      ]
+    },
+    {
+      "id": "ap-d01-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Quem escreveu e para quem.",
+      "paragrafos": [
+        "João estava exilado na ilha de Patmos por causa da fé. As igrejas da Ásia Menor eram pressionadas e perseguidas.",
+        "O livro é uma carta para elas, com uma bênção prometida a quem lê, ouve e guarda o que está escrito."
+      ]
+    },
+    {
+      "id": "ap-d01-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Um livro de imagens.",
+      "paragrafos": [
+        "O Apocalipse fala por imagens: candelabros, estrelas, animais, números.",
+        "Ao longo da história, os cristãos leram essas imagens de formas diferentes. Neste estudo você vai conhecer as principais leituras, sem precisar escolher uma para entender a mensagem central."
+      ]
+    },
+    {
+      "id": "ap-d01-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "Para começar o livro.",
+      "instrucao": "Toque num item e depois no que combina com ele.",
+      "pares": [
+        {
+          "a": "Apocalipse",
+          "b": "Revelação, tirar o véu"
+        },
+        {
+          "a": "Patmos",
+          "b": "Ilha onde João estava exilado"
+        },
+        {
+          "a": "As sete igrejas",
+          "b": "Primeiros leitores da carta"
+        },
+        {
+          "a": "Símbolos",
+          "b": "Imagens que comunicam verdades"
+        }
+      ],
+      "acerto": "Isso. Esse é o ponto de partida."
+    },
+    {
+      "id": "ap-d01-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Não tenha medo.",
+      "referencia": "Apocalipse 1:4-20",
+      "resumo": "João saúda as igrejas em nome de Deus e de Jesus, a testemunha fiel. Depois vê Cristo glorioso entre sete candelabros, que lhe diz: não tenha medo, eu sou o primeiro e o último, e tenho as chaves da morte.",
+      "observar": "As primeiras palavras de Jesus a João no livro são: não tenha medo."
+    },
+    {
+      "id": "ap-d01-c06",
+      "tipo": "cristo",
+      "texto": "O Apocalipse é, antes de tudo, a revelação de Jesus Cristo. Não é um livro sobre o anticristo; é um livro sobre o Cristo que vence."
+    },
+    {
+      "id": "ap-d01-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Por que o Apocalipse foi escrito?",
+      "opcoes": [
+        {
+          "texto": "Para consolar e fortalecer igrejas que sofriam.",
+          "correta": true
+        },
+        {
+          "texto": "Para marcar a data exata do fim do mundo.",
+          "correta": false
+        },
+        {
+          "texto": "Para assustar quem não crê.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. É um livro de esperança.",
+      "erro": "Releia o card \"Quem escreveu e para quem\"."
+    },
+    {
+      "id": "ap-d01-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "O que você sente quando ouve falar do Apocalipse? Como seria lê-lo ouvindo primeiro a frase: não tenha medo?"
+    },
+    {
+      "id": "ap-d01-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor Jesus, tu és o primeiro e o último. Tira de mim o medo e abre os meus olhos para ver a tua vitória neste livro. Amém."
+    }
+  ]
+}

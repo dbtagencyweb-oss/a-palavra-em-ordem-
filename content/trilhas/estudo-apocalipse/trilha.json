@@ -1,0 +1,56 @@
+{
+  "id": "estudo-apocalipse",
+  "titulo": "Apocalipse sem medo",
+  "subtitulo": "O último livro da Bíblia, lido com calma, em 8 lições",
+  "descricao": "Um livro escrito para consolar igrejas que sofriam, não para assustar. Você vai entender como ler os símbolos, conhecer as principais formas de interpretar o fim e terminar onde o livro termina: todas as coisas novas.",
+  "livro": "ap",
+  "revisao_pastoral": false,
+  "orientacao": "O Apocalipse divide as igrejas. Apresente as principais leituras (por exemplo, sobre o milênio e a ordem dos eventos finais) sem tomar partido. Só pode ser publicado depois da revisão do pastor: marque revisao_pastoral: true neste arquivo.",
+  "capa": "capa-estudo-apocalipse",
+  "preco": 37,
+  "acesso": [
+    "estudo-apocalipse"
+  ],
+  "formato": "trilha",
+  "totalDias": 8,
+  "conclusao": {
+    "selo": "Selo da esperança",
+    "titulo": "Todas as coisas novas",
+    "mensagem": "Você leu o último livro da Bíblia sem medo. O trono continua ocupado, o Cordeiro já venceu e a história termina em casa: Deus morando com o seu povo, sem lágrimas e sem noite. Viva hoje com essa esperança.",
+    "referencia": "Apocalipse 21:3-5"
+  },
+  "dias": [
+    {
+      "n": 1,
+      "arquivo": "dia-01.json"
+    },
+    {
+      "n": 2,
+      "arquivo": "dia-02.json"
+    },
+    {
+      "n": 3,
+      "arquivo": "dia-03.json"
+    },
+    {
+      "n": 4,
+      "arquivo": "dia-04.json"
+    },
+    {
+      "n": 5,
+      "arquivo": "dia-05.json"
+    },
+    {
+      "n": 6,
+      "arquivo": "dia-06.json"
+    },
+    {
+      "n": 7,
+      "arquivo": "dia-07.json"
+    },
+    {
+      "n": 8,
+      "arquivo": "dia-08.json"
+    }
+  ]
+}

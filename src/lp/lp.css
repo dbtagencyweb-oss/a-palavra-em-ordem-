@@ -1,0 +1,864 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    @apply bg-ink font-sans text-ink antialiased;
+  }
+  :focus-visible {
+    outline: 2.5px solid #e2c580;
+    outline-offset: 3px;
+  }
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* The hero is a size container so its picture layers can cover it like object-fit: cover while
+   keeping the picture's own 768×1376 box (the road overlay shares that box). Layers are taller
+   than the hero (overscan) so the parallax never shows an edge. */
+.lp-hero {
+  container-type: size;
+}
+.lp-cover {
+  position: absolute;
+  left: 50%;
+  top: var(--lp-pos-y, 50%);
+  width: max(100cqw, calc(112cqh * 768 / 1376));
+  aspect-ratio: 768 / 1376;
+  transform: translate(-50%, calc(var(--lp-pos-y, 50%) * -1));
+}
+.lp-cover img {
+  display: block;
+  object-fit: cover;
+}
+/* Mobile: keep the lamp in the middle of the screen. Desktop: the road and the lamp, the lamp well clear of the bottom fade. */
+.lp-hero {
+  --lp-pos-y: 46%;
+}
+@media (min-width: 768px) {
+  .lp-hero {
+    --lp-pos-y: 58%;
+  }
+}
+
+/* 2 · A dor. Static (reduced motion): phrases one after the other. Animated: all in one spot. */
+.lp-pain .pain-line + .pain-line {
+  margin-top: 2.2rem;
+}
+.lp-pain .pain-finale-wrap {
+  margin-top: 4rem;
+}
+.lp-pain.is-animated .pain-lines {
+  display: grid;
+}
+.lp-pain.is-animated .pain-line {
+  grid-area: 1 / 1;
+  margin: 0;
+}
+.lp-pain.is-animated .pain-lines,
+.lp-pain.is-animated .pain-finale-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  margin: 0;
+}
+.lp-pain.is-animated .pain-lines {
+  width: min(88vw, 15em);
+}
+.lp-pain.is-animated .pain-finale-wrap {
+  width: min(90vw, 760px);
+}
+.lp-pain.is-animated .pain-dots {
+  display: flex;
+}
+
+/* Purchase buttons: brushed bronze with a warm orange cast (a soft vertical metal gradient, a
+   bright top edge and a darker lip at the bottom). A wide, faint band of light glides across now and
+   then. Reduced motion: no glide. */
+.lp-shine {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff8ee;
+  text-shadow: 0 1px 0 rgba(90, 38, 14, 0.45);
+  background-color: #b8582c;
+  background-image:
+    linear-gradient(180deg, rgba(255, 222, 180, 0.38) 0%, rgba(255, 222, 180, 0.08) 38%, rgba(70, 25, 5, 0) 52%, rgba(70, 25, 5, 0.18) 100%),
+    linear-gradient(100deg, #a94a22 0%, #cf6a35 22%, #e08a52 40%, #c55e2e 58%, #a8461f 78%, #c6622f 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 228, 196, 0.7),
+    inset 0 -2px 0 rgba(90, 34, 10, 0.35),
+    inset 0 0 0 1px rgba(120, 50, 18, 0.35),
+    0 10px 26px -10px rgba(170, 72, 30, 0.75);
+}
+.lp-shine::after {
+  content: '';
+  position: absolute;
+  inset: -50% auto -50% 0;
+  width: 70%;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 226, 190, 0) 25%, rgba(255, 232, 205, 0.22) 50%, rgba(255, 226, 190, 0) 75%, transparent 100%);
+  transform: translateX(-150%) skewX(-16deg);
+  animation: lp-sweep 6.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes lp-sweep {
+  0%,
+  45% {
+    transform: translateX(-150%) skewX(-16deg);
+  }
+  90%,
+  100% {
+    transform: translateX(260%) skewX(-16deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-shine::after {
+    display: none;
+  }
+}
+
+/* ---------- Hero: 3D Bible ---------- */
+/* Placement: mobile, centered over the land between the title and the text; desktop, at the
+   right edge of the content column, close to the text. Hidden on tablets (it would cover the text). */
+.lp-book {
+  position: absolute;
+  left: 50%;
+  top: 41%;
+  translate: -50% 0;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .lp-book {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lp-book {
+    left: auto;
+    top: 50%;
+    right: max(40px, calc((100vw - 1152px) / 2 + 40px));
+    translate: none;
+  }
+}
+
+.bk {
+  --w: 104px; /* one page */
+  --h: 142px;
+  --t: 10px; /* thickness of a page block */
+  width: calc(var(--w) * 2 + 24px);
+  height: calc(var(--h) * 1.25);
+  display: grid;
+  place-items: center;
+}
+@media (min-width: 1024px) {
+  .bk {
+    --w: 170px;
+    --h: 234px;
+    --t: 14px;
+  }
+}
+@media (min-width: 1200px) {
+  .bk {
+    --w: 205px;
+    --h: 282px;
+    --t: 17px;
+  }
+}
+/* Flat on purpose: the light layers are painted as plain layers behind the book instead of
+   living in its 3D space (where they would cut through the tilted pages). */
+.bk-float {
+  position: relative;
+  width: calc(var(--w) * 2);
+  height: var(--h);
+  perspective: 1500px;
+}
+.bk-book {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(50deg) rotateZ(-14deg);
+}
+.bk-book > * {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+/* Boards overhang the pages a little, like a hardcover. */
+.bk-back,
+.bk-cover {
+  left: var(--w);
+  top: -4px;
+  width: calc(var(--w) + 6px);
+  height: calc(var(--h) + 8px);
+}
+.bk-back {
+  transform: translateZ(calc(var(--t) * -1 - 3px));
+  border-radius: 2px 9px 9px 2px;
+  background: linear-gradient(135deg, #2e3346, #171a25);
+  box-shadow: 0 40px 60px -10px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(0, 0, 0, 0.35);
+}
+.bk-cover {
+  transform-origin: left center;
+}
+.bk-cover-out {
+  border-radius: 2px 9px 9px 2px;
+  background:
+    radial-gradient(120% 80% at 30% 20%, rgba(255, 255, 255, 0.07), transparent 60%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.015) 0 2px, transparent 2px 4px),
+    linear-gradient(135deg, #2e3346, #1a1d29);
+  box-shadow: inset 7px 0 10px -5px rgba(0, 0, 0, 0.65), inset 0 0 0 1px rgba(226, 197, 128, 0.12);
+}
+.bk-cover-frame {
+  position: absolute;
+  inset: 9%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(226, 197, 128, 0.45);
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 4px rgba(30, 34, 48, 0.4), inset 0 0 0 5px rgba(226, 197, 128, 0.25);
+}
+.bk-cover-in {
+  /* Once open, this is the board under the left pages: only its leather turn-in shows around them. */
+  border-radius: 9px 2px 2px 9px;
+  background: linear-gradient(225deg, #2e3346, #171a25);
+  box-shadow: 0 30px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.35);
+}
+
+/* Rounded spine along the bottom edge, between the two boards. */
+.bk-spine {
+  left: calc(var(--w) - 12px);
+  top: calc(var(--h) + 2px);
+  width: 24px;
+  height: calc(var(--t) + 2px);
+  transform-origin: center top;
+  transform: translateZ(-2px) rotateX(-90deg);
+  border-radius: 0 0 12px 12px;
+  background: linear-gradient(90deg, #171a25, #3a3f55 45%, #2a2e3f 55%, #171a25);
+}
+
+.bk-block {
+  top: 0;
+  width: var(--w);
+  height: var(--h);
+  transform: translateZ(-2.5px);
+}
+.bk-block-right {
+  left: var(--w);
+}
+.bk-block-left {
+  left: 0;
+}
+.bk-edge-side,
+.bk-edge-bottom {
+  position: absolute;
+}
+.bk-block-right .bk-edge-side {
+  top: 0;
+  right: 0;
+  width: var(--t);
+  height: 100%;
+  transform-origin: right center;
+  /* folds down, away from the viewer, under the page */
+  transform: rotateY(-90deg);
+  background: repeating-linear-gradient(90deg, #f1e8d4 0 1px, #d8cbaf 1px 2px);
+}
+.bk-block-left .bk-edge-side {
+  top: 0;
+  left: 0;
+  width: var(--t);
+  height: 100%;
+  transform-origin: left center;
+  transform: rotateY(90deg);
+  background: repeating-linear-gradient(90deg, #d8cbaf 0 1px, #f1e8d4 1px 2px);
+}
+.bk-edge-bottom {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--t);
+  transform-origin: center bottom;
+  transform: rotateX(-90deg);
+  background: repeating-linear-gradient(0deg, #f1e8d4 0 1px, #d8cbaf 1px 2px);
+}
+/* Page edges curve into the spine: shade them darker near it. */
+.bk-block-right .bk-edge-bottom {
+  background:
+    linear-gradient(90deg, rgba(110, 85, 45, 0.45), rgba(110, 85, 45, 0) 22%),
+    repeating-linear-gradient(0deg, #f1e8d4 0 1px, #d8cbaf 1px 2px);
+}
+.bk-block-left .bk-edge-bottom {
+  background:
+    linear-gradient(270deg, rgba(110, 85, 45, 0.45), rgba(110, 85, 45, 0) 22%),
+    repeating-linear-gradient(0deg, #f1e8d4 0 1px, #d8cbaf 1px 2px);
+}
+
+.bk-page {
+  position: absolute;
+  inset: 0;
+  border-radius: 1px 6px 6px 1px;
+  background: linear-gradient(90deg, #e9dec6 0%, #f8f1e2 10%, #fffcf6 55%, #f6eedd 100%);
+  overflow: hidden;
+}
+.bk-gutter-shade {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 26%;
+  background: linear-gradient(90deg, rgba(110, 85, 45, 0.34), rgba(110, 85, 45, 0.08) 45%, rgba(110, 85, 45, 0));
+  pointer-events: none;
+}
+.bk-leaf {
+  left: var(--w);
+  top: 0;
+  width: var(--w);
+  height: var(--h);
+  transform-origin: left center;
+}
+.bk-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+.bk-face-back {
+  transform: rotateY(180deg);
+}
+.bk-face-back.bk-page {
+  border-radius: 6px 1px 1px 6px;
+  background: linear-gradient(270deg, #e9dec6 0%, #f8f1e2 10%, #fffcf6 55%, #f6eedd 100%);
+}
+.bk-gutter-left {
+  inset: 0 0 0 auto;
+  background: linear-gradient(270deg, rgba(110, 85, 45, 0.34), rgba(110, 85, 45, 0.08) 45%, rgba(110, 85, 45, 0));
+}
+/* The fold itself: a soft dark valley right on the spine line, above the pages. */
+.bk-crease {
+  left: calc(var(--w) - 7px);
+  top: 0;
+  width: 14px;
+  height: var(--h);
+  transform: translateZ(-0.4px);
+  background: linear-gradient(90deg, rgba(90, 68, 35, 0), rgba(90, 68, 35, 0.42) 50%, rgba(90, 68, 35, 0));
+  pointer-events: none;
+}
+.bk-left-mark {
+  height: calc(var(--w) * 0.22);
+}
+.bk-left-title {
+  font-size: calc(var(--w) * 0.068);
+}
+.bk-left-sub {
+  font-size: calc(var(--w) * 0.044);
+}
+
+.bk-light {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 150%;
+  height: 150%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 236, 190, 0.55), rgba(242, 198, 110, 0.18) 38%, rgba(242, 198, 110, 0) 66%);
+  filter: blur(4px);
+  pointer-events: none;
+}
+.bk-rays {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.bk-ray {
+  position: absolute;
+  left: -14px;
+  bottom: 0;
+  width: 28px;
+  height: calc(var(--h) * 1.05);
+  transform-origin: 50% 100%;
+  background: linear-gradient(to top, rgba(255, 236, 190, 0.5), rgba(255, 236, 190, 0));
+  filter: blur(6px);
+  opacity: 0;
+}
+
+/* Near the spine the pages curve down into the binding, so each block's bottom edge dips in a
+   curve toward the middle: the two blocks part in a "V" and the spine shows between them. */
+.bk-block-right .bk-edge-bottom {
+  clip-path: polygon(0 100%, 0 78%, 2% 52%, 5% 30%, 9% 14%, 14% 4%, 20% 0, 100% 0, 100% 100%);
+}
+.bk-block-left .bk-edge-bottom {
+  clip-path: polygon(100% 100%, 100% 78%, 98% 52%, 95% 30%, 91% 14%, 86% 4%, 80% 0, 0 0, 0 100%);
+}
+/* The page surfaces bend into the gutter right at the bottom edge as well. */
+.bk-crease {
+  width: 22px;
+  left: calc(var(--w) - 11px);
+  background:
+    linear-gradient(90deg, rgba(90, 68, 35, 0), rgba(90, 68, 35, 0.5) 46%, rgba(40, 30, 15, 0.65) 50%, rgba(90, 68, 35, 0.5) 54%, rgba(90, 68, 35, 0));
+}
+.bk-spine {
+  left: calc(var(--w) - 14px);
+  width: 28px;
+  height: calc(var(--t) + 3px);
+  border-radius: 0 0 14px 14px;
+  background:
+    radial-gradient(60% 90% at 50% 0%, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 70%),
+    linear-gradient(90deg, #14161f, #3a3f55 42%, #2a2e3f 58%, #14161f);
+}
+
+/* Edge faces, built so their outer side faces out (and their back is never drawn): each face is
+   attached outside the page block and folds down, away from the viewer. Without this, from some
+   angles the browser painted the inside of the right edge as a light flap at the corner. */
+.bk-edge-side,
+.bk-edge-bottom,
+.bk-spine {
+  backface-visibility: hidden;
+}
+.bk-block-right .bk-edge-side {
+  top: 0;
+  left: 100%;
+  right: auto;
+  width: var(--t);
+  height: 100%;
+  transform-origin: left center;
+  transform: rotateY(90deg);
+}
+.bk-block-left .bk-edge-side {
+  top: 0;
+  left: auto;
+  right: 100%;
+  width: var(--t);
+  height: 100%;
+  transform-origin: right center;
+  transform: rotateY(-90deg);
+}
+.bk-block-right .bk-edge-bottom,
+.bk-block-left .bk-edge-bottom {
+  left: 0;
+  top: 100%;
+  bottom: auto;
+  width: 100%;
+  height: var(--t);
+  transform-origin: center top;
+  transform: rotateX(-90deg);
+}
+/* The spine: a soft leather curve in the boards' own color, no highlight blob. */
+.bk-spine {
+  left: calc(var(--w) - 11px);
+  width: 22px;
+  border-radius: 0 0 11px 11px;
+  background: linear-gradient(90deg, #171a25, #262a3a 50%, #171a25);
+}
+
+/* Tap / click to close and reopen the book. */
+.bk {
+  pointer-events: auto;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 16px;
+}
+.bk:focus-visible {
+  outline-offset: 6px;
+}
+
+/* Closed: the cover lights up around its edge, a ring of light running along it, a warm glow and
+   a few twinkles. Reduced motion: the glow stays, nothing moves. */
+@property --bk-ang {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.bk-cover-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 4px 12px 12px 4px;
+  padding: 3px;
+  background: conic-gradient(from var(--bk-ang), rgba(246, 217, 143, 0) 0deg 220deg, rgba(246, 217, 143, 0.9) 290deg, #fff6dc 320deg, rgba(246, 217, 143, 0.9) 345deg, rgba(246, 217, 143, 0) 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  animation: bk-ring 3.2s linear infinite;
+}
+@keyframes bk-ring {
+  to {
+    --bk-ang: 360deg;
+  }
+}
+.bk-cover-out {
+  transition: box-shadow 0.8s ease;
+}
+.bk.is-closed .bk-cover-ring {
+  opacity: 1;
+}
+.bk.is-closed .bk-cover-out {
+  box-shadow:
+    inset 7px 0 10px -5px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 1px rgba(226, 197, 128, 0.35),
+    0 0 26px 2px rgba(242, 198, 110, 0.35);
+  animation: bk-glow 2.6s ease-in-out infinite;
+}
+@keyframes bk-glow {
+  50% {
+    box-shadow:
+      inset 7px 0 10px -5px rgba(0, 0, 0, 0.65),
+      inset 0 0 0 1px rgba(226, 197, 128, 0.5),
+      0 0 40px 6px rgba(242, 198, 110, 0.5);
+  }
+}
+.bk-twinkle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  filter: drop-shadow(0 0 4px rgba(255, 230, 170, 0.9));
+  background: radial-gradient(circle, #fff 0 18%, rgba(255, 240, 200, 0.9) 30%, rgba(246, 217, 143, 0) 70%);
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  opacity: 0;
+  pointer-events: none;
+}
+.bk.is-closed .bk-twinkle {
+  animation: bk-twinkle 2.6s ease-in-out infinite;
+}
+@keyframes bk-twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.3) rotate(0deg);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.25) rotate(45deg);
+  }
+  60% {
+    opacity: 0.2;
+    transform: scale(0.6) rotate(60deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bk-cover-ring,
+  .bk.is-closed .bk-cover-out,
+  .bk.is-closed .bk-twinkle {
+    animation: none;
+  }
+  .bk.is-closed .bk-twinkle {
+    opacity: 0.8;
+  }
+}
+
+/* The spine on the hinge side of the closed book: a rounded leather band joining the two boards,
+   with two gold bands like a Bible's spine. It faces out to the left. */
+.bk-spine-side {
+  left: calc(var(--w) - var(--t) - 4px);
+  top: -4px;
+  width: calc(var(--t) + 4px);
+  height: calc(var(--h) + 8px);
+  transform-origin: right center;
+  transform: translateZ(1px) rotateY(-90deg);
+  backface-visibility: hidden;
+  border-radius: 3px;
+  background:
+    linear-gradient(180deg, transparent 9%, rgba(226, 197, 128, 0.7) 9%, rgba(226, 197, 128, 0.7) 10%, transparent 10%, transparent 90%, rgba(226, 197, 128, 0.7) 90%, rgba(226, 197, 128, 0.7) 91%, transparent 91%),
+    linear-gradient(90deg, #14161f, #34394d 45%, #2a2e3f 60%, #14161f);
+}
+
+/* Top page of the left block (mirror of the right page). */
+.bk-page-left {
+  border-radius: 6px 1px 1px 6px;
+  background: linear-gradient(270deg, #e9dec6 0%, #f8f1e2 10%, #fffcf6 55%, #f6eedd 100%);
+}
+
+/* "Ouvir" (narrations, docs/05): sound wave while it plays, subtitle word by word. */
+.lp-wave > span {
+  height: 35%;
+  animation: lp-wave 0.9s ease-in-out infinite;
+}
+@keyframes lp-wave {
+  0%, 100% { height: 30%; }
+  50% { height: 100%; }
+}
+.lp-cue-word {
+  display: inline-block;
+  animation: lp-cue-word 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes lp-cue-word {
+  from { opacity: 0; transform: translateY(8px); filter: blur(5px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-wave > span { animation: none; height: 60%; }
+  .lp-cue-word { animation: lp-cue-fade 0.2s linear both; }
+  @keyframes lp-cue-fade { from { opacity: 0; } to { opacity: 1; } }
+}
+
+/* Hero: the highlighted word ([Bíblia] in content/lp-publicos.json). Gold gradient text, a stroke
+   drawn underneath once the title is up, then a single shine across the word. */
+.lp-hl {
+  /* content/lp-publicos.json: Fraunces italic, #F1E3C4 → #B8893A, with one brighter band for the shine. */
+  font-style: italic;
+  padding-right: 0.06em; /* the italic's last letter leans out of the clip */
+  background: linear-gradient(100deg, #f1e3c4 0%, #d9b877 22%, #b8893a 40%, #fff3d6 50%, #f1e3c4 60%, #d9b877 80%, #b8893a 100%);
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.lp-hl-line {
+  position: absolute;
+  left: -2%;
+  bottom: -0.2em;
+  width: 104%;
+  height: 0.26em;
+  overflow: visible;
+}
+.lp-hl-line path {
+  fill: none;
+  stroke: #d9b877;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.is-drawn .lp-hl-line path {
+  animation: lp-hl-draw 0.9s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+.is-drawn .lp-hl {
+  animation: lp-hl-shine 1.5s ease-in-out 0.8s 1 both;
+}
+@keyframes lp-hl-draw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes lp-hl-shine {
+  from { background-position: 100% 0; }
+  to { background-position: 0% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-hl-line path { stroke-dashoffset: 0; animation: none !important; }
+  .is-drawn .lp-hl { animation: none; }
+}
+
+/* Scroll cue (src/lp/ScrollCue.tsx): the wheel slides down and fades, the chevron pulses under it. */
+.lp-scroll-wheel {
+  animation: lp-scroll-wheel 1.8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+.lp-scroll-chevron {
+  animation: lp-scroll-chevron 1.8s ease-in-out infinite;
+}
+@keyframes lp-scroll-wheel {
+  0% { transform: translateY(0); opacity: 0; }
+  15% { opacity: 1; }
+  70% { transform: translateY(9px); opacity: 0; }
+  100% { transform: translateY(9px); opacity: 0; }
+}
+@keyframes lp-scroll-chevron {
+  0%, 100% { transform: translateY(0); opacity: 0.45; }
+  50% { transform: translateY(3px); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-scroll-wheel, .lp-scroll-chevron { animation: none; }
+}
+
+/* ---------- Hero: the Bible that opens into the map (src/lp/HeroBook.tsx) ---------- */
+.hb {
+  /* Fine tuning of the map over the pages, by eye (the page corners are in BOOK, in HeroBook.tsx). */
+  --map-x: 0px;
+  --map-y: 0px;
+  --map-scale: 1;
+  /* Type sizes on the sheets (about 1:1 with the picture's 1280 units). Larger than the spec's
+     28/12/17/13 so they stay readable at the book's real size. */
+  --hb-t1: 24px;
+  --hb-t2: 14px;
+  --hb-t3: 21px;
+  --hb-label: 21px;
+}
+.hb-frame {
+  --s: 0.5; /* picture → screen scale, set from the frame's width */
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  /* Melts into the scene: full at the centre, gone at the edges, and a stronger fade at the bottom so
+     the stone dissolves into the desert. No straight edge anywhere. */
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 48%, #000 58%, transparent 100%), linear-gradient(to bottom, #000 62%, transparent 94%);
+  -webkit-mask-composite: source-in;
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 48%, #000 58%, transparent 100%), linear-gradient(to bottom, #000 62%, transparent 94%);
+  mask-composite: intersect;
+}
+.hb-frame.is-shown { opacity: 1; }
+.hb-frame.is-open { cursor: pointer; }
+.hb-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Colour match with the golden background. */
+  filter: sepia(0.25) saturate(0.9) brightness(0.95);
+}
+.hb-warm {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #c4572e, #b8893a);
+  opacity: 0.15;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+/* The picture's own 1280×720 space, scaled to the frame. Everything on the pages lives in it. */
+.hb-stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1280px;
+  height: 720px;
+  transform-origin: 0 0;
+  transform: translate(var(--map-x), var(--map-y)) scale(calc(var(--s) * var(--map-scale)));
+  pointer-events: none;
+}
+.hb-contact {
+  position: absolute;
+  left: 637px;
+  top: 560px;
+  width: 980px;
+  height: 90px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(10, 8, 6, 0.35), rgba(10, 8, 6, 0));
+}
+/* The ink: multiplied over the paper (its grain shows through), slightly soft. */
+.hb-ink {
+  mix-blend-mode: multiply;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.hb-frame.is-open .hb-ink { opacity: 0.88; }
+.hb-sheet {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  filter: blur(0.25px);
+}
+/* Light and fold: the ink pales toward the page edges and fades into the crease. */
+.hb-sheet-left {
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, #000 14%, #000 84%, transparent 99%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, #000 14%, #000 84%, transparent 99%);
+}
+.hb-sheet-right {
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.75) 0%, #000 14%, #000 84%, transparent 99%);
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.75) 0%, #000 14%, #000 84%, transparent 99%);
+}
+.hb-words { position: absolute; inset: 0; }
+.hb-words p,
+.hb-words .hb-label { position: absolute; margin: 0; white-space: nowrap; color: #3b2a14; line-height: 1.15; }
+.hb-t1 { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: var(--hb-t1); transform: translate(-50%, -80%); }
+.hb-t2 { font-family: Newsreader, Georgia, serif; font-weight: 500; font-size: var(--hb-t2); letter-spacing: 0.2em; color: #6b4a1e !important; transform: translate(-50%, -80%); }
+.hb-t3 { display: flex; align-items: center; gap: 0.45em; font-family: Newsreader, Georgia, serif; font-style: italic; font-size: var(--hb-t3); transform: translate(-50%, -50%); }
+.hb-label { font-family: Newsreader, Georgia, serif; font-weight: 500; font-size: var(--hb-label); transform: translateX(-50%); }
+.hb-lamp { width: 1.6em; height: 1.3em; flex: none; fill: #6b4a1e; stroke: #6b4a1e; }
+
+/* The sequence. Each replay remounts the ink, so the animations start over. */
+.hb-ghost { transition: opacity 0.8s ease; }
+.is-drawing .hb-ghost { opacity: 0; }
+.hb-path { stroke-dasharray: 1; stroke-dashoffset: 1; animation-name: hb-draw; animation-timing-function: linear; animation-fill-mode: forwards; }
+/* Points soak in like ink: a fade and a small settle, no bounce. */
+.hb-dot { transform-box: fill-box; transform-origin: center; opacity: 0; animation: hb-soak 0.55s ease-out forwards; }
+.hb-label { opacity: 0; animation: hb-fade 0.45s ease forwards; }
+.hb-titles { opacity: 0; animation: hb-fade 0.7s ease 0.1s forwards; }
+.hb-glow {
+  position: absolute;
+  left: 637px;
+  top: 340px;
+  width: 900px;
+  height: 420px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(241, 217, 160, 0.9), rgba(241, 217, 160, 0));
+  mix-blend-mode: screen;
+  opacity: 0;
+  animation: hb-glow 1.8s ease 1.9s forwards;
+}
+@keyframes hb-draw { to { stroke-dashoffset: 0; } }
+@keyframes hb-soak { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+@keyframes hb-fade { to { opacity: 1; } }
+@keyframes hb-glow { 0% { opacity: 0; } 55% { opacity: 0.35; } 100% { opacity: 0.15; } }
+/* Reduced motion: everything in its final state. */
+.hb-frame.is-static,
+.hb-frame.is-static .hb-ink { transition: none; }
+.hb-frame.is-static * { animation-duration: 0s !important; animation-delay: 0s !important; }
+
+/* Phones: line and points only; the caption under the book names the eras. The frame is wider than
+   the screen so the book fills it (its edges fade out anyway). */
+.hb-frame.is-phone { width: 136%; margin-left: -18%; }
+.hb-frame.is-phone .hb-titles,
+.hb-frame.is-phone .hb-label { display: none; }
+.hb-caption { min-height: 1.6em; margin-top: 0.25rem; text-align: center; font-size: 14px; transition: opacity 0.4s ease; }
+.hb-caption-in { animation: hb-caption 0.35s ease both; }
+@keyframes hb-caption { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* Points: a 40px target over each (in the picture's units, ~44px at desktop sizes); tooltip above. */
+.hb-hits { pointer-events: none; }
+.hb-hit {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  translate: -50% -50%;
+  border-radius: 999px;
+  pointer-events: auto;
+}
+.hb-hit:focus-visible { outline: 4px solid #e2c580; outline-offset: 2px; }
+.hb-tip {
+  position: absolute;
+  z-index: 5;
+  translate: -50% calc(-100% - 18px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 280px;
+  width: max-content;
+  padding: 7px 11px;
+  border-radius: 10px;
+  background: #f5efe3;
+  color: #1e2230;
+  font-size: 13px;
+  line-height: 1.35;
+  box-shadow: 0 10px 26px -10px rgba(20, 22, 32, 0.55);
+  pointer-events: none;
+  animation: hb-caption 0.2s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hb-caption-in, .hb-tip { animation: none; }
+}
+/* Hero grid (≥1024px): the book's cell is the title's row; the book is centred on it (it does not
+   push the rows), starts 48px into the text column and never runs off the right edge. */
+.lp-herobook-cell {
+  position: relative;
+  align-self: center;
+  height: 0;
+  pointer-events: auto;
+}
+.lp-herobook {
+  position: absolute;
+  left: -48px;
+  top: var(--hb-top, 0px);
+  translate: 0 -50%;
+  width: clamp(440px, 44vw, 600px);
+}
+@media (min-width: 1280px) {
+  .lp-herobook { width: clamp(520px, 48vw, 780px); }
+}

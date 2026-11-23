@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Palavra em Ordem — Protótipo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5EFE3; --paper-2:#EDE4D3; --card:#FFFCF6;
+  --ink:#1E2230; --ink-2:#4A4F5E; --ink-3:#8A8D98;
+  --ember:#C4572E; --ember-soft:#F3DCCF;
+  --gold:#B8893A; --gold-soft:#F1E3C4;
+  --olive:#5D6B3B; --olive-soft:#E1E6D2;
+  --line:#E2D8C5;
+  --r:18px;
+  --shadow:0 1px 0 rgba(30,34,48,.04),0 8px 24px -12px rgba(30,34,48,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#2A2620;font-family:Manrope,system-ui,sans-serif;color:var(--ink);display:flex;align-items:center;justify-content:center;min-height:100vh;-webkit-font-smoothing:antialiased}
+.device{width:100%;max-width:400px;height:100vh;max-height:860px;background:var(--paper);position:relative;overflow:hidden;display:flex;flex-direction:column}
+@media(min-width:520px){.device{border-radius:36px;height:820px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6),0 0 0 10px #15130F}}
+.screen{flex:1;overflow-y:auto;overflow-x:hidden;display:none;flex-direction:column;scrollbar-width:none}
+.screen::-webkit-scrollbar{display:none}
+.screen.on{display:flex;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.01em;line-height:1.15}
+.serif{font-family:Newsreader,Georgia,serif}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:16px 20px;border-radius:14px;font-weight:700;font-size:15px;background:var(--ink);color:var(--paper);transition:transform .1s,opacity .2s}
+.btn:active{transform:scale(.98)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn.ember{background:var(--ember);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink-2);font-weight:600}
+.pad{padding:24px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.muted{color:var(--ink-2)}
+
+/* welcome */
+#welcome{background:radial-gradient(120% 70% at 50% 0%,#FBF6EC 0%,var(--paper) 60%)}
+.hero-art{height:300px;display:flex;align-items:flex-end;justify-content:center;padding-top:40px}
+.welcome-body{padding:8px 28px 28px;margin-top:auto}
+.welcome-body h1{font-size:34px;margin:10px 0 14px}
+.welcome-body p{font-size:17px;line-height:1.55;color:var(--ink-2);margin-bottom:28px}
+
+/* diag */
+.top{display:flex;align-items:center;gap:12px;padding:18px 20px 6px}
+.back{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:var(--ink-2)}
+.steps{display:flex;gap:6px;flex:1}
+.steps i{height:4px;flex:1;border-radius:4px;background:var(--line)}
+.steps i.on{background:var(--ink)}
+.opt{display:flex;align-items:center;gap:14px;text-align:left;width:100%;padding:16px;border-radius:14px;background:var(--card);border:1.5px solid var(--line);margin-bottom:10px;font-size:15px;font-weight:500;transition:border-color .15s,background .15s}
+.opt .dot{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink-3);flex:none;display:grid;place-items:center}
+.opt.sel{border-color:var(--ink);background:#fff}
+.opt.sel .dot{border-color:var(--ink);background:var(--ink)}
+.opt.sel .dot::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--paper)}
+.footer{padding:16px 24px 24px;margin-top:auto;background:linear-gradient(transparent,var(--paper) 30%)}
+
+/* rec */
+.rec-card{background:var(--card);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.rec-list{list-style:none;margin-top:16px}
+.rec-list li{display:flex;gap:12px;padding:10px 0;border-top:1px dashed var(--line);font-size:14px;align-items:center}
+.rec-list li b{font-family:Fraunces,serif;font-weight:600;color:var(--gold);width:22px}
+
+/* home */
+.home-head{padding:18px 20px 10px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:linear-gradient(var(--paper) 75%,transparent);z-index:5}
+.chips{display:flex;gap:8px}
+.chip{display:flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-weight:700;font-size:13px}
+.chip svg{width:16px;height:16px}
+.chip.lamp.lit{background:var(--ember-soft);border-color:#EBC1AC;color:var(--ember)}
+.greet{padding:4px 20px 6px}
+.greet h2{font-size:24px}
+.greet p{color:var(--ink-2);font-size:14px;margin-top:4px}
+.continue{margin:14px 20px 4px;background:var(--ink);color:var(--paper);border-radius:var(--r);padding:20px;display:flex;align-items:center;gap:16px;text-align:left;width:calc(100% - 40px)}
+.continue .t{flex:1}
+.continue .t small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft);opacity:.8;font-weight:700}
+.continue .t strong{display:block;font-family:Fraunces,serif;font-size:19px;font-weight:600;margin:4px 0 2px}
+.continue .t span{font-size:13px;opacity:.7}
+.continue .go{width:44px;height:44px;border-radius:50%;background:var(--ember);display:grid;place-items:center;flex:none}
+.section-title{padding:22px 20px 6px;display:flex;justify-content:space-between;align-items:baseline}
+.section-title h3{font-size:18px}
+.section-title span{font-size:12px;color:var(--ink-3);font-weight:600}
+.map{position:relative;padding:10px 0 20px}
+.map svg.path{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.node{position:relative;display:flex;align-items:center;gap:14px;height:104px;padding:0 24px}
+.node.r{flex-direction:row-reverse;text-align:right}
+.node .circle{width:66px;height:66px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:Fraunces,serif;font-weight:700;font-size:22px;background:var(--paper-2);color:var(--ink-3);border:3px solid var(--paper);box-shadow:0 0 0 1.5px var(--line);position:relative;z-index:2;transition:transform .15s}
+.node.done .circle{background:var(--olive);color:#fff;box-shadow:0 0 0 1.5px var(--olive)}
+.node.cur .circle{background:var(--ember);color:#fff;box-shadow:0 0 0 6px var(--ember-soft),0 0 0 7.5px #EBC1AC;animation:pulse 2.2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 10px rgba(243,220,207,.5),0 0 0 11.5px rgba(235,193,172,.4)}}
+.node button.circle:active{transform:scale(.95)}
+.node .lbl small{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.node .lbl strong{display:block;font-family:Fraunces,serif;font-weight:600;font-size:15.5px;line-height:1.2;margin-top:2px;max-width:170px}
+.node.locked .lbl strong{color:var(--ink-3)}
+.node .lbl em{font-style:normal;font-size:12px;color:var(--ink-3)}
+.premium{margin:6px 20px 24px;border-radius:var(--r);padding:20px;background:linear-gradient(150deg,#2B2F3D,#1E2230);color:var(--paper);position:relative;overflow:hidden}
+.premium .eyebrow{color:var(--gold)}
+.premium h3{font-size:21px;margin:6px 0 6px}
+.premium p{font-size:13.5px;opacity:.75;line-height:1.5;margin-bottom:14px}
+.premium .btn{background:var(--gold);color:#1E2230}
+.premium .lockbadge{position:absolute;top:18px;right:18px;opacity:.5}
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 20px 24px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:left}
+.mini strong{display:block;font-size:14px;margin-top:8px}
+.mini span{font-size:12px;color:var(--ink-3)}
+.nav{display:flex;border-top:1px solid var(--line);background:var(--card);padding:8px 6px 14px}
+.nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:600;color:var(--ink-3);padding:6px 0}
+.nav button.on{color:var(--ink)}
+.nav svg{width:22px;height:22px}
+.demo{margin:0 20px 24px;padding:12px 14px;border:1.5px dashed var(--line);border-radius:12px;font-size:12px;color:var(--ink-3);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.demo button{font-weight:700;color:var(--ink-2);font-size:12px;text-decoration:underline}
+
+/* lesson */
+#lesson{background:var(--paper)}
+.l-top{display:flex;align-items:center;gap:12px;padding:16px 18px 8px}
+.bar{flex:1;height:8px;border-radius:8px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ember);border-radius:8px;transition:width .4s cubic-bezier(.3,.8,.3,1)}
+.l-body{flex:1;padding:14px 24px 10px;display:flex;flex-direction:column}
+.l-kind{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.l-body h2{font-size:28px;margin-bottom:16px}
+.l-text{font-family:Newsreader,Georgia,serif;font-size:19.5px;line-height:1.55;color:#2B2F3D}
+.l-text p+p{margin-top:14px}
+.l-text strong{font-weight:500;background:linear-gradient(transparent 62%,var(--gold-soft) 62%)}
+.moves{display:grid;gap:10px;margin-top:6px}
+.move{display:flex;gap:14px;align-items:flex-start;padding:14px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
+.move b{font-family:Fraunces,serif;font-size:20px;color:var(--ember);width:22px;flex:none;line-height:1.2}
+.move strong{display:block;font-size:15px}
+.move span{font-size:14px;color:var(--ink-2);line-height:1.45}
+.scripture{background:var(--card);border-radius:var(--r);padding:20px;border-left:4px solid var(--gold);box-shadow:var(--shadow)}
+.scripture .ref{font-family:Fraunces,serif;font-size:20px;font-weight:600}
+.scripture .ref small{display:block;font-family:Manrope;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:700;margin-bottom:4px}
+.scripture a{display:inline-flex;margin-top:12px;font-size:13px;font-weight:700;color:var(--ember);text-decoration:none}
+.observe{margin-top:16px;padding:16px;border-radius:14px;background:var(--olive-soft);font-size:14.5px;line-height:1.5;color:#3C4626}
+.observe b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.order-slots{display:grid;gap:8px;margin:6px 0 18px}
+.slot{height:50px;border-radius:12px;border:1.5px dashed var(--line);display:flex;align-items:center;gap:12px;padding:0 14px;font-weight:600;font-size:15px;color:var(--ink-3)}
+.slot b{font-family:Fraunces,serif;color:var(--ink-3);width:16px}
+.slot.filled{border-style:solid;border-color:var(--ink);background:#fff;color:var(--ink)}
+.slot.filled b{color:var(--ember)}
+.slot.ok{border-color:var(--olive);background:var(--olive-soft)}
+.slot.bad{border-color:var(--ember);background:var(--ember-soft);animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.pool{display:flex;flex-wrap:wrap;gap:8px}
+.pill{padding:11px 16px;border-radius:999px;background:var(--card);border:1.5px solid var(--line);font-weight:700;font-size:14px;box-shadow:0 2px 0 var(--line)}
+.pill:active{transform:translateY(1px)}
+.pill.used{visibility:hidden}
+.q-opt{display:block;width:100%;text-align:left;padding:16px;border-radius:14px;background:var(--card);border:1.5px solid var(--line);font-size:15px;font-weight:500;line-height:1.4;margin-bottom:10px;box-shadow:0 2px 0 var(--line)}
+.q-opt.right{border-color:var(--olive);background:var(--olive-soft)}
+.q-opt.wrong{border-color:var(--ember);background:var(--ember-soft)}
+.feedback{border-radius:14px;padding:14px 16px;font-size:14px;line-height:1.5;margin-top:4px;display:none}
+.feedback.show{display:block;animation:fade .3s}
+.feedback.good{background:var(--olive-soft);color:#3C4626}
+.feedback.bad{background:var(--ember-soft);color:#7A3418}
+textarea{width:100%;min-height:130px;padding:16px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);font-family:Newsreader,Georgia,serif;font-size:18px;line-height:1.5;color:var(--ink);resize:none;outline:none}
+textarea:focus{border-color:var(--ink)}
+.hint{font-size:12.5px;color:var(--ink-3);margin-top:8px}
+.prayer{font-family:Newsreader,serif;font-style:italic;font-size:21px;line-height:1.6;color:#2B2F3D;padding:8px 0 0 18px;border-left:2px solid var(--gold)}
+.l-foot{padding:12px 24px 24px}
+
+/* done */
+#done{background:var(--ink);color:var(--paper);text-align:center}
+#done .pad{margin:auto 0}
+.lamp-big{width:150px;height:150px;margin:0 auto 18px;position:relative}
+.glow{position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,rgba(232,140,80,.45),transparent 65%);animation:glow 2.4s ease-in-out infinite}
+@keyframes glow{50%{transform:scale(1.12);opacity:.7}}
+#done h1{font-size:30px;margin-bottom:8px}
+#done .verse{font-family:Newsreader,serif;font-style:italic;font-size:16px;opacity:.65;margin-bottom:26px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:22px}
+.stat{background:rgba(255,255,255,.06);border-radius:14px;padding:14px 6px}
+.stat strong{display:block;font-family:Fraunces,serif;font-size:24px;color:var(--gold-soft)}
+.stat span{font-size:11px;opacity:.6;font-weight:600}
+.badge{display:flex;align-items:center;gap:14px;background:rgba(184,137,58,.14);border:1px solid rgba(184,137,58,.35);border-radius:14px;padding:14px;text-align:left;margin-bottom:24px}
+.badge .ic{width:46px;height:46px;border-radius:12px;background:var(--gold);display:grid;place-items:center;flex:none}
+.badge small{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.badge strong{display:block;font-family:Fraunces,serif;font-size:17px}
+.badge span{font-size:12.5px;opacity:.7}
+#done .btn{background:var(--paper);color:var(--ink)}
+.float{position:absolute;left:50%;top:30%;font-family:Fraunces,serif;font-weight:700;font-size:22px;color:var(--gold-soft);pointer-events:none;animation:up 1.4s forwards}
+@keyframes up{to{transform:translate(-50%,-80px);opacity:0}}
+
+/* diary */
+.page-head{padding:22px 20px 8px}
+.page-head h2{font-size:26px}
+.page-head p{color:var(--ink-2);font-size:14px;margin-top:6px;line-height:1.5}
+.field{margin:0 20px 14px}
+.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+.field textarea{min-height:64px;font-size:16.5px;padding:12px 14px}
+.entry{margin:0 20px 10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.entry .meta{display:flex;justify-content:space-between;font-size:11.5px;font-weight:700;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.entry .meta span:first-child{color:var(--gold)}
+.entry p{font-family:Newsreader,serif;font-size:16.5px;line-height:1.5}
+.entry p+p{margin-top:6px}
+.entry p i{font-family:Manrope;font-style:normal;font-size:12px;font-weight:700;color:var(--ink-3);display:block}
+.empty{margin:10px 20px;padding:24px;text-align:center;color:var(--ink-3);font-size:14px;border:1.5px dashed var(--line);border-radius:14px}
+.toggle{margin:4px 20px 16px;display:flex;background:var(--paper-2);border-radius:12px;padding:4px}
+.toggle button{flex:1;padding:10px;border-radius:9px;font-weight:700;font-size:13px;color:var(--ink-2)}
+.toggle button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+
+/* guia */
+.notice{margin:0 20px 16px;padding:14px 16px;border-radius:14px;background:var(--gold-soft);font-size:13px;line-height:1.5;color:#6A4E1C}
+.cmds{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 20px}
+.cmd{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:left;font-size:13.5px;font-weight:600;line-height:1.35;min-height:84px;display:flex;flex-direction:column;justify-content:space-between;opacity:.85}
+.soon{margin:18px 20px 24px;padding:16px;border-radius:14px;background:var(--ink);color:var(--paper);font-size:13.5px;line-height:1.5}
+.soon b{color:var(--gold)}
+
+/* profile */
+.prow{margin:0 20px;display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.prow span:last-child{font-weight:700}
+
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(20,18,14,.5);display:none;z-index:20;align-items:flex-end}
+.scrim.on{display:flex;animation:fade .2s}
+.sheet{background:var(--paper);width:100%;border-radius:24px 24px 0 0;padding:26px 24px 28px;animation:sheet .3s cubic-bezier(.3,.8,.3,1)}
+@keyframes sheet{from{transform:translateY(100%)}to{transform:none}}
+.sheet h3{font-size:23px;margin:6px 0 10px}
+.sheet ul{list-style:none;margin:14px 0 18px}
+.sheet li{display:flex;gap:10px;padding:7px 0;font-size:14.5px}
+.sheet li svg{flex:none;color:var(--olive);margin-top:2px}
+.price{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.price strong{font-family:Fraunces,serif;font-size:34px}
+.price span{color:var(--ink-3);font-size:14px}
+.tiny{font-size:11.5px;color:var(--ink-3);text-align:center;margin-top:10px}
+.toast{position:absolute;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:12px;font-size:13.5px;font-weight:600;z-index:30;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="device" id="app">
+
+<!-- BOAS-VINDAS -->
+<section class="screen" id="welcome">
+  <div class="hero-art">
+    <svg width="260" height="250" viewBox="0 0 260 250" aria-hidden="true">
+      <defs><radialGradient id="g1" cx="50%" cy="40%"><stop offset="0" stop-color="#F6C99A" stop-opacity=".9"/><stop offset="1" stop-color="#F6C99A" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="130" cy="95" r="95" fill="url(#g1)"/>
+      <path d="M20 230 C 70 200, 70 160, 120 150 S 190 120, 170 80 S 200 30, 240 22" fill="none" stroke="#1E2230" stroke-width="2" stroke-dasharray="2 9" stroke-linecap="round"/>
+      <circle cx="20" cy="230" r="7" fill="#5D6B3B"/>
+      <circle cx="120" cy="150" r="7" fill="#C4572E"/>
+      <circle cx="170" cy="80" r="6" fill="#E2D8C5" stroke="#1E2230" stroke-width="1.5"/>
+      <circle cx="240" cy="22" r="6" fill="#E2D8C5" stroke="#1E2230" stroke-width="1.5"/>
+      <g transform="translate(96 152)">
+        <path d="M6 30 h56 c-4 14-14 20-28 20 s-24-6-28-20z" fill="#1E2230"/>
+        <path d="M62 34 c10 0 14-8 8-12" fill="none" stroke="#1E2230" stroke-width="4" stroke-linecap="round"/>
+        <path d="M34 26 c-9-8-6-20 0-30 c6 10 9 22 0 30z" fill="#C4572E"/>
+        <path d="M34 24 c-4-4-3-10 0-15 c3 5 4 11 0 15z" fill="#F6C99A"/>
+      </g>
+    </svg>
+  </div>
+  <div class="welcome-body">
+    <div class="eyebrow">A Palavra em Ordem</div>
+    <h1>Você não precisa entender tudo de uma vez.</h1>
+    <p class="serif">Um passo por dia, em ordem, do começo ao fim da grande história. Cinco minutos bastam.</p>
+    <button class="btn" data-go="diag">Começar minha jornada</button>
+    <button class="btn ghost" style="margin-top:6px" data-act="skip">Já tenho conta</button>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
+<section class="screen" id="diag">
+  <div class="top"><button class="back" data-go="welcome" aria-label="Voltar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button><div class="steps"><i class="on"></i><i></i></div></div>
+  <div class="pad" style="padding-top:18px">
+    <h2 style="font-size:27px;margin-bottom:8px">O que mais parece com você hoje?</h2>
+    <p class="muted" style="font-size:14.5px;margin-bottom:22px">Isso ajusta o ponto de partida. Não existe resposta errada.</p>
+    <div id="diagOpts"></div>
+  </div>
+  <div class="footer"><button class="btn" id="diagNext" disabled>Continuar</button></div>
+</section>
+
+<!-- RECOMENDAÇÃO -->
+<section class="screen" id="rec">
+  <div class="top"><button class="back" data-go="diag" aria-label="Voltar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button><div class="steps"><i class="on"></i><i class="on"></i></div></div>
+  <div class="pad" style="padding-top:18px">
+    <div class="eyebrow">Seu ponto de partida</div>
+    <h2 style="font-size:27px;margin:8px 0 10px" id="recTitle"></h2>
+    <p class="serif muted" style="font-size:17.5px;line-height:1.5;margin-bottom:22px" id="recText"></p>
+    <div class="rec-card">
+      <div class="eyebrow" style="color:var(--ember)">Trilha 1 · grátis</div>
+      <h3 style="font-size:21px;margin-top:6px">Mapa da Bíblia em 7 dias</h3>
+      <p class="muted" style="font-size:13.5px;margin-top:4px">5 a 7 minutos por dia</p>
+      <ul class="rec-list" id="recList"></ul>
+    </div>
+  </div>
+  <div class="footer"><button class="btn ember" data-act="startJourney">Começar o Dia 1</button></div>
+</section>
+
+<!-- HOME -->
+<section class="screen" id="home">
+  <div class="home-head">
+    <div class="chips">
+      <span class="chip lamp" id="chipLamp" title="Lâmpada acesa: dias seguidos"><svg viewBox="0 0 24 24"><path d="M12 3c-3 3.5-4 6.5-1.5 9.5C8 12 7 10 7.5 8 5 10.5 5 15 8.5 17.5h7C19 15 19 9.5 12 3z" fill="currentColor"/><path d="M6 19h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span id="streakN">0</span></span>
+      <span class="chip" title="Graça: protege sua sequência 1 dia por semana" style="color:var(--olive)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg><span id="graceN">1</span></span>
+    </div>
+    <span class="chip" title="Passos na jornada" style="color:var(--gold)"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="8" cy="8" rx="3" ry="4.5"/><ellipse cx="16" cy="14" rx="3" ry="4.5"/></svg><span id="stepsN">0</span></span>
+  </div>
+  <div class="greet"><h2 id="greetT">Boa noite.</h2><p id="greetS">Sua caminhada pela Palavra continua aqui.</p></div>
+  <button class="continue" id="continueBtn">
+    <div class="t"><small id="contEyebrow">Continue de onde parou</small><strong id="contTitle"></strong><span id="contSub"></span></div>
+    <div class="go"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+  </button>
+  <div class="section-title"><h3>Mapa da Bíblia em 7 dias</h3><span id="mapProg">0 de 7</span></div>
+  <div class="map" id="map"></div>
+  <div class="premium">
+    <svg class="lockbadge" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5EFE3" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>
+    <div class="eyebrow">Próxima trilha</div>
+    <h3>Jesus em Ordem</h3>
+    <p>Os quatro Evangelhos lidos na sequência dos acontecimentos, em 30 dias. Do nascimento à ressurreição, sem se perder entre Mateus, Marcos, Lucas e João.</p>
+    <button class="btn" data-act="offer">Conhecer o Acesso Fundador</button>
+  </div>
+  <div class="demo"><span>Protótipo: o Dia 2 libera amanhã.</span><button data-act="nextDay">Simular dia seguinte</button></div>
+</section>
+
+<!-- LIÇÃO -->
+<section class="screen" id="lesson">
+  <div class="l-top">
+    <button class="back" data-act="exitLesson" aria-label="Fechar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="bar"><i id="lBar" style="width:0"></i></div>
+  </div>
+  <div class="l-body" id="lBody"></div>
+  <div class="l-foot"><button class="btn" id="lNext">Continuar</button></div>
+</section>
+
+<!-- CONCLUSÃO -->
+<section class="screen" id="done">
+  <div class="pad">
+    <div class="lamp-big"><div class="glow"></div>
+      <svg width="150" height="150" viewBox="0 0 150 150" style="position:relative">
+        <path d="M30 92 h90 c-6 24-24 34-45 34 s-39-10-45-34z" fill="#F5EFE3"/>
+        <path d="M120 98 c18 0 24-14 13-21" fill="none" stroke="#F5EFE3" stroke-width="7" stroke-linecap="round"/>
+        <path d="M75 86 c-16-14-11-36 0-56 c11 20 16 42 0 56z" fill="#C4572E"/>
+        <path d="M75 82 c-7-7-5-18 0-28 c5 10 7 21 0 28z" fill="#F6C99A"/>
+      </svg>
+    </div>
+    <h1 id="doneTitle">Lâmpada acesa.</h1>
+    <p class="verse">“Lâmpada para os meus pés é a tua palavra.” — Salmo 119:105</p>
+    <div class="stats">
+      <div class="stat"><strong id="dStreak">1</strong><span>dia seguido</span></div>
+      <div class="stat"><strong id="dSteps">+60</strong><span>passos</span></div>
+      <div class="stat"><strong id="dProg">1/7</strong><span>do mapa</span></div>
+    </div>
+    <div class="badge" id="dBadge">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="#1E2230"><path d="M3 20l5-9 4 6 3-4 6 7z"/><circle cx="17" cy="6" r="2.5"/></svg></div>
+      <div><small>Marco desbloqueado</small><strong>O mapa nas mãos</strong><span>Você viu a Bíblia inteira de cima.</span></div>
+    </div>
+    <button class="btn" data-act="toHome">Voltar à jornada</button>
+    <p style="font-size:12.5px;opacity:.55;margin-top:14px">O Dia 2 libera amanhã. Volte para manter a lâmpada acesa.</p>
+  </div>
+</section>
+
+<!-- DIÁRIO -->
+<section class="screen" id="diary">
+  <div class="page-head"><h2>Diário Espiritual</h2><p>Registre o que a Palavra está organizando dentro de você.</p></div>
+  <div class="toggle"><button class="on" data-tab="list">Meus registros</button><button data-tab="new">Novo registro</button></div>
+  <div id="diaryList"></div>
+  <div id="diaryNew" style="display:none">
+    <div class="field"><label>O que aprendi hoje?</label><textarea data-f="aprendi"></textarea></div>
+    <div class="field"><label>Qual versículo me marcou?</label><textarea data-f="versiculo"></textarea></div>
+    <div class="field"><label>Que dúvida quero estudar depois?</label><textarea data-f="duvida"></textarea></div>
+    <div class="field"><label>Pelo que quero orar?</label><textarea data-f="oracao"></textarea></div>
+    <div class="field"><label>Que decisão prática levo comigo?</label><textarea data-f="decisao"></textarea></div>
+    <div style="padding:4px 20px 24px"><button class="btn" data-act="saveEntry">Salvar registro</button></div>
+  </div>
+</section>
+
+<!-- GUIAVERBO -->
+<section class="screen" id="guia">
+  <div class="page-head"><h2>GuiaVerbo</h2><p>Apoio para estudar a Bíblia com mais clareza, a partir do conteúdo da sua jornada.</p></div>
+  <div class="notice">Use o GuiaVerbo como apoio de estudo. Ele não substitui a leitura da Bíblia, a oração, a comunidade cristã ou a orientação pastoral.</div>
+  <div class="cmds">
+    <div class="cmd">Quero entender uma passagem<span style="color:var(--ink-3);font-size:11px">em breve</span></div>
+    <div class="cmd">Onde isso se encaixa na história?<span style="color:var(--ink-3);font-size:11px">em breve</span></div>
+    <div class="cmd">Resuma este livro<span style="color:var(--ink-3);font-size:11px">em breve</span></div>
+    <div class="cmd">Monte um plano de leitura<span style="color:var(--ink-3);font-size:11px">em breve</span></div>
+    <div class="cmd">Transforme minha dúvida em estudo<span style="color:var(--ink-3);font-size:11px">em breve</span></div>
+    <div class="cmd">Me dê uma reflexão guiada<span style="color:var(--ink-3);font-size:11px">em breve</span></div>
+  </div>
+  <div class="soon"><b>Fase 2.</b> O GuiaVerbo entra depois que a base de conteúdo estiver pronta: ele responde a partir das fichas dos livros e das lições do app, com um limite diário de perguntas.</div>
+</section>
+
+<!-- PERFIL -->
+<section class="screen" id="perfil">
+  <div class="page-head"><h2>Minha jornada</h2><p id="pDiag"></p></div>
+  <div class="prow"><span>Lâmpada acesa</span><span id="pStreak">0 dias</span></div>
+  <div class="prow"><span>Passos na jornada</span><span id="pSteps">0</span></div>
+  <div class="prow"><span>Lições concluídas</span><span id="pDone">0</span></div>
+  <div class="prow"><span>Registros no diário</span><span id="pDiary">0</span></div>
+  <div class="prow"><span>Plano</span><span>Gratuito</span></div>
+  <div style="padding:24px 20px"><button class="btn ghost" data-act="reset" style="border:1.5px solid var(--line)">Reiniciar protótipo</button></div>
+</section>
+
+<nav class="nav" id="nav" style="display:none">
+  <button data-tabgo="home" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19c4-1 3-6 8-7s5-6 8-8"/><circle cx="4" cy="19" r="1.6" fill="currentColor"/><circle cx="20" cy="4" r="1.6" fill="currentColor"/></svg>Jornada</button>
+  <button data-tabgo="diary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 4h11a3 3 0 013 3v13H8a3 3 0 01-3-3z"/><path d="M5 17a3 3 0 013-3h11"/></svg>Diário</button>
+  <button data-tabgo="guia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg>GuiaVerbo</button>
+  <button data-tabgo="perfil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg>Perfil</button>
+</nav>
+
+<div class="scrim" id="offer">
+  <div class="sheet">
+    <div class="eyebrow">Acesso Fundador</div>
+    <h3>Toda a jornada, liberada aos poucos.</h3>
+    <div class="price"><strong>R$ 47</strong><span>por ano · preço de fundador</span></div>
+    <ul>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"/></svg>Jesus em Ordem: os 4 Evangelhos em 30 dias</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"/></svg>A Bíblia em Ordem: plano cronológico, novas etapas a cada mês</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"/></svg>Áudio de cada lição e Diário completo</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"/></svg>GuiaVerbo assim que for lançado</li>
+    </ul>
+    <button class="btn ember" data-act="buy">Quero ser Fundador</button>
+    <button class="btn ghost" data-act="closeOffer">Agora não</button>
+    <p class="tiny">Protótipo: preço e oferta ainda a validar.</p>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+</div>
+
+<script>
+const DIAG = [
+  {id:'perco', t:'Tento ler a Bíblia, mas me perco.', rt:'Faltava o mapa, não a vontade.', rx:'Antes de ler mais, você vai ver a Bíblia inteira de cima. Com o mapa na mão, cada livro passa a ter lugar.'},
+  {id:'comeco', t:'Não sei por onde começar.', rt:'Começar pelo começo certo.', rx:'O começo certo não é Gênesis 1, é entender como a Bíblia está montada. Em 7 dias você terá a visão do todo.'},
+  {id:'ordem', t:'Quero entender a ordem dos acontecimentos.', rt:'Você veio ao lugar certo.', rx:'Os livros da Bíblia não estão na ordem em que as coisas aconteceram. Nos próximos 7 dias você vai ver a linha da história inteira.'},
+  {id:'constancia', t:'Quero voltar a ter constância.', rt:'Um passo por dia é o suficiente.', rx:'Lições curtas, uma por dia. A lâmpada acende a cada dia cumprido, e a Graça protege você quando um dia escapar.'},
+  {id:'profundo', t:'Quero estudar com mais profundidade.', rt:'Profundidade começa pela estrutura.', rx:'Quem enxerga o todo entende melhor cada parte. Os 7 dias montam a base para os estudos por livro.'}
+];
+const DAYS = [
+  {n:1,t:'A Bíblia não é um labirinto',p:'Visão do todo'},
+  {n:2,t:'Criação, queda e promessa',p:'Éden'},
+  {n:3,t:'Abraão, Israel e aliança',p:'Canaã'},
+  {n:4,t:'Êxodo, lei e caminhada',p:'Sinai'},
+  {n:5,t:'Reino, profetas e exílio',p:'Jerusalém e Babilônia'},
+  {n:6,t:'Jesus e os Evangelhos',p:'Galileia'},
+  {n:7,t:'Igreja, cartas e esperança',p:'Nova Jerusalém'}
+];
+const MOVES = ['Criação','Queda','Redenção','Restauração'];
+
+const DAY1 = [
+  {k:'Abertura', render:()=>`
+    <h2>Você não está sozinho.</h2>
+    <div class="l-text">
+      <p>Se você já abriu a Bíblia decidido a ler do começo ao fim e parou no meio do caminho, saiba: isso acontece com muita gente.</p>
+      <p>Não é falta de fé. Na maioria das vezes, <strong>é falta de mapa.</strong></p>
+      <p>Hoje você vai receber esse mapa.</p>
+    </div>`},
+  {k:'Entenda', render:()=>`
+    <h2>A Bíblia é uma biblioteca.</h2>
+    <div class="l-text">
+      <p>São 66 livros, escritos por dezenas de autores ao longo de mais de mil anos: reis, pastores, profetas, pescadores, um médico, um cobrador de impostos.</p>
+      <p>Tem lei, poesia, história, profecia e carta. E os livros estão <strong>agrupados por tipo, não pela ordem dos acontecimentos.</strong></p>
+      <p>Por isso ler de capa a capa confunde tanto.</p>
+    </div>`},
+  {k:'Entenda', render:()=>`
+    <h2>Mas é uma história só.</h2>
+    <p class="muted" style="font-size:15px;margin:-6px 0 14px">Toda a Bíblia se move em quatro grandes passos:</p>
+    <div class="moves">
+      <div class="move"><b>1</b><div><strong>Criação</strong><span>Deus faz todas as coisas, e tudo é bom.</span></div></div>
+      <div class="move"><b>2</b><div><strong>Queda</strong><span>O ser humano se afasta de Deus, e o mundo se quebra.</span></div></div>
+      <div class="move"><b>3</b><div><strong>Redenção</strong><span>Deus promete um resgate e o cumpre em Jesus.</span></div></div>
+      <div class="move"><b>4</b><div><strong>Restauração</strong><span>No fim, tudo será feito novo.</span></div></div>
+    </div>`},
+  {k:'Pratique', interactive:'order', render:()=>`
+    <h2 style="font-size:24px">Coloque a história em ordem.</h2>
+    <p class="muted" style="font-size:14.5px;margin:-8px 0 16px">Toque nos passos na sequência certa.</p>
+    <div class="order-slots" id="slots">${[1,2,3,4].map(i=>`<div class="slot"><b>${i}</b><span></span></div>`).join('')}</div>
+    <div class="pool" id="pool">${shuffle([...MOVES]).map(m=>`<button class="pill" data-m="${m}">${m}</button>`).join('')}</div>
+    <div class="feedback" id="fb"></div>`},
+  {k:'Na Palavra', render:()=>`
+    <h2 style="font-size:24px">Um caminho de 11 quilômetros.</h2>
+    <div class="scripture">
+      <div class="ref"><small>Leia em sua Bíblia</small>Lucas 24:13-27</div>
+      <p class="serif" style="font-size:17px;line-height:1.5;margin-top:10px;color:var(--ink-2)">Depois da ressurreição, Jesus caminha com dois discípulos desanimados. Começando por Moisés e passando pelos profetas, Ele mostra como toda a Escritura falava dele.</p>
+      <a href="https://www.bible.com/pt/bible/129/LUK.24.NVI" target="_blank" rel="noopener">Abrir o texto →</a>
+    </div>
+    <div class="observe"><b>O que observar</b>Eles conheciam os textos. O que faltava era ver a ligação entre eles. É exatamente isso que esta jornada faz.</div>`},
+  {k:'Fixe', interactive:'quiz', render:()=>`
+    <h2 style="font-size:23px">Por que tanta gente se perde ao ler a Bíblia de capa a capa?</h2>
+    <div id="quiz">
+      <button class="q-opt" data-ok="0">Porque as partes da Bíblia não têm relação entre si.</button>
+      <button class="q-opt" data-ok="1">Porque os livros estão agrupados por tipo, e não na ordem dos acontecimentos.</button>
+      <button class="q-opt" data-ok="0">Porque só especialistas conseguem entender.</button>
+    </div>
+    <div class="feedback" id="fb"></div>`},
+  {k:'Reflita', interactive:'reflect', render:()=>`
+    <h2 style="font-size:24px">Em que ponto você costuma parar?</h2>
+    <p class="muted" style="font-size:14.5px;margin:-6px 0 14px">Pode ser um livro, um momento da vida, um tipo de texto.</p>
+    <textarea id="refl" placeholder="Escreva com suas palavras..."></textarea>
+    <p class="hint">Isso vai para o seu Diário Espiritual.</p>`},
+  {k:'Oração', render:()=>`
+    <h2 style="font-size:24px">Para terminar.</h2>
+    <p class="prayer">Senhor, eu quero conhecer a tua Palavra. Onde eu me perder, guia os meus passos. Abre os meus olhos como abriste os daqueles dois no caminho. Amém.</p>`}
+];
+
+/* estado */
+const DEF = {started:false, diag:null, done:[], unlocked:1, streak:0, grace:1, steps:0, diary:[]};
+let S = load();
+function load(){try{const s=JSON.parse(localStorage.getItem('pao-v1'));return s?{...DEF,...s}:{...DEF}}catch(e){return {...DEF}}}
+function save(){try{localStorage.setItem('pao-v1',JSON.stringify(S))}catch(e){}}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}if(a.join()===MOVES.join())return shuffle(a);return a}
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+
+function show(id){
+  $$('.screen').forEach(s=>s.classList.toggle('on',s.id===id));
+  const tabs=['home','diary','guia','perfil'];
+  $('#nav').style.display=tabs.includes(id)?'flex':'none';
+  $$('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.tabgo===id));
+  if(id==='home')renderHome();
+  if(id==='diary')renderDiary();
+  if(id==='perfil')renderPerfil();
+  const sc=document.getElementById(id); if(sc) sc.scrollTop=0;
+}
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),2200)}
+
+/* diagnóstico */
+$('#diagOpts').innerHTML=DIAG.map(d=>`<button class="opt" data-d="${d.id}"><span class="dot"></span>${d.t}</button>`).join('');
+$('#diagOpts').addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;$$('.opt').forEach(o=>o.classList.toggle('sel',o===b));S.diag=b.dataset.d;$('#diagNext').disabled=false});
+$('#diagNext').onclick=()=>{const d=DIAG.find(x=>x.id===S.diag);$('#recTitle').textContent=d.rt;$('#recText').textContent=d.rx;$('#recList').innerHTML=DAYS.map(x=>`<li><b>${x.n}</b>${x.t}</li>`).join('');show('rec')};
+
+/* home */
+function renderHome(){
+  const h=new Date().getHours();
+  $('#greetT').textContent=h<12?'Bom dia.':h<18?'Boa tarde.':'Boa noite.';
+  $('#streakN').textContent=S.streak;$('#graceN').textContent=S.grace;$('#stepsN').textContent=S.steps;
+  $('#chipLamp').classList.toggle('lit',S.streak>0);
+  $('#mapProg').textContent=`${S.done.length} de 7`;
+  const next=DAYS.find(d=>!S.done.includes(d.n));
+  const avail=next&&next.n<=S.unlocked;
+  if(!next){$('#contEyebrow').textContent='Trilha concluída';$('#contTitle').textContent='Você viu o mapa inteiro';$('#contSub').textContent='Próximo: Jesus em Ordem'}
+  else if(avail){$('#contEyebrow').textContent=S.done.length?'Continue de onde parou':'Comece aqui';$('#contTitle').textContent=`Dia ${next.n} · ${next.t}`;$('#contSub').textContent='Cerca de 6 minutos'}
+  else{$('#contEyebrow').textContent='Lâmpada acesa hoje';$('#contTitle').textContent=`Dia ${next.n} libera amanhã`;$('#contSub').textContent='Enquanto isso, registre algo no diário'}
+  $('#continueBtn').onclick=()=>{if(!next)return offer();if(avail)openDay(next.n);else show('diary')};
+  // mapa
+  const W=$('#map').clientWidth||400, rowH=104;
+  const pts=DAYS.map((d,i)=>({x:i%2? W-57:57, y:i*rowH+52+10}));
+  let dPath=`M${pts[0].x} ${pts[0].y}`;
+  for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i];const my=(a.y+b.y)/2;dPath+=` C${a.x} ${my}, ${b.x} ${my}, ${b.x} ${b.y}`}
+  const doneIdx=S.done.length;
+  let dDone=`M${pts[0].x} ${pts[0].y}`;
+  for(let i=1;i<=Math.min(doneIdx,pts.length-1);i++){const a=pts[i-1],b=pts[i];const my=(a.y+b.y)/2;dDone+=` C${a.x} ${my}, ${b.x} ${my}, ${b.x} ${b.y}`}
+  $('#map').innerHTML=`<svg class="path" viewBox="0 0 ${W} ${DAYS.length*rowH+20}" preserveAspectRatio="none"><path d="${dPath}" fill="none" stroke="#D8CCB4" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>${doneIdx?`<path d="${dDone}" fill="none" stroke="#5D6B3B" stroke-width="3.5" stroke-linecap="round"/>`:''}</svg>`+
+  DAYS.map((d,i)=>{
+    const done=S.done.includes(d.n), cur=!done&&d.n<=S.unlocked&&d===next, locked=!done&&!cur;
+    const cls=done?'done':cur?'cur':'locked';
+    const inner=done?`<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg>`:locked&&d.n>S.unlocked?`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A8D98" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>`:d.n;
+    return `<div class="node ${cls} ${i%2?'r':''}"><button class="circle" data-day="${d.n}">${inner}</button><div class="lbl"><small>Dia ${d.n} · ${d.p}</small><strong>${d.t}</strong>${cur?'<em>Toque para começar</em>':''}</div></div>`
+  }).join('');
+}
+$('#map').addEventListener('click',e=>{const b=e.target.closest('[data-day]');if(!b)return;const n=+b.dataset.day;
+  if(S.done.includes(n)){n===1?openDay(1):toast('Revisão disponível na versão final');return}
+  if(n>S.unlocked){toast(n===S.unlocked+1?'Libera amanhã. Volte para manter a lâmpada acesa.':'Siga a trilha em ordem, um dia por vez.');return}
+  openDay(n)});
+
+/* lição */
+let L={day:1,i:0,ok:false,firstTry:true,bonus:0};
+function openDay(n){
+  if(n!==1){ // demais dias: em produção
+    $('#lBody').innerHTML=`<div class="l-kind">Dia ${n}</div><h2>${DAYS[n-1].t}</h2><div class="l-text"><p>Esta lição está em produção. No protótipo, só o Dia 1 tem conteúdo completo.</p></div>`;
+    $('#lBar').style.width='100%';L={day:n,i:99,ok:true};$('#lNext').textContent='Concluir mesmo assim';$('#lNext').disabled=false;show('lesson');return}
+  L={day:1,i:0,ok:true,firstTry:true,bonus:0};renderCard();show('lesson')}
+function renderCard(){
+  const c=DAY1[L.i];
+  $('#lBar').style.width=((L.i)/DAY1.length*100+4)+'%';
+  $('#lBody').innerHTML=`<div class="l-kind">Dia 1 · ${c.k}</div>`+c.render();
+  $('#lBody').scrollTop=0;
+  L.ok=!c.interactive||c.interactive==='reflect';L.firstTry=true;
+  $('#lNext').textContent=L.i===DAY1.length-1?'Concluir o Dia 1':c.interactive==='reflect'?'Salvar e continuar':'Continuar';
+  $('#lNext').disabled=!L.ok;
+  if(c.interactive==='order')bindOrder();
+  if(c.interactive==='quiz')bindQuiz();
+}
+function bindOrder(){
+  let filled=[];
+  $('#pool').onclick=e=>{const b=e.target.closest('.pill');if(!b||b.classList.contains('used'))return;
+    const idx=filled.length;const slot=$$('#slots .slot')[idx];
+    slot.querySelector('span').textContent=b.dataset.m;slot.classList.add('filled');b.classList.add('used');filled.push(b.dataset.m);
+    if(filled.length===4){
+      const right=filled.every((m,i)=>m===MOVES[i]);
+      $$('#slots .slot').forEach((s,i)=>s.classList.add(filled[i]===MOVES[i]?'ok':'bad'));
+      const fb=$('#fb');
+      if(right){fb.className='feedback show good';fb.innerHTML='<b>Isso.</b> Criação, Queda, Redenção, Restauração. Guarde essa sequência: ela é o esqueleto da Bíblia inteira.';if(L.firstTry)L.bonus+=10;L.ok=true;$('#lNext').disabled=false}
+      else{fb.className='feedback show bad';fb.innerHTML='Quase. Tente de novo: o que vem primeiro, o mundo bom ou o mundo quebrado?';L.firstTry=false;
+        setTimeout(()=>{filled=[];$$('#slots .slot').forEach(s=>{s.className='slot';s.querySelector('span').textContent=''});$$('#pool .pill').forEach(p=>p.classList.remove('used'));fb.className='feedback'},1400)}
+    }};
+}
+function bindQuiz(){
+  $('#quiz').onclick=e=>{const b=e.target.closest('.q-opt');if(!b||L.ok)return;const fb=$('#fb');
+    if(b.dataset.ok==='1'){b.classList.add('right');fb.className='feedback show good';fb.innerHTML='<b>Exato.</b> A Bíblia não está em ordem cronológica. Quando você conhece a linha da história, cada livro encontra o seu lugar.';if(L.firstTry)L.bonus+=10;L.ok=true;$('#lNext').disabled=false}
+    else{b.classList.add('wrong');L.firstTry=false;fb.className='feedback show bad';fb.innerHTML='Não é isso. As partes se ligam, e não é preciso ser especialista. Tente outra opção.'}};
+}
+$('#lNext').onclick=()=>{
+  if(L.i===99)return finishDay();
+  const c=DAY1[L.i];
+  if(c.interactive==='reflect'){const v=($('#refl').value||'').trim();if(v){S.diary.unshift({d:Date.now(),tag:'Dia 1 · Reflexão',f:{aprendi:v}});save()}}
+  if(L.i<DAY1.length-1){L.i++;renderCard()}else finishDay();
+};
+function finishDay(){
+  const first=!S.done.includes(L.day);
+  const gained=first?50+(L.bonus||0):0;
+  if(first){S.done.push(L.day);S.streak+=1;S.steps+=gained}
+  save();
+  $('#dStreak').textContent=S.streak;$('#dSteps').textContent='+'+gained;$('#dProg').textContent=`${S.done.length}/7`;
+  $('#dBadge').style.display=L.day===1&&first?'flex':'none';
+  $('#doneTitle').textContent=first?'Lâmpada acesa.':'Revisão concluída.';
+  show('done');
+  if(gained){const f=document.createElement('div');f.className='float';f.textContent=`+${gained} passos`;$('#done').appendChild(f);setTimeout(()=>f.remove(),1500)}
+}
+
+/* diário */
+function renderDiary(){
+  const L=$('#diaryList');
+  if(!S.diary.length){L.innerHTML='<div class="empty">Nenhum registro ainda. Conclua o Dia 1 ou escreva um novo registro.</div>';return}
+  const lab={aprendi:'Aprendi',versiculo:'Versículo',duvida:'Dúvida',oracao:'Oração',decisao:'Decisão'};
+  L.innerHTML=S.diary.map(e=>`<div class="entry"><div class="meta"><span>${e.tag}</span><span>${new Date(e.d).toLocaleDateString('pt-BR',{day:'2-digit',month:'short'})}</span></div>${Object.entries(e.f).map(([k,v])=>`<p><i>${lab[k]}</i>${esc(v)}</p>`).join('')}</div>`).join('');
+}
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+$$('.toggle button').forEach(b=>b.onclick=()=>{$$('.toggle button').forEach(x=>x.classList.toggle('on',x===b));$('#diaryList').style.display=b.dataset.tab==='list'?'block':'none';$('#diaryNew').style.display=b.dataset.tab==='new'?'block':'none'});
+
+/* perfil */
+function renderPerfil(){const d=DIAG.find(x=>x.id===S.diag);$('#pDiag').textContent=d?`Ponto de partida: “${d.t}”`:'';
+  $('#pStreak').textContent=S.streak+(S.streak===1?' dia':' dias');$('#pSteps').textContent=S.steps;$('#pDone').textContent=S.done.length;$('#pDiary').textContent=S.diary.length}
+
+/* oferta */
+function offer(){$('#offer').classList.add('on')}
+$('#offer').addEventListener('click',e=>{if(e.target.id==='offer')$('#offer').classList.remove('on')});
+
+/* ações */
+document.addEventListener('click',e=>{
+  const g=e.target.closest('[data-go]');if(g)return show(g.dataset.go);
+  const t=e.target.closest('[data-tabgo]');if(t)return show(t.dataset.tabgo);
+  const a=e.target.closest('[data-act]');if(!a)return;
+  ({
+    skip(){S.started=true;if(!S.diag)S.diag='perco';save();show('home')},
+    startJourney(){S.started=true;save();openDay(1)},
+    exitLesson(){show('home')},
+    toHome(){show('home')},
+    offer, closeOffer(){$('#offer').classList.remove('on')},
+    buy(){$('#offer').classList.remove('on');toast('Checkout entra aqui na versão final')},
+    nextDay(){if(S.unlocked<7&&S.done.includes(S.unlocked)){S.unlocked++;save();renderHome();toast(`Dia ${S.unlocked} liberado`)}else toast('Conclua o dia atual primeiro')},
+    saveEntry(){const f={};$$('#diaryNew textarea').forEach(x=>{const v=x.value.trim();if(v)f[x.dataset.f]=v});
+      if(!Object.keys(f).length)return toast('Escreva em pelo menos um campo');
+      S.diary.unshift({d:Date.now(),tag:'Registro livre',f});save();$$('#diaryNew textarea').forEach(x=>x.value='');
+      $$('.toggle button')[0].click();renderDiary();toast('Registro salvo')},
+    reset(){S={...DEF,done:[],diary:[]};save();$$('.opt').forEach(o=>o.classList.remove('sel'));$('#diagNext').disabled=true;show('welcome')}
+  })[a.dataset.act]?.();
+});
+
+show(S.started?'home':'welcome');
+</script>
+</body>
+</html>

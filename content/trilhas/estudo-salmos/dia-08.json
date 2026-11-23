@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 8,
+  "titulo": "Quando preciso agradecer",
+  "passagens": "Salmos 103",
+  "midiaSugerida": {
+    "id": "sl-d08",
+    "prompt": "a wide field of golden wheat at sunrise, the sun rising on the eastern horizon and deep blue sky to the west, sense of vastness and gratitude, no people"
+  },
+  "cards": [
+    {
+      "id": "sl-d08-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Não se esqueça.",
+      "paragrafos": [
+        "No Salmo 103, Davi fala consigo mesmo: bendiga ao Senhor, minha alma, e não esqueça nenhum dos seus benefícios.",
+        "A gratidão começa com memória."
+      ]
+    },
+    {
+      "id": "sl-d08-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "A lista de Davi.",
+      "paragrafos": [
+        "Ele perdoa, cura, resgata, coroa de amor, satisfaz com bens.",
+        "Davi não fala de forma vaga. Ele lista o que Deus fez, um item por vez."
+      ]
+    },
+    {
+      "id": "sl-d08-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Do oriente ao ocidente.",
+      "paragrafos": [
+        "Deus não nos trata segundo os nossos pecados. Afasta de nós as culpas tanto quanto o oriente está longe do ocidente.",
+        "Somos frágeis como a erva do campo, mas o amor de Deus dura para sempre."
+      ]
+    },
+    {
+      "id": "sl-d08-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "A lista de Davi.",
+      "instrucao": "Toque no que Deus faz e depois em quem recebe.",
+      "pares": [
+        {
+          "a": "Perdoa",
+          "b": "Todas as culpas"
+        },
+        {
+          "a": "Cura",
+          "b": "As doenças"
+        },
+        {
+          "a": "Resgata",
+          "b": "Da cova"
+        },
+        {
+          "a": "Coroa",
+          "b": "De bondade e compaixão"
+        }
+      ],
+      "acerto": "Isso. Uma lista para não esquecer."
+    },
+    {
+      "id": "sl-d08-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Bendiga, minha alma.",
+      "referencia": "Salmos 103",
+      "resumo": "Davi convida a própria alma a louvar a Deus e a lembrar de tudo o que Ele faz: perdoa, cura, resgata e renova. Deus é compassivo, paciente e cheio de amor. Conhece a nossa fragilidade, e o seu amor permanece para sempre.",
+      "observar": "Davi termina convidando os anjos e toda a criação a louvar junto."
+    },
+    {
+      "id": "sl-d08-c06",
+      "tipo": "cristo",
+      "texto": "Ninguém mostrou melhor do que Jesus um Deus que perdoa, cura e resgata. Nele, as nossas culpas foram afastadas de nós."
+    },
+    {
+      "id": "sl-d08-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Por onde começa a gratidão no Salmo 103?",
+      "opcoes": [
+        {
+          "texto": "Por lembrar o que Deus já fez.",
+          "correta": true
+        },
+        {
+          "texto": "Por esperar tudo dar certo.",
+          "correta": false
+        },
+        {
+          "texto": "Por comparar a vida com a dos outros.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Gratidão é memória.",
+      "erro": "Releia o card \"Não se esqueça\"."
+    },
+    {
+      "id": "sl-d08-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Faça a sua própria lista: três coisas que Deus fez por você e que você não quer esquecer."
+    },
+    {
+      "id": "sl-d08-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Bendiga ao Senhor, minha alma! Obrigado por me perdoar, cuidar de mim e me amar conhecendo a minha fragilidade. Não quero esquecer nenhum dos teus benefícios. Amém."
+    }
+  ]
+}

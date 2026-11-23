@@ -1,0 +1,125 @@
+{
+  "status": "em_revisao",
+  "n": 1,
+  "titulo": "Por que quatro Evangelhos",
+  "passagens": "Lucas 1:1-4; João 20:30-31",
+  "fase": "Preparação",
+  "midiaSugerida": {
+    "id": "je-d01-quatro",
+    "prompt": "Four ancient scrolls lying side by side on a wooden table, each tied with a cord of a different color, lit by a small clay oil lamp at night. No people."
+  },
+  "cards": [
+    {
+      "id": "je-d01-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Quatro livros, uma pessoa.",
+      "paragrafos": [
+        "Você terminou o mapa e viu que toda a Bíblia aponta para um centro: Jesus.",
+        "Nos próximos 30 dias, vamos olhar esse centro de perto e acompanhar a vida dele na ordem em que aconteceu."
+      ]
+    },
+    {
+      "id": "je-d01-c02",
+      "tipo": "movimentos",
+      "rotulo": "Entenda",
+      "titulo": "Quatro retratos, quatro olhares.",
+      "itens": [
+        {
+          "n": 1,
+          "nome": "Mateus",
+          "texto": "Escrito pensando em leitores judeus. Mostra Jesus cumprindo as promessas das Escrituras."
+        },
+        {
+          "n": 2,
+          "nome": "Marcos",
+          "texto": "O mais curto e direto. A tradição antiga o liga às memórias de Pedro."
+        },
+        {
+          "n": 3,
+          "nome": "Lucas",
+          "texto": "Um médico que pesquisou tudo com cuidado antes de escrever."
+        },
+        {
+          "n": 4,
+          "nome": "João",
+          "texto": "Uma testemunha que quer mostrar quem Jesus é."
+        }
+      ]
+    },
+    {
+      "id": "je-d01-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Por que ler em ordem?",
+      "paragrafos": [
+        "Cada Evangelho organiza a história com um propósito, às vezes por tema, nem sempre pela data. Lidos separados, os episódios parecem soltos.",
+        "Juntos e em sequência, aparece o caminho inteiro. A ordem exata de alguns episódios é debatida; aqui seguimos a sequência mais aceita."
+      ]
+    },
+    {
+      "id": "je-d01-c04",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "As fases da vida de Jesus.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Nascimento",
+        "Preparação",
+        "Ministério na Galileia",
+        "Caminho para Jerusalém",
+        "Última semana"
+      ],
+      "acerto": "Isso. Esse é o mapa dos próximos 30 dias.",
+      "erro": "Quase. Antes do ministério, vem a preparação."
+    },
+    {
+      "id": "je-d01-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Escrever em ordem.",
+      "referencia": "Lucas 1:1-4",
+      "resumo": "Lucas conta que muitos já tinham escrito sobre Jesus. Ele investigou tudo com cuidado, desde o começo, e decidiu escrever em ordem para Teófilo, para que ele tivesse certeza do que tinha aprendido.",
+      "observar": "Lucas usa exatamente a ideia desta jornada: escrever em ordem, para dar firmeza à fé."
+    },
+    {
+      "id": "je-d01-c06",
+      "tipo": "cristo",
+      "texto": "João diz por que escreveu: para que você creia que Jesus é o Cristo, o Filho de Deus, e, crendo, tenha vida (João 20:31). Os Evangelhos não são só biografia; são um convite."
+    },
+    {
+      "id": "je-d01-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Qual evangelista diz que investigou tudo com cuidado para escrever em ordem?",
+      "opcoes": [
+        {
+          "texto": "Lucas",
+          "correta": true
+        },
+        {
+          "texto": "Marcos",
+          "correta": false
+        },
+        {
+          "texto": "João",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Lucas era médico e escreveu como um pesquisador cuidadoso.",
+      "erro": "Releia o card Na Palavra: a resposta está no começo do terceiro Evangelho."
+    },
+    {
+      "id": "je-d01-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "O que você mais quer descobrir sobre Jesus nesses 30 dias?"
+    },
+    {
+      "id": "je-d01-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor Jesus, eu quero te conhecer como Tu és, não só ouvir falar de Ti. Caminha comigo nesses dias e abre a tua Palavra para mim. Amém."
+    }
+  ]
+}

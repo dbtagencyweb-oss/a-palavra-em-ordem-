@@ -1,0 +1,496 @@
+{
+  "estiloBase": "cinematic biblical epic, painterly realism, golden hour backlight, warm earth palette (ochre, sand, terracotta, deep umber), volumetric light rays, soft film grain, historically grounded ancient Near East clothing and architecture, vertical 9:16, calm lower third, no text",
+  "estiloFundo": "painterly cinematic landscape, wide establishing shot, vertical 9:16, main subject in the upper 40% of the frame, lower 55% calm and dark (shadowed ground, still water or deep sky) to hold text, no people or only tiny distant silhouettes, volumetric light, soft film grain, historically grounded ancient Near East, no text, no logos",
+  "estiloSimbolo": "a single round antique gold medallion like a struck coin, {SIMBOLO} in raised relief at the center, simple engraved inner ring border, brushed gold with subtle wear, soft light from the top left, front view, perfectly centered, filling 92% of the frame, isolated on a plain flat white background, minimalist, no text, no letters, no numbers",
+  "itens": [
+    {
+      "id": "d1-labirinto",
+      "tipo": "video",
+      "dia": 1,
+      "onde": "Abertura do Dia 1",
+      "prompt": "old parchment scrolls and an open ancient book on a wooden table lit by an oil lamp, camera slowly pushing in",
+      "movimento": "the lines of text on the parchment slowly rearrange into a winding golden path, like a map drawing itself",
+      "ambiente": "amb_fire_soft",
+      "status": "pronto"
+    },
+    {
+      "id": "d1-emaus",
+      "tipo": "imagem",
+      "dia": 1,
+      "onde": "Card Na Palavra (Lucas 24)",
+      "prompt": "two travelers walking on a dusty road at sunset toward a small village, a third figure walking beside them seen only from behind, long shadows",
+      "nota": "A terceira figura é Jesus: só de costas.",
+      "status": "pronto"
+    },
+    {
+      "id": "d2-criacao",
+      "tipo": "video",
+      "dia": 2,
+      "onde": "Cena de abertura do Dia 2",
+      "prompt": "beam of light breaking over dark primordial waters, mist, first dawn",
+      "movimento": "light spreads across the water, land and green hills emerge, sky turns golden",
+      "ambiente": "amb_water_sea",
+      "status": "pronto"
+    },
+    {
+      "id": "d2-jardim",
+      "tipo": "imagem",
+      "dia": 2,
+      "onde": "Card Tudo era bom",
+      "prompt": "lush garden paradise with a river and a great luminous tree in the center, two tiny human silhouettes far away among the foliage",
+      "nota": "Adão e Eva só como silhuetas distantes.",
+      "status": "pronto"
+    },
+    {
+      "id": "d2-esconder",
+      "tipo": "imagem",
+      "dia": 2,
+      "onde": "Card O mundo se quebra",
+      "prompt": "close-up of a hand parting large fig leaves in dim evening light, a bitten fruit on the ground, mood of shame and hiding, cool shadows with a ray of warm light searching",
+      "status": "pronto"
+    },
+    {
+      "id": "d2-arco-iris",
+      "tipo": "imagem",
+      "dia": 2,
+      "onde": "Card Na Palavra / recomeço",
+      "prompt": "large wooden ark resting on a mountain slope after the flood, wet earth, a soft rainbow across the clearing sky",
+      "status": "pronto"
+    },
+    {
+      "id": "d3-estrelas",
+      "tipo": "video",
+      "dia": 3,
+      "onde": "Cena do Dia 3 (promessa das estrelas)",
+      "prompt": "elderly man in a wool robe seen from behind, standing outside a tent in the desert at night under a vast starry sky",
+      "movimento": "slow tilt up as more and more stars appear until the sky is full",
+      "ambiente": "amb_night_crickets",
+      "nota": "Abraão pode aparecer, mas de costas fica mais forte: o protagonista é o céu.",
+      "status": "pronto"
+    },
+    {
+      "id": "d3-caravana",
+      "tipo": "imagem",
+      "dia": 3,
+      "onde": "Card O chamado de Abraão",
+      "prompt": "family caravan with camels, sheep and tents leaving a walled ancient city at dawn, heading into the open desert",
+      "status": "pronto"
+    },
+    {
+      "id": "d3-jose",
+      "tipo": "imagem",
+      "dia": 3,
+      "onde": "Card De uma família, um povo",
+      "prompt": "young Hebrew man dressed as an Egyptian official overlooking large granaries along the Nile, workers carrying grain sacks",
+      "status": "pronto"
+    },
+    {
+      "id": "d4-sarca",
+      "tipo": "video",
+      "dia": 4,
+      "onde": "Cena do Dia 4 (chamado de Moisés)",
+      "prompt": "a desert bush burning with bright gentle flames that do not consume its leaves, rocky mountain behind, a shepherd's staff lying on the ground",
+      "movimento": "flames flicker softly, embers rise, the bush stays green",
+      "ambiente": "amb_fire_soft",
+      "nota": "Deus não aparece como pessoa: só o fogo.",
+      "status": "pronto"
+    },
+    {
+      "id": "d4-porta-pascoa",
+      "tipo": "imagem",
+      "dia": 4,
+      "onde": "Card Deus liberta (Páscoa)",
+      "prompt": "night, mud-brick house doorway with a dark red mark painted on the wooden lintel and doorposts, warm lamp light inside, quiet street",
+      "nota": "Marca discreta, sem aspecto de sangue escorrendo.",
+      "status": "pronto"
+    },
+    {
+      "id": "d4-mar-aberto",
+      "tipo": "video",
+      "dia": 4,
+      "onde": "Cena do Mar Vermelho",
+      "prompt": "wide aerial view of a sea parted into two towering walls of water, a multitude crossing on the dry seabed at dawn",
+      "movimento": "camera glides forward slowly between the walls of water, spray in the light",
+      "ambiente": "amb_water_sea",
+      "status": "pronto"
+    },
+    {
+      "id": "d4-sinai",
+      "tipo": "imagem",
+      "dia": 4,
+      "onde": "Card Primeiro o resgate, depois a lei",
+      "prompt": "massive mountain wrapped in dark cloud with fire at the summit, a vast camp of tents at its base, people looking up",
+      "status": "pronto"
+    },
+    {
+      "id": "d4-serpente-bronze",
+      "tipo": "imagem",
+      "dia": 4,
+      "onde": "Card extra Na caminhada (Números 21) — opcional",
+      "prompt": "Moses on a rock lifting a tall wooden pole with a bronze serpent sculpture mounted on top, crowd in the desert camp looking at it, snakes on the ground",
+      "nota": "Sua imagem de referência serve, com um ajuste: em Números 21 é uma serpente de BRONZE presa numa haste, não uma cobra viva no cajado.",
+      "status": "pronto"
+    },
+    {
+      "id": "d5-coroa",
+      "tipo": "imagem",
+      "dia": 5,
+      "onde": "Card De juízes a reis",
+      "prompt": "ancient golden crown resting on a stone ledge beside a wooden lyre, palace window light, Jerusalem hills beyond",
+      "status": "pronto"
+    },
+    {
+      "id": "d5-templo",
+      "tipo": "video",
+      "dia": 5,
+      "onde": "Cena do Dia 5 (templo de Salomão)",
+      "prompt": "Solomon's temple in Jerusalem at sunrise, cedar and stone, courtyard, smoke from the altar rising",
+      "movimento": "slow rising crane shot revealing the temple and the city",
+      "ambiente": "amb_temple_reverb",
+      "status": "pronto"
+    },
+    {
+      "id": "d5-exilio",
+      "tipo": "imagem",
+      "dia": 5,
+      "onde": "Card O reino se divide e cai",
+      "prompt": "long line of exiles walking toward a monumental blue glazed-brick city gate of Babylon, dust, heavy sky, no chains in focus",
+      "status": "pronto"
+    },
+    {
+      "id": "d5-muralhas",
+      "tipo": "imagem",
+      "dia": 5,
+      "onde": "Card / volta a Jerusalém",
+      "prompt": "people rebuilding the stone walls of Jerusalem, some carrying stones, others holding tools, morning light, hope",
+      "status": "pronto"
+    },
+    {
+      "id": "d6-belem",
+      "tipo": "imagem",
+      "dia": 6,
+      "onde": "Card A promessa chega",
+      "prompt": "humble stone stable at night lit by a single oil lamp, a young mother and father seen from the side looking down at a swaddled baby in a manger, baby's face not visible",
+      "nota": "Rosto do bebê não aparece.",
+      "status": "pronto"
+    },
+    {
+      "id": "d6-sinagoga",
+      "tipo": "video",
+      "dia": 6,
+      "onde": "Cena do Dia 6 (Lucas 4)",
+      "prompt": "close-up of hands unrolling an ancient Isaiah scroll inside a stone synagogue, lamp light, dust in the air",
+      "movimento": "the scroll unrolls slowly, light shifts across the Hebrew letters",
+      "ambiente": "amb_temple_reverb",
+      "nota": "Só as mãos de Jesus.",
+      "status": "pronto"
+    },
+    {
+      "id": "d6-cruz",
+      "tipo": "imagem",
+      "dia": 6,
+      "onde": "Card Quem é Jesus (crucificação)",
+      "prompt": "three crosses silhouetted on a distant hill against a dramatic stormy sunset, no detail of bodies",
+      "nota": "Silhueta distante, sem violência gráfica.",
+      "status": "pronto"
+    },
+    {
+      "id": "d6-tumulo",
+      "tipo": "video",
+      "dia": 6,
+      "onde": "Cena da ressurreição (antes do card Na Palavra)",
+      "prompt": "rock-cut tomb in a garden at dawn, the large round stone rolled aside, empty interior",
+      "movimento": "first sunlight pours into the empty tomb, linen cloths visible, birds start singing",
+      "ambiente": "amb_garden_birds",
+      "nota": "Momento mais forte da trilha: use day_complete curto aqui.",
+      "status": "pronto"
+    },
+    {
+      "id": "d7-pentecostes",
+      "tipo": "video",
+      "dia": 7,
+      "onde": "Cena do Dia 7 (Atos 2)",
+      "prompt": "upper room full of people, small tongues of fire resting above their heads, wind moving the curtains",
+      "movimento": "the wind rises, flames glow brighter, people look up in awe",
+      "ambiente": "amb_desert_wind",
+      "status": "pronto"
+    },
+    {
+      "id": "d7-paulo",
+      "tipo": "imagem",
+      "dia": 7,
+      "onde": "Card Onde entram as cartas",
+      "prompt": "middle-aged man writing a letter on parchment by oil lamp in a simple room, a travel bag and staff in the corner, Roman-era setting",
+      "status": "pronto"
+    },
+    {
+      "id": "d7-cidade",
+      "tipo": "video",
+      "dia": 7,
+      "onde": "Cena final (Apocalipse 21-22)",
+      "prompt": "luminous city with open gates, a crystal river flowing through the main street and a great tree of life on both banks, people from every nation walking in",
+      "movimento": "slow approach through the open gates toward the river and the tree, light grows",
+      "ambiente": "amb_city_morning",
+      "nota": "Fecha o arco com d2-jardim: mesma árvore, mesmo rio.",
+      "status": "pendente"
+    },
+    {
+      "id": "simbolo-lampada",
+      "tipo": "simbolo",
+      "dia": 1,
+      "onde": "Conclusão do Dia 1 e Coleção",
+      "prompt": "a single round antique gold medallion like a struck coin, an ancient clay oil lamp with a small flame in raised relief at the center, simple engraved inner ring border, brushed gold with subtle wear, soft light from the top left, front view, perfectly centered, filling 92% of the frame, isolated on a plain flat white background, minimalist, no text, no letters, no numbers",
+      "nota": "Gere os 7 juntos, na mesma sessão. Remova o fundo branco e exporte PNG transparente 1024 e WebP transparente 512.",
+      "status": "pronto"
+    },
+    {
+      "id": "simbolo-arvore",
+      "tipo": "simbolo",
+      "dia": 2,
+      "onde": "Conclusão do Dia 2 e Coleção",
+      "prompt": "a single round antique gold medallion like a struck coin, the tree of life with spreading branches and visible roots in raised relief at the center, simple engraved inner ring border, brushed gold with subtle wear, soft light from the top left, front view, perfectly centered, filling 92% of the frame, isolated on a plain flat white background, minimalist, no text, no letters, no numbers",
+      "nota": "Gere os 7 juntos, na mesma sessão. Remova o fundo branco e exporte PNG transparente 1024 e WebP transparente 512.",
+      "status": "pronto"
+    },
+    {
+      "id": "simbolo-estrelas",
+      "tipo": "simbolo",
+      "dia": 3,
+      "onde": "Conclusão do Dia 3 e Coleção",
+      "prompt": "a single round antique gold medallion like a struck coin, a cluster of small stars around one larger bright star in raised relief at the center, simple engraved inner ring border, brushed gold with subtle wear, soft light from the top left, front view, perfectly centered, filling 92% of the frame, isolated on a plain flat white background, minimalist, no text, no letters, no numbers",
+      "nota": "Gere os 7 juntos, na mesma sessão. Remova o fundo branco e exporte PNG transparente 1024 e WebP transparente 512.",
+      "status": "pronto"
+    },
+    {
+      "id": "simbolo-cordeiro",
+      "tipo": "simbolo",
+      "dia": 4,
+      "onde": "Conclusão do Dia 4 e Coleção",
+      "prompt": "a single round antique gold medallion like a struck coin, a standing lamb seen in profile in raised relief at the center, simple engraved inner ring border, brushed gold with subtle wear, soft light from the top left, front view, perfectly centered, filling 92% of the frame, isolated on a plain flat white background, minimalist, no text, no letters, no numbers",
+      "nota": "Gere os 7 juntos, na mesma sessão. Remova o fundo branco e exporte PNG transparente 1024 e WebP transparente 512.",
+      "status": "pronto"
+    },
+    {
+      "id": "simbolo-coroa",
+      "tipo": "simbolo",
+      "dia": 5,
+      "onde": "Conclusão do Dia 5 e Coleção",
+      "prompt": "a single round antique gold medallion like a struck coin, an ancient royal crown in raised relief at the center, simple engraved inner ring border, brushed gold with subtle wear, soft light from the top left, front view, perfectly centered, filling 92% of the frame, isolated on a plain flat white background, minimalist, no text, no letters, no numbers",
+      "nota": "Gere os 7 juntos, na mesma sessão. Remova o fundo branco e exporte PNG transparente 1024 e WebP transparente 512.",
+      "status": "pronto"
+    },
+    {
+      "id": "simbolo-cruz",
+      "tipo": "simbolo",
+      "dia": 6,
+      "onde": "Conclusão do Dia 6 e Coleção",
+      "prompt": "a single round antique gold medallion like a struck coin, a simple empty cross in raised relief at the center, simple engraved inner ring border, brushed gold with subtle wear, soft light from the top left, front view, perfectly centered, filling 92% of the frame, isolated on a plain flat white background, minimalist, no text, no letters, no numbers",
+      "nota": "Gere os 7 juntos, na mesma sessão. Remova o fundo branco e exporte PNG transparente 1024 e WebP transparente 512.",
+      "status": "pronto"
+    },
+    {
+      "id": "simbolo-cidade",
+      "tipo": "simbolo",
+      "dia": 7,
+      "onde": "Conclusão do Dia 7 e Coleção",
+      "prompt": "a single round antique gold medallion like a struck coin, a city with open gates and a river flowing out of it in raised relief at the center, simple engraved inner ring border, brushed gold with subtle wear, soft light from the top left, front view, perfectly centered, filling 92% of the frame, isolated on a plain flat white background, minimalist, no text, no letters, no numbers",
+      "nota": "Gere os 7 juntos, na mesma sessão. Remova o fundo branco e exporte PNG transparente 1024 e WebP transparente 512.",
+      "status": "pronto"
+    },
+    {
+      "id": "era-d1",
+      "tipo": "fundo",
+      "dia": 1,
+      "onde": "Fundo do Dia 1 (Visão do todo): abertura do capítulo, card Continue na Home e Conclusão",
+      "prompt": "a vast landscape seen from a high hill at dusk, one winding road crossing all of it from a garden on the left to a distant glowing city on the horizon, a small oil lamp burning on a stone in the near foreground, color palette dominated by #2A2620 and #B8893A with #F1E3C4 highlights",
+      "nota": "O texto fica na metade de baixo: ela precisa ser escura e calma.",
+      "status": "pronto"
+    },
+    {
+      "id": "era-d2",
+      "tipo": "fundo",
+      "dia": 2,
+      "onde": "Fundo do Dia 2 (Éden): abertura do capítulo, card Continue na Home e Conclusão",
+      "prompt": "a lush primordial garden at dawn, a river winding through, a great tree crowned with soft light in the distance, low mist between the trees, color palette dominated by #253222 and #6F8A4A with #E1E6D2 highlights",
+      "nota": "O texto fica na metade de baixo: ela precisa ser escura e calma.",
+      "status": "pronto"
+    },
+    {
+      "id": "era-d3",
+      "tipo": "fundo",
+      "dia": 3,
+      "onde": "Fundo do Dia 3 (Canaã): abertura do capítulo, card Continue na Home e Conclusão",
+      "prompt": "nomad tents of dark goat hair on rolling hills under a vast twilight sky filling with stars, a small campfire glow, sheep resting, color palette dominated by #352A1F and #B48A4E with #F0DDBE highlights",
+      "nota": "O texto fica na metade de baixo: ela precisa ser escura e calma.",
+      "status": "pronto"
+    },
+    {
+      "id": "era-d4",
+      "tipo": "fundo",
+      "dia": 4,
+      "onde": "Fundo do Dia 4 (Sinai): abertura do capítulo, card Continue na Home e Conclusão",
+      "prompt": "the rugged granite mountain of Sinai at dawn, its summit wrapped in a glowing cloud with fire inside it, a desert plain below with a faint line of distant tents, color palette dominated by #3A2418 and #B5663A with #F3D6C2 highlights",
+      "nota": "O texto fica na metade de baixo: ela precisa ser escura e calma.",
+      "status": "pronto"
+    },
+    {
+      "id": "era-d5",
+      "tipo": "fundo",
+      "dia": 5,
+      "onde": "Fundo do Dia 5 (Jerusalém e Babilônia): abertura do capítulo, card Continue na Home e Conclusão",
+      "prompt": "ancient Jerusalem on its hill at blue hour, the temple walls catching the last light, indigo sky, a long road leaving the city toward the east, color palette dominated by #232540 and #5E62A0 with #DCDDF2 highlights",
+      "nota": "O texto fica na metade de baixo: ela precisa ser escura e calma.",
+      "status": "pronto"
+    },
+    {
+      "id": "era-d6",
+      "tipo": "fundo",
+      "dia": 6,
+      "onde": "Fundo do Dia 6 (Galileia): abertura do capítulo, card Continue na Home e Conclusão",
+      "prompt": "the Sea of Galilee in early morning, a wooden fishing boat resting near the pebble shore, soft mist on the water, the hills of Galilee beyond, color palette dominated by #1C3140 and #3F7891 with #D3E6EE highlights",
+      "nota": "O texto fica na metade de baixo: ela precisa ser escura e calma.",
+      "status": "pronto"
+    },
+    {
+      "id": "era-d7",
+      "tipo": "fundo",
+      "dia": 7,
+      "onde": "Fundo do Dia 7 (Nova Jerusalém): abertura do capítulo, card Continue na Home e Conclusão",
+      "prompt": "a radiant city of golden light seen from far across a crystal clear river, trees on both banks, open gates, the whole sky glowing warm gold with no sun, the light comes from the city itself, color palette dominated by #33291A and #A8832E with #F6E7C1 highlights",
+      "nota": "O texto fica na metade de baixo: ela precisa ser escura e calma.",
+      "status": "pronto"
+    },
+    {
+      "id": "mapa-d1",
+      "tipo": "fundo",
+      "dia": 1,
+      "onde": "Trecho 1 do mapa ilustrado da Home (Visão do todo). Os 7 trechos se empilham de baixo para cima: Dia 1 embaixo, Dia 7 no topo.",
+      "prompt": "vertical painterly illustration seen slightly from above, a quiet hillside path among olive trees at golden dawn, an open scroll resting on a flat stone beside the road, a clear open dirt road running through the middle of the frame with empty space for map markers, no people, color palette dominated by #2A2620 and #B8893A with #F1E3C4 highlights",
+      "nota": "Topo e base do trecho se emendam com os vizinhos num degradê de 25%: evite elementos importantes nas bordas de cima e de baixo.",
+      "status": "pronto"
+    },
+    {
+      "id": "mapa-d2",
+      "tipo": "fundo",
+      "dia": 2,
+      "onde": "Trecho 2 do mapa ilustrado da Home (Éden). Os 7 trechos se empilham de baixo para cima: Dia 1 embaixo, Dia 7 no topo.",
+      "prompt": "vertical painterly illustration seen slightly from above, a lush garden path between fruit trees and a gentle river, soft morning light, a clear open dirt road running through the middle of the frame with empty space for map markers, no people, color palette dominated by #253222 and #6F8A4A with #E1E6D2 highlights",
+      "nota": "Topo e base do trecho se emendam com os vizinhos num degradê de 25%: evite elementos importantes nas bordas de cima e de baixo.",
+      "status": "pronto"
+    },
+    {
+      "id": "mapa-d3",
+      "tipo": "fundo",
+      "dia": 3,
+      "onde": "Trecho 3 do mapa ilustrado da Home (Canaã). Os 7 trechos se empilham de baixo para cima: Dia 1 embaixo, Dia 7 no topo.",
+      "prompt": "vertical painterly illustration seen slightly from above, a sandy path past nomad tents and grazing sheep under a starry dusk sky, a clear open dirt road running through the middle of the frame with empty space for map markers, no people, color palette dominated by #352A1F and #B48A4E with #F0DDBE highlights",
+      "nota": "Topo e base do trecho se emendam com os vizinhos num degradê de 25%: evite elementos importantes nas bordas de cima e de baixo.",
+      "status": "pronto"
+    },
+    {
+      "id": "mapa-d4",
+      "tipo": "fundo",
+      "dia": 4,
+      "onde": "Trecho 4 do mapa ilustrado da Home (Sinai). Os 7 trechos se empilham de baixo para cima: Dia 1 embaixo, Dia 7 no topo.",
+      "prompt": "vertical painterly illustration seen slightly from above, a rocky desert path climbing toward a mountain wrapped in cloud and fire glow, a clear open dirt road running through the middle of the frame with empty space for map markers, no people, color palette dominated by #3A2418 and #B5663A with #F3D6C2 highlights",
+      "nota": "Topo e base do trecho se emendam com os vizinhos num degradê de 25%: evite elementos importantes nas bordas de cima e de baixo.",
+      "status": "pronto"
+    },
+    {
+      "id": "mapa-d5",
+      "tipo": "fundo",
+      "dia": 5,
+      "onde": "Trecho 5 do mapa ilustrado da Home (Jerusalém e Babilônia). Os 7 trechos se empilham de baixo para cima: Dia 1 embaixo, Dia 7 no topo.",
+      "prompt": "vertical painterly illustration seen slightly from above, a stone road from old city walls toward distant ziggurats along a river at twilight, a clear open dirt road running through the middle of the frame with empty space for map markers, no people, color palette dominated by #232540 and #5E62A0 with #DCDDF2 highlights",
+      "nota": "Topo e base do trecho se emendam com os vizinhos num degradê de 25%: evite elementos importantes nas bordas de cima e de baixo.",
+      "status": "pronto"
+    },
+    {
+      "id": "mapa-d6",
+      "tipo": "fundo",
+      "dia": 6,
+      "onde": "Trecho 6 do mapa ilustrado da Home (Galileia). Os 7 trechos se empilham de baixo para cima: Dia 1 embaixo, Dia 7 no topo.",
+      "prompt": "vertical painterly illustration seen slightly from above, a lakeside path by the Sea of Galilee with fishing boats and hills, clear morning, a clear open dirt road running through the middle of the frame with empty space for map markers, no people, color palette dominated by #1C3140 and #3F7891 with #D3E6EE highlights",
+      "nota": "Topo e base do trecho se emendam com os vizinhos num degradê de 25%: evite elementos importantes nas bordas de cima e de baixo.",
+      "status": "pronto"
+    },
+    {
+      "id": "mapa-d7",
+      "tipo": "fundo",
+      "dia": 7,
+      "onde": "Trecho 7 do mapa ilustrado da Home (Nova Jerusalém). Os 7 trechos se empilham de baixo para cima: Dia 1 embaixo, Dia 7 no topo.",
+      "prompt": "vertical painterly illustration seen slightly from above, a radiant path rising toward a shining city of light on the horizon, golden clouds, a clear open dirt road running through the middle of the frame with empty space for map markers, no people, color palette dominated by #33291A and #A8832E with #F6E7C1 highlights",
+      "nota": "Topo e base do trecho se emendam com os vizinhos num degradê de 25%: evite elementos importantes nas bordas de cima e de baixo.",
+      "status": "pronto"
+    },
+    {
+      "id": "capa-boas-vindas",
+      "tipo": "fundo",
+      "onde": "Topo da tela de Boas-vindas",
+      "prompt": "soft dawn light over gentle hills, a single path winding from the foreground to a distant glowing horizon, airy and hopeful, very light palette of cream #F5EFE3, warm sand and pale gold, the bottom 35% fades into plain cream #F5EFE3, square 1:1",
+      "nota": "Tela clara: nada escuro. A parte de baixo precisa ser creme liso para emendar com a tela.",
+      "status": "pronto"
+    },
+    {
+      "id": "capa-jesus-em-ordem",
+      "tipo": "fundo",
+      "onde": "Card da Trilha 2 (Jesus em Ordem) na Home",
+      "prompt": "the shore of the Sea of Galilee at sunrise, one figure walking away along the shore far in the distance, seen only from behind, footprints in the wet sand, deep navy #1E2230 and warm gold light, the left half dark and calm for text, landscape 3:2",
+      "nota": "A figura é Jesus: só de costas e à distância.",
+      "status": "pronto"
+    },
+    {
+      "id": "intro-luz",
+      "tipo": "video",
+      "onde": "Abertura de cinema: só na primeira vez, depois de \"Começar minha jornada\"",
+      "prompt": "night sky over quiet dark hills; a single warm point of light appears low on the horizon and slowly spreads into a golden dawn, clouds catch the light, calm and hopeful",
+      "movimento": "slow upward tilt from the hills to the open sky; the light grows steadily, no cuts",
+      "nota": "Proposta, revisar. 6 a 10 s. O logo completo entra nos últimos 2 s sobre o céu: deixar o centro e o terço superior calmos, sem detalhes. Mudo (o som vem do SoundManager).",
+      "status": "pendente"
+    },
+    {
+      "id": "capa-estudo-romanos",
+      "tipo": "fundo",
+      "onde": "Capa do estudo Romanos na Loja de estudos",
+      "prompt": "an ancient Roman street at dawn seen from a quiet courtyard, a rolled letter sealed with wax resting on a stone ledge, warm gold light, deep navy #1E2230 shadows, the left half dark and calm for text, landscape 3:2",
+      "nota": "Sem pessoas em destaque. Só a carta e a cidade.",
+      "status": "pendente"
+    },
+    {
+      "id": "capa-estudo-salmos",
+      "tipo": "fundo",
+      "onde": "Capa do estudo Salmos na Loja de estudos",
+      "prompt": "a small wooden lyre resting on a rock beside a still pool in a desert valley at first light, mist over distant hills, gentle hopeful gold light, deep navy #1E2230 shadows, the left half dark and calm for text, landscape 3:2",
+      "nota": "Clima de consolo, nada triste demais.",
+      "status": "pendente"
+    },
+    {
+      "id": "capa-estudo-apocalipse",
+      "tipo": "fundo",
+      "onde": "Capa do estudo Apocalipse na Loja de estudos",
+      "prompt": "a rocky island coast at sunrise over a calm sea, through parting clouds a radiant golden light breaks over the horizon, hopeful and serene, no monsters and nothing frightening, deep navy #1E2230 and warm gold, the left half dark and calm for text, landscape 3:2",
+      "nota": "Patmos. Esperança, não medo. Deus só como luz.",
+      "status": "pendente"
+    },
+    {
+      "id": "simbolo-manjedoura",
+      "tipo": "simbolo",
+      "trilha": "jesus-em-ordem",
+      "dia": 5,
+      "onde": "Conclusão do Dia 5 de Jesus em Ordem e Coleção",
+      "prompt": "a single round antique gold medallion like a struck coin, a simple wooden manger with straw in raised relief at the center, simple engraved inner ring border, brushed gold with subtle wear, soft light from the top left, front view, perfectly centered, filling 92% of the frame, isolated on a plain flat white background, minimalist, no text, no letters, no numbers",
+      "nota": "Mesmo estilo dos 7 símbolos da Trilha 1. PNG transparente 1024 e WebP transparente 512.",
+      "status": "pendente"
+    },
+    {
+      "id": "simbolo-cantaro",
+      "tipo": "simbolo",
+      "trilha": "jesus-em-ordem",
+      "dia": 10,
+      "onde": "Conclusão do Dia 10 de Jesus em Ordem e Coleção",
+      "prompt": "a single round antique gold medallion like a struck coin, a large stone water jar in raised relief at the center, simple engraved inner ring border, brushed gold with subtle wear, soft light from the top left, front view, perfectly centered, filling 92% of the frame, isolated on a plain flat white background, minimalist, no text, no letters, no numbers",
+      "nota": "Mesmo estilo dos 7 símbolos da Trilha 1. PNG transparente 1024 e WebP transparente 512.",
+      "status": "pendente"
+    }
+  ]
+}

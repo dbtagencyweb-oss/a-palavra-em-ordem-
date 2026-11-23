@@ -1,0 +1,106 @@
+{
+  "status": "em_revisao",
+  "n": 7,
+  "titulo": "Quando vejo injustiça",
+  "passagens": "Salmos 73",
+  "midiaSugerida": {
+    "id": "sl-d07",
+    "prompt": "an ancient temple courtyard bathed in a column of golden light, a person seen from behind standing at the entrance, quiet awe"
+  },
+  "cards": [
+    {
+      "id": "sl-d07-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Não é justo.",
+      "paragrafos": [
+        "Asafe, autor do Salmo 73, quase desistiu da fé por um motivo: os maus pareciam se dar bem.",
+        "Tinham saúde, dinheiro e ninguém os punia. Enquanto isso, quem tentava fazer o certo sofria."
+      ]
+    },
+    {
+      "id": "sl-d07-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Quase escorreguei.",
+      "paragrafos": [
+        "Asafe admite que seus pés quase escorregaram. Chegou a pensar que manter o coração limpo tinha sido inútil.",
+        "É uma das confissões mais honestas da Bíblia."
+      ]
+    },
+    {
+      "id": "sl-d07-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "No santuário.",
+      "paragrafos": [
+        "Tudo mudou quando ele entrou no santuário de Deus. Ali entendeu o fim de cada caminho.",
+        "O sucesso dos maus é passageiro. E ele percebeu o maior tesouro: o próprio Deus, que segura a sua mão."
+      ]
+    },
+    {
+      "id": "sl-d07-c04",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "O caminho de Asafe.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Inveja dos maus",
+        "Quase desistir",
+        "Entrar no santuário",
+        "Entender o fim",
+        "Descobrir que Deus basta"
+      ],
+      "acerto": "Isso. Da inveja até a descoberta.",
+      "erro": "Quase. A virada vem quando ele entra no santuário."
+    },
+    {
+      "id": "sl-d07-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Quem mais eu tenho?",
+      "referencia": "Salmos 73",
+      "resumo": "Asafe confessa que invejou a prosperidade dos maus e quase perdeu a fé. Ao entrar no santuário, entendeu o destino deles e reconheceu que Deus sempre esteve com ele. Conclui que, além de Deus, não deseja mais nada.",
+      "observar": "A perspectiva mudou no lugar de adoração, não na discussão."
+    },
+    {
+      "id": "sl-d07-c06",
+      "tipo": "cristo",
+      "texto": "Na cruz, o maior injustiçado da história foi Jesus. E Deus transformou essa injustiça em salvação. Ele vê tudo, e a última palavra é dele."
+    },
+    {
+      "id": "sl-d07-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "O que mudou a visão de Asafe?",
+      "opcoes": [
+        {
+          "texto": "Entrar na presença de Deus e ver o fim de cada caminho.",
+          "correta": true
+        },
+        {
+          "texto": "Ficar rico como os maus.",
+          "correta": false
+        },
+        {
+          "texto": "Parar de pensar no assunto.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Na presença de Deus a perspectiva muda.",
+      "erro": "Releia o card \"No santuário\"."
+    },
+    {
+      "id": "sl-d07-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Que injustiça tem tirado a sua paz? Você pode levá-la a Deus, como Asafe fez, em vez de carregá-la sozinho."
+    },
+    {
+      "id": "sl-d07-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, há coisas que não me parecem justas. Não me deixes escorregar na inveja ou na amargura. Segura a minha mão. Tu és o que eu mais preciso. Amém."
+    }
+  ]
+}

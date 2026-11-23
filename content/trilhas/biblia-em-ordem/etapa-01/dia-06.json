@@ -1,0 +1,15 @@
+{
+  "status": "rascunho",
+  "n": 6,
+  "formato": "leitura-guiada",
+  "titulo": "Jó 1–2",
+  "leitura": "Jó 1–2",
+  "capitulos": [
+    {
+      "livro": "job",
+      "de": 1,
+      "ate": 2
+    }
+  ],
+  "cards": []
+}

@@ -1,0 +1,154 @@
+{
+  "status": "publicado",
+  "n": 5,
+  "titulo": "Reino, profetas e exílio",
+  "base": "Josué a Ester, Salmos e Provérbios, e os Profetas",
+  "lugar": "Jerusalém e Babilônia",
+  "simbolo": {
+    "id": "coroa",
+    "nome": "A coroa",
+    "texto": "A promessa de um rei para sempre fica em aberto no fim do Antigo Testamento.",
+    "midia": "simbolo-coroa"
+  },
+  "cards": [
+    {
+      "id": "d5-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "A parte em que quase todo mundo se perde.",
+      "paragrafos": [
+        "Hoje você vai ver em cinco minutos o trecho que mais confunde quem lê a Bíblia de capa a capa: reis, reinos divididos e profetas.",
+        "Respire: é uma linha só."
+      ]
+    },
+    {
+      "id": "d5-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "De juízes a reis.",
+      "midia": "d5-coroa",
+      "paragrafos": [
+        "Na terra prometida, Israel vive um ciclo: se afasta de Deus, é oprimido, clama, e Deus levanta um juiz para libertá-lo. Depois, o povo pede um rei: Saul, depois Davi, por volta do ano 1000 a.C., e depois Salomão, que constrói o templo.",
+        "Deus promete a Davi um descendente cujo reino não teria fim. Nesse tempo nascem boa parte dos Salmos, ligados a Davi, e dos Provérbios, ligados a Salomão."
+      ]
+    },
+    {
+      "id": "d5-c03",
+      "tipo": "cena",
+      "midia": "d5-templo",
+      "legenda": "O templo de Salomão, em Jerusalém."
+    },
+    {
+      "id": "d5-c04",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "O reino se divide e cai.",
+      "midia": "d5-exilio",
+      "paragrafos": [
+        "Depois de Salomão, o reino se parte em dois: Israel, ao norte, e Judá, ao sul, com Jerusalém. O norte cai diante da Assíria em 722 a.C.; Judá cai diante da Babilônia em 586 a.C., o templo é destruído e o povo vai para o exílio.",
+        "Décadas depois, um grupo volta e reconstrói o templo e os muros de Jerusalém: são as histórias de Esdras e Neemias."
+      ]
+    },
+    {
+      "id": "d5-c05",
+      "tipo": "mapa",
+      "rotulo": "Mapa",
+      "titulo": "Onde entram os profetas.",
+      "livros": [
+        "is",
+        "jr",
+        "lm",
+        "ez",
+        "dn",
+        "os",
+        "jl",
+        "am",
+        "ob",
+        "jn",
+        "mq",
+        "na",
+        "hc",
+        "sf",
+        "ag",
+        "zc",
+        "ml"
+      ],
+      "paragrafos": [
+        "Os livros dos profetas estão no fim do Antigo Testamento, mas não aconteceram depois de Reis. Eles falaram durante essa mesma história: alertando os reis, chamando o povo de volta e consolando os exilados.",
+        "E \"Maiores\" e \"Menores\" se refere ao tamanho dos livros, não à importância dos profetas."
+      ]
+    },
+    {
+      "id": "d5-c06",
+      "tipo": "ordenar",
+      "rotulo": "Pratique",
+      "titulo": "Coloque o reino em ordem.",
+      "instrucao": "Toque na sequência certa.",
+      "itens": [
+        "Juízes",
+        "Reis Saul, Davi e Salomão",
+        "Reino dividido",
+        "Exílio na Babilônia",
+        "Volta a Jerusalém"
+      ],
+      "acerto": "Isso. Agora os livros de Josué a Ester têm uma linha.",
+      "erro": "Quase. O reino só se divide depois de Salomão."
+    },
+    {
+      "id": "d5-c07",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Duas promessas.",
+      "referencia": "2 Samuel 7:12-16 e Jeremias 31:31-34",
+      "midia": "d5-muralhas",
+      "resumo": "Deus promete a Davi um reino eterno; séculos depois, no meio da crise, promete uma nova aliança, escrita no coração.",
+      "observar": "Nenhum rei depois de Davi cumpriu essa promessa. O povo terminou o Antigo Testamento esperando."
+    },
+    {
+      "id": "d5-c08",
+      "tipo": "cristo",
+      "texto": "No anúncio a Maria, o anjo diz que Jesus receberia o trono de Davi e que seu reino não teria fim (Lucas 1:32-33). Na última ceia, Jesus fala do cálice da nova aliança."
+    },
+    {
+      "id": "d5-c09",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Qual é a diferença entre Profetas Maiores e Menores?",
+      "opcoes": [
+        {
+          "texto": "A importância de cada profeta.",
+          "correta": false
+        },
+        {
+          "texto": "O tamanho dos livros.",
+          "correta": true
+        },
+        {
+          "texto": "A época em que viveram.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Jonas é \"menor\" só porque o livro é curto.",
+      "erro": "Não é isso. A diferença é bem mais simples."
+    },
+    {
+      "id": "d5-c10",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "Os profetas chamavam o povo de volta para Deus. Para o que Deus está chamando você de volta?"
+    },
+    {
+      "id": "d5-c11",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Senhor, Tu foste fiel mesmo quando o teu povo não foi. Traz o meu coração de volta para Ti e escreve a tua Palavra nele. Amém."
+    },
+    {
+      "id": "d5-c12",
+      "tipo": "oferta",
+      "texto": "Amanhã a promessa encontra seu cumprimento. Depois do mapa, a jornada continua com Jesus em Ordem: os quatro Evangelhos lidos na sequência dos acontecimentos, em 30 dias.",
+      "botao": "Conhecer o Acesso Fundador",
+      "botaoSecundario": "Agora não"
+    }
+  ]
+}

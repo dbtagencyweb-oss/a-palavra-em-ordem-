@@ -1,0 +1,116 @@
+{
+  "status": "em_revisao",
+  "n": 2,
+  "titulo": "Todos precisam",
+  "passagens": "Romanos 1–3",
+  "midiaSugerida": {
+    "id": "rm-d02",
+    "prompt": "many different footprints on a dusty road converging toward a hill where a warm beam of light falls at dawn, no people visible"
+  },
+  "cards": [
+    {
+      "id": "rm-d02-c01",
+      "tipo": "abertura",
+      "rotulo": "Abertura",
+      "titulo": "Antes da boa notícia, o diagnóstico.",
+      "paragrafos": [
+        "Um bom médico não receita antes de entender o problema. Paulo faz o mesmo.",
+        "Nos três primeiros capítulos, ele mostra por que todo ser humano precisa de Deus."
+      ]
+    },
+    {
+      "id": "rm-d02-c02",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Os que se afastaram.",
+      "paragrafos": [
+        "Paulo começa pelos que trocaram Deus por ídolos e se perderam em escolhas que machucam a si mesmos e aos outros.",
+        "Muitos leitores devem ter concordado: esses, sim, precisam de Deus."
+      ]
+    },
+    {
+      "id": "rm-d02-c03",
+      "tipo": "texto",
+      "rotulo": "Entenda",
+      "titulo": "Os que se acham bons.",
+      "paragrafos": [
+        "Então Paulo vira a mesa: quem julga os outros faz coisas parecidas. Conhecer a lei não basta, é preciso cumpri-la.",
+        "A conclusão do capítulo 3: todos pecaram e estão longe da glória de Deus. Religiosos ou não."
+      ]
+    },
+    {
+      "id": "rm-d02-c04",
+      "tipo": "ligar",
+      "rotulo": "Pratique",
+      "titulo": "Quem precisa de Deus.",
+      "instrucao": "Toque em cada grupo e depois no que Paulo diz sobre ele.",
+      "pares": [
+        {
+          "a": "Quem se afastou de Deus",
+          "b": "Trocou o Criador por coisas criadas"
+        },
+        {
+          "a": "Quem julga os outros",
+          "b": "Faz coisas parecidas com o que condena"
+        },
+        {
+          "a": "Quem conhece a lei",
+          "b": "Também não consegue cumpri-la toda"
+        },
+        {
+          "a": "Todos",
+          "b": "Precisam da graça de Deus"
+        }
+      ],
+      "acerto": "Isso. Ninguém fica de fora do diagnóstico, nem da solução."
+    },
+    {
+      "id": "rm-d02-c05",
+      "tipo": "palavra",
+      "rotulo": "Na Palavra",
+      "titulo": "Mas agora.",
+      "referencia": "Romanos 3:21-26",
+      "resumo": "Depois de mostrar que todos pecaram, Paulo anuncia a virada: a justiça de Deus se manifesta, sem depender da lei, por meio da fé em Jesus Cristo, para todos os que creem, de graça.",
+      "observar": "Note o \"mas agora\". O diagnóstico é duro, mas não é a última palavra."
+    },
+    {
+      "id": "rm-d02-c06",
+      "tipo": "cristo",
+      "texto": "O mesmo trecho que diz que todos pecaram diz que todos podem ser justificados de graça, pela redenção que há em Cristo Jesus. Na cruz, a justiça e o amor de Deus se encontram."
+    },
+    {
+      "id": "rm-d02-c07",
+      "tipo": "quiz",
+      "rotulo": "Fixe",
+      "pergunta": "Por que Paulo mostra o problema antes da solução?",
+      "opcoes": [
+        {
+          "texto": "Para que todos vejam que precisam da graça, sem exceção.",
+          "correta": true
+        },
+        {
+          "texto": "Para provar que alguns grupos são piores que outros.",
+          "correta": false
+        },
+        {
+          "texto": "Para assustar os leitores.",
+          "correta": false
+        }
+      ],
+      "acerto": "Isso. Quem enxerga a necessidade recebe a graça com alegria.",
+      "erro": "Pense no card \"Os que se acham bons\": ninguém fica de fora."
+    },
+    {
+      "id": "rm-d02-c08",
+      "tipo": "reflexao",
+      "rotulo": "Reflita",
+      "pergunta": "É mais fácil enxergar o erro dos outros do que o nosso. Existe algo que você tem julgado nos outros e tolerado em si mesmo?"
+    },
+    {
+      "id": "rm-d02-c09",
+      "tipo": "oracao",
+      "rotulo": "Oração",
+      "texto": "Deus, eu reconheço que preciso de ti tanto quanto qualquer pessoa. Obrigado porque em Jesus existe perdão de graça. Livra meu coração do orgulho e do julgamento. Amém."
+    }
+  ]
+}
