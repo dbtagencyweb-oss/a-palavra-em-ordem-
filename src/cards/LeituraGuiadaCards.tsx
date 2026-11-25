@@ -2,25 +2,21 @@
 // person's own Bible, then "Marcar como lido"), where it fits, what to observe and one question
 // that goes to the Diary. "Como aponta para Cristo" uses the existing CristoCard.
 import { useId } from 'react'
-import { trilha } from '../content'
-import { buildReadingLink } from '../content/readingLink'
 import { CheckIcon } from '../ui/icons'
+import { PassageLink } from '../ui/PassageLink'
 import type { CardOf, CardProps } from './types'
 
 export function LeituraCard({ card, api }: CardProps<CardOf<'leitura'>>) {
-  const link = buildReadingLink(card.referencia, trilha.linkLeitura.modelo)
   const done = api.read || api.solved
   return (
     <>
       <h2 className="mb-2 font-display text-[34px] leading-tight">{card.referencia}</h2>
       {card.texto && <p className="mb-4 font-serif text-[17px] leading-normal text-ink-2">{card.texto}</p>}
-      <p className="mb-5 text-[14.5px] text-ink-2">Leia na sua Bíblia, no seu ritmo. Depois volte e marque como lido.</p>
+      <p className="mb-5 text-[14.5px] text-ink-2">Leia os capítulos no seu ritmo. Ao terminar, marque a leitura como lida.</p>
       <div className="grid gap-2.5">
-        {link && (
-          <a href={link} target="_blank" rel="noopener noreferrer" className="btn btn-ghost !bg-card !text-ink ring-1 ring-line">
-            Ler na minha Bíblia
-          </a>
-        )}
+        <PassageLink reference={card.referencia} className="btn btn-ghost !bg-card !text-ink ring-1 ring-line">
+          Abrir o texto
+        </PassageLink>
         <button
           type="button"
           data-sound="correct"

@@ -26,30 +26,38 @@ const cacheKey = (userId: string) => `pao:entitlements:${userId}`
 const useDevStore = !cloudEnabled && import.meta.env.DEV
 
 export function AccessProvider({ children }: { children: ReactNode }) {
-  const { session } = useAuth()
+  const { session, ready: authReady } = useAuth()
   const userId = session?.user.id ?? null
   const dev = useSyncExternalStore(subscribeDevEntitlements, readDevEntitlements)
-  const [cloud, setCloud] = useState<Entitlement[]>(() => readCache(userId))
-  const [ready, setReady] = useState(!cloudEnabled)
+  const [cloud, setCloud] = useState(() => ({ userId, entries: readCache(userId), checked: false }))
   const [tick, setTick] = useState(0)
   const refresh = useCallback(() => setTick((n) => n + 1), [])
 
   useEffect(() => {
-    setCloud(readCache(userId))
     const sb = getSupabase()
     if (!sb || !userId) {
-      setReady(true)
+      setCloud({ userId, entries: [], checked: false })
       return
     }
+    setCloud((previous) => previous.userId === userId ? previous : { userId, entries: readCache(userId), checked: false })
     let cancelled = false
+    let sequence = 0
     const load = async () => {
+      const request = ++sequence
       // my_entitlements: the person's rows, with family access marked expired once the owner's ends.
-      const { data, error } = await (await sb).rpc('my_entitlements')
-      if (cancelled) return
-      setReady(true)
-      if (error) return
-      const list = (data ?? []) as Entitlement[]
-      setCloud(list)
+      let list: Entitlement[] | null = null
+      try {
+        const { data, error } = await (await sb).rpc('my_entitlements')
+        if (!error) list = (data ?? []) as Entitlement[]
+      } catch {
+        // Keep this account's cached access when offline.
+      }
+      if (cancelled || request !== sequence) return
+      if (!list) {
+        setCloud((previous) => ({ ...previous, checked: true }))
+        return
+      }
+      setCloud({ userId, entries: list, checked: true })
       try {
         localStorage.setItem(cacheKey(userId), JSON.stringify(list))
       } catch {
@@ -66,7 +74,8 @@ export function AccessProvider({ children }: { children: ReactNode }) {
     }
   }, [userId, tick])
 
-  const entitlements = useDevStore ? dev : userId ? cloud : []
+  const ready = !cloudEnabled || (authReady && (!userId || (cloud.userId === userId && cloud.checked)))
+  const entitlements = useDevStore ? dev : userId && cloud.userId === userId ? cloud.entries : []
   const api = useMemo<AccessApi>(() => {
     const now = new Date()
     return {

@@ -12,7 +12,7 @@ import { useFounder } from '../auth/useFounder'
 import { soundManager } from '../sound/SoundManager'
 import { TrackCover } from '../media/TrackCover'
 import { ContinueCard } from './ContinueCard'
-import { BIBLIA, JESUS } from '../content/trails'
+import { dayCovers, JESUS } from '../content/trails'
 import { Trail2Path } from './Trail2Path'
 import { PlanBanner } from '../access/PlanNotices'
 import { GroupCard } from '../access/GroupCard'
@@ -21,6 +21,7 @@ import { JourneyMap } from './JourneyMap'
 interface Props {
   onOpenDay(n: number, trail?: string): void
   onOffer(origem: string): void
+  onContinueJesus(): void
   onCollection(): void
   onBiblia(): void
   onStudies(): void
@@ -31,7 +32,7 @@ function greeting(hour: number) {
   return hour < 12 ? 'Bom dia.' : hour < 18 ? 'Boa tarde.' : 'Boa noite.'
 }
 
-export function HomeScreen({ onOpenDay, onOffer, onCollection, onBiblia, onStudies, onGroup }: Props) {
+export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, onBiblia, onStudies, onGroup }: Props) {
   const founder = useFounder()
   // The crowned badge is for the limited Founder seats (paid access without a seat shows no lock either).
   const seat = isFounderSeat(useAccess().entitlements)
@@ -90,6 +91,8 @@ export function HomeScreen({ onOpenDay, onOffer, onCollection, onBiblia, onStudi
   // The continue card wears the picture of the day it leads to (the last day once the track is done;
   // the Galilee for Trilha 2).
   const contDay = onTrail2 ? 6 : (next ?? TOTAL_DAYS)
+  // Trilha 2: the cover of the day it leads to (or the last day), falling back to the trail's cover.
+  const contPictures = onTrail2 ? dayCovers(JESUS, t2Next ?? JESUS.visible.at(-1)?.n ?? 1) : undefined
 
   function tapTrail2Day(n: number) {
     if (isDayCompleted(progress, n, JESUS.id) || isDayUnlocked(progress, n, today, JESUS.id)) return onOpenDay(n, JESUS.id)
@@ -152,7 +155,7 @@ export function HomeScreen({ onOpenDay, onOffer, onCollection, onBiblia, onStudi
 
       {onTrail2 && <Trail2Path next={t2Next} onTapDay={tapTrail2Day} />}
 
-      <JourneyMap doneCount={doneCount} nextAvailable={nextAvailable} onTapDay={tapDay} autoScroll={!onTrail2} />
+      <JourneyMap doneCount={doneCount} nextAvailable={nextAvailable} onTapDay={tapDay} autoScroll={!onTrail2} blendFromTrail={onTrail2} />
 
       {/* Continue card: sits under the map and floats over it while you scroll, so it is on screen
           as soon as Home opens on the current day. */}
@@ -162,6 +165,7 @@ export function HomeScreen({ onOpenDay, onOffer, onCollection, onBiblia, onStudi
         title={cont.title}
         sub={cont.sub}
         iconDone={cont.icon === 'done'}
+        pictures={contPictures}
         icon={cont.icon === 'play' ? <PlayIcon /> : cont.icon === 'next' ? <ArrowIcon /> : <CheckIcon size={20} className="text-white" />}
         onClick={cont.action}
       />
@@ -194,10 +198,10 @@ export function HomeScreen({ onOpenDay, onOffer, onCollection, onBiblia, onStudi
           <BookIcon />
         </span>
         <span className="flex-1">
-          <strong className="block text-sm">{BIBLIA.titulo}</strong>
-          <span className="text-xs text-ink-3">{founder ? 'O plano cronológico, uma etapa por mês' : 'Parte do Acesso Fundador'}</span>
+          <strong className="block text-sm">Biblioteca da Bíblia</strong>
+          <span className="text-xs text-ink-3">66 livros, mapa e plano cronológico</span>
         </span>
-        {founder ? <span className="text-ink-3" aria-hidden="true">›</span> : <LockIcon size={16} className="text-ink-3" />}
+        <span className="text-ink-3" aria-hidden="true">›</span>
       </button>
 
       {/* Estudos por livro: the in-app store (docs/07, Prompt 9). */}
@@ -217,8 +221,7 @@ export function HomeScreen({ onOpenDay, onOffer, onCollection, onBiblia, onStudi
         <span className="text-ink-3" aria-hidden="true">›</span>
       </button>
 
-      {/* Trilha 2 card: locked (opens the Offer) for everyone who isn't a Founder; for Founders who
-          haven't finished the map yet, it tells when it starts. Once it starts, it is the path above. */}
+      {/* Direct access for subscribers who are still exploring the free map. */}
       {!onTrail2 && (
       <div
         className="relative mx-5 mt-1.5 aspect-[16/10] flex-none overflow-hidden rounded-card bg-ink text-paper shadow-[0_8px_22px_rgba(30,34,48,0.22)]"
@@ -240,16 +243,14 @@ export function HomeScreen({ onOpenDay, onOffer, onCollection, onBiblia, onStudi
         <div className="relative flex h-full w-[62%] flex-col justify-center gap-1 py-4 pl-5 [text-shadow:0_1px_8px_rgba(20,22,32,0.55)]">
           <small className="text-[10.5px] font-bold uppercase tracking-[0.14em] text-gold">{founder ? 'Sua próxima trilha' : ui.proximaTrilha.rotulo}</small>
           <h3 className="font-display text-[22px] font-semibold leading-tight">{ui.proximaTrilha.titulo}</h3>
-          <p className="text-[12.5px] leading-snug text-paper/85">{founder ? 'Acesso garantido. Começa no dia seguinte ao último dia do mapa.' : ui.proximaTrilha.resumo}</p>
-          {!founder && (
-            <button
-              type="button"
-              className="btn-shine mt-2 min-h-[44px] self-start whitespace-nowrap rounded-full px-4 text-[13px] font-bold active:scale-[0.98]"
-              onClick={() => onOffer('home')}
-            >
-              {ui.proximaTrilha.botao}
-            </button>
-          )}
+          <p className="text-[12.5px] leading-snug text-paper/85">{founder ? 'Os Evangelhos na sequência dos acontecimentos.' : ui.proximaTrilha.resumo}</p>
+          <button
+            type="button"
+            className="btn-shine mt-2 min-h-[44px] self-start rounded-full px-4 text-[13px] font-bold active:scale-[0.98]"
+            onClick={founder ? onContinueJesus : () => onOffer('home')}
+          >
+            {founder ? 'Abrir Jesus em Ordem' : ui.proximaTrilha.botao}
+          </button>
         </div>
       </div>
       )}

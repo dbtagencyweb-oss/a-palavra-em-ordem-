@@ -1,9 +1,10 @@
 {
-  "status": "em_revisao",
+  "status": "publicado",
   "n": 10,
   "titulo": "Os primeiros discípulos e o vinho em Caná",
   "passagens": "João 1:35–2:12",
   "fase": "Ministério na Galileia",
+  "capa": "/trilhas/jesus-em-ordem/capa-jeo-dia-10.webp",
   "marcoLinhaDoTempo": "Início do ministério",
   "simbolo": {
     "id": "cantaro",

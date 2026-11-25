@@ -1,5 +1,5 @@
 /* The few app styles the embedded activity needs (copied from src/index.css; keep in step).
-   Loaded only with the demo chunk. */
+   Loaded only with the demo modal chunk (GameModal). */
 @tailwind components;
 
 @layer components {

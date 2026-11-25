@@ -1,9 +1,10 @@
 {
-  "status": "em_revisao",
+  "status": "publicado",
   "n": 5,
   "titulo": "O nascimento",
   "passagens": "Lucas 1:57–2:20; Mateus 1:18-25",
   "fase": "Nascimento",
+  "capa": "/trilhas/jesus-em-ordem/capa-jeo-dia-05.webp",
   "marcoLinhaDoTempo": "Nascimento",
   "simbolo": {
     "id": "manjedoura",

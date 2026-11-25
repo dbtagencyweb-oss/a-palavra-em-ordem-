@@ -1,9 +1,10 @@
 {
-  "status": "em_revisao",
+  "status": "publicado",
   "n": 8,
   "titulo": "João Batista e o batismo",
   "passagens": "Mateus 3; Marcos 1:1-11; Lucas 3:1-22",
   "fase": "Preparação",
+  "capa": "/trilhas/jesus-em-ordem/capa-jeo-dia-08.webp",
   "marcoLinhaDoTempo": "Batismo",
   "midiaSugerida": {
     "id": "je-d08-jordao",

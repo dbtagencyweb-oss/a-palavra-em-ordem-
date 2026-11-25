@@ -3,7 +3,9 @@
 // glass over the map; docked in its place it wears the day's picture. A thin light runs around its
 // border either way, and a thumbnail of the day's picture sits beside the text.
 import { useEffect, useRef, useState, type ReactNode } from 'react'
+import type { Picture } from '../content/trails'
 import { Backdrop } from '../media/Backdrop'
+import { CoverImage } from '../media/CoverImage'
 import { imageSmallPath } from '../media/paths'
 import { eraOf } from '../ui/eras'
 
@@ -14,10 +16,12 @@ interface Props {
   sub: string
   icon: ReactNode
   iconDone: boolean
+  /** The day's own covers (best first). Without them, the era picture of `day`. */
+  pictures?: Picture[]
   onClick(): void
 }
 
-export function ContinueCard({ day, eyebrow, title, sub, icon, iconDone, onClick }: Props) {
+export function ContinueCard({ day, eyebrow, title, sub, icon, iconDone, pictures, onClick }: Props) {
   const era = eraOf(day)
   const sentinel = useRef<HTMLDivElement>(null)
   const [floating, setFloating] = useState(true)
@@ -34,7 +38,7 @@ export function ContinueCard({ day, eyebrow, title, sub, icon, iconDone, onClick
 
   return (
     <>
-      <div className={`continue-glow sticky bottom-4 z-[6] mx-7 -mt-6 rounded-card ${floating ? 'is-floating' : ''}`}>
+      <div className={`continue-glow sticky bottom-4 z-[6] mx-7 -mt-11 rounded-card ${floating ? 'is-floating' : ''}`}>
         <button
           type="button"
           onClick={onClick}
@@ -50,14 +54,23 @@ export function ContinueCard({ day, eyebrow, title, sub, icon, iconDone, onClick
         >
           {/* Docked: the day's picture behind the text. Floating: plain glass, the map shows through. */}
           <div className={`absolute inset-0 transition-opacity duration-500 ${floating ? 'opacity-0' : 'opacity-100'}`} aria-hidden="true">
-            <Backdrop key={day} id={`era-d${day}`} tint={era.deep} variant="card" />
+            {pictures ? (
+              <>
+                <CoverImage key={pictures[0]?.full} pictures={pictures} className="absolute inset-0 h-full w-full object-cover object-[center_35%]" />
+                <div className="absolute inset-0" style={{ background: `linear-gradient(to right, ${era.deep}F2 0%, ${era.deep}C8 52%, ${era.deep}55 100%)` }} />
+              </>
+            ) : (
+              <Backdrop key={day} id={`era-d${day}`} tint={era.deep} variant="card" />
+            )}
           </div>
           <span
             className="relative h-[60px] w-[60px] flex-none overflow-hidden rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.35),0_0_0_1px_rgba(241,227,196,0.35)]"
             style={{ background: `linear-gradient(${era.mid}, ${era.deep})` }}
             aria-hidden="true"
           >
-            {thumbOk && (
+            {pictures ? (
+              <CoverImage key={pictures[0]?.full} pictures={pictures} small className="h-full w-full object-cover" />
+            ) : thumbOk && (
               <img
                 key={day}
                 src={imageSmallPath(`era-d${day}`)}

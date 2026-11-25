@@ -1,9 +1,10 @@
 {
-  "status": "em_revisao",
+  "status": "publicado",
   "n": 9,
   "titulo": "A tentação no deserto",
   "passagens": "Mateus 4:1-11; Lucas 4:1-13",
   "fase": "Preparação",
+  "capa": "/trilhas/jesus-em-ordem/capa-jeo-dia-09.webp",
   "midiaSugerida": {
     "id": "je-d09-deserto",
     "prompt": "The barren Judean wilderness at midday, bare rocks and dry hills shimmering in the heat, one solitary small figure seen from far behind walking alone. No other people."

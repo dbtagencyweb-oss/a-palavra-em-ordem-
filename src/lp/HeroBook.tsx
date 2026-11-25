@@ -9,7 +9,7 @@
 //
 // Sequence: the book waits, invisible, until the hero title is up (so the title area keeps the LCP);
 // it fades in and the video plays once. On "ended" the still of the open book takes its place; the
-// pages show a fine rule and ghost text; the line writes itself through the seven eras, each point
+// pages show ghost text; the line writes itself through the seven eras, each point
 // soaks in as the line reaches it, the labels follow, and a warm light rises from the pages.
 // Tapping the book writes the map again (not the video). Reduced motion: the open book with the
 // whole map, still. Phones (<768px): line and points only, with a caption naming the eras.
@@ -17,6 +17,8 @@
 // Fine tuning by eye: the corners in BOOK, and --map-x, --map-y, --map-scale on .hb (lp.css).
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import eraData from '../../content/lp-eras.json'
+import trilha1 from '../../content/trilhas/mapa-7-dias/trilha.json'
+import { imagePath } from '../media/paths'
 import { eraOf } from '../ui/eras'
 import { apply, invert, rectToQuad, toMatrix3d, type Pt } from './homography'
 import { onTitleDone, reducedMotion } from './motion'
@@ -65,10 +67,21 @@ export function desaturate(hex: string, k = 0.4): string {
   return `rgb(${c.map((v) => Math.round(v + (grey - v) * k)).join(',')})`
 }
 
+/**
+ * Each era's seal: the symbol of a day of Trilha 1, the very file the app shows
+ * (/media/img/simbolo-<id>.webp). Exílio has no symbol of its own: a dot in the era's color.
+ */
+const ERA_DAY: Record<string, number | null> = { criacao: 2, patriarcas: 3, exodo: 4, reis: 5, exilio: null, jesus: 6, igreja: 7 }
+const daySymbol = (day: number | null) => {
+  const s = day ? trilha1.simbolos.find((x) => x.dia === day) : undefined
+  return s ? imagePath(`simbolo-${s.id}`) : null
+}
+
 /** The seven eras with their map position and color (also used by the comparison section). */
 export const ERAS = eraData.eras.map((e) => ({
   ...e,
   pos: POS[e.id],
+  selo: daySymbol(ERA_DAY[e.id] ?? null),
   // Same hues as the mechanism section (Exílio, a dusk tone), softened into ink.
   color: e.id === 'exilio' ? '#8B7BB0' : eraOf(e.dia).mid,
 }))
@@ -164,7 +177,8 @@ export function HeroBook({ className = '' }: { className?: string }) {
   const [shown, setShown] = useState(reduced)
   const [phase, setPhase] = useState<Phase>(reduced ? 'open' : 'waiting')
   const [draw, setDraw] = useState(reduced ? 1 : 0) // 0 = not yet; each new number writes again
-  const [tip, setTip] = useState<string | null>(null)
+  const [tip, setTip] = useState<string | null>(null) // chosen by hover, focus or tap
+  const [autoTip, setAutoTip] = useState<string | null>(null) // the one dripping on its own
   const [caption, setCaption] = useState(0)
 
   // The stage is the picture's own 1280×720 space, scaled to the book's width.
@@ -237,9 +251,33 @@ export function HeroBook({ className = '' }: { className?: string }) {
     return () => timers.forEach((t) => (window.clearTimeout(t), window.clearInterval(t)))
   }, [phone, draw, reduced])
 
+  // Desktop: once the map is written, the eras' notes drip onto the page one at a time, by
+  // themselves. Hovering or focusing a point takes over; the drip resumes after it.
+  useEffect(() => {
+    if (phone || !draw || tip) return
+    let i = autoTip ? ERAS.findIndex((e) => e.id === autoTip) : -1
+    const step = () => setAutoTip(ERAS[(i = (i + 1) % ERAS.length)].id)
+    let iv = 0
+    const first = window.setTimeout(
+      () => {
+        step()
+        iv = window.setInterval(step, 2600)
+      },
+      autoTip ? 1200 : (reduced ? 0.4 : LEAD_S + DRAW_S + 1.4) * 1000,
+    )
+    return () => {
+      window.clearTimeout(first)
+      window.clearInterval(iv)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phone, draw, tip, reduced])
+
+  const shownTip = tip ?? autoTip
+
   const replay = () => {
     if (phase !== 'open' || reduced) return
     setTip(null)
+    setAutoTip(null)
     setDraw((n) => n + 1)
   }
 
@@ -295,8 +333,7 @@ export function HeroBook({ className = '' }: { className?: string }) {
           {PAGES.map((pg) => (
             <div key={pg.side} className={`hb-sheet hb-sheet-${pg.side}`} style={{ width: S, height: S, transform: pg.css }}>
               <svg viewBox={`0 0 ${S} ${S}`} width={S} height={S} className="absolute inset-0 overflow-visible">
-                {/* a · A fine rule inside the page and two columns of ghost text, in sepia. */}
-                <rect x="18" y="18" width={S - 36} height={S - 36} fill="none" stroke={INK} strokeOpacity="0.28" strokeWidth="1.5" />
+                {/* a · Two columns of ghost text, in sepia (no frame on the page). */}
                 <g className="hb-ghost" fill={INK_TEXT} fillOpacity="0.07" filter="url(#hb-soft)">
                   {GHOST[pg.side].map((l, i) => (
                     <rect key={i} x={l.x} y={l.y} width={l.w} height="3" rx="1.5" />
@@ -409,14 +446,18 @@ export function HeroBook({ className = '' }: { className?: string }) {
           </div>
         )}
         {!phone &&
-          ERAS.filter((e) => e.id === tip).map((e) => (
-            <div key={e.id} role="tooltip" className="hb-tip" style={at(e.pos[0], e.pos[1])}>
-              {e.simbolo && <img src={`/media/img/${e.simbolo}.webp`} alt="" className="h-6 w-6 flex-none" />}
+          ERAS.filter((e) => e.id === shownTip).map((e) => (
+            <div key={`${e.id}-${draw}`} role="tooltip" className={`hb-tip ${tip ? '' : 'is-auto'}`} style={at(e.pos[0], e.pos[1])}>
+              <Seal src={e.selo} color={desaturate(e.color, 0.2)} />
               <span>
                 <strong className="font-semibold">{e.nome}</strong> · {e.linha}
               </span>
             </div>
           ))}
+        {/* The drop lands on the point: a soft ring where the note falls. */}
+        {!phone &&
+          !reduced &&
+          ERAS.filter((e) => e.id === shownTip).map((e) => <span key={`ping-${e.id}-${draw}`} aria-hidden="true" className="hb-ping" style={at(e.pos[0], e.pos[1])} />)}
       </div>
 
       {/* Phones: the caption under the book walks the eras. */}
@@ -431,6 +472,13 @@ export function HeroBook({ className = '' }: { className?: string }) {
       )}
     </div>
   )
+}
+
+/** An era's seal; without one (or if the image fails), a dot in the era's color. Never a file name. */
+function Seal({ src, color }: { src: string | null; color: string }) {
+  const [failed, setFailed] = useState(false)
+  if (!src || failed) return <span aria-hidden="true" className="ml-1 mr-0.5 h-3 w-3 flex-none rounded-full" style={{ backgroundColor: color }} />
+  return <img src={src} alt="" className="h-6 w-6 flex-none" onError={() => setFailed(true)} />
 }
 
 /** Below the hero, on screens narrower than 1024px: the book after the buttons, full width. */

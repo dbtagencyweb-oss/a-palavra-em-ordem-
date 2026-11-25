@@ -12,6 +12,12 @@ import { seatsLeft } from '../../supabase/functions/_shared/logic-access'
 export const OFERTA = oferta
 const URL_ = import.meta.env.VITE_SUPABASE_URL as string | undefined
 const KEY = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
+const FOUNDER_CHECKOUT = import.meta.env.VITE_HOTMART_CHECKOUT_URL as string | undefined
+const ANNUAL_CHECKOUT = import.meta.env.VITE_HOTMART_CHECKOUT_ANUAL_URL as string | undefined
+
+export function offerCheckoutBase(closed: boolean): string {
+  return (closed ? ANNUAL_CHECKOUT : FOUNDER_CHECKOUT) ?? ''
+}
 
 let sold: number | null = null
 const listeners = new Set<() => void>()
@@ -39,16 +45,21 @@ async function readSold(): Promise<number | null> {
 
 /** Starts reading the count (on load, then every atualizarACadaSegundos). */
 export function startSeats() {
+  let active = true
   const tick = async () => {
     const n = await readSold()
     // A failed read hides the counter instead of keeping an old number on screen.
-    if (n !== sold) {
+    if (active && n !== sold) {
       sold = n
       emit()
     }
   }
   void tick()
-  window.setInterval(tick, oferta.atualizarACadaSegundos * 1000)
+  const interval = window.setInterval(tick, oferta.atualizarACadaSegundos * 1000)
+  return () => {
+    active = false
+    window.clearInterval(interval)
+  }
 }
 
 export interface OfferState {

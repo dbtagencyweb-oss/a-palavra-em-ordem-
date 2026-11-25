@@ -218,7 +218,7 @@ export function Hero() {
           {/* In the flow above the eyebrow, so it never sits on top of the text at any screen height. */}
           <Logo variant="full" className="lp-logo lp-reveal mb-4 block w-[92px] text-paper drop-shadow-[0_2px_10px_rgba(20,22,32,0.5)] md:mb-8 md:w-[140px]" />
           <p className="lp-eyebrow lp-reveal mb-3 text-[11px] font-bold tracking-[0.16em] text-gold-soft/85 md:text-xs">{fixed.eyebrow}</p>
-          <h1 className="font-display text-[31px] font-semibold leading-[1.1] tracking-[-0.015em] md:text-[58px] lg:text-[48px] xl:text-[58px]">
+          <h1 className="lp-hero-title font-display text-[31px] font-semibold leading-[1.1] tracking-[-0.015em] md:text-[58px] lg:text-[48px] xl:text-[58px]">
             {fixed.titulo.split(' ').map((w, j) => (
               <Word key={j} w={w} />
             ))}
@@ -233,9 +233,9 @@ export function Hero() {
           </div>
         )}
 
-        <div className="pointer-events-auto md:mt-7 md:max-w-[520px] lg:col-start-1 lg:row-start-2">
+        <div className="lp-hero-bottom pointer-events-auto md:mt-7 md:max-w-[520px] lg:col-start-1 lg:row-start-2">
           {/* No "Ouvir" here for now: the recorded narr-lp-hero speaks the old title. */}
-          <p className="lp-reveal text-[17px] font-medium leading-[1.45] text-paper/90 md:text-[22px]">{fixed.subtitulo}</p>
+          <p className="lp-hero-sub lp-reveal text-[17px] font-medium leading-[1.45] text-paper/90 md:text-[22px]">{fixed.subtitulo}</p>
           <HeroCtas />
           <ul className="lp-reveal mt-1.5 flex flex-wrap justify-center gap-x-2.5 gap-y-0.5 text-[11.5px] text-paper/65 md:mt-2 md:justify-start md:gap-y-1">
             {h.confianca.map((c, i) => (
@@ -263,7 +263,7 @@ function HeroCtas() {
   const link =
     'grid min-h-11 place-items-center text-center text-sm font-semibold text-paper/85 underline decoration-gold/70 underline-offset-4 hover:text-paper'
   return (
-    <div className="lp-reveal mt-4 flex flex-col gap-1.5 md:mt-6 md:flex-row md:flex-wrap md:items-start md:gap-x-6 md:gap-y-1">
+    <div className="lp-hero-ctas lp-reveal mt-4 flex flex-col gap-1.5 md:mt-6 md:flex-row md:flex-wrap md:items-start md:gap-x-6 md:gap-y-1">
       {retargeting ? (
         <>
           <a href={checkoutHref()} onClick={() => onBuyClick('hero')} className={`lp-buy ${big}`}>

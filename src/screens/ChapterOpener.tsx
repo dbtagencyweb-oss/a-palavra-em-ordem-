@@ -1,8 +1,9 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { useState } from 'react'
-import { MAPA, type Trail } from '../content/trails'
+import { dayCovers, MAPA, type Trail } from '../content/trails'
 import { Backdrop } from '../media/Backdrop'
-import { CloseIcon } from '../ui/icons'
+import { CoverImage } from '../media/CoverImage'
+import { BackIcon, CloseIcon } from '../ui/icons'
 
 interface Props {
   dayN: number
@@ -10,13 +11,15 @@ interface Props {
   review: boolean
   onStart(): void
   onExit(): void
+  /** Opens the day before, to see it again (given only when that day is done). */
+  onPrevious?(): void
 }
 
 /**
  * Each day opens like a book chapter, in the color of its era:
  * the place in large serif, the passage it covers, and where it sits on the line of the story.
  */
-export function ChapterOpener({ dayN, trail = MAPA, review, onStart, onExit }: Props) {
+export function ChapterOpener({ dayN, trail = MAPA, review, onStart, onExit, onPrevious }: Props) {
   const reduced = useReducedMotion()
   const days = trail.outline
   const total = trail.total
@@ -36,15 +39,28 @@ export function ChapterOpener({ dayN, trail = MAPA, review, onStart, onExit }: P
         </button>
       </div>
 
-      <Backdrop id={trail.backdrop(dayN)} tint={era.deep} variant="opener" onLoad={() => setArt(true)} />
+      {/* A day with its own cover (Jesus em Ordem) wears it; otherwise the era's picture. */}
+      {day.capa ? (
+        // The picture fills the upper half, anchored at its bottom, so the people of the scene sit above
+        // the title; it melts into the era's color where the text begins.
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-[54%] overflow-hidden">
+          <CoverImage key={dayN} pictures={dayCovers(trail, dayN, 'tall')} onLoad={() => setArt(true)} className="h-full w-full object-cover object-bottom" />
+          <div
+            className="absolute inset-0"
+            style={{ background: `linear-gradient(to bottom, ${era.deep}66 0%, ${era.deep}00 18%, ${era.deep}00 62%, ${era.deep}B0 84%, ${era.deep} 100%)` }}
+          />
+        </div>
+      ) : (
+        <Backdrop id={trail.backdrop(dayN)} tint={era.deep} variant="opener" onLoad={() => setArt(true)} />
+      )}
 
       {/* Large day numeral: the chapter's watermark, quieter once the era's picture is in place. */}
       <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute right-4 top-10 select-none font-display font-semibold leading-none"
-        style={{ color: art ? era.light : era.mid, fontSize: 'clamp(200px, 62vw, 280px)' }}
+        style={{ color: art ? (dayN === 4 ? era.deep : era.light) : era.mid, fontSize: 'clamp(200px, 62vw, 280px)' }}
         initial={reduced ? false : { opacity: 0, y: 20 }}
-        animate={{ opacity: art ? 0.14 : 0.35, y: 0 }}
+        animate={{ opacity: art ? (dayN === 4 ? 0.18 : 0.22) : 0.35, y: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       >
         {dayN}
@@ -114,6 +130,17 @@ export function ChapterOpener({ dayN, trail = MAPA, review, onStart, onExit }: P
           <p className="mt-3 text-center text-[12px]" style={{ color: era.light, opacity: 0.6 }}>
             {trail.duracao}
           </p>
+          {onPrevious && (
+            <button
+              type="button"
+              onClick={onPrevious}
+              className="mx-auto mt-2 flex min-h-11 items-center gap-1.5 px-3 text-[13px] font-semibold underline-offset-4 hover:underline"
+              style={{ color: era.light, opacity: 0.85 }}
+            >
+              <BackIcon size={16} />
+              Rever o Dia {dayN - 1}
+            </button>
+          )}
         </motion.div>
       </div>
     </section>

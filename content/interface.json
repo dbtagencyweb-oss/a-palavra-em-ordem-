@@ -7,7 +7,7 @@
   "boasVindas": {
     "marca": "A Palavra em Ordem",
     "titulo": "Você não precisa entender tudo de uma vez.",
-    "texto": "Um passo por dia, em ordem, do começo ao fim da grande história. Cinco minutos bastam.",
+    "texto": "Comece com o Mapa da Bíblia em 7 dias, grátis. Depois, continue a jornada guiada com Jesus em Ordem no Premium.",
     "botao": "Começar minha jornada",
     "botaoSecundario": "Já tenho conta"
   },
@@ -172,9 +172,9 @@
     "verificar": "Verificar de novo",
     "passos": {
       "principal": {
-        "titulo": "Sua jornada completa está liberada",
-        "texto": "Trilhas, A Bíblia em Ordem e tudo o que for lançado.",
-        "botao": "Entrar no app"
+        "titulo": "Jesus em Ordem está liberada",
+        "texto": "Acompanhe os quatro Evangelhos na sequência dos acontecimentos. Comece pela primeira lição ou retome de onde parou.",
+        "botao": "Abrir Jesus em Ordem"
       },
       "mapa-impresso": {
         "titulo": "Mapa da Bíblia para imprimir",

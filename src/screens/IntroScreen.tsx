@@ -14,7 +14,7 @@ import { Logo } from '../ui/Logo'
 
 const ID = 'intro-luz'
 const LOGO_LEAD_S = 2 // the logo shows during the video's last 2 seconds
-const HOLD_AFTER_MS = 1200 // logo stays on screen after the video (and the voice) end
+const HOLD_AFTER_MS = 500 // brief breathing room before the next screen
 const NARRATION_ID = 'narr-intro-luz'
 /** Timeline without a playable video: placeholder (missing file) or reduced motion. */
 const STILL_TIMELINE = { full: { logoAt: 4000, endAt: 6000 }, reduced: { logoAt: 300, endAt: 2600 } }
@@ -30,7 +30,7 @@ export function IntroScreen({ onDone }: Props) {
   const [posterOk, setPosterOk] = useState(false)
   const [logo, setLogo] = useState(false)
   const left = useRef(false)
-  // The narrator speaks over the intro; the last frame holds until the voice ends.
+  // The narrator speaks over the intro; the last frame keeps moving slowly until the voice ends.
   const voice = useNarration(NARRATION_ID, { delayMs: 400 })
   const [ended, setEnded] = useState(false)
 
@@ -90,8 +90,11 @@ export function IntroScreen({ onDone }: Props) {
       {!videoOk && !posterOk && <MediaPlaceholder id={ID} fill />}
       {posterOk && !videoOk && <img src={posterPath(ID)} alt="" className="absolute inset-0 h-full w-full object-cover" />}
       {!reduced && !videoMissing && (
-        <video
+        <motion.video
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${videoOk ? 'opacity-100' : 'opacity-0'}`}
+          animate={{ scale: ended ? 1.13 : 1 }}
+          transition={ended ? { duration: 4.5, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror' } : { duration: 0 }}
+          style={{ transformOrigin: '50% 45%' }}
           muted
           playsInline
           autoPlay
@@ -114,7 +117,7 @@ export function IntroScreen({ onDone }: Props) {
               onError={i === all.length - 1 ? () => setVideoMissing(true) : undefined}
             />
           ))}
-        </video>
+        </motion.video>
       )}
 
       {/* Soft darkening at the top so the logo reads over a bright sky. */}

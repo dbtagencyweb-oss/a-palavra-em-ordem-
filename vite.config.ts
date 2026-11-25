@@ -56,8 +56,8 @@ export default defineConfig({
         importScripts: ['/reminder-sw.js'],
         runtimeCaching: [
           {
-            // Images, videos and sounds are cached as they are visited.
-            urlPattern: ({ url }) => url.pathname.startsWith('/media/') || url.pathname.startsWith('/audio/'),
+            // Images, videos and sounds (and the study covers) are cached as they are visited.
+            urlPattern: ({ url }) => url.pathname.startsWith('/media/') || url.pathname.startsWith('/audio/') || url.pathname.startsWith('/estudos/'),
             handler: 'CacheFirst',
             options: {
               cacheName: 'pao-media',

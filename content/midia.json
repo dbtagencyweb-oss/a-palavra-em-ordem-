@@ -446,7 +446,7 @@
       "prompt": "night sky over quiet dark hills; a single warm point of light appears low on the horizon and slowly spreads into a golden dawn, clouds catch the light, calm and hopeful",
       "movimento": "slow upward tilt from the hills to the open sky; the light grows steadily, no cuts",
       "nota": "Proposta, revisar. 6 a 10 s. O logo completo entra nos últimos 2 s sobre o céu: deixar o centro e o terço superior calmos, sem detalhes. Mudo (o som vem do SoundManager).",
-      "status": "pendente"
+      "status": "pronto"
     },
     {
       "id": "capa-estudo-romanos",
@@ -454,7 +454,7 @@
       "onde": "Capa do estudo Romanos na Loja de estudos",
       "prompt": "an ancient Roman street at dawn seen from a quiet courtyard, a rolled letter sealed with wax resting on a stone ledge, warm gold light, deep navy #1E2230 shadows, the left half dark and calm for text, landscape 3:2",
       "nota": "Sem pessoas em destaque. Só a carta e a cidade.",
-      "status": "pendente"
+      "status": "pronto"
     },
     {
       "id": "capa-estudo-salmos",
@@ -462,7 +462,7 @@
       "onde": "Capa do estudo Salmos na Loja de estudos",
       "prompt": "a small wooden lyre resting on a rock beside a still pool in a desert valley at first light, mist over distant hills, gentle hopeful gold light, deep navy #1E2230 shadows, the left half dark and calm for text, landscape 3:2",
       "nota": "Clima de consolo, nada triste demais.",
-      "status": "pendente"
+      "status": "pronto"
     },
     {
       "id": "capa-estudo-apocalipse",
@@ -470,7 +470,7 @@
       "onde": "Capa do estudo Apocalipse na Loja de estudos",
       "prompt": "a rocky island coast at sunrise over a calm sea, through parting clouds a radiant golden light breaks over the horizon, hopeful and serene, no monsters and nothing frightening, deep navy #1E2230 and warm gold, the left half dark and calm for text, landscape 3:2",
       "nota": "Patmos. Esperança, não medo. Deus só como luz.",
-      "status": "pendente"
+      "status": "pronto"
     },
     {
       "id": "simbolo-manjedoura",

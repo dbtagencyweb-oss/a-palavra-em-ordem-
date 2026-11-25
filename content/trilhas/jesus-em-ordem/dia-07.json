@@ -1,9 +1,10 @@
 {
-  "status": "em_revisao",
+  "status": "publicado",
   "n": 7,
   "titulo": "Aos 12 anos, no templo",
   "passagens": "Lucas 2:41-52",
   "fase": "Preparação",
+  "capa": "/trilhas/jesus-em-ordem/capa-jeo-dia-07.webp",
   "midiaSugerida": {
     "id": "je-d07-templo",
     "prompt": "A boy of about twelve, seen from behind, sitting among elderly teachers in long robes in the sunlit stone courts of an ancient temple, columns and warm light. The boy's face is not visible."

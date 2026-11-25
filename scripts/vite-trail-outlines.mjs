@@ -4,7 +4,7 @@ import { join, resolve } from 'node:path'
 
 /**
  * virtual:trail-outlines: for every trail in content/trilhas/, only the outline of each day
- * (number, title, passages, phase, status, symbol, timeline milestone). The lesson cards of paid
+ * (number, title, passages, phase, status, symbol, timeline milestone, cover). The lesson cards of paid
  * trails never enter the app bundle; they come from the server (see src/content/trails.ts).
  */
 export function trailOutlines() {
@@ -34,7 +34,7 @@ export function trailOutlines() {
           if (!existsSync(file)) return { n, titulo: `Dia ${n}`, status: 'rascunho' }
           this.addWatchFile(resolve(file))
           const d = JSON.parse(readFileSync(file, 'utf8'))
-          return { n, titulo: d.titulo, formato: d.formato, capitulos: d.capitulos, passagens: d.passagens ?? d.leitura ?? d.base, fase: d.fase ?? d.lugar, status: d.status, simbolo: d.simbolo, marcoLinhaDoTempo: d.marcoLinhaDoTempo }
+          return { n, titulo: d.titulo, formato: d.formato, capitulos: d.capitulos, passagens: d.passagens ?? d.leitura ?? d.base, fase: d.fase ?? d.lugar, status: d.status, simbolo: d.simbolo, marcoLinhaDoTempo: d.marcoLinhaDoTempo, capa: d.capa }
         })
       }
       // Estudos por livro: what the Loja de estudos shows. Editorial notes in trilha.json (such as

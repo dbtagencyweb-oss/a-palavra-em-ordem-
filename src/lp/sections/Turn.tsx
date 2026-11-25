@@ -50,7 +50,7 @@ export function Turn() {
   return (
     <section id="virada" ref={root} className="relative overflow-hidden bg-paper px-5 py-20 text-ink md:py-28">
       <div className="mx-auto max-w-3xl">
-        <h2 data-reveal className="font-display text-[30px] font-semibold leading-[1.12] tracking-[-0.015em] md:text-center md:text-5xl">
+        <h2 data-reveal className="font-display text-[30px] font-semibold leading-[1.12] tracking-[-0.015em] md:text-center md:text-[44px]">
           {v.titulo}
         </h2>
         <p data-reveal className="mt-5 text-[16px] leading-[1.65] text-ink-2 md:mx-auto md:max-w-[40em] md:text-center md:text-lg">

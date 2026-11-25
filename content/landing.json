@@ -88,6 +88,91 @@
       "passosTentativa": 5
     }
   },
+  "organizacao": {
+    "eyebrow": "O MAPA DOS 66 LIVROS",
+    "titulo": "Antes de colocar em ordem, entenda como sua Bíblia foi organizada.",
+    "texto": "A ordem do índice não segue uma linha do tempo. Ela reúne livros com formas e funções parecidas. Toque em cada grupo para abrir o mapa.",
+    "instrucao": "Explore os oito grupos",
+    "centroTitulo": "BÍBLIA",
+    "centroLivros": "66 livros",
+    "centroMensagem": "uma só mensagem",
+    "progresso": "grupos explorados",
+    "transicao": "Agora veja o que muda quando esses 66 livros encontram seu lugar na história.",
+    "grupos": [
+      {
+        "id": "lei",
+        "nome": "Lei",
+        "rotulo": "Linha da Lei",
+        "testamento": "Antigo Testamento",
+        "cor": "#B8893A",
+        "blocos": ["Pentateuco"],
+        "funcao": "Apresenta as origens, a aliança e os fundamentos da vida do povo de Deus."
+      },
+      {
+        "id": "historicos",
+        "nome": "Históricos",
+        "rotulo": "Linha Histórica",
+        "testamento": "Antigo Testamento",
+        "cor": "#3D6F9E",
+        "blocos": ["Históricos"],
+        "funcao": "Conta a caminhada de Israel na terra, seus reis, crises, exílio e retorno."
+      },
+      {
+        "id": "poeticos",
+        "nome": "Poéticos",
+        "rotulo": "Linha Poética",
+        "testamento": "Antigo Testamento",
+        "cor": "#75609C",
+        "blocos": ["Poéticos e Sapienciais"],
+        "funcao": "Reúne oração, louvor, sabedoria e reflexão sobre a vida diante de Deus."
+      },
+      {
+        "id": "profetas",
+        "nome": "Profetas",
+        "rotulo": "Linha Profética",
+        "testamento": "Antigo Testamento",
+        "cor": "#A84B3D",
+        "blocos": ["Profetas Maiores", "Profetas Menores"],
+        "funcao": "Chama o povo de volta à aliança e anuncia juízo, esperança e restauração."
+      },
+      {
+        "id": "evangelhos",
+        "nome": "Evangelhos",
+        "rotulo": "Linha dos Evangelhos",
+        "testamento": "Novo Testamento",
+        "cor": "#C66A2D",
+        "blocos": ["Evangelhos"],
+        "funcao": "Apresenta a vida, os ensinos, a morte e a ressurreição de Jesus."
+      },
+      {
+        "id": "atos",
+        "nome": "Atos",
+        "rotulo": "Linha da Igreja",
+        "testamento": "Novo Testamento",
+        "cor": "#338C91",
+        "blocos": ["Histórico do NT"],
+        "funcao": "Mostra o nascimento da Igreja e a expansão do evangelho pelo mundo."
+      },
+      {
+        "id": "cartas",
+        "nome": "Cartas",
+        "rotulo": "Linha das Cartas",
+        "testamento": "Novo Testamento",
+        "cor": "#3F5F93",
+        "blocos": ["Cartas de Paulo", "Cartas Gerais"],
+        "funcao": "Orienta comunidades e pessoas a viver a fé cristã no cotidiano."
+      },
+      {
+        "id": "apocalipse",
+        "nome": "Apocalipse",
+        "rotulo": "Estação Final",
+        "testamento": "Novo Testamento",
+        "cor": "#8E6335",
+        "blocos": ["Apocalipse"],
+        "funcao": "Conclui a história com a vitória de Cristo e a renovação de todas as coisas."
+      }
+    ]
+  },
   "mecanismo": {
     "titulo": "Nós colocamos a Palavra em ordem.",
     "legenda": "Uma história só. Do Éden à Nova Jerusalém.",
@@ -225,7 +310,48 @@
     "botaoAcerto": "Quero continuar a jornada",
     "erro": "Quase. O que vem primeiro, o mundo bom ou o mundo quebrado?",
     "recomecar": "Recomeçar",
-    "passos": 10
+    "passos": 10,
+    "modal": {
+      "_status": "em_revisao",
+      "titulo": "Você acendeu a primeira lâmpada.",
+      "passos": "+10 passos",
+      "texto": "Quer mais um? Agora ligue cada personagem à sua época.",
+      "botaoProximo": "Próximo desafio",
+      "botaoGratis": "Começar os 7 dias grátis",
+      "fechar": "Fechar"
+    },
+    "desafio2": {
+      "_status": "em_revisao",
+      "_sobre": "Atividade 'ligar' da demo da LP. 'era' é o id em content/lp-eras.json (dá o nome e a cor da época).",
+      "titulo": "Ligue cada personagem à sua época.",
+      "instrucao": "Toque em um nome e depois na época.",
+      "pares": [
+        { "nome": "Abraão", "era": "patriarcas" },
+        { "nome": "Moisés", "era": "exodo" },
+        { "nome": "Davi", "era": "reis" },
+        { "nome": "Daniel", "era": "exilio" }
+      ],
+      "acerto": "Isso. Cada personagem no seu lugar da história.",
+      "fimTitulo": "Duas lâmpadas acesas. É assim todos os dias, em 5 minutos.",
+      "fimPassos": "+20 passos",
+      "botaoGratis": "Começar os 7 dias grátis",
+      "linkOferta": "Ver a oferta de Fundador",
+      "linkOfertaAnual": "Ver a oferta",
+      "passos": 20
+    }
+  },
+  "vsl": {
+    "_status": "em_revisao",
+    "_sobre": "Seção do vídeo de vendas, antes da oferta. Fica oculta enquanto public/lp/vsl.mp4 não existir. Legendas em public/lp/vsl.vtt; poster em public/lp/vsl-poster.webp.",
+    "titulo": "3 minutos que mudam o jeito de ler a Bíblia.",
+    "subtitulo": "A história de dois homens que andavam perdidos, até alguém mostrar a ordem.",
+    "video": "/lp/vsl.mp4",
+    "poster": "/lp/vsl-poster.webp",
+    "legendas": "/lp/vsl.vtt",
+    "previaSegundos": 10,
+    "botaoAposSegundos": 150,
+    "tocar": "Assistir com som",
+    "botao": "Começar os 7 dias grátis"
   },
   "app": {
     "titulo": "O app por dentro",

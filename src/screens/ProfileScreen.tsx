@@ -3,7 +3,9 @@ import { MyPlan } from '../access/MyPlan'
 import { AnnualSwitchOffer } from '../access/PlanNotices'
 import { FamilySection } from '../access/FamilySection'
 import { useAuth } from '../auth/AuthContext'
+import { AccountSettings } from '../auth/AccountSettings'
 import { SignInForm } from '../auth/SignInForm'
+import { PremiumAccountForm } from '../auth/PremiumAccountForm'
 import { TOTAL_DAYS, ui } from '../content'
 import { canPromptInstall, isStandalone, needsIosInstallGuide, onInstallAvailabilityChange, promptInstall } from '../pwa/install'
 import { notificationStatus, requestPermission, type NotificationStatus } from '../reminder/notifications'
@@ -73,6 +75,28 @@ export function ProfileScreen({ reminder, onReminderChange, onShowIosGuide, onOf
       <AnnualSwitchOffer />
       <FamilySection />
 
+      {auth.enabled && (
+        <section className="mx-5 mt-6" aria-labelledby="minha-conta" data-testid="minha-conta">
+          <h3 id="minha-conta" className="pb-2 text-lg">Minha conta</h3>
+          {!auth.ready ? (
+            <p role="status" className="text-sm text-ink-2">Verificando a sessão…</p>
+          ) : auth.session ? (
+            <AccountSettings key={auth.session.user.id} />
+          ) : (
+            <>
+              <p className="mb-4 text-[13.5px] leading-normal text-ink-2">
+                Se você comprou um plano, entre com o e-mail usado na compra. Sua jornada gratuita fica salva neste aparelho.
+              </p>
+              <PremiumAccountForm origem="perfil" />
+              <details className="mt-3">
+                <summary className="min-h-11 cursor-pointer py-3 text-sm text-ink-2">Já entrava por link ou Google?</summary>
+                <SignInForm origem="perfil_link" />
+              </details>
+            </>
+          )}
+        </section>
+      )}
+
       <h3 className="px-5 pb-1 pt-7 text-lg">Preferências</h3>
       <div className="mx-5">
         <SwitchRow
@@ -108,30 +132,6 @@ export function ProfileScreen({ reminder, onReminderChange, onShowIosGuide, onOf
           </button>
         )}
       </div>
-
-      {auth.enabled && (
-        <>
-          <h3 className="px-5 pb-1 pt-7 text-lg">Conta</h3>
-          {auth.session ? (
-            <div className="mx-5 flex min-h-[64px] items-center justify-between gap-4 border-b border-line py-3">
-              <div className="min-w-0">
-                <div className="truncate text-[14.5px] font-semibold">{auth.email}</div>
-                <div className="mt-0.5 text-xs text-ink-3">Jornada salva na sua conta</div>
-              </div>
-              <button type="button" onClick={() => void auth.signOut()} className="min-h-[44px] flex-none px-2 text-[13.5px] font-bold text-ember-ink">
-                Sair
-              </button>
-            </div>
-          ) : (
-            <div className="mx-5 pt-1">
-              <p className="mb-4 text-[13.5px] leading-normal text-ink-2">
-                Salve sua jornada para não perder a lâmpada, os passos e o diário, e continuar em outro aparelho.
-              </p>
-              <SignInForm origem="perfil" />
-            </div>
-          )}
-        </>
-      )}
 
       {!isStandalone() && (installable || needsIosInstallGuide()) && (
         <div className="px-5 pb-2 pt-6">

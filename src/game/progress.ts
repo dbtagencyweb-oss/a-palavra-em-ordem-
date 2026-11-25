@@ -107,11 +107,6 @@ export function refreshForToday(input: Progress, today: DateKey): RefreshResult 
 /** Trilha 1 (free). Its days live in completedDays; every other trail in trails[id]. */
 export const MAIN_TRAIL = 'mapa-7-dias'
 
-/** A follow-up trail starts the calendar day after this day of another trail was completed. */
-export const TRAIL_STARTS_AFTER: Record<string, { trail: string; day: number }> = {
-  'jesus-em-ordem': { trail: MAIN_TRAIL, day: 7 },
-}
-
 export function completedOf(p: Progress, trail = MAIN_TRAIL): Record<number, DateKey> {
   return trail === MAIN_TRAIL ? p.completedDays : (p.trails?.[trail] ?? {})
 }
@@ -128,13 +123,7 @@ export function isDayUnlocked(p: Progress, n: number, today: DateKey, trail = MA
   // DEV panel → "Liberar tudo": every day open, for testing (always off in production).
   if (devUnlockAll()) return true
   if (isDayCompleted(p, n, trail)) return true
-  if (n === 1) {
-    // A follow-up trail opens the day after the previous trail was finished.
-    const after = TRAIL_STARTS_AFTER[trail]
-    if (!after) return true
-    const done = completedOf(p, after.trail)[after.day]
-    return done !== undefined && done < today
-  }
+  if (n === 1) return true
   const prev = completedOf(p, trail)[n - 1]
   return prev !== undefined && prev < today
 }

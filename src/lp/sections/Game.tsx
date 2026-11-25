@@ -1,17 +1,22 @@
 // 5 · Mini jogo. On ink: four shuffled buttons (Criação · Queda · Redenção · Restauração); each tap
 // fills the next slot. All four right: light particles, the lamp lights, +10 steps and the invite.
-// Wrong: a gentle shake, a hint, and it starts over after 1.4s.
+// Wrong: a gentle shake, a hint, and it starts over after 1.4s. Right: the reward modal opens
+// (GameModal, loaded on demand) with a second challenge; closed, the section stays solved.
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import landing from '../../../content/landing.json'
 import { Logo } from '../../ui/Logo'
 import { FadeBg } from '../FadeBg'
 import { pixelCustom } from '../pixel'
+import { publicoTag } from '../publico'
 import { addSteps, lpSound } from '../state'
 import { useReveal } from '../useReveal'
 import { ScrollCue } from '../ScrollCue'
 
 const g = landing.jogo
+const GameModal = lazy(() => import('./GameModal'))
+/** Start loading the modal while the visitor plays, so it opens without a wait. */
+const preloadModal = () => void import('./GameModal')
 type Status = 'playing' | 'wrong' | 'right'
 
 export function Game() {
@@ -22,6 +27,7 @@ export function Game() {
   const [status, setStatus] = useState<Status>('playing')
   const [tries, setTries] = useState(0)
   const rewarded = useRef(false)
+  const [modal, setModal] = useState(false)
 
   useEffect(() => {
     if (picked.length < g.ordem.length) return
@@ -29,13 +35,16 @@ export function Game() {
     setTries((n) => n + 1)
     if (ok) {
       setStatus('right')
-      lpSound.play('lamp_ignite')
+      lpSound.play('correct')
       lpSound.vibrate('correct')
       if (!rewarded.current) {
         rewarded.current = true
         addSteps(g.passos)
+        pixelCustom('DemoComplete', { publico: publicoTag(), tentativas: tries + 1 })
       }
-      pixelCustom('GameSolved', { tentativas: tries + 1 })
+      // The lamp lights first, then the modal.
+      const id = window.setTimeout(() => setModal(true), reduced ? 300 : 1100)
+      return () => window.clearTimeout(id)
     } else {
       setStatus('wrong')
       lpSound.vibrate('wrong')
@@ -51,6 +60,7 @@ export function Game() {
   function tap(word: string) {
     if (status !== 'playing' || picked.includes(word)) return
     lpSound.play('tap')
+    if (picked.length === 0) preloadModal()
     setPicked((p) => [...p, word])
   }
 
@@ -58,7 +68,7 @@ export function Game() {
     <section id="jogo" ref={root} className="relative overflow-hidden bg-ink px-5 py-20 text-paper md:py-28">
       <FadeBg id="era-d6" position="50% 60%" opacity={0.7} veil="radial-gradient(ellipse at 50% 40%, rgba(30,34,48,0.62), rgba(30,34,48,0.12) 75%)" />
       <div className="relative mx-auto max-w-2xl text-center">
-        <h2 data-reveal className="font-display text-[30px] font-semibold leading-[1.12] tracking-[-0.015em] md:text-5xl">
+        <h2 data-reveal className="font-display text-[30px] font-semibold leading-[1.12] tracking-[-0.015em] md:text-[44px]">
           {g.titulo}
         </h2>
         <p data-reveal className="mt-3 text-[16px] text-paper/75 md:text-lg">
@@ -153,6 +163,9 @@ export function Game() {
           )}
         </div>
       </div>
+      <Suspense fallback={null}>
+        <AnimatePresence>{modal && <GameModal key="modal" onClose={() => setModal(false)} />}</AnimatePresence>
+      </Suspense>
       <ScrollCue className="absolute bottom-3 left-1/2 z-[2] -translate-x-1/2 md:bottom-5" />
     </section>
   )

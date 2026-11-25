@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 import { trilha } from '../content'
 import { buildReadingLink } from '../content/readingLink'
 import type { Livro } from '../content/types'
@@ -9,7 +9,7 @@ import { Sheet } from '../ui/Sheet'
 const has = (v: unknown) => v !== null && v !== undefined && v !== '' && !(Array.isArray(v) && v.length === 0)
 
 /** Book fact sheet. Shows only the fields already filled in content/livros.json. */
-export function BookCard({ livro }: { livro: Livro }) {
+export function BookCard({ livro, onRead }: { livro: Livro; onRead?(): void }) {
   const [openEvent, setOpenEvent] = useState<number | null>(null)
   const numbers = [
     { label: 'capítulos', value: livro.capitulos },
@@ -20,6 +20,7 @@ export function BookCard({ livro }: { livro: Livro }) {
     has(livro.autorTradicional) && { label: 'Autor (tradição)', value: livro.autorTradicional! },
     has(livro.dataAproximada) && { label: 'Data aproximada', value: livro.dataAproximada! },
   ].filter(Boolean) as { label: string; value: string }[]
+  const firstChapterLink = buildReadingLink(`${livro.nome} 1`, trilha.linkLeitura.modelo)
 
   return (
     <article>
@@ -27,6 +28,8 @@ export function BookCard({ livro }: { livro: Livro }) {
         {livro.testamento === 'AT' ? 'Antigo Testamento' : 'Novo Testamento'} · {livro.bloco}
       </div>
       <h3 className="mb-4 mt-1.5 text-[28px]">{livro.nome}</h3>
+
+      {has(livro.resumo) && <p className="mb-4 font-serif text-[17px] leading-normal text-ink-2">{livro.resumo}</p>}
 
       {/* Where this book sits among the 66 */}
       <div className="mb-4">
@@ -129,6 +132,16 @@ export function BookCard({ livro }: { livro: Livro }) {
             ))}
           </ul>
         </Section>
+      )}
+
+      {onRead ? (
+        <button type="button" onClick={onRead} className="btn library-read-button mt-2 w-full" style={{ '--book-color': BLOCK_COLORS[livro.bloco] } as CSSProperties}>
+          Abrir capítulo
+        </button>
+      ) : firstChapterLink && (
+        <a href={firstChapterLink} target="_blank" rel="noopener noreferrer" className="btn mt-2 w-full">
+          Abrir o capítulo 1
+        </a>
       )}
     </article>
   )

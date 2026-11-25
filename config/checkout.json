@@ -1,7 +1,7 @@
 {
   "nota": "Links de checkout usados pelos avisos do plano (docs/07, Prompt 7). Vazio = usa o VITE_HOTMART_CHECKOUT_URL do Acesso Fundador. Estudos por livro (Prompt 9): checkout = preço cheio; checkoutFundador = oferta com 30% de desconto, mostrada a quem tem Acesso Fundador. Vazio = o botão avisa que o estudo ainda não está à venda.",
   "renovacaoFundador": "",
-  "_renovacao": "renovacaoFundador: link ou cupom de renovação a R$ 47 para quem tem vaga de Fundador (preco_fundador). renovacaoAnual: renovação de quem comprou depois das vagas (R$ 67); vazio = VITE_HOTMART_CHECKOUT_ANUAL_URL.",
+  "_renovacao": "renovacaoFundador: link ou cupom de renovação a R$ 47 para quem tem vaga de Fundador (preco_fundador). renovacaoAnual: renovação de quem comprou depois das vagas (R$ 97); vazio = VITE_HOTMART_CHECKOUT_ANUAL_URL.",
   "renovacaoAnual": "",
   "trocaParaAnual": "",
   "atualizarPagamento": "https://consumer.hotmart.com/purchase",

@@ -46,9 +46,9 @@ export function onTitleDone(fn: () => void) {
 let lenisRef: Lenis | null = null
 
 /** Smooth scroll to an element (through Lenis when it runs, so the two never fight). */
-export function scrollToEl(el: Element) {
-  if (lenisRef) lenisRef.scrollTo(el as HTMLElement, { duration: 1.2 })
-  else el.scrollIntoView({ behavior: reducedMotion() ? 'auto' : 'smooth' })
+export function scrollToEl(el: Element, offset = 0) {
+  if (lenisRef) lenisRef.scrollTo(el as HTMLElement, { duration: 1.2, offset })
+  else window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY + offset, behavior: reducedMotion() ? 'auto' : 'smooth' })
 }
 
 export function startSmoothScroll() {

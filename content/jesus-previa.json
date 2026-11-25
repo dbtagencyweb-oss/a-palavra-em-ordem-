@@ -1,0 +1,18 @@
+{
+  "titulo": "Como quatro Evangelhos contam uma só história?",
+  "cards": [
+    {
+      "titulo": "Quatro retratos, quatro olhares.",
+      "pontos": [
+        { "nome": "Mateus", "texto": "Mostra Jesus cumprindo as promessas das Escrituras." },
+        { "nome": "Marcos", "texto": "O mais curto e direto." },
+        { "nome": "Lucas", "texto": "Um médico que pesquisou tudo com cuidado antes de escrever." },
+        { "nome": "João", "texto": "Uma testemunha que quer mostrar quem Jesus é." }
+      ]
+    },
+    {
+      "titulo": "Por que ler em ordem?",
+      "texto": "Cada Evangelho organiza a história com um propósito, às vezes por tema, nem sempre pela data. Lidos separados, os episódios parecem soltos. Juntos e em sequência, aparece o caminho inteiro."
+    }
+  ]
+}

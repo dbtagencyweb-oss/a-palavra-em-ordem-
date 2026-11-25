@@ -13,10 +13,8 @@ import { isDayCompleted, type CompletionResult } from '../game/progress'
 import { ChapterOpener } from './ChapterOpener'
 import { BackIcon, CloseIcon } from '../ui/icons'
 import { EASE_OUT, useCardMotion, useSceneMotion } from '../ui/motion'
-import { SoundToggle } from '../ui/SoundToggle'
-import { LessonAudioPlayer } from '../media/LessonAudioPlayer'
-import { useAccess } from '../access/AccessContext'
 import { Leaving } from '../ui/Leaving'
+import { preloadPrayerHands3D } from '../cards/OracaoCard'
 
 interface Props {
   dayN: number
@@ -25,6 +23,8 @@ interface Props {
   onExit(): void
   /** `early`: the day was already completed during the lesson ("Marcar como lido"). */
   onFinish(firstTryActivities: number, early?: CompletionResult): void
+  /** Opens another day of the same trail (the opener's "rever o dia anterior"). */
+  onOpenDay?(n: number): void
   onOffer(origem: string): void
 }
 
@@ -62,9 +62,8 @@ export function LessonScreen(props: Props) {
   return <Lesson {...props} trail={trail} day={day} />
 }
 
-function Lesson({ dayN, trail, day, onExit, onFinish, onOffer }: Props & { trail: Trail; day: Dia }) {
+function Lesson({ dayN, trail, day, onExit, onFinish, onOffer, onOpenDay }: Props & { trail: Trail; day: Dia }) {
   const { progress, addDiaryEntry, updateDiaryEntry, completeDay } = useProgress()
-  const { podeAcessar } = useAccess()
   const era = trail.era(dayN)
   // "Marcar como lido" completes the day right away (it counts for the lamp like a finished lesson).
   const early = useRef<CompletionResult | null>(null)
@@ -83,6 +82,7 @@ function Lesson({ dayN, trail, day, onExit, onFinish, onOffer }: Props & { trail
   const card: Card = day.cards[index]
   const isLast = index === day.cards.length - 1
   const cinema = isCinema(card)
+  const fullBleedMedia = card.tipo === 'cena' || (card.tipo === 'abertura' && Boolean(card.midia))
   const canContinue = !INTERACTIVE_TYPES.has(card.tipo) || solved.has(index)
 
   // "More below" hint: some cards (long lists, many books) continue under the footer.
@@ -108,11 +108,15 @@ function Lesson({ dayN, trail, day, onExit, onFinish, onOffer }: Props & { trail
 
   // Only the current card's media loads; warm up the next one.
   useEffect(() => {
-    preloadMedia(day.cards[index + 1]?.midia)
+    // While the chapter opener is visible, warm the first card itself so its full-bleed picture is
+    // already decoded when "Começar o dia" is tapped. Once inside, keep warming the next card.
+    preloadMedia(day.cards[intro ? index : index + 1]?.midia)
+    if (intro) return
     const nextCard = day.cards[index + 1]
+    if (nextCard?.tipo === 'oracao') preloadPrayerHands3D()
     if (nextCard) soundManager.preloadNarration(narrationForCard(nextCard.id)?.id)
     track('card_view', { dia: dayN, trilha: trail.id, card: day.cards[index].id })
-  }, [day.cards, index, dayN])
+  }, [day.cards, index, dayN, intro, trail.id])
 
   function next() {
     if (card.tipo === 'reflexao' || card.tipo === 'pergunta') {
@@ -185,6 +189,8 @@ function Lesson({ dayN, trail, day, onExit, onFinish, onOffer }: Props & { trail
         trail={trail}
         review={review}
         onExit={onExit}
+        // The day before, to see it again: only once it is done.
+        onPrevious={onOpenDay && dayN > 1 && isDayCompleted(progress, dayN - 1, trail.id) ? () => onOpenDay(dayN - 1) : undefined}
         onStart={() => {
           soundManager.play(day.cards[0].tipo === 'cena' ? 'tap' : 'card_next')
           setIntro(false)
@@ -200,7 +206,9 @@ function Lesson({ dayN, trail, day, onExit, onFinish, onOffer }: Props & { trail
       aria-label={`Dia ${dayN}: ${day.titulo}`}
     >
       <DevStatusStrip status={trail.outline.find((d) => d.n === dayN)?.status} />
-      <div className="relative z-10 flex items-center gap-2 px-6 pb-2 pt-4">
+      <div
+        className={`${fullBleedMedia ? 'absolute inset-x-0 top-0 bg-gradient-to-b from-black/35 via-black/10 to-transparent' : 'relative'} z-10 flex items-center gap-2 px-6 pb-2 pt-4`}
+      >
         <button type="button" onClick={onExit} aria-label="Fechar a lição" className={`-ml-3 grid h-11 w-11 place-items-center rounded-full ${iconTone}`}>
           <CloseIcon />
         </button>
@@ -219,26 +227,7 @@ function Lesson({ dayN, trail, day, onExit, onFinish, onOffer }: Props & { trail
             transition={{ duration: 0.4, ease: EASE_OUT }}
           />
         </div>
-        <SoundToggle className={`-mr-3 ${iconTone}`} />
       </div>
-
-      {/* Modo Áudio: the whole lesson narrated, for buyers of the "audio" bump. */}
-      {podeAcessar('modo-audio-completo') && (
-        <div className="relative z-10 flex px-6 pb-2">
-          <LessonAudioPlayer
-            trailId={trail.id}
-            trailTitle={trail.titulo}
-            dayN={dayN}
-            dayTitle={day.titulo}
-            tone={cinema ? 'dark' : 'light'}
-            onListened={() => {
-              // Listening to the end completes the lesson.
-              if (!early.current) early.current = completeDay(dayN, firstTries.current, trail)
-              onFinish(firstTries.current, early.current)
-            }}
-          />
-        </div>
-      )}
 
       <AnimatePresence mode="popLayout" initial={false} custom={direction}>
         <motion.div

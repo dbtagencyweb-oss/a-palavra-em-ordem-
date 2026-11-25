@@ -1,7 +1,8 @@
 // The app's icon set: one 24px grid, 1.8 stroke, round caps and joins.
 // Most icons are "duotone": a line drawing plus a soft tinted fill (ACCENT) that gives them a little volume,
 // the way the gold medallions and the paper cards do. Navigation icons fill that accent in when active.
-import type { ReactNode } from 'react'
+import { useId, type ReactNode } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 
 type P = { className?: string; size?: number }
 type NavP = { active?: boolean }
@@ -28,6 +29,41 @@ function Svg({ size = 24, className, children, stroke = 1.8 }: P & { children: R
 }
 
 // ---- Actions ----
+
+export function FlameSearchIcon({ className }: P) {
+  const gold = useId()
+  const reduced = useReducedMotion()
+  const loop = { duration: 3, repeat: Infinity, ease: 'easeInOut' } as const
+  return (
+    <svg className={className} viewBox="0 0 42 42" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id={gold} x1="7" y1="7" x2="28" y2="32" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#AD8747" />
+          <stop offset=".57" stopColor="#E5C681" />
+          <stop offset="1" stopColor="#D5AD64" />
+        </linearGradient>
+      </defs>
+      {/* The arc is centered at (21, 21), with a gap at the top for the flame. */}
+      <motion.path d="M14.25 12.9565A10.5 10.5 0 1 0 27.75 12.9565" stroke={`url(#${gold})`} strokeWidth="2.6" strokeLinecap="round"
+        initial={reduced ? false : { opacity: 1 }}
+        animate={reduced ? { opacity: 1 } : { opacity: [1, 0.8, 1] }}
+        transition={reduced ? { duration: 0 } : loop} />
+      <motion.path d="m28.42 28.42 7.8 7.8" stroke={`url(#${gold})`} strokeWidth="2.6" strokeLinecap="round"
+        initial={reduced ? false : { opacity: 1 }}
+        animate={reduced ? { opacity: 1 } : { opacity: [1, 0.8, 1] }}
+        transition={reduced ? { duration: 0 } : loop} />
+      <motion.path d="M20.3 3.8c3.6 2.2 6.6 7.2 6.6 12 0 3.2-1.5 6.4-3.5 8.6.8-3.1-.1-6-1.9-8.1-.7 3.1-2.8 5.6-2.8 8.8 0 1.4.4 2.6 1 3.9-3.4-3.1-4.7-6.6-4.7-10.1 0-5.1 4.6-10.8 5.3-15.1Z" fill={`url(#${gold})`}
+        style={{ originX: 0.5, originY: 0.95 }}
+        initial={reduced ? false : { opacity: 1, rotate: 0, scaleY: 1 }}
+        animate={reduced ? { opacity: 1, rotate: 0, scaleY: 1 } : {
+          opacity: [1, 0.76, 1, 0.85, 1],
+          rotate: [0, -8, 6, -3, 0],
+          scaleY: [1, 0.85, 1.04, 0.94, 1],
+        }}
+        transition={reduced ? { duration: 0 } : { ...loop, times: [0, 0.22, 0.46, 0.75, 1] }} />
+    </svg>
+  )
+}
 
 export const BackIcon = ({ size = 20, className }: P) => (
   <Svg size={size} className={className} stroke={2.1}>

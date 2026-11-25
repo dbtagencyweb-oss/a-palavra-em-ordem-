@@ -43,6 +43,13 @@ describe('SignInForm', () => {
     expect(url.searchParams.get('utm_source')).toBe('ig')
     expect(url.searchParams.has('fbclid')).toBe(false)
   })
+
+  it('returns buyers to the payment confirmation after sign-in', async () => {
+    const { redirectTo } = await vi.importActual<typeof import('./AuthContext')>('./AuthContext')
+    const url = new URL(redirectTo('?utm_source=ig', '/obrigado/'))
+    expect(url.pathname).toBe('/obrigado')
+    expect(url.searchParams.get('utm_source')).toBe('ig')
+  })
 })
 
 describe('checkoutUrl', () => {

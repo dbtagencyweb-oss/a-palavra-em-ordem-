@@ -7,8 +7,8 @@ import { usePublico } from './publico'
 import { useWide } from './useWide'
 import { AppInside } from './sections/AppInside'
 import { Audience } from './sections/Audience'
+import { BookOrganization } from './sections/BookOrganization'
 import { Compare } from './sections/Compare'
-import { Demo } from './sections/Demo'
 import { ExitIntent, Faq, Finale, Offer } from './sections/Closing'
 import { Game } from './sections/Game'
 import { Hero } from './sections/Hero'
@@ -17,6 +17,7 @@ import { ForWhom, Journey, Verse } from './sections/Middle'
 import { Pain } from './sections/Pain'
 import { Preloader } from './sections/Preloader'
 import { Turn } from './sections/Turn'
+import { Vsl } from './sections/Vsl'
 
 export function Landing() {
   // Re-render on the audience choice: links to the app carry it, and the pain section is rebuilt.
@@ -36,13 +37,14 @@ export function Landing() {
         <Pain key={publico ?? 'padrao'} />
         <Compare />
         <Turn />
+        <BookOrganization />
         <Mechanism />
         <Game />
         <AppInside />
-        <Demo />
         <Verse />
         <Journey />
         <ForWhom />
+        <Vsl />
         <Offer />
         <Faq />
         <Finale />

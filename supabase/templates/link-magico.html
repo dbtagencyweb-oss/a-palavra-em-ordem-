@@ -2,8 +2,8 @@
   E-mail de acesso (link mágico) do Supabase Auth, com a identidade do A Palavra em Ordem.
   Assunto: Seu acesso ao A Palavra em Ordem
   Onde colar: Supabase Dashboard → Authentication → Email Templates → "Magic Link" (e o mesmo em
-  "Confirm signup", para quem entra pela primeira vez). {{ .ConfirmationURL }} é o link do Supabase.
-  O logo vem da landing page publicada: troque SEU-DOMINIO pelo domínio real.
+  "Confirm signup", para quem entra pela primeira vez).
+  Troque SEU-DOMINIO pelo domínio real no logo e na condição do fluxo de ativação.
 -->
 <!doctype html>
 <html lang="pt-BR">
@@ -22,12 +22,20 @@
             </tr>
             <tr>
               <td style="font-size:17px;line-height:1.55;color:#3A3F4E;padding-bottom:26px">
-                Toque no botão para entrar no A Palavra em Ordem. Sem senha: este link já faz o seu login.
+                {{ if or (eq .RedirectTo "https://SEU-DOMINIO/ativar-conta") (eq .RedirectTo "http://localhost:5174/ativar-conta") }}
+                Confirme seu e-mail para criar sua senha de acesso ao A Palavra em Ordem.
+                {{ else }}
+                Toque no botão para entrar no A Palavra em Ordem. Este link já faz o seu login.
+                {{ end }}
               </td>
             </tr>
             <tr>
               <td style="padding-bottom:26px">
+                {{ if or (eq .RedirectTo "https://SEU-DOMINIO/ativar-conta") (eq .RedirectTo "http://localhost:5174/ativar-conta") }}
+                <a href="{{ .RedirectTo }}?token_hash={{ .TokenHash }}" style="display:inline-block;background:#C0552D;color:#ffffff;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-weight:bold;font-size:16px;padding:15px 30px;border-radius:14px">Ativar meu acesso</a>
+                {{ else }}
                 <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#C0552D;color:#ffffff;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-weight:bold;font-size:16px;padding:15px 30px;border-radius:14px">Entrar no A Palavra em Ordem</a>
+                {{ end }}
               </td>
             </tr>
             <tr>

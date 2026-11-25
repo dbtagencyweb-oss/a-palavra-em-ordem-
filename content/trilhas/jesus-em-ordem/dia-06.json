@@ -1,9 +1,10 @@
 {
-  "status": "em_revisao",
+  "status": "publicado",
   "n": 6,
   "titulo": "Os magos e a fuga para o Egito",
   "passagens": "Mateus 2; Lucas 2:21-40",
   "fase": "Nascimento",
+  "capa": "/trilhas/jesus-em-ordem/capa-jeo-dia-06.webp",
   "midiaSugerida": {
     "id": "je-d06-magos",
     "prompt": "A small caravan of travelers on camels crossing a vast desert at night under one very bright star, seen from behind and small in the frame. Deep blue night, warm starlight."

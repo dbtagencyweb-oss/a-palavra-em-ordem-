@@ -7,6 +7,7 @@ import { footprints, mapLayout, nodePoint, sparkles, windingFullPath, windingPat
 import { imagePath, imageSrcSet } from '../media/paths'
 import { soundManager } from '../sound/SoundManager'
 import { eraOf } from '../ui/eras'
+import { OilLamp3D } from '../ui/OilLamp3D'
 import { MapAtmosphere } from './MapAtmosphere'
 
 interface Props {
@@ -17,6 +18,8 @@ interface Props {
   onTapDay(n: number): void
   /** Frame the current day when Home opens (off when the journey is already on Trilha 2, above). */
   autoScroll?: boolean
+  /** The trail above blends directly into the first image. */
+  blendFromTrail?: boolean
 }
 
 const NODES = mapa.nos as MapNodeSpec[]
@@ -27,6 +30,7 @@ const STEP_MS = 90
 const SAND = '#3B2816'
 const LABEL_GAP = 42 // from the node centre to the label card
 const GUTTER = 20 // free space between a label card and the edge of the screen
+const MAP_END_CLEARANCE = 140 // space below the Day 1 pin, including the card overlap
 
 // How far the walked road was drawn last time, so only the new stretch animates on return.
 const MAP_SEEN_KEY = 'pao:map-seen'
@@ -54,7 +58,7 @@ function scroller(el: HTMLElement | null): HTMLElement | null {
   return null
 }
 
-export function JourneyMap({ doneCount, nextAvailable, onTapDay, autoScroll = true }: Props) {
+export function JourneyMap({ doneCount, nextAvailable, onTapDay, autoScroll = true, blendFromTrail = false }: Props) {
   const reduced = useReducedMotion()
   const boxRef = useRef<HTMLDivElement>(null)
   const stretchRefs = useRef<(SVGPathElement | null)[]>([])
@@ -73,6 +77,9 @@ export function JourneyMap({ doneCount, nextAvailable, onTapDay, autoScroll = tr
   const count = trilha.dias.length
   const layout = useMemo(() => mapLayout(width || 390, count, SEAM), [width, count])
   const points = useMemo(() => NODES.map((n) => nodePoint(layout, n)), [layout])
+  // Crop the artwork below the first pin without shifting the artwork or any of the nodes.
+  const visibleHeight = Math.min(layout.height, points[0].y + MAP_END_CLEARANCE)
+  const bottomCrop = layout.height - visibleHeight
   // The road's swings stay inside the picture.
   const bounds = useMemo(() => ({ minX: 26, maxX: layout.width - 26 }), [layout.width])
 
@@ -192,10 +199,10 @@ export function JourneyMap({ doneCount, nextAvailable, onTapDay, autoScroll = tr
   const lampSide = NODES[reached].rotulo === 'esquerda' ? 1 : -1 // opposite side of the label
 
   return (
-    <div ref={boxRef} className="relative isolate w-full flex-none overflow-hidden" style={{ height: layout.height }} data-testid="journey-map">
+    <div ref={boxRef} className="relative isolate w-full flex-none overflow-clip" style={{ height: visibleHeight }} data-testid="journey-map">
       {/* Background: one picture per day, Day 1 at the bottom, each fading into the one below. */}
       {trilha.dias.map((d) => (
-        <MapSegment key={d.n} day={d.n} count={count} top={layout.segTop(d.n)} height={layout.segH} />
+        <MapSegment key={d.n} day={d.n} count={count} top={layout.segTop(d.n)} height={layout.segH} blendFromTrail={blendFromTrail} bottomCrop={bottomCrop} />
       ))}
       <MapAtmosphere layout={layout} />
 
@@ -337,12 +344,12 @@ export function JourneyMap({ doneCount, nextAvailable, onTapDay, autoScroll = tr
       <motion.div
         className="pointer-events-none absolute left-0 top-0 z-[25]"
         initial={false}
-        animate={{ x: lampAt.x + lampSide * (NODE / 2 + 8) - 19, y: lampAt.y - NODE / 2 - 12 }}
+        animate={{ x: lampAt.x + lampSide * (NODE / 2 + 10) - 26, y: lampAt.y - NODE / 2 - 14 }}
         transition={reduced ? { duration: 0 } : { type: 'spring', stiffness: 60, damping: 16 }}
         aria-hidden="true"
         data-testid="map-lamp"
       >
-        <Candeia />
+        <OilLamp3D className="w-[52px] drop-shadow-[0_4px_5px_rgba(30,20,12,0.42)]" />
       </motion.div>
       <span className="sr-only" aria-live="polite">
         {`Você está no Dia ${reached + 1}`}
@@ -351,7 +358,14 @@ export function JourneyMap({ doneCount, nextAvailable, onTapDay, autoScroll = tr
   )
 }
 
-function MapSegment({ day, count, top, height }: { day: number; count: number; top: number; height: number }) {
+function MapSegment({ day, count, top, height, blendFromTrail, bottomCrop }: {
+  day: number
+  count: number
+  top: number
+  height: number
+  blendFromTrail: boolean
+  bottomCrop: number
+}) {
   const isTop = day === count
   const isBottom = day === 1
   const id = `mapa-d${day}`
@@ -388,12 +402,12 @@ function MapSegment({ day, count, top, height }: { day: number; count: number; t
         />
       )}
       {/* Soft edges where the map meets the page. */}
-      {isTop && <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-paper to-transparent" />}
-      {/* Day 1 ends in a dark vignette: a longer, eased fade so it melts into the page. */}
+      {isTop && !blendFromTrail && <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-paper to-transparent" />}
+      {/* Fade at the visible edge of the artwork, behind the continue card. */}
       {isBottom && (
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-44"
-          style={{ background: 'linear-gradient(to top, #F5EFE3 10%, rgba(245,239,227,.85) 32%, rgba(245,239,227,.45) 60%, rgba(245,239,227,.12) 85%, transparent)' }}
+          className="pointer-events-none absolute inset-x-0 h-24"
+          style={{ bottom: bottomCrop, background: 'linear-gradient(to top, #F5EFE3, rgba(245,239,227,.85) 20%, rgba(245,239,227,.35) 54%, rgba(245,239,227,.1) 80%, transparent)' }}
         />
       )}
     </div>
@@ -435,20 +449,3 @@ function Print({ f }: { f: Footprint }) {
   )
 }
 
-/** Small oil lamp with a flickering flame: "você está aqui". */
-function Candeia() {
-  return (
-    <span className="grid h-[38px] w-[38px] place-items-center rounded-full bg-paper/95 shadow-[0_3px_10px_rgba(0,0,0,0.35),0_0_0_2px_rgba(246,201,154,0.7)]">
-    <svg width="28" height="28" viewBox="0 0 28 28" className="-mt-0.5">
-      <circle cx="17" cy="9" r="8" fill="#F6C99A" opacity="0.35" className="lamp-glow" />
-      <g className="flame" style={{ transformOrigin: '17px 15px' }}>
-        <path d="M17 15c-2.6-2-2-5.2 0-8.4 2 3.2 2.6 6.4 0 8.4z" fill="#C4572E" />
-        <path d="M17 14.2c-1.1-.9-.9-2.6 0-4.2.9 1.6 1.1 3.3 0 4.2z" fill="#F6C99A" />
-      </g>
-      <path d="M3 16h19c-1.2 4.6-4.8 7-9.5 7S4.2 20.6 3 16z" fill="#8A672B" />
-      <path d="M3 16h19" stroke="#F1E3C4" strokeWidth="1" strokeLinecap="round" opacity=".6" />
-      <path d="M22 17.5c3 0 4-2.4 2.2-3.6" fill="none" stroke="#8A672B" strokeWidth="1.8" strokeLinecap="round" />
-    </svg>
-    </span>
-  )
-}

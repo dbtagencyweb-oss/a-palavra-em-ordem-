@@ -127,6 +127,7 @@ function Medals({ on }: { on: boolean }) {
             alt=""
             loading="lazy"
             decoding="async"
+            onError={(e) => (e.currentTarget.parentElement!.style.display = 'none')}
             className="h-full w-full drop-shadow-[0_4px_8px_rgba(30,34,48,0.3)] transition-[filter] duration-700"
             style={{ filter: on ? 'none' : 'grayscale(1) brightness(1.1) opacity(0.55)', transitionDelay: on ? `${i * 160}ms` : '0ms' }}
           />
@@ -171,7 +172,7 @@ export function AppInside() {
   return (
     <section id="app" ref={root} className="relative bg-paper text-ink">
       <div className="mx-auto max-w-6xl px-5 pt-20 md:px-10 md:pt-28">
-        <h2 data-reveal className="text-center font-display text-[30px] font-semibold leading-[1.12] tracking-[-0.015em] md:text-5xl">
+        <h2 data-reveal className="text-center font-display text-[30px] font-semibold leading-[1.12] tracking-[-0.015em] md:text-[44px]">
           {a.titulo}
         </h2>
       </div>

@@ -1,12 +1,9 @@
 // Outgoing links of the landing page. Purchase buttons go to the checkout, free buttons to the app.
 // Campaign parameters the visitor arrived with (utm_*, fbclid, src…) are carried over to both.
 
-import { getOffer } from './oferta'
+import { getOffer, offerCheckoutBase } from './oferta'
 import { getPublico } from './publico'
 
-const CHECKOUT_URL = (import.meta.env.VITE_HOTMART_CHECKOUT_URL as string | undefined) || ''
-/** The normal annual offer (R$ 67), once the Founder seats are gone (content/oferta.json). */
-const CHECKOUT_ANUAL_URL = (import.meta.env.VITE_HOTMART_CHECKOUT_ANUAL_URL as string | undefined) || ''
 const APP_URL = ((import.meta.env.VITE_APP_URL as string | undefined) || window.location.origin).replace(/\/$/, '')
 
 const KEEP = /^(utm_[a-z_]+|fbclid|gclid|src|sck|xcod)$/
@@ -37,7 +34,7 @@ function withParams(base: string, extra: Record<string, string> = {}): string {
  */
 export const checkoutHref = () => {
   const source = campaignParams().get('utm_source')
-  return withParams(getOffer().fechada ? CHECKOUT_ANUAL_URL : CHECKOUT_URL, source && !campaignParams().has('src') ? { src: source } : {})
+  return withParams(offerCheckoutBase(getOffer().fechada), source && !campaignParams().has('src') ? { src: source } : {})
 }
 /**
  * The free 7 days: the app, straight into the journey. The chosen audience goes along so the app's
@@ -53,4 +50,4 @@ export const freeHref = () => {
   }
   return withParams(`${APP_URL}/`, extra)
 }
-export const hasCheckout = () => Boolean(CHECKOUT_URL)
+export const hasCheckout = () => Boolean(offerCheckoutBase(getOffer().fechada))

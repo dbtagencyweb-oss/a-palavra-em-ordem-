@@ -121,7 +121,7 @@ export function Mechanism() {
     <section id="mecanismo" ref={root} className="relative bg-paper text-ink">
       <div className="mech-stage flex min-h-[100svh] flex-col justify-center px-5 py-16 md:px-10">
         <div className="mx-auto w-full max-w-5xl">
-          <h2 data-reveal className="text-center font-display text-[30px] font-semibold leading-[1.12] tracking-[-0.015em] md:text-5xl">
+          <h2 data-reveal className="text-center font-display text-[30px] font-semibold leading-[1.12] tracking-[-0.015em] md:text-[44px]">
             {m.titulo}
           </h2>
 

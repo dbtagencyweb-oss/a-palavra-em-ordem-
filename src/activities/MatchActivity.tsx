@@ -10,6 +10,10 @@ interface Props {
   /** `attempts` counts tries until right (1 = first try). */
   onSolved(firstTry: boolean, attempts: number): void
   solved?: boolean
+  /** Color of the thread that joins a right pair (default: olive). */
+  threadColor?: string
+  /** Optional color dot before an item, keyed by its text (e.g. an era's color). */
+  colors?: Record<string, string>
 }
 
 type Side = 'a' | 'b'
@@ -32,7 +36,7 @@ const thread = (p: Pt, q: Pt) => {
  * "Ligar": tap one side then the other, or drag a thread from one item to its pair.
  * Every right pair stays joined by a drawn thread, so the activity literally links things.
  */
-export function MatchActivity({ pares, acerto, onSolved, solved = false }: Props) {
+export function MatchActivity({ pares, acerto, onSolved, solved = false, threadColor = OLIVE, colors }: Props) {
   const reduced = useReducedMotion()
   const [right] = useState(() => shuffle(pares.map((p) => p.b)))
   const [selected, setSelected] = useState<{ side: Side; value: string } | null>(null)
@@ -182,7 +186,14 @@ export function MatchActivity({ pares, acerto, onSolved, solved = false }: Props
           aria-pressed={selected?.side === side && selected.value === v}
           className={`min-h-[52px] touch-none select-none rounded-xl border-[1.5px] px-3 py-2.5 text-left text-[14px] font-semibold leading-snug shadow-pill transition-colors ${cls(side, v)}`}
         >
-          {v}
+          {colors?.[v] ? (
+            <span className="flex items-center gap-2">
+              <span aria-hidden="true" className="h-2.5 w-2.5 flex-none rounded-full" style={{ backgroundColor: colors[v] }} />
+              {v}
+            </span>
+          ) : (
+            v
+          )}
         </button>
       ))}
     </div>
@@ -212,7 +223,7 @@ export function MatchActivity({ pares, acerto, onSolved, solved = false }: Props
                   key={t.key}
                   d={thread(t.from, t.to)}
                   fill="none"
-                  stroke={OLIVE}
+                  stroke={threadColor}
                   strokeWidth={2.5}
                   strokeLinecap="round"
                   initial={reduced || solved ? false : { pathLength: 0 }}

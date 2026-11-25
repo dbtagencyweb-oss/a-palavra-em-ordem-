@@ -125,7 +125,7 @@ export function Journey() {
   return (
     <section id="jornada" ref={root} className="relative bg-paper-2 px-5 py-20 text-ink md:px-10 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <h2 data-reveal className="text-center font-display text-[30px] font-semibold leading-[1.12] tracking-[-0.015em] md:text-5xl">
+        <h2 data-reveal className="text-center font-display text-[30px] font-semibold leading-[1.12] tracking-[-0.015em] md:text-[44px]">
           {j.titulo}
         </h2>
         <ol className="journey-list relative mt-12 grid gap-6 md:mt-16 md:grid-cols-4 md:gap-6">

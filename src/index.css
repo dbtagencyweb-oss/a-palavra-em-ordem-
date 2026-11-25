@@ -106,6 +106,7 @@
   background: radial-gradient(circle, rgba(232, 140, 80, 0.45), transparent 65%);
   animation: glow 2.4s ease-in-out infinite;
 }
+
 @keyframes shake {
   25% {
     transform: translateX(-5px);
@@ -163,7 +164,6 @@
 @media (prefers-reduced-motion: reduce) {
   .node-current,
   .lamp-glow,
-  .flame,
   .map-node-current,
   .map-node-current > *,
   .map-node-shine::after,
@@ -213,19 +213,187 @@
   color: var(--drop-cap, #8a672b);
 }
 
-/* Candle flame flicker (prayer card). */
-@keyframes flicker {
-  0%, 100% { transform: scaleY(1) skewX(0deg); opacity: 1; }
-  30% { transform: scaleY(1.06) skewX(-2deg); opacity: 0.94; }
-  60% { transform: scaleY(0.96) skewX(2deg); opacity: 1; }
+/* Prayer card: open sculpted hands with a restrained light between the palms. */
+.prayer-hands-symbol {
+  aspect-ratio: 1.48;
+  isolation: isolate;
+  filter: drop-shadow(0 9px 18px rgba(18, 8, 4, 0.32));
 }
-.flame {
+.prayer-hands-canvas,
+.prayer-hands-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  animation: prayer-hands-appear 0.42s ease-out both;
+}
+.prayer-hands-halo,
+.prayer-hands-light {
+  position: absolute;
+  left: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.prayer-hands-halo {
+  z-index: 0;
+  top: 48%;
+  width: 145%;
+  aspect-ratio: 1.8;
+  background: radial-gradient(ellipse, rgba(246, 201, 154, 0.25), rgba(232, 140, 80, 0.07) 46%, transparent 72%);
+  transform: translate(-50%, -50%);
+}
+.prayer-hands-light {
+  z-index: 1;
+  top: 38%;
+  width: 34%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(255, 241, 194, 0.56), rgba(232, 140, 80, 0.15) 48%, transparent 72%);
+  filter: blur(2px);
+  transform: translate(-50%, -50%);
+  animation: prayer-light-breathe 2.8s ease-in-out infinite alternate;
+}
+@keyframes prayer-hands-appear {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes prayer-light-breathe {
+  from { opacity: 0.62; scale: 0.9; }
+  to { opacity: 1; scale: 1.08; }
+}
+
+/* Living 3D oil lamp: generated clay body + a real layered flame that scales from map to finale. */
+.oil-lamp-3d {
+  position: relative;
+  display: inline-block;
+  aspect-ratio: 1068 / 724;
+  flex: none;
+  isolation: isolate;
+}
+.oil-lamp-3d > img {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+.oil-lamp-halo,
+.oil-lamp-wick-glow {
+  position: absolute;
+  z-index: 0;
+  left: 93.2%;
+  top: 38%;
+  border-radius: 999px;
+  pointer-events: none;
+}
+.oil-lamp-halo {
+  width: 38%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(255, 224, 139, 0.72) 0%, rgba(241, 155, 55, 0.3) 38%, transparent 72%);
+  filter: blur(3px);
+  transform: translate(-50%, -50%);
+  animation: oil-lamp-glow 1.65s ease-in-out infinite alternate;
+}
+.oil-lamp-wick-glow {
+  z-index: 3;
+  width: 13%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(255, 248, 211, 0.94), rgba(255, 185, 74, 0.42) 45%, transparent 72%);
+  transform: translate(-50%, -20%);
+  animation: oil-lamp-glow 0.95s ease-in-out infinite alternate-reverse;
+}
+.oil-lamp-flame-wrap {
+  position: absolute;
+  z-index: 4;
+  left: 93.2%;
+  top: 17.5%;
+  width: 8.5%;
+  height: 29%;
+  transform: translateX(-50%);
   transform-origin: 50% 100%;
-  transform-box: fill-box;
-  animation: flicker 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+.oil-lamp-flame-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform-origin: 50% 100%;
+  filter: drop-shadow(0 0 4px rgba(255, 224, 139, 0.95)) drop-shadow(0 0 10px rgba(241, 155, 55, 0.7));
+  animation: oil-lamp-flicker 1.05s ease-in-out infinite alternate;
+}
+.oil-lamp-spark {
+  position: absolute;
+  z-index: 5;
+  left: 93%;
+  top: 21%;
+  width: max(1px, 1.2%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff4bd;
+  box-shadow: 0 0 5px #f6b653;
+  animation: oil-lamp-spark 2.2s ease-out infinite;
+}
+.oil-lamp-spark-b {
+  animation-delay: 1.05s;
+  animation-duration: 1.8s;
+}
+.oil-lamp-ignite .oil-lamp-flame-wrap {
+  animation: oil-lamp-ignite-flame 1.15s 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.oil-lamp-ignite .oil-lamp-halo {
+  animation:
+    oil-lamp-ignite-halo 1.15s 0.18s cubic-bezier(0.22, 1, 0.36, 1) both,
+    oil-lamp-glow 1.65s 1.33s ease-in-out infinite alternate;
+}
+.oil-lamp-ignite .oil-lamp-wick-glow {
+  animation:
+    oil-lamp-ignite-wick 1.15s 0.18s cubic-bezier(0.22, 1, 0.36, 1) both,
+    oil-lamp-glow 0.95s 1.33s ease-in-out infinite alternate-reverse;
+}
+@keyframes oil-lamp-flicker {
+  0% { transform: rotate(-2deg) scaleX(0.92) scaleY(1.04); opacity: 0.94; }
+  38% { transform: rotate(1.5deg) scaleX(1.04) scaleY(0.96); opacity: 1; }
+  72% { transform: rotate(-0.5deg) scaleX(0.97) scaleY(1.08); opacity: 0.97; }
+  100% { transform: rotate(2deg) scaleX(1.03) scaleY(1); opacity: 1; }
+}
+@keyframes oil-lamp-glow {
+  from { opacity: 0.62; scale: 0.9; }
+  to { opacity: 1; scale: 1.08; }
+}
+@keyframes oil-lamp-spark {
+  0%, 30% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+  45% { opacity: 0.9; }
+  100% { opacity: 0; transform: translate(70%, -420%) scale(0.1); }
+}
+@keyframes oil-lamp-ignite-flame {
+  from { opacity: 0; transform: translateX(-50%) scale(0.05); }
+  60% { opacity: 1; }
+  to { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+@keyframes oil-lamp-ignite-halo {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.1); }
+  to { opacity: 0.62; transform: translate(-50%, -50%) scale(0.9); }
+}
+@keyframes oil-lamp-ignite-wick {
+  from { opacity: 0; transform: translate(-50%, -20%) scale(0.1); }
+  to { opacity: 1; transform: translate(-50%, -20%) scale(1); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .flame { animation: none; }
+  .prayer-hands-canvas,
+  .prayer-hands-light,
+  .oil-lamp-halo,
+  .oil-lamp-wick-glow,
+  .oil-lamp-flame-art,
+  .oil-lamp-spark,
+  .oil-lamp-ignite .oil-lamp-flame-wrap {
+    animation: none;
+  }
+  .oil-lamp-spark { display: none; }
 }
 
 /* Map atmosphere (MapAtmosphere.tsx): soft glowing particles. */
@@ -347,6 +515,25 @@
     inset 0 0 0 1px rgba(120, 50, 18, 0.35),
     0 10px 26px -10px rgba(170, 72, 30, 0.75);
 }
+.library-book-number,
+.library-book-abbreviation {
+  color: color-mix(in srgb, var(--book-color, #8a8d98) 56%, #1e2230);
+  background-color: color-mix(in srgb, var(--book-color, #8a8d98) 22%, #fffaf0);
+}
+
+.library-book-abbreviation {
+  background-color: color-mix(in srgb, var(--book-color, #8a8d98) 33%, #fffaf0);
+}
+
+.btn.library-read-button {
+  --book-button-light: color-mix(in srgb, var(--book-color, #8a8d98) 68%, #151811);
+  --book-button-dark: color-mix(in srgb, var(--book-color, #8a8d98) 56%, #151811);
+  background-color: var(--book-button-dark);
+  background-image: linear-gradient(155deg, var(--book-button-light), var(--book-button-dark));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 28%), inset 0 -2px 0 rgb(0 0 0 / 18%), 0 10px 20px -12px var(--book-button-dark);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 25%);
+}
+
 .btn:not(.btn-ghost)::after,
 .btn-shine::after {
   content: '';
@@ -454,7 +641,7 @@
   background: linear-gradient(90deg, rgba(226, 197, 128, 0.45), #f1d58f, rgba(226, 197, 128, 0.45));
   box-shadow: 0 0 10px rgba(241, 213, 143, 0.8);
 }
-/* The flame button: dark glass with a gold rim, breathing a warm glow. */
+/* Dark glass button for Scripture lookup. */
 .nav-flame {
   position: relative;
   overflow: hidden;
@@ -463,9 +650,8 @@
     radial-gradient(circle at 50% 60%, rgba(58, 63, 85, 0.55) 0%, rgba(30, 34, 48, 0.62) 60%, rgba(18, 20, 29, 0.72) 100%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
   backdrop-filter: blur(12px) saturate(150%);
-  border: 1.5px solid rgba(226, 197, 128, 0.5);
-  border-top-color: rgba(241, 213, 143, 0.8);
-  animation: nav-flame-pulse 2.8s ease-in-out infinite;
+  border: 1px solid rgba(226, 197, 128, 0.24);
+  box-shadow: 0 5px 13px rgba(12, 14, 22, 0.32);
   -webkit-tap-highlight-color: transparent;
 }
 .nav-flame.is-lit {

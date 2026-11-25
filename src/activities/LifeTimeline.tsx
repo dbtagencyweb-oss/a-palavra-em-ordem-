@@ -33,9 +33,11 @@ export function LifeTimeline({ milestones, lit, fresh = null, tone = 'dark', cla
         {milestones.map((label, i) => {
           const on = lit.has(label)
           const above = i % 2 === 1
+          // The first and last labels open toward the inside, so they never touch the card's edge.
+          const edge = i === 0 ? 'self-start justify-start text-left' : i === milestones.length - 1 ? 'self-end justify-end text-right' : 'justify-center'
           const text = (
             <span
-              className={`flex h-[26px] w-[200%] justify-center px-0.5 text-[9.5px] font-semibold leading-tight ${above ? 'items-end' : 'items-start'} ${on ? (dark ? 'text-gold-soft' : 'text-gold-ink') : dark ? 'text-paper/45' : 'text-ink-3'}`}
+              className={`flex h-[26px] w-[200%] px-0.5 text-[9.5px] font-semibold leading-tight ${edge} ${above ? 'items-end' : 'items-start'} ${on ? (dark ? 'text-gold-soft' : 'text-gold-ink') : dark ? 'text-paper/45' : 'text-ink-3'}`}
             >
               {label}
             </span>

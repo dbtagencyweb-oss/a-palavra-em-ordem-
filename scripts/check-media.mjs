@@ -15,9 +15,13 @@ const rules = {
   ],
 }
 
+const studyCover = [{ file: (id) => `public/estudos/${id}.webp`, max: 250 * KB }, { file: (id) => `public/estudos/${id}-640.webp`, max: 120 * KB }]
+
 let missing = 0, heavy = 0, ok = 0
 for (const item of itens) {
-  for (const r of rules[item.tipo] ?? []) {
+  // Study covers live in public/estudos/ (1280×720 + 640×360), not in public/media/img/.
+  const list = item.id.startsWith('capa-estudo-') ? studyCover : rules[item.tipo] ?? []
+  for (const r of list) {
     const path = r.file(item.id)
     if (!existsSync(path)) {
       if (!r.optional) { missing++; console.log(`FALTA   ${path}`) }

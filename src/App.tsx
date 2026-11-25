@@ -14,19 +14,19 @@ import { DiagnosisScreen } from './screens/DiagnosisScreen'
 import { DiaryScreen } from './screens/DiaryScreen'
 import { GuideScreen } from './screens/GuideScreen'
 import { ProfileScreen } from './screens/ProfileScreen'
-import { SaveJourneyScreen } from './screens/SaveJourneyScreen'
+import { AccountScreen } from './screens/AccountScreen'
 import { ThankYouScreen } from './screens/ThankYouScreen'
 import { useCloudSync } from './store/useCloudSync'
 import { DoneScreen } from './screens/DoneScreen'
 import { HomeScreen } from './screens/HomeScreen'
 import { LessonScreen } from './screens/LessonScreen'
-import { BibliaScreen } from './screens/BibliaScreen'
+import { BibleLibraryScreen } from './screens/BibleLibraryScreen'
 import { DownloadsScreen } from './screens/DownloadsScreen'
 import { InviteScreen, PENDING_INVITE } from './screens/InviteScreen'
 import { announceNewEtapas } from './access/etapaNotices'
 import { useFounder } from './auth/useFounder'
 import { useToast } from './ui/Toast'
-import { isStudy, trailById } from './content/trails'
+import { isStudy, JESUS, MAPA, trailById } from './content/trails'
 import { StudiesScreen, StudyScreen } from './screens/StudiesScreen'
 import { GroupScreen } from './screens/GroupScreen'
 import { AdminScreen } from './screens/AdminScreen'
@@ -37,6 +37,7 @@ import { RecommendationScreen } from './screens/RecommendationScreen'
 import { WelcomeScreen } from './screens/WelcomeScreen'
 import { useProgress } from './store/ProgressContext'
 import { BottomNav, type Tab } from './ui/BottomNav'
+import { BibleLookup } from './ui/BibleLookup'
 import { IosInstallGuide } from './ui/IosInstallGuide'
 import { Leaving } from './ui/Leaving'
 import { DevPanel } from './ui/DevPanel'
@@ -54,9 +55,11 @@ type Route =
   | { name: 'diary' }
   | { name: 'guide' }
   | { name: 'profile' }
-  | { name: 'save' }
+  | { name: 'entrar' }
+  | { name: 'ativar-conta' }
+  | { name: 'recuperar-senha' }
   | { name: 'obrigado' }
-  | { name: 'biblia' }
+  | { name: 'biblia'; tab?: 'progresso' }
   | { name: 'downloads' }
   | { name: 'estudos' }
   | { name: 'grupo' }
@@ -74,6 +77,9 @@ export function App() {
   // /obrigado is where the payment platform sends the buyer after checkout.
   const [route, setRoute] = useState<Route>(() =>
     window.location.pathname.replace(/\/$/, '') === '/obrigado' ? { name: 'obrigado' } :
+    window.location.pathname.replace(/\/$/, '') === '/entrar' ? { name: 'entrar' } :
+    window.location.pathname.replace(/\/$/, '') === '/ativar-conta' ? { name: 'ativar-conta' } :
+    window.location.pathname.replace(/\/$/, '') === '/recuperar-senha' ? { name: 'recuperar-senha' } :
     window.location.pathname.replace(/\/$/, '') === '/downloads' ? { name: 'downloads' } :
     window.location.pathname.startsWith('/estudos') && progress.started ? { name: 'estudos' } :
     window.location.pathname.replace(/\/$/, '') === '/grupo' ? { name: 'grupo' } :
@@ -82,6 +88,7 @@ export function App() {
     /^\/convite\/[\w-]+/.test(window.location.pathname) ? { name: 'convite', codigo: window.location.pathname.split('/')[2] } : progress.started ? { name: 'home' } : { name: 'welcome' },
   )
   const [offerOpen, setOfferOpen] = useState(false)
+  const [bibleLookupOpen, setBibleLookupOpen] = useState(false)
   const [offerOrigin, setOfferOrigin] = useState('home')
   const openOffer = useCallback((origem: string) => {
     soundManager.play('offer_open')
@@ -110,6 +117,7 @@ export function App() {
   // Back from the sign-in that an invite link started (magic link / Google land on "/"): finish it.
   useEffect(() => {
     if (!auth.session) return
+    if (/^\/(entrar|ativar-conta|recuperar-senha|obrigado)\/?$/.test(window.location.pathname)) return
     let code: string | null = null
     try {
       code = localStorage.getItem(PENDING_INVITE)
@@ -143,27 +151,34 @@ export function App() {
 
   const go = (r: Route) => setRoute(r)
 
-  // Back from the magic link / Google while on "Salve sua jornada": continue the journey.
-  useEffect(() => {
-    if (auth.session && route.name === 'save') setRoute({ name: 'home' })
-  }, [auth.session, route.name])
-
   // Where a lesson returns to: the plan, the study, or the journey.
   const backFrom = (trail?: string): Route =>
-    trail === 'biblia-em-ordem' ? { name: 'biblia' } : trail && isStudy(trail) ? { name: 'estudo', id: trail } : { name: 'home' }
+    trail === 'biblia-em-ordem' ? { name: 'biblia', tab: 'progresso' } : trail && isStudy(trail) ? { name: 'estudo', id: trail } : { name: 'home' }
 
   function openDay(day: number, trail?: string) {
+    if (trail === JESUS.id && !paidAccess) {
+      openOffer('jesus_em_ordem')
+      return
+    }
     track('day_start', { dia: day, revisao: isDayCompleted(progress, day, trail), trilha: trail })
     go({ name: 'lesson', day, trail })
   }
 
-  function leaveDone() {
-    // After Day 1, invite to create an account ("Salve sua jornada") once.
-    if (route.name === 'done' && route.day === 1 && !route.trail && route.result.firstTime && auth.enabled && !auth.session) {
-      go({ name: 'save' })
+  function continueWithJesus(origin: string) {
+    if (!paidAccess) {
+      openOffer(origin)
       return
     }
-    goHomeAfterLesson()
+    const next = JESUS.visible.find((day) => day.status === 'publicado' && !isDayCompleted(progress, day.n, JESUS.id))
+    if (!next) {
+      toastMsg('Você está em dia com as lições disponíveis de Jesus em Ordem.')
+      return
+    }
+    if (!isDayUnlocked(progress, next.n, today, JESUS.id)) {
+      toastMsg('A próxima lição libera amanhã.')
+      return
+    }
+    openDay(next.n, JESUS.id)
   }
 
   // After the first lesson on an iPhone browser, teach "add to home screen" once.
@@ -191,10 +206,7 @@ export function App() {
             track('onboarding_start')
             go(progress.introSeen ? { name: 'diag' } : { name: 'intro' })
           }}
-          onHasAccount={() => {
-            update((p) => ({ ...p, started: true, diagnosis: p.diagnosis ?? 'perco' }))
-            go({ name: 'home' })
-          }}
+          onHasAccount={() => go({ name: 'entrar' })}
         />
       )
       break
@@ -238,6 +250,7 @@ export function App() {
         <HomeScreen
           onOpenDay={openDay}
           onOffer={openOffer}
+          onContinueJesus={() => continueWithJesus('home')}
           onCollection={() => go({ name: 'collection' })}
           onBiblia={() => go({ name: 'biblia' })}
           onStudies={() => go({ name: 'estudos' })}
@@ -268,7 +281,7 @@ export function App() {
       )
       break
     case 'biblia':
-      screen = <BibliaScreen onBack={() => go({ name: 'home' })} onOpenDay={(n) => openDay(n, 'biblia-em-ordem')} onOffer={openOffer} />
+      screen = <BibleLibraryScreen initialTab={route.tab} onBack={() => go({ name: 'home' })} onOpenDay={(n) => openDay(n, 'biblia-em-ordem')} onOffer={openOffer} />
       break
     case 'admin':
       screen = (
@@ -328,6 +341,13 @@ export function App() {
     case 'obrigado':
       screen = (
         <ThankYouScreen
+          onSetPassword={() => go({ name: 'ativar-conta' })}
+          onOpenJesus={() => {
+            window.history.replaceState(null, '', '/')
+            update((p) => ({ ...p, started: true }))
+            go({ name: 'home' })
+            continueWithJesus('obrigado')
+          }}
           onDownloads={() => {
             window.history.replaceState(null, '', '/downloads')
             go({ name: 'downloads' })
@@ -340,8 +360,26 @@ export function App() {
         />
       )
       break
-    case 'save':
-      screen = <SaveJourneyScreen onSkip={goHomeAfterLesson} />
+    case 'entrar':
+    case 'ativar-conta':
+    case 'recuperar-senha':
+      screen = (
+        <AccountScreen
+          key={route.name}
+          purpose={route.name === 'ativar-conta' ? 'activation' : route.name === 'recuperar-senha' ? 'recovery' : undefined}
+          onBack={() => {
+            const backToPurchase = route.name === 'ativar-conta' && !!auth.session
+            window.history.replaceState(null, '', backToPurchase ? '/obrigado' : '/')
+            go({ name: backToPurchase ? 'obrigado' : progress.started ? 'home' : 'welcome' })
+          }}
+          onDone={() => {
+            const backToPurchase = route.name === 'ativar-conta'
+            window.history.replaceState(null, '', backToPurchase ? '/obrigado' : '/')
+            if (!backToPurchase) update((p) => ({ ...p, started: true, diagnosis: p.diagnosis ?? 'perco' }))
+            go({ name: backToPurchase ? 'obrigado' : 'home' })
+          }}
+        />
+      )
       break
     case 'profile':
       screen = <ProfileScreen reminder={reminder} onReminderChange={changeReminder} onShowIosGuide={() => setIosGuide(true)} onOffer={openOffer} onDownloads={() => go({ name: 'downloads' })} onStudies={() => go({ name: 'estudos' })} />
@@ -349,10 +387,12 @@ export function App() {
     case 'lesson':
       screen = (
         <LessonScreen
+          key={`${route.trail ?? 'mapa'}-${route.day}`}
           dayN={route.day}
           trail={trailById(route.trail)}
           onExit={() => go(backFrom(route.trail))}
           onOffer={openOffer}
+          onOpenDay={(n) => openDay(n, route.trail)}
           onFinish={(firstTries, early) => {
             const result = early ?? completeDay(route.day, firstTries, trailById(route.trail))
             track('day_complete', { dia: route.day, primeiraVez: result.firstTime, trilha: route.trail })
@@ -362,7 +402,8 @@ export function App() {
       )
       break
     case 'done':
-      screen = <DoneScreen dayN={route.day} trail={trailById(route.trail)} result={route.result} onHome={leaveDone} />
+      screen = <DoneScreen dayN={route.day} trail={trailById(route.trail)} result={route.result} onHome={goHomeAfterLesson}
+        onContinueJesus={!route.trail && route.day === MAPA.total ? () => continueWithJesus('conclusao_dia_7') : undefined} />
       break
   }
 
@@ -385,17 +426,16 @@ export function App() {
         <BottomNav
           current={route.name}
           onChange={(tab) => go({ name: tab })}
-          litToday={lastCompletedAny(progress) === today}
-          onToday={() => {
-            // The flame: the next lesson of the journey (Mapa, then the paid trails with access).
-            const at = journeyNext(progress, paidAccess)
-            const trailId = at && at.trail.id !== 'mapa-7-dias' ? at.trail.id : undefined
-            if (at && isDayUnlocked(progress, at.next.n, today, at.trail.id)) return openDay(at.next.n, trailId)
-            go({ name: 'home' })
-            toastMsg(lastCompletedAny(progress) === today ? 'Lâmpada acesa hoje. A próxima lição libera amanhã.' : 'Sua próxima lição libera amanhã.')
-          }}
+          onSearch={() => setBibleLookupOpen(true)}
         />
       )}
+      <BibleLookup open={bibleLookupOpen} onClose={() => setBibleLookupOpen(false)} onToday={() => {
+        const at = journeyNext(progress, paidAccess)
+        const trailId = at && at.trail.id !== MAPA.id ? at.trail.id : undefined
+        if (at && isDayUnlocked(progress, at.next.n, today, at.trail.id)) return openDay(at.next.n, trailId)
+        go({ name: 'home' })
+        toastMsg(lastCompletedAny(progress) === today ? 'Lâmpada acesa hoje. A próxima lição libera amanhã.' : 'Sua próxima lição libera amanhã.')
+      }} />
       <OfferSheet open={offerOpen} origem={offerOrigin} onClose={closeOffer} />
       <IosInstallGuide open={iosGuide} onClose={() => setIosGuide(false)} />
       {import.meta.env.DEV && <DevPanel />}

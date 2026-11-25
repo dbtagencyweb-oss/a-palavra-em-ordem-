@@ -1,0 +1,14 @@
+<!-- Supabase Auth → Email Templates → Reset password. Assunto: Redefina sua senha do A Palavra em Ordem -->
+<!doctype html>
+<html lang="pt-BR">
+  <body style="margin:0;background:#F5EFE3;font-family:Georgia,serif;color:#1E2230">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5EFE3;padding:36px 16px">
+      <tr><td align="center">
+        <h1 style="font-size:26px">Redefina sua senha</h1>
+        <p>Abra o A Palavra em Ordem pelo botão abaixo para escolher uma nova senha.</p>
+        <a href="{{ .RedirectTo }}?token_hash={{ .TokenHash }}" style="display:inline-block;background:#C0552D;color:#fff;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:15px 30px;border-radius:14px">Redefinir senha</a>
+        <p style="font:13px Arial,sans-serif;color:#6B6455">Se você não pediu uma nova senha, pode ignorar este e-mail.</p>
+      </td></tr>
+    </table>
+  </body>
+</html>

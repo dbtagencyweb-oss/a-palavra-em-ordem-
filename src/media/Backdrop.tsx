@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { imagePath, imageSrcSet } from './paths'
+import { imagePath, imageSrcSet, isStudyCover, studyCoverVertical } from './paths'
 
 type Variant = 'opener' | 'card' | 'done' | 'light'
 
@@ -31,14 +31,20 @@ function overlay(variant: Variant, tint: string): string {
   }
 }
 
+/** Study covers on a full screen: the tall version, ink rising from the bottom to ~55%. */
+const STUDY_OPENER = 'linear-gradient(to top, #1E2230 0%, rgba(30,34,48,0) 55%)'
+
 /**
  * Full-bleed background picture behind a screen or card.
  * While the file is missing, the screen keeps its flat color and a small tag shows the catalog id.
+ * Study covers (capa-estudo-*) use their tall version from /estudos/ and never show a tag.
  */
 export function Backdrop({ id, tint, variant, responsive = true, onLoad }: Props) {
   const [stage, setStage] = useState<Stage>(responsive ? 'srcset' : 'single')
   const [loaded, setLoaded] = useState(false)
+  const study = isStudyCover(id) ? studyCoverVertical(id) : null
 
+  if (stage === 'missing' && study) return null
   if (stage === 'missing')
     return (
       <span
@@ -57,8 +63,8 @@ export function Backdrop({ id, tint, variant, responsive = true, onLoad }: Props
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden" data-media-id={id}>
       <img
         key={stage}
-        src={imagePath(id)}
-        srcSet={stage === 'srcset' ? imageSrcSet(id) : undefined}
+        src={study?.full ?? imagePath(id)}
+        srcSet={stage === 'srcset' ? (study ? `${study.small} 540w, ${study.full} 1080w` : imageSrcSet(id)) : undefined}
         sizes={stage === 'srcset' ? '(max-width: 400px) 100vw, 400px' : undefined}
         alt=""
         decoding="async"
@@ -68,10 +74,10 @@ export function Backdrop({ id, tint, variant, responsive = true, onLoad }: Props
         }}
         onError={() => setStage(stage === 'srcset' ? 'single' : 'missing')}
         className={`h-full w-full object-cover transition-opacity duration-700 ${loaded ? 'opacity-100' : 'opacity-0'} ${
-          variant === 'card' ? 'object-[center_35%]' : 'object-top'
+          study ? 'object-[45%_15%]' : variant === 'card' ? 'object-[center_35%]' : 'object-top'
         }`}
       />
-      <div className="absolute inset-0" style={{ background: overlay(variant, tint) }} />
+      <div className="absolute inset-0" style={{ background: study && variant === 'opener' ? STUDY_OPENER : overlay(variant, tint) }} />
     </div>
   )
 }

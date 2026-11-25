@@ -25,6 +25,8 @@ export interface DayOutline {
   status: LessonStatus
   simbolo?: Simbolo
   marcoLinhaDoTempo?: string
+  /** The day's own cover (public path to the 800×800 WebP; a 400×400 "-400" version sits beside it). */
+  capa?: string
 }
 
 export interface Trail {
@@ -262,3 +264,24 @@ export const STUDIES: { meta: StudyMeta; trail: Trail }[] = (Object.values(study
   .map((meta) => ({ meta, trail: studyTrail(meta) }))
 for (const s of STUDIES) TRAILS[s.trail.id] = s.trail
 export const isStudy = (id: string | undefined) => Boolean(id?.startsWith('estudo-'))
+
+/** A picture as its full file and a small version. */
+export interface Picture {
+  full: string
+  small: string
+}
+
+/**
+ * The pictures to try for a day, best first: the day's own cover, then the trail's cover. A screen
+ * shows the first that loads; if none loads, only its background color (never a file name).
+ */
+export function dayCovers(trail: Trail, n: number, shape: 'square' | 'tall' = 'square'): Picture[] {
+  const out: Picture[] = []
+  const capa = trail.outline.find((d) => d.n === n)?.capa
+  // Tall screens (the day's opener) take the vertical version (720×1280, 540×960) first.
+  if (capa && shape === 'tall') out.push({ full: capa.replace(/\.webp$/, '-vertical.webp'), small: capa.replace(/\.webp$/, '-vertical-540.webp') })
+  if (capa) out.push({ full: capa, small: capa.replace(/\.webp$/, '-400.webp') })
+  const id = trail.backdrop(n)
+  out.push({ full: `/media/img/${id}.webp`, small: `/media/img/${id}-540.webp` })
+  return out
+}

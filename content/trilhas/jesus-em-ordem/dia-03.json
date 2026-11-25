@@ -1,9 +1,10 @@
 {
-  "status": "em_revisao",
+  "status": "publicado",
   "n": 3,
   "titulo": "Duas genealogias, uma promessa",
   "passagens": "Mateus 1:1-17; Lucas 3:23-38",
   "fase": "Preparação",
+  "capa": "/trilhas/jesus-em-ordem/capa-jeo-dia-03.webp",
   "midiaSugerida": {
     "id": "je-d03-arvore",
     "prompt": "An old parchment scroll unrolled on a stone table with long columns of handwritten names, and through the window an ancient olive tree with deep roots and many branches at sunrise. No people."

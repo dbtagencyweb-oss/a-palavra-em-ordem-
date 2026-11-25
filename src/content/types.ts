@@ -178,9 +178,12 @@ export interface Livro {
   id: string
   ordem: number
   nome: string
+  sigla?: string
   testamento: 'AT' | 'NT'
   bloco: string
   capitulos: number
+  resumo?: string
+  era?: number
   diasDoMapa?: number[]
   // Still null/empty in content/livros.json; the BookCard shows only what is filled.
   versiculos?: number | null

@@ -1,11 +1,8 @@
 // Bottom navigation, in the style of the Gatedo app: a dark ink bar from edge to edge (square
 // ends, running to the bottom of the screen), gold icons, and a raised round button in a notch at
-// the center with the lamp's flame. The flame opens today's lesson; it glows steady once today's
-// lesson is done and breathes softly while it's still waiting.
+// the center for quick Scripture lookup.
 import { motion, useReducedMotion } from 'framer-motion'
-import { useState } from 'react'
-import { Logo } from './Logo'
-import { NavDiary, NavGuide, NavJourney, NavProfile } from './icons'
+import { FlameSearchIcon, NavDiary, NavGuide, NavJourney, NavProfile } from './icons'
 
 export type Tab = 'home' | 'diary' | 'guide' | 'profile'
 
@@ -19,15 +16,11 @@ const TABS: { id: Tab; label: string; icon: (active: boolean) => React.ReactNode
 interface Props {
   current: Tab
   onChange(tab: Tab): void
-  /** The flame: opens today's lesson (or the journey, when there is none). */
-  onToday(): void
-  /** Today's lesson is done: the flame is lit. */
-  litToday: boolean
+  onSearch(): void
 }
 
-export function BottomNav({ current, onChange, onToday, litToday }: Props) {
+export function BottomNav({ current, onChange, onSearch }: Props) {
   const reduced = useReducedMotion()
-  const [ripple, setRipple] = useState(0)
 
   const tab = (t: (typeof TABS)[number]) => {
     const active = t.id === current
@@ -62,28 +55,16 @@ export function BottomNav({ current, onChange, onToday, litToday }: Props) {
         </div>
       </div>
 
-      {/* The flame: today's lesson. */}
       <div className="absolute left-1/2 top-[-26px] z-[3] -translate-x-1/2">
         <motion.button
           type="button"
-          onClick={() => {
-            setRipple((n) => n + 1)
-            onToday()
-          }}
-          aria-label={litToday ? 'Lição de hoje concluída. Abrir a jornada' : 'Abrir a lição de hoje'}
-          data-testid="chama-central"
-          data-acesa={litToday}
+          onClick={onSearch}
+          aria-label="Buscar na Bíblia"
+          aria-haspopup="dialog"
           whileTap={reduced ? undefined : { scale: 0.9 }}
-          className={`nav-flame grid h-[54px] w-[54px] place-items-center rounded-full ${litToday ? 'is-lit' : ''}`}
+          className="nav-flame grid h-[54px] w-[54px] place-items-center rounded-full text-gold-soft"
         >
-          {ripple > 0 && <span key={ripple} className="nav-flame-ripple" aria-hidden="true" />}
-          <motion.span
-            className="relative z-[1] block"
-            animate={reduced || litToday ? undefined : { scale: [1, 1.07, 1], y: [0, -1, 0] }}
-            transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <Logo variant="mark" title={null} className={`h-[32px] w-auto ${litToday ? 'drop-shadow-[0_0_10px_rgba(242,190,110,0.85)]' : 'opacity-90'}`} />
-          </motion.span>
+          <FlameSearchIcon className="h-[42px] w-[42px]" />
         </motion.button>
       </div>
     </nav>

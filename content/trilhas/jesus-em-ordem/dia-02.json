@@ -1,9 +1,10 @@
 {
-  "status": "em_revisao",
+  "status": "publicado",
   "n": 2,
   "titulo": "O Verbo antes de tudo",
   "passagens": "João 1:1-18",
   "fase": "Preparação",
+  "capa": "/trilhas/jesus-em-ordem/capa-jeo-dia-02.webp",
   "midiaSugerida": {
     "id": "je-d02-verbo",
     "prompt": "A single soft beam of light descending from a starry night sky onto a small humble village of stone houses in the hills, as if light came to dwell among the houses. No people."

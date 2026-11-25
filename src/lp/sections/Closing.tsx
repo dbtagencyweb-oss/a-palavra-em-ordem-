@@ -19,7 +19,7 @@ import { ScrollCue } from '../ScrollCue'
 // ---------- 10 · Oferta ----------
 // The Founder offer (content/oferta.json) with real scarcity: the counter shows the seats taken
 // from the database, or nothing when the count can't be read. When the seats are gone the block
-// becomes the annual offer (R$ 67) by itself.
+// becomes the regular annual offer after the Founder seats are filled.
 
 export function Offer() {
   const root = useRef<HTMLElement>(null)
@@ -105,6 +105,20 @@ export function Offer() {
               </>
             )}
 
+            {!offer.fechada && OFERTA.bumps.ativos && (
+              <div className="mt-6 border-t border-white/10 pt-4">
+                <h3 className="text-sm font-semibold text-gold-soft">Adicionais opcionais no checkout</h3>
+                <ul className="mt-2 space-y-2 text-sm text-paper/80">
+                  {OFERTA.bumps.itens.map((item) => (
+                    <li key={item.produto}>
+                      <strong>{item.titulo}</strong> · {item.preco}
+                      <span className="block text-paper/60">{item.descricao}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             <div className="mt-7 border-t border-white/10 pt-6 text-center">
               <strong className="font-display text-[44px] font-semibold leading-none text-gold-soft md:text-[52px]">{offer.fechada ? closed.preco : b.preco}</strong>
               <p className="mt-1.5 font-serif text-[17px] italic text-paper/70">{offer.fechada ? closed.precoDia : b.precoDia}</p>
@@ -176,7 +190,7 @@ export function Faq() {
   return (
     <section id="faq" ref={root} className="relative bg-paper px-5 py-20 text-ink md:py-28">
       <div className="mx-auto max-w-2xl">
-        <h2 data-reveal className="text-center font-display text-[30px] font-semibold leading-[1.12] md:text-5xl">
+        <h2 data-reveal className="text-center font-display text-[30px] font-semibold leading-[1.12] md:text-[44px]">
           {f.titulo}
         </h2>
         <div className="mt-10 divide-y divide-line rounded-card bg-card shadow-card">

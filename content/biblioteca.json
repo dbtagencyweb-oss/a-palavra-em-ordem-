@@ -1,0 +1,78 @@
+{
+  "titulo": "Biblioteca da Bíblia",
+  "subtitulo": "Entenda os livros, encontre seu lugar na história e acompanhe o que já conhece.",
+  "grupos": [
+    {
+      "id": "lei",
+      "nome": "Lei",
+      "rotulo": "Linha da Lei",
+      "testamento": "Antigo Testamento",
+      "cor": "#B8893A",
+      "blocos": ["Pentateuco"],
+      "funcao": "Apresenta as origens, a aliança e os fundamentos da vida do povo de Deus."
+    },
+    {
+      "id": "historicos",
+      "nome": "Históricos",
+      "rotulo": "Linha Histórica",
+      "testamento": "Antigo Testamento",
+      "cor": "#3D6F9E",
+      "blocos": ["Históricos"],
+      "funcao": "Conta a caminhada de Israel na terra, seus reis, crises, exílio e retorno."
+    },
+    {
+      "id": "poeticos",
+      "nome": "Poéticos",
+      "rotulo": "Linha Poética",
+      "testamento": "Antigo Testamento",
+      "cor": "#75609C",
+      "blocos": ["Poéticos e Sapienciais"],
+      "funcao": "Reúne oração, louvor, sabedoria e reflexão sobre a vida diante de Deus."
+    },
+    {
+      "id": "profetas",
+      "nome": "Profetas",
+      "rotulo": "Linha Profética",
+      "testamento": "Antigo Testamento",
+      "cor": "#A84B3D",
+      "blocos": ["Profetas Maiores", "Profetas Menores"],
+      "funcao": "Chama o povo de volta à aliança e anuncia juízo, esperança e restauração."
+    },
+    {
+      "id": "evangelhos",
+      "nome": "Evangelhos",
+      "rotulo": "Linha dos Evangelhos",
+      "testamento": "Novo Testamento",
+      "cor": "#C66A2D",
+      "blocos": ["Evangelhos"],
+      "funcao": "Apresenta a vida, os ensinos, a morte e a ressurreição de Jesus."
+    },
+    {
+      "id": "atos",
+      "nome": "Atos",
+      "rotulo": "Linha da Igreja",
+      "testamento": "Novo Testamento",
+      "cor": "#338C91",
+      "blocos": ["Histórico do NT"],
+      "funcao": "Mostra o nascimento da Igreja e a expansão do evangelho pelo mundo."
+    },
+    {
+      "id": "cartas",
+      "nome": "Cartas",
+      "rotulo": "Linha das Cartas",
+      "testamento": "Novo Testamento",
+      "cor": "#3F5F93",
+      "blocos": ["Cartas de Paulo", "Cartas Gerais"],
+      "funcao": "Orienta comunidades e pessoas a viver a fé cristã no cotidiano."
+    },
+    {
+      "id": "apocalipse",
+      "nome": "Apocalipse",
+      "rotulo": "Estação Final",
+      "testamento": "Novo Testamento",
+      "cor": "#8E6335",
+      "blocos": ["Apocalipse"],
+      "funcao": "Conclui a história com a vitória de Cristo e a renovação de todas as coisas."
+    }
+  ]
+}

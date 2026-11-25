@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import type { ReactNode } from 'react'
 import { createPortal } from 'react-dom'
@@ -11,6 +11,7 @@ interface Props {
   label?: string
   tone?: 'light' | 'dark'
   className?: string
+  animateLayout?: boolean
   children: ReactNode
 }
 
@@ -21,8 +22,9 @@ const FOCUSABLE = 'button:not([disabled]), a[href], input:not([disabled]), texta
  * Keeps keyboard focus inside while open, closes on Esc or a tap on the backdrop,
  * and gives focus back to whatever opened it.
  */
-export function Sheet({ open, onClose, labelledBy, label, tone = 'light', className = '', children }: Props) {
+export function Sheet({ open, onClose, labelledBy, label, tone = 'light', className = '', animateLayout = false, children }: Props) {
   const panel = useRef<HTMLDivElement>(null)
+  const reducedMotion = useReducedMotion()
   const closeRef = useRef(onClose)
   closeRef.current = onClose
 
@@ -74,6 +76,7 @@ export function Sheet({ open, onClose, labelledBy, label, tone = 'light', classN
         >
           <motion.div
             ref={panel}
+            layout={animateLayout && !reducedMotion}
             role="dialog"
             aria-modal="true"
             aria-labelledby={labelledBy}

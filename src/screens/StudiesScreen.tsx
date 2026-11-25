@@ -10,6 +10,7 @@ import { formatBRL, studyCheckout } from '../access/studies'
 import { useAuth } from '../auth/AuthContext'
 import { STUDIES, type StudyMeta } from '../content/trails'
 import { completedOf, isDayCompleted, isDayUnlocked } from '../game/progress'
+import { studyCover } from '../media/paths'
 import { TrackCover } from '../media/TrackCover'
 import { useProgress } from '../store/ProgressContext'
 import { BackIcon, CheckIcon, LockIcon, PlayIcon } from '../ui/icons'
@@ -73,7 +74,7 @@ export function StudiesScreen({ onBack, onOpenStudy }: StoreProps) {
             return (
               <li key={meta.id} className="overflow-hidden rounded-card bg-card shadow-card" data-estudo={meta.id} data-comprado={owned}>
                 <div className="relative aspect-[16/9] bg-ink text-paper">
-                  <TrackCover id={meta.capa} />
+                  <TrackCover id={meta.capa} src={studyCover(meta.capa)} position="70% 35%" shade="bottom" />
                   <div className="absolute inset-x-0 bottom-0 z-[1] p-4">
                     <small className="text-[10.5px] font-bold uppercase tracking-[0.14em] text-gold-soft">{meta.totalDias} lições</small>
                     <strong className="block max-w-[70%] font-display text-[22px] font-semibold leading-tight">{meta.titulo}</strong>
@@ -170,7 +171,7 @@ export function StudyScreen({ id, onBack, onOpenDay }: StudyProps) {
     <section className="screen bg-paper pb-[calc(90px+env(safe-area-inset-bottom))]" data-testid="estudo" data-estudo={id}>
       <div className="flex-none">
         <div className="relative aspect-[16/10] bg-ink text-paper">
-          <TrackCover id={meta.capa} />
+          <TrackCover id={meta.capa} src={studyCover(meta.capa)} position="70% 35%" shade="bottom" />
           <button type="button" onClick={onBack} aria-label="Voltar" className="absolute left-3 top-3 z-[2] grid h-11 w-11 place-items-center rounded-full bg-ink/40 text-paper">
             <BackIcon />
           </button>

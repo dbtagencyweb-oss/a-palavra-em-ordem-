@@ -15,11 +15,12 @@ interface Props {
   onBack(): void
   onOpenDay(n: number): void
   onOffer(origem: string): void
+  embedded?: boolean
 }
 
 const fmt = (iso: string) => new Date(iso).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long' })
 
-export function BibliaScreen({ onBack, onOpenDay, onOffer }: Props) {
+export function BibliaScreen({ onBack, onOpenDay, onOffer, embedded = false }: Props) {
   const { podeAcessar } = useAccess()
   const { progress, today } = useProgress()
   const toast = useToast()
@@ -37,16 +38,16 @@ export function BibliaScreen({ onBack, onOpenDay, onOffer }: Props) {
   }
 
   return (
-    <section className="screen bg-paper pb-[calc(90px+env(safe-area-inset-bottom))]" data-testid="biblia-em-ordem">
+    <section className={embedded ? 'bg-paper pb-5' : 'screen bg-paper pb-[calc(90px+env(safe-area-inset-bottom))]'} data-testid="biblia-em-ordem">
       {/* One block that never shrinks: inside the screen's flex column, loose children would. */}
       <div className="flex-none">
-      <header className="flex items-center gap-2 px-3 pt-3">
+      {!embedded && <header className="flex items-center gap-2 px-3 pt-3">
         <button type="button" onClick={onBack} aria-label="Voltar" className="grid h-11 w-11 place-items-center rounded-full text-ink-2">
           <BackIcon />
         </button>
-      </header>
+      </header>}
       <div className="px-5 pb-2">
-        <h2 className="text-[28px] leading-tight">{BIBLIA.titulo}</h2>
+        {embedded ? <h3 className="text-[22px] leading-tight">Seu plano cronológico</h3> : <h2 className="text-[28px] leading-tight">{BIBLIA.titulo}</h2>}
         <p className="mt-1 text-sm text-ink-2">{BIBLIA.subtitulo}.</p>
       </div>
 

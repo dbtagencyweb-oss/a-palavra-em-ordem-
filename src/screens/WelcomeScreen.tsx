@@ -20,7 +20,7 @@ export function WelcomeScreen({ onStart, onHasAccount }: Props) {
         {!art && <WelcomeArt />}
       </div>
       <div className="mt-auto px-7 pb-7 pt-2">
-        <Logo variant="full" title={t.marca} className="mb-3 h-[60px] w-auto text-ink" />
+        <Logo variant="full" title={t.marca} className="mb-3 h-[68px] w-auto text-ink" />
         <h1 className="mb-3.5 mt-2.5 text-[34px]">{t.titulo}</h1>
         <p className="mb-7 font-serif text-[17px] leading-[1.55] text-ink-2">{t.texto}</p>
         <button type="button" className="btn" onClick={onStart}>

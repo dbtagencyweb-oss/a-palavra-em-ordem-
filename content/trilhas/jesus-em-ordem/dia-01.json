@@ -1,9 +1,10 @@
 {
-  "status": "em_revisao",
+  "status": "publicado",
   "n": 1,
   "titulo": "Por que quatro Evangelhos",
   "passagens": "Lucas 1:1-4; João 20:30-31",
   "fase": "Preparação",
+  "capa": "/trilhas/jesus-em-ordem/capa-jeo-dia-01.webp",
   "midiaSugerida": {
     "id": "je-d01-quatro",
     "prompt": "Four ancient scrolls lying side by side on a wooden table, each tied with a cord of a different color, lit by a small clay oil lamp at night. No people."

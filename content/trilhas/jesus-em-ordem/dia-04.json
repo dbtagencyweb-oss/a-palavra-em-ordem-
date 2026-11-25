@@ -1,9 +1,10 @@
 {
-  "status": "em_revisao",
+  "status": "publicado",
   "n": 4,
   "titulo": "Dois anúncios: Zacarias e Maria",
   "passagens": "Lucas 1:5-56",
   "fase": "Preparação",
+  "capa": "/trilhas/jesus-em-ordem/capa-jeo-dia-04.webp",
   "midiaSugerida": {
     "id": "je-d04-anuncio",
     "prompt": "A young woman in simple long robes and a head covering, seen from the side, sitting in a small stone house in a hill village, looking up toward a soft bright light entering through the window. Quiet, reverent mood."

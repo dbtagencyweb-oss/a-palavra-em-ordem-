@@ -2,7 +2,7 @@ import { eraOf } from '../ui/eras'
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 import { trilha } from '../content'
-import { buildReadingLink } from '../content/readingLink'
+import { buildReadingLink, parsePassage } from '../content/readingLink'
 import { cardRegistry } from './registry'
 import type { CardProps, LessonApi } from './types'
 
@@ -52,6 +52,20 @@ describe('lesson content', () => {
     }
     expect(buildReadingLink('Lucas 24:13-27', trilha.linkLeitura.modelo)).toContain('LUK.24')
     expect(buildReadingLink('2 Samuel 7:12-16 e Jeremias 31', trilha.linkLeitura.modelo)).toContain('2SA.7')
+  })
+
+  it('opens the exact verses and follows references across chapters and books', () => {
+    for (const { card } of allCards) {
+      if (card.tipo === 'palavra') expect(parsePassage(card.referencia), card.referencia).not.toBeNull()
+    }
+    const ranges = (reference: string) => parsePassage(reference)?.map(({ book, chapter, firstVerse, lastVerse }) =>
+      [book.id, chapter, firstVerse, lastVerse],
+    )
+    expect(ranges('Lucas 24:13-27')).toEqual([['lc', 24, 13, 27]])
+    expect(ranges('Gênesis 1–2')).toEqual([['gn', 1, undefined, undefined], ['gn', 2, undefined, undefined]])
+    expect(ranges('2 Samuel 7:12-16 e Jeremias 31:31-34')).toEqual([['2sm', 7, 12, 16], ['jr', 31, 31, 34]])
+    expect(ranges('Apocalipse 21:1-7; 22:1-5')).toEqual([['ap', 21, 1, 7], ['ap', 22, 1, 5]])
+    expect(parsePassage('Lucas 25')).toBeNull()
   })
 
   it('shows the scene caption and reference over a media placeholder', () => {

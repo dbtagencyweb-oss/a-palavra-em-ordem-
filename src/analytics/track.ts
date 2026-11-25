@@ -14,6 +14,7 @@ export interface EventProps {
   streak_saved_by_grace: { dias: number }
   offer_view: { origem: string }
   offer_click: { origem: string }
+  premium_preview: { dia: number }
   diary_entry_saved: { origem: 'diario' | 'reflexao' }
   sound_toggled: { ligado: boolean }
   // Extra, for the account funnel.

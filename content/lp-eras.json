@@ -1,13 +1,13 @@
 {
-  "_sobre": "As 7 eras do mapa que aparece sobre as páginas do livro no hero da landing page (dica ao passar o mouse ou tocar num ponto, e legenda no celular). Redação própria, criada para a LP: REVISAR antes de publicar. 'dia' é o dia da Trilha 1 (define a cor da era, como na seção do mecanismo); 'simbolo' é o id do símbolo do catálogo, quando a era tem um.",
+  "_sobre": "As 7 eras do mapa que aparece sobre as páginas do livro no hero da landing page (dica ao passar o mouse ou tocar num ponto, e legenda no celular). Redação própria, criada para a LP: REVISAR antes de publicar. 'dia' é o dia da Trilha 1 (define a cor da era, como na seção do mecanismo). O selo de cada era vem do símbolo do dia no app (mapa explícito em src/lp/HeroBook.tsx).",
   "status": "em_revisao",
   "eras": [
-    { "id": "criacao", "nome": "Criação", "dia": 2, "simbolo": "simbolo-arvore", "linha": "Deus cria tudo, e o ser humano se afasta dele." },
-    { "id": "patriarcas", "nome": "Patriarcas", "dia": 3, "simbolo": "simbolo-estrelas", "linha": "Deus chama Abraão e promete uma família e uma bênção." },
-    { "id": "exodo", "nome": "Êxodo", "dia": 4, "simbolo": "simbolo-cordeiro", "linha": "Deus liberta o seu povo." },
-    { "id": "reis", "nome": "Reis", "dia": 5, "simbolo": "simbolo-coroa", "linha": "Israel ganha reis, um templo e a voz dos profetas." },
-    { "id": "exilio", "nome": "Exílio", "dia": 5, "simbolo": null, "linha": "O povo perde a terra e aprende a esperar a volta." },
-    { "id": "jesus", "nome": "Jesus", "dia": 6, "simbolo": "simbolo-cruz", "linha": "A promessa se cumpre em Jesus." },
-    { "id": "igreja", "nome": "Igreja", "dia": 7, "simbolo": "simbolo-cidade", "linha": "A boa notícia chega a todos os povos." }
+    { "id": "criacao", "nome": "Criação", "dia": 2, "linha": "Deus cria tudo, e o ser humano se afasta dele." },
+    { "id": "patriarcas", "nome": "Patriarcas", "dia": 3, "linha": "Deus chama Abraão e promete uma família e uma bênção." },
+    { "id": "exodo", "nome": "Êxodo", "dia": 4, "linha": "Deus liberta o seu povo." },
+    { "id": "reis", "nome": "Reis", "dia": 5, "linha": "Israel ganha reis, um templo e a voz dos profetas." },
+    { "id": "exilio", "nome": "Exílio", "dia": 5, "linha": "O povo perde a terra e aprende a esperar a volta." },
+    { "id": "jesus", "nome": "Jesus", "dia": 6, "linha": "A promessa se cumpre em Jesus." },
+    { "id": "igreja", "nome": "Igreja", "dia": 7, "linha": "A boa notícia chega a todos os povos." }
   ]
 }

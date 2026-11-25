@@ -203,7 +203,7 @@ for (const f of rawImages) {
 
 // ---------- 3 + 4. Videos and audio candidates ----------
 
-if (existsSync(RAW_VIDEO) && (!only || /^d[1-7]-/.test(only))) {
+if (existsSync(RAW_VIDEO)) {
   mkdirSync(VIDEO, { recursive: true })
   const names = new Set(readdirSync(RAW_VIDEO))
   const raw = new Set(
@@ -273,6 +273,7 @@ const need = {
 }
 let changed = 0
 for (const item of catalog.itens) {
+  if (only && !item.id.startsWith(only)) continue
   const files = need[item.tipo]?.(item.id) ?? []
   const status = files.length && files.every((p) => existsSync(p)) ? 'pronto' : 'pendente'
   if (item.status !== status) {

@@ -1,21 +1,43 @@
 {
-  "_sobre": "Seção 'Sem mapa × Com mapa' da landing page (logo depois da seção de dores). Referência + paráfrase nossa: nenhum texto de tradução protegida. REVISAR (revisão doutrinária) antes de publicar.",
+  "_sobre": "Seção 'Sem mapa × Com mapa' da landing page (logo depois da seção de dores). Referência + paráfrase nossa: nenhum texto de tradução protegida. As perguntas do card 'Sem o mapa' são botões: cada uma troca o texto do card 'Com o mapa' pela sua resposta. 'foco' é a era destacada na linha do tempo; 'arco' liga duas eras com um rótulo. REVISAR (revisão doutrinária) antes de publicar.",
   "status": "em_revisao",
   "titulo": "A mesma passagem. Com e sem o mapa.",
   "sem": {
     "rotulo": "Sem o mapa",
     "referencia": "Jeremias 29:10",
     "parafrase": "Deus fala de setenta anos na Babilônia e de trazer o povo de volta.",
-    "duvidas": [
-      "Que setenta anos?",
-      "O que o povo de Deus fazia na Babilônia?",
-      "Isso vem antes ou depois de Davi?"
-    ]
+    "dica": "Toque numa dúvida."
   },
+  "perguntas": [
+    {
+      "id": "setenta",
+      "pergunta": "Que setenta anos?",
+      "foco": "exilio",
+      "resposta": "É o tempo em que a Babilônia dominaria. Depois disso, Deus traria o povo de volta, e foi o que aconteceu: cerca de setenta anos depois, os judeus começaram a voltar para casa."
+    },
+    {
+      "id": "babilonia",
+      "pergunta": "O que o povo de Deus fazia na Babilônia?",
+      "foco": "exilio",
+      "resposta": "Vivia longe de casa, como estrangeiro. Na mesma carta, Jeremias diz para construírem casas, plantarem e orarem pelo bem da cidade onde estavam (Jeremias 29:5–7)."
+    },
+    {
+      "id": "davi",
+      "pergunta": "Isso vem antes ou depois de Davi?",
+      "foco": "exilio",
+      "arco": { "de": "reis", "ate": "exilio", "rotulo": "≈ 400 anos" },
+      "resposta": "Depois. Davi está na era dos Reis, cerca de 400 anos antes. O exílio vem quando o reino cai."
+    }
+  ],
   "com": {
     "rotulo": "Com o mapa",
     "eraAtiva": "exilio",
-    "texto": "Você está na era do Exílio. Séculos depois de Davi, Jerusalém foi derrotada e o povo foi levado para a Babilônia. Jeremias escreve para quem está longe de casa: o castigo tem prazo e Deus não esqueceu a promessa.",
-    "rodape": "É isso que você aprende no Dia 5."
+    "texto": "Você está na era do Exílio. Séculos depois de Davi, Jerusalém foi derrotada e parte do povo foi levada para a Babilônia. Jeremias escreve para quem está longe de casa: o castigo tem prazo e Deus não esqueceu a promessa.",
+    "rodape": "É isso que você aprende no Dia 5.",
+    "verResumo": "Ver resumo"
+  },
+  "fim": {
+    "texto": "Imagina isso com a Bíblia inteira. É o que você faz nos 7 dias.",
+    "botao": "Começar os 7 dias grátis"
   }
 }
