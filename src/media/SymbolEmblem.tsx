@@ -1,12 +1,14 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { useState } from 'react'
 import { LockIcon } from '../ui/icons'
+import type { Era } from '../ui/eras'
 import { SmartImage } from './SmartImage'
 
 interface Props {
   midia: string
   unlocked: boolean
   size?: number
+  era?: Era
   /** Play the "silhouette turns gold" moment (Conclusion screen). */
   revealing?: boolean
 }
@@ -16,19 +18,21 @@ const GOLD = 'radial-gradient(circle at 32% 28%, #F1E3C4 0%, #D4AE62 28%, #B8893
 const SILHOUETTE = 'radial-gradient(circle at 32% 28%, rgba(30,34,48,.10), rgba(30,34,48,.22))'
 
 /** A collection symbol as a medallion: gold when unlocked, a dim silhouette otherwise. */
-export function SymbolEmblem({ midia, unlocked, size = 46, revealing = false }: Props) {
+export function SymbolEmblem({ midia, unlocked, size = 46, era, revealing = false }: Props) {
   const reduced = useReducedMotion()
   const tiny = size < 70
   const ring = Math.max(2, Math.round(size * 0.06))
   // Once the generated medallion exists, it IS the coin: the drawn disc and ring step aside.
   const [art, setArt] = useState(false)
+  const tone = unlocked ? era : undefined
+  const coin = tone ? `radial-gradient(circle at 32% 28%, ${tone.light}, ${tone.mid} 55%, ${tone.deep})` : GOLD
   return (
     <div
-      className="relative flex-none overflow-hidden rounded-full transition-[background] duration-700"
+      className="relative isolate flex-none overflow-hidden rounded-full transition-[background] duration-700"
       style={{
         width: size,
         height: size,
-        background: art ? 'transparent' : unlocked ? GOLD : SILHOUETTE,
+        background: art ? tone?.mid ?? 'transparent' : unlocked ? coin : SILHOUETTE,
         boxShadow: unlocked && !art ? 'inset 0 -2px 4px rgba(90,60,20,.35), 0 2px 6px rgba(30,34,48,.25)' : undefined,
       }}
     >
@@ -46,7 +50,7 @@ export function SymbolEmblem({ midia, unlocked, size = 46, revealing = false }: 
       )}
       {/* The symbol art sits inside the ring */}
       <div
-        className={`absolute overflow-hidden rounded-full transition-[filter,opacity] duration-700 ${unlocked ? '' : art ? 'opacity-30 grayscale' : 'opacity-20 brightness-0 grayscale'}`}
+        className={`absolute overflow-hidden rounded-full transition-[filter,opacity] duration-700 ${unlocked ? tone ? 'mix-blend-luminosity' : '' : art ? 'opacity-30 grayscale' : 'opacity-20 brightness-0 grayscale'}`}
         style={{ inset: art ? 0 : ring * 2.2, filter: art && unlocked ? 'drop-shadow(0 2px 4px rgba(30,34,48,.3))' : undefined }}
       >
         <SmartImage

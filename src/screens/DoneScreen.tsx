@@ -13,6 +13,7 @@ import { MountainIcon } from '../ui/icons'
 import { Backdrop } from '../media/Backdrop'
 import { useCountUp } from '../ui/useCountUp'
 import { OilLamp3D } from '../ui/OilLamp3D'
+import type { Era } from '../ui/eras'
 
 interface Props {
   dayN: number
@@ -109,19 +110,21 @@ export function DoneScreen({ dayN, trail = MAPA, result, onHome, onContinueJesus
         <div className="grid gap-2.5 empty:hidden">
           {result.newSymbol && simbolo && (
             <Badge
+              era={era}
               eyebrow="Símbolo desbloqueado"
               title={simbolo.nome}
               text={simbolo.texto}
-              icon={<SymbolEmblem midia={simbolo.midia ?? `simbolo-${simbolo.id}`} unlocked={symbolGold} revealing />}
+              icon={<SymbolEmblem midia={simbolo.midia ?? `simbolo-${simbolo.id}`} unlocked={symbolGold} revealing era={era} />}
             />
           )}
           {result.newMilestone && marco && (
             <Badge
+              era={era}
               eyebrow="Marco desbloqueado"
               title={marco.nome}
               text={marco.texto}
               icon={
-                <span className="grid h-[46px] w-[46px] flex-none place-items-center rounded-xl bg-gold">
+                <span className="grid h-[46px] w-[46px] flex-none place-items-center rounded-xl" style={{ backgroundColor: era.mid, color: era.light }}>
                   <MountainIcon />
                 </span>
               }
@@ -179,12 +182,15 @@ function Stat({ value, label }: { value: string; label: string }) {
   )
 }
 
-function Badge({ eyebrow, title, text, icon }: { eyebrow: string; title: string; text: string; icon: React.ReactNode }) {
+function Badge({ eyebrow, title, text, icon, era }: { eyebrow: string; title: string; text: string; icon: React.ReactNode; era: Era }) {
   return (
-    <div className="flex items-center gap-3 rounded-btn border border-gold/35 bg-gold/[0.14] p-3 text-left">
+    <div
+      className="flex items-center gap-3 rounded-btn border p-3 text-left"
+      style={{ background: `linear-gradient(125deg, ${era.mid}55, ${era.deep}B3)`, borderColor: `${era.mid}88` }}
+    >
       {icon}
       <div>
-        <small className="text-[10.5px] font-bold uppercase tracking-[0.12em] text-gold">{eyebrow}</small>
+        <small className="text-[10.5px] font-bold uppercase tracking-[0.12em]" style={{ color: era.light }}>{eyebrow}</small>
         <strong className="block font-display text-[17px]">{title}</strong>
         <span className="text-[12.5px] opacity-70">{text}</span>
       </div>

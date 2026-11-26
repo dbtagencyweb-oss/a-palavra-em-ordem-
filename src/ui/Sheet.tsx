@@ -11,6 +11,7 @@ interface Props {
   label?: string
   tone?: 'light' | 'dark'
   className?: string
+  backdropClassName?: string
   animateLayout?: boolean
   children: ReactNode
 }
@@ -22,7 +23,7 @@ const FOCUSABLE = 'button:not([disabled]), a[href], input:not([disabled]), texta
  * Keeps keyboard focus inside while open, closes on Esc or a tap on the backdrop,
  * and gives focus back to whatever opened it.
  */
-export function Sheet({ open, onClose, labelledBy, label, tone = 'light', className = '', animateLayout = false, children }: Props) {
+export function Sheet({ open, onClose, labelledBy, label, tone = 'light', className = '', backdropClassName = 'bg-[rgba(20,18,14,.5)]', animateLayout = false, children }: Props) {
   const panel = useRef<HTMLDivElement>(null)
   const reducedMotion = useReducedMotion()
   const closeRef = useRef(onClose)
@@ -68,7 +69,7 @@ export function Sheet({ open, onClose, labelledBy, label, tone = 'light', classN
     <AnimatePresence>
       {open && (
         <motion.div
-          className="absolute inset-0 z-20 flex items-end bg-[rgba(20,18,14,.5)]"
+          className={`absolute inset-0 z-20 flex items-end ${backdropClassName}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

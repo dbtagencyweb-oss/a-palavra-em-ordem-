@@ -1,0 +1,345 @@
+.pilgrimage-home { position: relative; }
+.pilgrimage-header {
+  position: absolute;
+  inset: 0 0 auto;
+  padding-top: calc(12px + env(safe-area-inset-top));
+  pointer-events: none;
+}
+.pilgrimage-header .app-header { pointer-events: auto; }
+
+.pilgrimage {
+  --map-overlay-top: calc(80px + env(safe-area-inset-top));
+  --map-overlay-bottom: calc(96px + env(safe-area-inset-bottom));
+  --map-glass:
+    linear-gradient(180deg, rgb(255 255 255 / .09), transparent 68%),
+    linear-gradient(180deg, rgb(42 47 66 / .66), rgb(24 27 39 / .77));
+  --map-glass-edge: rgb(226 197 128 / .29);
+  position: relative;
+  isolation: isolate;
+  flex: none;
+  overflow: hidden;
+  height: min(820px, 100dvh);
+  color: #fbefda;
+  background: #34331e;
+}
+
+@media (max-width: 519px) {
+  .pilgrimage { height: 100dvh; }
+}
+
+.pilgrimage-viewport,
+.pilgrimage-image,
+.pilgrimage-incoming,
+.pilgrimage-haze {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+}
+
+.pilgrimage-viewport {
+  cursor: grab;
+  contain: layout paint;
+  touch-action: none;
+  user-select: none;
+  outline-offset: -4px;
+}
+
+.pilgrimage-viewport[data-dragging] { cursor: grabbing; }
+.pilgrimage-stage { position: absolute; inset: 0 auto auto 0; transform-origin: 0 0; will-change: transform; }
+.pilgrimage-image { background: #37321f; pointer-events: none; }
+.pilgrimage-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.pilgrimage-image img[data-loaded] { opacity: 0; transition: opacity 210ms ease; }
+.pilgrimage-image img[data-loaded='true'] { opacity: 1; }
+.pilgrimage-incoming { pointer-events: none; animation: pilgrimage-in ease-out both; }
+@keyframes pilgrimage-in { from { opacity: 0; } to { opacity: 1; } }
+
+.pilgrimage-haze {
+  pointer-events: none;
+  background: linear-gradient(180deg, #181b2799, transparent 23%, transparent 62%, #15182380 100%);
+}
+
+.pilgrimage[data-level='world'] .pilgrimage-haze::before {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: clamp(56px, 11dvh, 94px);
+  background: linear-gradient(to bottom, rgb(245 239 227 / 0), rgb(245 239 227 / .32) 52%, #f5efe3);
+}
+
+.pilgrimage[data-effects='true'] .pilgrimage-haze::after {
+  content: '';
+  position: absolute;
+  inset: 6% -10% 25%;
+  opacity: .55;
+  background: radial-gradient(ellipse at 72% 17%, #ffdf9f2b, transparent 60%);
+  animation: pilgrimage-light 12s ease-in-out infinite alternate;
+}
+
+@keyframes pilgrimage-light { to { opacity: .8; transform: translate3d(-3%, 6%, 0); } }
+
+.pilgrimage-trail { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.pilgrimage-trail path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.pilgrimage-trail-future { stroke: #f7e8c0; stroke-width: 2; stroke-dasharray: 1 6; opacity: .43; }
+.pilgrimage-trail-future[data-current='true'] { opacity: .95; stroke-width: 2.7; }
+.pilgrimage-trail-done { stroke: #fed181; stroke-width: 2.8; filter: drop-shadow(0 0 2px #be642d); }
+.pilgrimage-trail-crossing { stroke: #fff0b5; stroke-width: 2.4; stroke-dasharray: 1 7; filter: drop-shadow(0 0 2px #279aba); }
+
+.pilgrimage-pin-anchor { position: absolute; width: 0; height: 0; z-index: 1; }
+.pilgrimage-pin-anchor:focus-within { z-index: 2; }
+.pilgrimage-lamp-anchor { position: absolute; z-index: 1; pointer-events: none; }
+.pilgrimage-lamp {
+  position: absolute;
+  width: 44px;
+  transform-origin: 0 0;
+  transform: scale(var(--map-pin-inverse, 1)) translate(-142%, -123%);
+}
+.pilgrimage[data-effects='false'] .oil-lamp-3d * { animation-duration: 0ms !important; }
+.pilgrimage-pin,
+.pilgrimage-hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%) scale(var(--map-pin-inverse, 1));
+  transform-origin: center;
+  color: #fff0ce;
+}
+
+.pilgrimage-pin {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #deb477;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 24%, #ebca8e, #815d38 86%);
+  box-shadow: 0 3px 13px #170e06a6;
+}
+
+.pilgrimage-medallion { width: 42px; height: 42px; border-radius: 50%; }
+.pilgrimage-pin[data-state='locked'] .pilgrimage-medallion { filter: saturate(.45) brightness(.86); }
+.pilgrimage-pin[data-state='done'] { box-shadow: 0 0 0 2px #f4ca83, 0 3px 14px #1b0d06; }
+.pilgrimage-pin[data-current='true'],
+.pilgrimage-pin[aria-pressed='true'] { outline: 2px solid #ffe1a1; outline-offset: 2px; }
+.pilgrimage-pin:focus-visible { outline: 3px solid white; }
+.pilgrimage[data-effects='true'] .pilgrimage-medallion {
+  animation: pilgrimage-medallion-pulse 4s ease-in-out infinite;
+  animation-delay: var(--pin-delay);
+}
+.pilgrimage[data-effects='true'] .pilgrimage-pin[data-current='true'] { animation: pilgrimage-current 4s ease-in-out infinite; }
+@keyframes pilgrimage-medallion-pulse { 45% { transform: scale(1.065); } }
+@keyframes pilgrimage-current { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--pin-tone) 28%, transparent), 0 0 19px var(--pin-tone); } }
+
+.pilgrimage-pin-status {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  display: grid;
+  place-items: center;
+  width: 19px;
+  height: 19px;
+  border: 1px solid var(--pin-tone);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--pin-tone) 55%, var(--pin-deep));
+  color: var(--pin-light);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.pilgrimage-pin-label {
+  position: absolute;
+  inline-size: var(--pin-label-fit, max-content);
+  max-inline-size: clamp(108px, calc(50vw - 41px), 156px);
+  padding: 5px 8px 6px;
+  border: 1px solid rgb(255 255 255 / .76);
+  border-radius: 10px;
+  color: #23232b;
+  background: linear-gradient(155deg, rgb(255 255 255 / .94), rgb(250 247 239 / .81));
+  -webkit-backdrop-filter: blur(9px) saturate(115%);
+  backdrop-filter: blur(9px) saturate(115%);
+  box-shadow: 0 2px 5px rgb(29 23 15 / .22), 0 12px 15px -6px rgb(29 23 15 / .5);
+  transform-origin: 0 0;
+  transform: scale(var(--map-pin-inverse, 1)) translate(31px, -38%);
+  pointer-events: none;
+}
+
+.pilgrimage-pin-label[data-side='left'] {
+  text-align: right;
+  transform: scale(var(--map-pin-inverse, 1)) translate(calc(-100% - 31px), -38%);
+}
+
+.pilgrimage-pin-label::after {
+  content: '';
+  position: absolute;
+  top: 38%;
+  left: -4px;
+  width: 7px;
+  height: 7px;
+  border: solid rgb(255 255 255 / .76);
+  border-width: 0 0 1px 1px;
+  background: rgb(250 247 239 / .91);
+  transform: translateY(-50%) rotate(45deg);
+}
+.pilgrimage-pin-label[data-side='left']::after {
+  right: -4px;
+  left: auto;
+  border-width: 1px 1px 0 0;
+}
+.pilgrimage-pin-label[data-current='true'] { border-color: #e3bb78; }
+.pilgrimage-pin-label small,
+.pilgrimage-pin-label strong { display: block; }
+.pilgrimage-pin-label small { margin-bottom: 2px; color: #5b482c; font-size: 9px; font-weight: 750; line-height: 1.2; }
+.pilgrimage-pin-label strong { font-size: 12px; font-weight: 700; line-height: 1.15; text-wrap: pretty; }
+
+.pilgrimage-hotspot,
+.pilgrimage-map-label,
+.pilgrimage-back,
+.pilgrimage-tool,
+.pilgrimage-notice,
+.pilgrimage-more,
+.pilgrimage-hud,
+.pilgrimage-explore {
+  color: #fbefda;
+  border: 1px solid var(--map-glass-edge);
+  background: var(--map-glass);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(140%);
+}
+
+.pilgrimage-hotspot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  max-width: 168px;
+  min-height: 44px;
+  padding: 6px 12px;
+  border-radius: 13px;
+  box-shadow: 0 4px 18px #180e0880;
+  font-size: 13px;
+  line-height: 1.25;
+  font-weight: 650;
+}
+
+.pilgrimage-hotspot > :first-child,
+.pilgrimage-map-label > span { color: #f6cf8a; }
+
+.pilgrimage-top {
+  position: absolute;
+  inset: var(--map-overlay-top) 14px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.pilgrimage-map-label,
+.pilgrimage-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: max-content;
+  min-height: 38px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 650;
+  box-shadow: 0 4px 12px #170e064d;
+}
+
+.pilgrimage-back { min-height: 44px; pointer-events: auto; }
+
+.pilgrimage-tool {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border-radius: 13px;
+  box-shadow: 0 4px 12px #170e064d;
+  font-size: 21px;
+  line-height: 1;
+  pointer-events: auto;
+}
+
+.pilgrimage-tool[aria-pressed='true'] { color: #f8cb85; }
+.pilgrimage-overlays { position: absolute; inset: auto 21px var(--map-overlay-bottom); display: flex; flex-direction: column; align-items: flex-end; gap: 8px; pointer-events: none; }
+.pilgrimage-tools { position: absolute; right: 0; bottom: calc(100% + 56px); display: flex; flex-direction: column; gap: 4px; }
+.pilgrimage-overlays > * { pointer-events: auto; }
+
+.pilgrimage-notice { border-radius: 8px; padding: 6px 9px; font-size: 12px; }
+
+.pilgrimage-hud {
+  position: relative;
+  width: 100%;
+  padding: 11px 13px;
+  border-radius: 18px;
+  background: rgb(30 34 48 / .63);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  backdrop-filter: blur(14px) saturate(130%);
+  box-shadow: 0 12px 30px rgb(20 22 32 / .38), inset 0 1px 0 rgb(255 255 255 / .14);
+}
+
+.pilgrimage-hud[data-folded='true'] { padding-block: 7px; }
+.pilgrimage-hud-head { display: flex; gap: 11px; align-items: center; }
+.pilgrimage-hud-thumb {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  overflow: hidden;
+  border-radius: 11px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / .35), 0 0 0 1px rgb(241 227 196 / .35);
+}
+.pilgrimage-hud-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.pilgrimage-hud-copy { min-width: 0; flex: 1; }
+.pilgrimage-hud-copy > p:first-child { font-size: 10px; line-height: 1.35; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #e9d5ab; }
+.pilgrimage-hud-copy h3 { margin-block: 2px; font-size: 17px; line-height: 1.13; }
+.pilgrimage-hud-place { color: rgb(251 239 218 / .78); font-size: 12px; line-height: 1.25; }
+.pilgrimage-fold { position: absolute; right: 0; bottom: calc(100% + 8px); }
+
+.pilgrimage-play {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+}
+.pilgrimage-play:disabled { background-color: rgb(255 255 255 / .11); }
+
+.pilgrimage-shortcuts {
+  position: absolute;
+  inset: calc(var(--map-overlay-top) + 50px) 14px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  pointer-events: none;
+}
+.pilgrimage-shortcuts > button { pointer-events: auto; }
+
+.pilgrimage-explore {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding-inline: 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.pilgrimage-explore > span { color: #f9d395; }
+.pilgrimage button:disabled { cursor: default; opacity: .55; }
+.pilgrimage-more { min-height: 44px; padding: 0 11px; border-radius: 999px; font-size: 12px; font-weight: 650; }
+.pilgrimage-more span { margin-left: 4px; color: #ffd490; }
+.pilgrimage-scene { position: relative; margin-inline: auto; max-height: 52dvh; max-width: 100%; overflow: hidden; border-radius: 14px; }
+.pilgrimage-loading { background: #34331e; }
+
+@media (max-height: 610px) {
+  .pilgrimage { --map-overlay-bottom: calc(91px + env(safe-area-inset-bottom)); }
+  .pilgrimage-overlays { gap: 5px; }
+  .pilgrimage-hud { padding-block: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pilgrimage *,
+  .pilgrimage *::after { animation-duration: 0ms !important; transition-duration: 0ms !important; }
+}

@@ -8,6 +8,7 @@ import { imagePath, imageSrcSet } from '../media/paths'
 import { soundManager } from '../sound/SoundManager'
 import { eraOf } from '../ui/eras'
 import { OilLamp3D } from '../ui/OilLamp3D'
+import { JourneyMedal } from '../ui/JourneyMedal'
 import { MapAtmosphere } from './MapAtmosphere'
 
 interface Props {
@@ -319,7 +320,7 @@ export function JourneyMap({ doneCount, nextAvailable, onTapDay, autoScroll = tr
               }`}
               style={{ width: NODE, height: NODE }}
             >
-              <Medal id={d.simbolo.midia} n={d.n} />
+              <JourneyMedal id={d.simbolo.midia} n={d.n} />
               {done && <span className="map-node-shine" style={{ animationDelay: `${(i * 1.7) % 6}s` }} />}
             </button>
             <div
@@ -415,26 +416,6 @@ function MapSegment({ day, count, top, height, blendFromTrail, bottomCrop }: {
 }
 
 /** The day's medal; a plain gold disc with the day number while the picture is missing. */
-function Medal({ id, n }: { id: string; n: number }) {
-  const [missing, setMissing] = useState(false)
-  if (missing)
-    return (
-      <span className="grid h-full w-full place-items-center rounded-full bg-[radial-gradient(circle_at_35%_30%,#F1E3C4,#B8893A_60%,#8A672B)] font-display text-xl font-bold text-ink shadow-[inset_0_0_0_3px_rgba(255,255,255,0.35)]">
-        {n}
-      </span>
-    )
-  return (
-    <img
-      src={imagePath(id)}
-      alt=""
-      loading="lazy"
-      decoding="async"
-      onError={() => setMissing(true)}
-      className="h-full w-full rounded-full object-contain drop-shadow-[0_3px_6px_rgba(0,0,0,0.45)]"
-    />
-  )
-}
-
 /** One sandal print, toes up in its own coordinates, then placed and turned along the road. */
 function Print({ f }: { f: Footprint }) {
   return (

@@ -22,9 +22,12 @@ export function AccountScreen({ purpose, onBack, onDone }: Props) {
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
   const [saved, setSaved] = useState(false)
+  const preview = import.meta.env.DEV && purpose === 'activation' && !token &&
+    new URLSearchParams(window.location.search).get('preview') === 'cadastro'
+  const accountEmail = preview ? 'comprador@exemplo.com' : auth.email
   const userId = auth.session?.user.id
   const activated = access.plano.kind !== 'gratuito' || access.extras.length > 0
-  const needsName = purpose === 'activation' && !auth.name
+  const needsName = preview || (purpose === 'activation' && !auth.name)
   const canSetPassword = !!userId && !token && !failure &&
     (purpose === 'activation' ? access.ready && activated : auth.recovery || verifiedUser === userId)
 
@@ -48,11 +51,17 @@ export function AccountScreen({ purpose, onBack, onDone }: Props) {
 
   async function save(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (busy || !canSetPassword) return
+    if (busy || (!preview && !canSetPassword)) return
     if (needsName && !name.trim()) return setError('Digite seu nome para completar a conta.')
     if (password.length < 8) return setError('Use pelo menos 8 caracteres na senha.')
     if (password !== confirmation) return setError('As duas senhas precisam ser iguais.')
     setError('')
+    if (preview) {
+      setPassword('')
+      setConfirmation('')
+      setSaved(true)
+      return
+    }
     setBusy(true)
     try {
       const result = await auth.setPassword(password, needsName ? { name } : undefined)
@@ -72,21 +81,22 @@ export function AccountScreen({ purpose, onBack, onDone }: Props) {
         <button type="button" className="mb-6 min-h-11 self-start text-sm font-semibold text-ink-2" onClick={onBack}>‹ Voltar</button>
         <Logo variant="full" title="A Palavra em Ordem" className="mb-5 h-14 w-auto self-start text-ink" />
         <h1 className="mb-2 text-[30px] leading-tight">{purpose === 'recovery' ? 'Recuperar senha' : purpose ? 'Ativar meu acesso' : 'Entrar na minha conta'}</h1>
+        {preview && <p className="mb-2 text-sm text-ink-2">Prévia DEV com dados fictícios.</p>}
         {saved ? (
           <>
-            <p role="status" className="mb-5 text-sm">Senha salva. Você já pode usá-la para entrar em outros aparelhos.</p>
-            <button className="btn" type="button" onClick={onDone}>Continuar</button>
+            <p role="status" className="mb-5 text-sm">{preview ? 'Validação do formulário concluída.' : 'Senha salva. Você já pode usá-la para entrar em outros aparelhos.'}</p>
+            <button className="btn" type="button" onClick={preview ? () => setSaved(false) : onDone}>{preview ? 'Rever cadastro' : 'Continuar'}</button>
           </>
         ) : token && auth.enabled ? (
           <button className="btn mt-4" type="button" disabled={busy || !auth.ready} onClick={() => void confirmEmail()}>
             {busy ? 'Verificando…' : 'Confirmar e-mail'}
           </button>
-        ) : !auth.ready && auth.enabled ? (
+        ) : !preview && !auth.ready && auth.enabled ? (
           <p role="status" className="mb-5 text-sm">Verificando seu acesso…</p>
-        ) : purpose && canSetPassword ? (
+        ) : preview || (purpose && canSetPassword) ? (
           <form className="mt-3 space-y-3" onSubmit={(event) => void save(event)} noValidate>
-            <p className="text-sm text-ink-2">{auth.email}</p>
-            <input type="email" autoComplete="username" value={auth.email ?? ''} readOnly hidden />
+            <p className="text-sm text-ink-2">{accountEmail}</p>
+            <input type="email" autoComplete="username" value={accountEmail ?? ''} readOnly hidden />
             {needsName && (
               <label className="block text-sm font-semibold">Seu nome
                 <input type="text" autoComplete="given-name" maxLength={MAX_ACCOUNT_NAME} value={name} disabled={busy} onChange={(event) => setName(event.target.value)} className={accountInput} />

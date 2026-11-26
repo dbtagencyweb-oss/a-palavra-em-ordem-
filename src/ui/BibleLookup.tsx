@@ -38,9 +38,10 @@ export function BibleLookup({ open, onClose, onToday }: Props) {
       onClose={close}
       label={result ? `Leitor da Bíblia: ${result.passage?.reference ?? result.book.nome}` : 'Buscar na Bíblia'}
       animateLayout
+      backdropClassName={result ? undefined : 'bg-[linear-gradient(to_top,rgba(12,11,10,.98)_calc(60px+env(safe-area-inset-bottom)),rgba(16,14,13,.84)_calc(104px+env(safe-area-inset-bottom)),transparent_calc(12rem+env(safe-area-inset-bottom)))]'}
       className={result
         ? '!flex h-[88%] flex-col !overflow-hidden !p-0'
-        : 'mx-3 mb-[calc(42px+env(safe-area-inset-bottom))] rounded-[22px] border border-gold/20 !bg-[#252A3B] !px-3.5 !py-3 text-paper shadow-[0_8px_22px_rgba(12,14,22,0.30)]'}
+        : 'mx-1.5 mb-[calc(28px+env(safe-area-inset-bottom))] rounded-[22px] border border-gold/55 border-t-gold-soft/70 !bg-[#252A3B]/80 !px-3.5 !py-3 text-paper shadow-[0_8px_24px_rgba(12,14,22,.34),0_0_14px_rgba(184,137,58,.18),inset_0_1px_0_rgba(255,238,195,.13)] backdrop-blur-xl'}
     >
       {result ? (
         <BibleReader book={result.book} open={open} onClose={close} passage={result.passage} embedded onBackToSearch={() => setResult(null)} />
@@ -96,7 +97,7 @@ export function BibleLookup({ open, onClose, onToday }: Props) {
               {invalid ? 'Confira a referência. Digite “Esdras” ou preencha os campos como em Êxodo 20:12.' : 'Só o livro abre no capítulo 1. Sem versículo, abre o capítulo inteiro.'}
             </p>
           </form>
-          <button type="button" className="mt-1 min-h-11 text-sm font-semibold text-gold-soft" onClick={() => {
+          <button type="button" className="mt-1 min-h-11 text-sm font-semibold text-[#F5A36B]" onClick={() => {
             close()
             onToday()
           }}>Abrir a lição de hoje</button>

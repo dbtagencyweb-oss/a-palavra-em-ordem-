@@ -2,7 +2,7 @@ import { useAccess } from '../access/AccessContext'
 import { isFounderSeat } from '../access/rules'
 import { FounderBadge } from '../ui/FounderBadge'
 import { Logo } from '../ui/Logo'
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect, useRef } from 'react'
 import { TOTAL_DAYS, trilha, ui } from '../content'
 import { isDayCompleted, isDayUnlocked, nextDay } from '../game/progress'
 import { useProgress } from '../store/ProgressContext'
@@ -12,11 +12,15 @@ import { useFounder } from '../auth/useFounder'
 import { soundManager } from '../sound/SoundManager'
 import { TrackCover } from '../media/TrackCover'
 import { ContinueCard } from './ContinueCard'
-import { dayCovers, JESUS } from '../content/trails'
+import { JESUS } from '../content/trails'
 import { Trail2Path } from './Trail2Path'
 import { PlanBanner } from '../access/PlanNotices'
 import { GroupCard } from '../access/GroupCard'
-import { JourneyMap } from './JourneyMap'
+import type { TerritoryStatus } from '../pilgrimage/PilgrimageMap'
+import '../pilgrimage/pilgrimage.css'
+
+const PilgrimageMap = lazy(() => import('../pilgrimage/PilgrimageMap').then((module) => ({ default: module.PilgrimageMap })))
+const JourneyMap = lazy(() => import('./JourneyMap').then((module) => ({ default: module.JourneyMap })))
 
 interface Props {
   onOpenDay(n: number, trail?: string): void
@@ -38,6 +42,11 @@ export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, 
   const seat = isFounderSeat(useAccess().entitlements)
   const { progress, today, pendingGrace, clearPendingGrace } = useProgress()
   const toast = useToast()
+  const more = useRef<HTMLHeadingElement>(null)
+  const mapOverride = new URLSearchParams(window.location.search).get('mapa')
+  const pilgrimage = mapOverride === 'v2' || (mapOverride !== 'classico' && (
+    import.meta.env.VITE_PILGRIMAGE_V2 === 'true' || (import.meta.env.DEV && import.meta.env.VITE_PILGRIMAGE_V2 !== 'false')
+  ))
   useEffect(() => {
     if (pendingGrace > 0) {
       soundManager.play('grace_used')
@@ -50,25 +59,17 @@ export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, 
   const next = nextDay(progress, TOTAL_DAYS)
   const nextAvailable = next !== null && isDayUnlocked(progress, next, today)
   const nextDayData = next !== null ? trilha.dias[next - 1] : null
+  const territoryStatus = trilha.dias.map<TerritoryStatus>(({ n }) =>
+    isDayCompleted(progress, n) ? 'done' : isDayUnlocked(progress, n, today) ? 'open' : n === next ? 'tomorrow' : 'locked',
+  )
 
   // Trilha 2 continues the path for Founders who finished the 7-day map.
   const onTrail2 = next === null && founder
   const t2Next = JESUS.visible.find((d) => !isDayCompleted(progress, d.n, JESUS.id))?.n ?? null
-  const t2Open = t2Next !== null && isDayUnlocked(progress, t2Next, today, JESUS.id)
 
   // The round button tells what tapping does: play a lesson, see the next track, or wait for tomorrow.
   let cont: { eyebrow: string; title: string; sub: string; icon: 'play' | 'next' | 'done'; action(): void }
-  if (onTrail2) {
-    const d = JESUS.visible.find((x) => x.n === t2Next)
-    if (!d) {
-      const all = JESUS.visible.length === JESUS.total
-      cont = { eyebrow: JESUS.titulo, title: all ? 'Trilha concluída' : 'Novos dias em breve', sub: all ? 'Você caminhou com Jesus do começo ao fim' : 'Os próximos dias estão sendo preparados', icon: 'done', action: () => toast(all ? 'Trilha concluída.' : 'Os próximos dias chegam em breve.') }
-    } else if (t2Open) {
-      cont = { eyebrow: `${JESUS.titulo} · Dia ${d.n}`, title: d.titulo, sub: d.passagens ?? 'Cerca de 6 minutos', icon: 'play', action: () => onOpenDay(d.n, JESUS.id) }
-    } else {
-      cont = { eyebrow: 'Lâmpada acesa hoje', title: `Dia ${d.n} libera amanhã`, sub: d.titulo, icon: 'done', action: () => toast('Libera amanhã. Volte para manter a lâmpada acesa.') }
-    }
-  } else if (next === null) {
+  if (next === null) {
     cont = { eyebrow: 'Trilha concluída', title: 'Você viu o mapa inteiro', sub: `Conheça a próxima trilha: ${ui.proximaTrilha.titulo}`, icon: 'next', action: () => onOffer('trilha_concluida') }
   } else if (nextAvailable) {
     cont = {
@@ -88,11 +89,7 @@ export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, 
     }
   }
 
-  // The continue card wears the picture of the day it leads to (the last day once the track is done;
-  // the Galilee for Trilha 2).
-  const contDay = onTrail2 ? 6 : (next ?? TOTAL_DAYS)
-  // Trilha 2: the cover of the day it leads to (or the last day), falling back to the trail's cover.
-  const contPictures = onTrail2 ? dayCovers(JESUS, t2Next ?? JESUS.visible.at(-1)?.n ?? 1) : undefined
+  const contDay = next ?? TOTAL_DAYS
 
   function tapTrail2Day(n: number) {
     if (isDayCompleted(progress, n, JESUS.id) || isDayUnlocked(progress, n, today, JESUS.id)) return onOpenDay(n, JESUS.id)
@@ -104,11 +101,15 @@ export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, 
     toast(n === next ? 'Libera amanhã. Volte para manter a lâmpada acesa.' : 'Siga a trilha em ordem, um dia por vez.')
   }
 
+  const jesusJourney = onTrail2 && (
+    <Trail2Path next={t2Next} onTapDay={tapTrail2Day} headingRef={pilgrimage ? more : undefined} autoScroll={!pilgrimage} />
+  )
+
   return (
     // Bottom room = the nav bar (~66px + safe area) + 24px, so the last card scrolls fully into view.
-    <section className="screen pb-[calc(90px+env(safe-area-inset-bottom))]">
+    <section className={`screen pb-[calc(90px+env(safe-area-inset-bottom))] ${pilgrimage ? 'pilgrimage-home' : ''}`}>
       {/* Header in the Gatedo style: a dark pill with a gold edge, the logo and the journey's numbers. */}
-      <header className="sticky top-0 z-[5] px-3.5 pb-2 pt-3">
+      <header className={`${pilgrimage ? 'pilgrimage-header' : 'sticky top-0 pt-3'} z-[5] px-3.5 pb-2`}>
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-[92px] bg-[linear-gradient(180deg,rgba(30,34,48,0.55)_0%,rgba(30,34,48,0.25)_40%,rgba(30,34,48,0)_100%)]" />
         <div className="app-header relative flex h-[58px] items-center justify-between gap-2 rounded-full pl-5 pr-2">
           <Logo variant="full" className="h-[38px] w-auto flex-none text-paper" />
@@ -137,8 +138,30 @@ export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, 
         </div>
       </header>
 
+      {pilgrimage && (
+        <Suspense fallback={<div className="pilgrimage pilgrimage-loading" role="status" aria-label="Carregando mapa da jornada" />}>
+          <PilgrimageMap
+            current={next ?? TOTAL_DAYS}
+            status={territoryStatus}
+            moreLabel={onTrail2 ? JESUS.titulo : undefined}
+            onLesson={tapDay}
+            onMore={() => {
+              const heading = more.current
+              heading?.focus({ preventScroll: true })
+              const target = onTrail2 ? heading?.closest('section') : heading
+              target?.scrollIntoView({
+                block: 'start',
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+              })
+            }}
+          />
+        </Suspense>
+      )}
+
+      {pilgrimage && jesusJourney}
+
       <div className="px-5 pb-1.5 pt-1">
-        <h2 className="text-2xl">{greeting(new Date().getHours())}</h2>
+        <h2 ref={pilgrimage && onTrail2 ? undefined : more} tabIndex={-1} className={`text-2xl ${pilgrimage ? 'scroll-mt-4' : 'scroll-mt-[84px]'}`}>{greeting(new Date().getHours())}</h2>
         <p className="mt-1 text-sm text-ink-2">Sua caminhada pela Palavra continua aqui.</p>
       </div>
 
@@ -153,22 +176,28 @@ export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, 
         </span>
       </div>
 
-      {onTrail2 && <Trail2Path next={t2Next} onTapDay={tapTrail2Day} />}
+      {!pilgrimage && jesusJourney}
 
-      <JourneyMap doneCount={doneCount} nextAvailable={nextAvailable} onTapDay={tapDay} autoScroll={!onTrail2} blendFromTrail={onTrail2} />
+      {!pilgrimage && (
+        <Suspense fallback={null}>
+          <JourneyMap doneCount={doneCount} nextAvailable={nextAvailable} onTapDay={tapDay} autoScroll={!onTrail2} blendFromTrail={onTrail2} />
+        </Suspense>
+      )}
 
       {/* Continue card: sits under the map and floats over it while you scroll, so it is on screen
           as soon as Home opens on the current day. */}
-      <ContinueCard
-        day={contDay}
-        eyebrow={cont.eyebrow}
-        title={cont.title}
-        sub={cont.sub}
-        iconDone={cont.icon === 'done'}
-        pictures={contPictures}
-        icon={cont.icon === 'play' ? <PlayIcon /> : cont.icon === 'next' ? <ArrowIcon /> : <CheckIcon size={20} className="text-white" />}
-        onClick={cont.action}
-      />
+      {!onTrail2 && (
+        <ContinueCard
+          day={contDay}
+          docked={pilgrimage}
+          eyebrow={cont.eyebrow}
+          title={cont.title}
+          sub={cont.sub}
+          iconDone={cont.icon === 'done'}
+          icon={cont.icon === 'play' ? <PlayIcon /> : cont.icon === 'next' ? <ArrowIcon /> : <CheckIcon size={20} className="text-white" />}
+          onClick={cont.action}
+        />
+      )}
 
       <button
         type="button"

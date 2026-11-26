@@ -1,0 +1,392 @@
+{
+  "mundo": {
+    "width": 793,
+    "height": 2637,
+    "preview": {
+      "path": "/media/peregrinacao/mundo-128.webp",
+      "width": 128,
+      "height": 426,
+      "bytes": 17876
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/mundo-480.webp",
+        "width": 480,
+        "height": 1596,
+        "bytes": 263046
+      },
+      {
+        "path": "/media/peregrinacao/mundo-768.webp",
+        "width": 768,
+        "height": 2554,
+        "bytes": 534112
+      },
+      {
+        "path": "/media/ui/world_master.webp",
+        "width": 793,
+        "height": 2637,
+        "bytes": 677366
+      }
+    ]
+  },
+  "visao-do-todo": {
+    "width": 941,
+    "height": 1672,
+    "preview": {
+      "path": "/media/peregrinacao/visao-do-todo-128.webp",
+      "width": 128,
+      "height": 227,
+      "bytes": 9708
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/visao-do-todo-480.webp",
+        "width": 480,
+        "height": 853,
+        "bytes": 165826
+      },
+      {
+        "path": "/media/peregrinacao/visao-do-todo-768.webp",
+        "width": 768,
+        "height": 1365,
+        "bytes": 353722
+      },
+      {
+        "path": "/media/ui/01_visao_do_todo.webp",
+        "width": 941,
+        "height": 1672,
+        "bytes": 562474
+      }
+    ]
+  },
+  "eden": {
+    "width": 941,
+    "height": 1671,
+    "preview": {
+      "path": "/media/peregrinacao/eden-128.webp",
+      "width": 128,
+      "height": 227,
+      "bytes": 11240
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/eden-480.webp",
+        "width": 480,
+        "height": 852,
+        "bytes": 186248
+      },
+      {
+        "path": "/media/peregrinacao/eden-768.webp",
+        "width": 768,
+        "height": 1364,
+        "bytes": 378176
+      },
+      {
+        "path": "/media/ui/02-eden.webp",
+        "width": 941,
+        "height": 1671,
+        "bytes": 576568
+      }
+    ]
+  },
+  "sinai": {
+    "width": 941,
+    "height": 1672,
+    "preview": {
+      "path": "/media/peregrinacao/sinai-128.webp",
+      "width": 128,
+      "height": 227,
+      "bytes": 10114
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/sinai-480.webp",
+        "width": 480,
+        "height": 853,
+        "bytes": 159944
+      },
+      {
+        "path": "/media/peregrinacao/sinai-768.webp",
+        "width": 768,
+        "height": 1365,
+        "bytes": 326376
+      },
+      {
+        "path": "/media/ui/03_sinai.webp",
+        "width": 941,
+        "height": 1672,
+        "bytes": 492336
+      }
+    ]
+  },
+  "jerusalem-babilonia": {
+    "width": 941,
+    "height": 1672,
+    "preview": {
+      "path": "/media/peregrinacao/jerusalem-babilonia-128.webp",
+      "width": 128,
+      "height": 227,
+      "bytes": 10592
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/jerusalem-babilonia-480.webp",
+        "width": 480,
+        "height": 853,
+        "bytes": 170884
+      },
+      {
+        "path": "/media/peregrinacao/jerusalem-babilonia-768.webp",
+        "width": 768,
+        "height": 1365,
+        "bytes": 355760
+      },
+      {
+        "path": "/media/ui/05_jerusalem_babilonia.webp",
+        "width": 941,
+        "height": 1672,
+        "bytes": 553704
+      }
+    ]
+  },
+  "galileia": {
+    "width": 941,
+    "height": 1672,
+    "preview": {
+      "path": "/media/peregrinacao/galileia-128.webp",
+      "width": 128,
+      "height": 227,
+      "bytes": 10296
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/galileia-480.webp",
+        "width": 480,
+        "height": 853,
+        "bytes": 173832
+      },
+      {
+        "path": "/media/peregrinacao/galileia-768.webp",
+        "width": 768,
+        "height": 1365,
+        "bytes": 364554
+      },
+      {
+        "path": "/media/ui/06_galileia.webp",
+        "width": 941,
+        "height": 1672,
+        "bytes": 582022
+      }
+    ]
+  },
+  "nova-jerusalem": {
+    "width": 941,
+    "height": 1672,
+    "preview": {
+      "path": "/media/peregrinacao/nova-jerusalem-128.webp",
+      "width": 128,
+      "height": 227,
+      "bytes": 11982
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/nova-jerusalem-480.webp",
+        "width": 480,
+        "height": 853,
+        "bytes": 187214
+      },
+      {
+        "path": "/media/peregrinacao/nova-jerusalem-768.webp",
+        "width": 768,
+        "height": 1365,
+        "bytes": 385646
+      },
+      {
+        "path": "/media/ui/07_nova_jerusalem.webp",
+        "width": 941,
+        "height": 1672,
+        "bytes": 600368
+      }
+    ]
+  },
+  "arvore-da-vida": {
+    "width": 941,
+    "height": 1672,
+    "preview": {
+      "path": "/media/peregrinacao/arvore-da-vida-128.webp",
+      "width": 128,
+      "height": 227,
+      "bytes": 12692
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/arvore-da-vida-480.webp",
+        "width": 480,
+        "height": 853,
+        "bytes": 183444
+      },
+      {
+        "path": "/media/peregrinacao/arvore-da-vida-768.webp",
+        "width": 768,
+        "height": 1365,
+        "bytes": 356614
+      },
+      {
+        "path": "/media/ui/scenes/Imagem%20do%20ChatGPT%2025%20de%20nov.%20de%202026,%2021_56_06.webp",
+        "width": 941,
+        "height": 1672,
+        "bytes": 530560
+      }
+    ]
+  },
+  "acampamento-de-abraao": {
+    "width": 941,
+    "height": 1672,
+    "preview": {
+      "path": "/media/peregrinacao/acampamento-de-abraao-128.webp",
+      "width": 128,
+      "height": 227,
+      "bytes": 10102
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/acampamento-de-abraao-480.webp",
+        "width": 480,
+        "height": 853,
+        "bytes": 142074
+      },
+      {
+        "path": "/media/peregrinacao/acampamento-de-abraao-768.webp",
+        "width": 768,
+        "height": 1365,
+        "bytes": 281484
+      },
+      {
+        "path": "/media/ui/scenes/Imagem%20do%20ChatGPT%2025%20de%20nov.%20de%202026,%2021_57_20.webp",
+        "width": 941,
+        "height": 1672,
+        "bytes": 429798
+      }
+    ]
+  },
+  "mar-vermelho": {
+    "width": 941,
+    "height": 1671,
+    "preview": {
+      "path": "/media/peregrinacao/mar-vermelho-128.webp",
+      "width": 128,
+      "height": 227,
+      "bytes": 9188
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/mar-vermelho-480.webp",
+        "width": 480,
+        "height": 852,
+        "bytes": 114236
+      },
+      {
+        "path": "/media/peregrinacao/mar-vermelho-768.webp",
+        "width": 768,
+        "height": 1364,
+        "bytes": 222282
+      },
+      {
+        "path": "/media/ui/scenes/Imagem%20do%20ChatGPT%2025%20de%20nov.%20de%202026,%2021_54_32.webp",
+        "width": 941,
+        "height": 1671,
+        "bytes": 346862
+      }
+    ]
+  },
+  "jerusalem": {
+    "width": 941,
+    "height": 1672,
+    "preview": {
+      "path": "/media/peregrinacao/jerusalem-128.webp",
+      "width": 128,
+      "height": 227,
+      "bytes": 11040
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/jerusalem-480.webp",
+        "width": 480,
+        "height": 853,
+        "bytes": 145582
+      },
+      {
+        "path": "/media/peregrinacao/jerusalem-768.webp",
+        "width": 768,
+        "height": 1365,
+        "bytes": 287010
+      },
+      {
+        "path": "/media/ui/scenes/Imagem%20do%20ChatGPT%2025%20de%20nov.%20de%202026,%2021_49_27.webp",
+        "width": 941,
+        "height": 1672,
+        "bytes": 440058
+      }
+    ]
+  },
+  "babilonia": {
+    "width": 941,
+    "height": 1672,
+    "preview": {
+      "path": "/media/peregrinacao/babilonia-128.webp",
+      "width": 128,
+      "height": 227,
+      "bytes": 10982
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/babilonia-480.webp",
+        "width": 480,
+        "height": 853,
+        "bytes": 141990
+      },
+      {
+        "path": "/media/peregrinacao/babilonia-768.webp",
+        "width": 768,
+        "height": 1365,
+        "bytes": 286104
+      },
+      {
+        "path": "/media/ui/scenes/Imagem%20do%20ChatGPT%2025%20de%20nov.%20de%202026,%2021_50_29.webp",
+        "width": 941,
+        "height": 1672,
+        "bytes": 445148
+      }
+    ]
+  },
+  "lago-da-galileia": {
+    "width": 941,
+    "height": 1672,
+    "preview": {
+      "path": "/media/peregrinacao/lago-da-galileia-128.webp",
+      "width": 128,
+      "height": 227,
+      "bytes": 11928
+    },
+    "variants": [
+      {
+        "path": "/media/peregrinacao/lago-da-galileia-480.webp",
+        "width": 480,
+        "height": 853,
+        "bytes": 174416
+      },
+      {
+        "path": "/media/peregrinacao/lago-da-galileia-768.webp",
+        "width": 768,
+        "height": 1365,
+        "bytes": 347104
+      },
+      {
+        "path": "/media/ui/scenes/Imagem%20do%20ChatGPT%2025%20de%20nov.%20de%202026,%2021_55_10.webp",
+        "width": 941,
+        "height": 1672,
+        "bytes": 523076
+      }
+    ]
+  }
+}

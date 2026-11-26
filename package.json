@@ -14,6 +14,7 @@
     "test:account": "playwright test --config playwright.account.config.ts",
     "check:media": "node scripts/check-media.mjs",
     "media:import": "node scripts/import-media.mjs",
+    "media:pilgrimage": "node scripts/import-pilgrimage-maps.mjs",
     "config:sync": "node -e \"const f=require('fs');f.copyFileSync('config/produtos-plataforma.json','supabase/functions/_shared/produtos-plataforma.json');f.copyFileSync('content/oferta.json','supabase/functions/_shared/oferta.json');f.copyFileSync('config/checkout.json','supabase/functions/_shared/checkout.json')\"",
     "content:check": "node scripts/content/check.mjs",
     "content:review": "node scripts/content/review.mjs",

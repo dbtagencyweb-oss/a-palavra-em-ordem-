@@ -1,150 +1,141 @@
-// Home, after the 7-day map: Trilha 2 (Jesus em Ordem) as the continuation of the path. A new
-// stretch of the illustrated map, painted with the trail's cover, with the life-of-Jesus timeline
-// on top and the days climbing (bottom to top, like the map below it).
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type RefObject } from 'react'
 import { LifeTimeline, reachedMilestones } from '../activities/LifeTimeline'
 import { dayCovers, JESUS } from '../content/trails'
 import { completedOf, isDayCompleted, isDayUnlocked } from '../game/progress'
 import { CoverImage } from '../media/CoverImage'
-import { imagePath } from '../media/paths'
+import { TrackCover } from '../media/TrackCover'
 import { useProgress } from '../store/ProgressContext'
 import { CheckIcon, LockIcon, PlayIcon } from '../ui/icons'
 
-/** Brushed gold sampled from the symbol medallions (public/media/img/simbolo-*.webp). */
-const MEDAL_GOLD = 'radial-gradient(circle at 34% 28%, #F1E0AD 0%, #DCC088 30%, #C4A266 62%, #9E7A3E 100%)'
-const MAP_BLEND = 'linear-gradient(to bottom, #000 calc(100% - 176px), rgba(0,0,0,.84) calc(100% - 120px), rgba(0,0,0,.48) calc(100% - 72px), rgba(0,0,0,.14) calc(100% - 28px), transparent)'
-
 interface Props {
   next: number | null
+  headingRef?: RefObject<HTMLHeadingElement>
+  autoScroll?: boolean
   onTapDay(n: number): void
 }
 
-/** How many days to show around the current one (the rest is summarized). */
-const BEFORE = 2
-const AFTER = 3
-
-export function Trail2Path({ next, onTapDay }: Props) {
+export function Trail2Path({ next, headingRef, autoScroll = false, onTapDay }: Props) {
   const { progress, today } = useProgress()
   const days = JESUS.visible
   const completed = completedOf(progress, JESUS.id)
   const doneCount = Object.keys(completed).length
   const lit = reachedMilestones(JESUS.outline, completed)
-  const current = next ?? days.at(-1)?.n ?? 1
-  const idx = Math.max(0, days.findIndex((d) => d.n === current))
-  // "Ver dias anteriores" opens every earlier day, to see them again.
+  const currentMilestone = JESUS.timeline.find((milestone) => !lit.has(milestone))
+  const nextLesson = days.find((day) => day.n === next)
+  const canContinue = !!nextLesson && isDayUnlocked(progress, nextLesson.n, today, JESUS.id)
   const [showPast, setShowPast] = useState(false)
-  const from = showPast ? 0 : Math.max(0, idx - BEFORE)
-  const to = Math.min(days.length, idx + AFTER + 1)
-  const windowDays = days.slice(from, to)
-  const below = from
-  const above = JESUS.total - (days[to - 1]?.n ?? 0)
-  const nodeRef = useRef<HTMLButtonElement>(null)
+  const cursor = nextLesson ? days.indexOf(nextLesson) : days.length - 1
+  const from = showPast ? 0 : Math.max(0, cursor - 2)
+  const end = Math.min(days.length, cursor + 4)
+  const lessons = days.slice(from, end).filter((day) => day !== nextLesson)
+  const remaining = JESUS.total - (days[end - 1]?.n ?? 0)
+  const section = useRef<HTMLElement>(null)
 
-  // Open Home on the current day of Trilha 2 (it sits above the 7-day map).
   useEffect(() => {
-    const id = window.setTimeout(() => nodeRef.current?.scrollIntoView({ block: 'center' }), 60)
+    if (!autoScroll) return
+    const id = window.setTimeout(() => section.current?.scrollIntoView({ block: 'start' }), 60)
     return () => window.clearTimeout(id)
-  }, [])
+  }, [autoScroll])
 
   return (
-    <section className="relative z-[1] flex-none" aria-label={`${JESUS.titulo}: ${doneCount} de ${JESUS.total}`} data-testid="trilha-2-mapa">
-      {/* Overlap the next map so the artwork fades directly into it. */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 -bottom-36 top-0 overflow-hidden" style={{ maskImage: MAP_BLEND, WebkitMaskImage: MAP_BLEND }}>
-        <img src={imagePath('capa-jesus-em-ordem')} alt="" className="h-full w-full object-cover object-[60%_50%]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#F5EFE3_0%,rgba(245,239,227,0)_14%,rgba(30,34,48,0.35)_40%,rgba(30,34,48,0.35)_75%,transparent_100%)]" />
-      </div>
-
-      <div className="relative px-5 pb-10 pt-10 text-paper">
-        <div className="flex items-baseline justify-between [text-shadow:0_1px_8px_rgba(20,22,32,0.6)]">
-          <h3 className="text-lg text-paper">{JESUS.titulo}</h3>
-          <span className="text-xs font-semibold text-paper/80">
-            {doneCount} de {JESUS.total}
-          </span>
-        </div>
-
-        {JESUS.timeline.length > 0 && (
-          <div className="mt-3 rounded-card bg-ink/55 px-4 pb-3.5 pt-4 backdrop-blur-sm">
-            <LifeTimeline milestones={JESUS.timeline} lit={lit} />
+    <section
+      ref={section}
+      className={`mx-4 my-4 flex-none overflow-hidden rounded-[24px] border border-line bg-card shadow-card ${autoScroll ? 'scroll-mt-[82px]' : ''}`}
+      aria-labelledby="trilha-jesus-titulo"
+      data-testid="trilha-2-mapa"
+    >
+      <div className="relative isolate bg-[#1C3140] text-paper">
+        <TrackCover id="capa-jesus-em-ordem" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(19,32,47,.78),rgba(25,39,52,.66)_49%,rgba(24,37,50,.98)_100%)]" />
+        <div className="relative px-4 pb-4 pt-5">
+          <div className="flex items-start justify-between gap-2">
+            <div>
+              <p className="eyebrow !text-gold-soft">Trilha 2</p>
+              <h2 id="trilha-jesus-titulo" ref={headingRef} tabIndex={-1} className="mt-1 scroll-mt-4 text-[26px] leading-tight">{JESUS.titulo}</h2>
+            </div>
+            <span className="mt-0.5 shrink-0 rounded-full border border-gold-soft/25 bg-ink/60 px-2.5 py-1 text-[11px] font-bold tabular-nums text-gold-soft">{doneCount} de {JESUS.total}</span>
           </div>
-        )}
-
-        {above > 0 && <p className="mt-5 text-center text-[12px] font-semibold text-paper/80 [text-shadow:0_1px_6px_rgba(20,22,32,0.7)]">+ {above} dias pela frente</p>}
-
-        {/* Days, bottom to top, zigzagging like the map below. */}
-        <ol className="mt-3 flex flex-col-reverse gap-3">
-          {windowDays.map((d, i) => {
-            const done = isDayCompleted(progress, d.n, JESUS.id)
-            const open = !done && isDayUnlocked(progress, d.n, today, JESUS.id)
-            const right = (from + i) % 2 === 1
-            const draft = d.status !== 'publicado'
-            return (
-              <li key={d.n} className={`flex items-center gap-3 ${right ? 'flex-row-reverse text-right' : ''}`}>
-                <button
-                  ref={d.n === current ? nodeRef : undefined}
-                  type="button"
-                  onClick={() => onTapDay(d.n)}
-                  aria-label={`Dia ${d.n}: ${d.titulo} (${done ? 'concluído' : open ? 'disponível' : 'bloqueado'})`}
-                  className={`relative h-14 w-14 flex-none rounded-full p-[3px] font-display text-lg font-semibold shadow-[0_6px_16px_rgba(20,22,32,0.4)] ${
-                    done ? '' : open ? 'bg-paper motion-safe:animate-[play-pulse_2.4s_ease-in-out_infinite]' : 'bg-white/25'
-                  }`}
-                  // Done: a ring in the same brushed gold as the symbol medals.
-                  style={done ? { backgroundImage: MEDAL_GOLD } : undefined}
-                >
-                  {/* The day's cover (or the trail's), inside the ring. */}
-                  <span className="relative block h-full w-full overflow-hidden rounded-full bg-ink">
-                    <CoverImage
-                      key={d.n}
-                      pictures={dayCovers(JESUS, d.n)}
-                      small
-                      className={`h-full w-full object-cover ${done || open ? '' : 'grayscale'} ${open ? '' : done ? '' : '!opacity-40'}`}
-                    />
-                    <span
-                      aria-hidden="true"
-                      className={`absolute inset-0 grid place-items-center ${open ? 'bg-[rgba(30,34,48,0.38)] text-white' : done ? '' : 'text-paper'}`}
-                    >
-                      {open ? <PlayIcon size={22} /> : done ? null : d.n === current ? <LockIcon size={18} /> : d.n}
-                    </span>
-                  </span>
-                  {/* Done: a small gold check on the ring. */}
-                  {done && (
-                    <span
-                      aria-hidden="true"
-                      className="absolute -bottom-0.5 -right-0.5 grid h-6 w-6 place-items-center rounded-full border-2 border-[#E6D09C] text-[#5A4318] shadow-[0_2px_6px_rgba(20,22,32,0.45)]"
-                      style={{ backgroundImage: MEDAL_GOLD }}
-                    >
-                      <CheckIcon size={13} />
-                    </span>
-                  )}
-                </button>
-                <div className="min-w-0 flex-1 rounded-card bg-ink/55 px-3 py-2 backdrop-blur-sm">
-                  <small className="block text-[10.5px] font-bold uppercase tracking-[0.12em] text-[#F5A36B]">
-                    Dia {d.n}
-                    {d.fase ? ` · ${d.fase}` : ''}
-                    {draft && import.meta.env.DEV ? ` · ${d.status}` : ''}
-                  </small>
-                  <strong className="block truncate font-display text-[15px] font-semibold leading-tight">{d.titulo}</strong>
-                  {d.passagens && <span className="block truncate text-[11.5px] text-paper/70">{d.passagens}</span>}
-                </div>
-              </li>
-            )
-          })}
-        </ol>
-
-        {(below > 0 || showPast) && (
-          <div className="mt-4 text-center">
+          <p className="mt-1 text-[13px] text-paper/85">Os Evangelhos na ordem dos acontecimentos.</p>
+          {nextLesson ? (
             <button
               type="button"
-              onClick={() => setShowPast((v) => !v)}
-              aria-expanded={showPast}
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-paper/25 bg-ink/55 px-4 text-[13px] font-semibold text-paper backdrop-blur-sm hover:bg-ink/70"
+              data-testid="continue-card"
+              onClick={() => onTapDay(nextLesson.n)}
+              className="mt-4 flex min-h-[78px] w-full items-center gap-3 rounded-card border border-gold-soft/30 bg-ink/75 px-3 py-2.5 text-left shadow-[0_8px_18px_rgba(12,17,25,.28)]"
             >
-              {showPast ? 'Esconder dias anteriores' : `Ver dias anteriores (${below})`}
-              <svg viewBox="0 0 24 24" className={`h-4 w-4 transition-transform ${showPast ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" />
-              </svg>
+              <span className="h-12 w-12 flex-none overflow-hidden rounded-xl bg-ink ring-1 ring-paper/25" aria-hidden="true">
+                <CoverImage key={nextLesson.n} pictures={dayCovers(JESUS, nextLesson.n)} small className="h-full w-full object-cover" />
+              </span>
+              <span className="min-w-0 flex-1">
+                <small className="block text-[10.5px] font-bold uppercase leading-snug tracking-[0.08em] text-gold-soft">
+                  {canContinue ? (doneCount ? `Continuar · Dia ${nextLesson.n}` : `Começar o Dia ${nextLesson.n}`) : `Dia ${nextLesson.n} libera amanhã`}
+                </small>
+                <strong className="mt-0.5 block font-display text-[15.5px] font-semibold leading-tight">{nextLesson.titulo}</strong>
+                {nextLesson.passagens && <span className="mt-0.5 block text-[11.5px] leading-tight text-paper/75">{nextLesson.passagens}</span>}
+              </span>
+              <span className={`grid h-10 w-10 flex-none place-items-center rounded-full ${canContinue ? 'play-shine' : 'bg-white/10 text-paper/80'}`} aria-hidden="true">
+                {canContinue ? <PlayIcon size={17} /> : <LockIcon size={16} />}
+              </span>
             </button>
+          ) : (
+            <p className="mt-4 rounded-btn border border-gold-soft/25 bg-ink/55 px-4 py-3 text-sm font-semibold text-gold-soft">
+              {days.length === JESUS.total ? 'Trilha concluída' : 'Novas lições em breve'}
+            </p>
+          )}
+        </div>
+      </div>
+
+      <div className="space-y-4 px-3.5 py-4">
+        {JESUS.timeline.length > 0 && (
+          <div className="rounded-card border border-line bg-paper/70 px-3 pb-2.5 pt-3 shadow-[0_3px_9px_rgba(45,34,22,.07)]">
+            <h3 className="mb-1 text-[15px]">Linha do tempo de Jesus</h3>
+            <LifeTimeline milestones={JESUS.timeline} lit={lit} current={currentMilestone} tone="light" />
           </div>
         )}
+
+        {(lessons.length > 0 || from > 0 || showPast) && (
+          <div>
+            <h3 className="mb-2 px-0.5 text-[16px]">Lições da trilha</h3>
+            {(from > 0 || showPast) && (
+              <button type="button" onClick={() => setShowPast((value) => !value)} aria-expanded={showPast} className="mb-2 min-h-11 rounded-btn border border-line px-3 text-[13px] font-semibold text-ink-2">
+                {showPast ? 'Recolher dias anteriores' : `Ver dias anteriores (${from})`}
+              </button>
+            )}
+            <ol className="space-y-1.5">
+              {lessons.map((day) => {
+                const done = isDayCompleted(progress, day.n, JESUS.id)
+                const open = isDayUnlocked(progress, day.n, today, JESUS.id)
+                const published = day.status === 'publicado'
+                return (
+                  <li key={day.n}>
+                    <button
+                      type="button"
+                      onClick={() => onTapDay(day.n)}
+                      aria-label={`Dia ${day.n}: ${day.titulo} (${done ? 'concluído' : open ? 'disponível' : 'bloqueado'})`}
+                      className="flex w-full items-center gap-2.5 rounded-xl border border-line/80 bg-paper/45 px-2.5 py-2 text-left shadow-[0_3px_9px_rgba(45,34,22,.07)]"
+                    >
+                      <span className={`relative h-10 w-10 flex-none overflow-hidden rounded-lg bg-ink ${open ? '' : 'grayscale opacity-65'}`} aria-hidden="true">
+                        <CoverImage pictures={dayCovers(JESUS, day.n)} small className="h-full w-full object-cover" />
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <small className="block text-[10px] font-bold uppercase leading-tight tracking-[0.075em] text-ember-ink">
+                          Dia {day.n}{day.fase ? ` · ${day.fase}` : ''}
+                          {!published && import.meta.env.DEV ? ' · Em revisão' : ''}
+                        </small>
+                        <strong className="mt-0.5 block font-display text-[14px] font-semibold leading-tight text-ink">{day.titulo}</strong>
+                        {day.passagens && <span className="mt-0.5 block text-[11px] leading-tight text-ink-3">{day.passagens}</span>}
+                      </span>
+                      <span className={`grid h-7 w-7 flex-none place-items-center rounded-full ${done ? 'bg-olive-soft text-olive' : 'bg-paper-2 text-ink-2'}`} aria-hidden="true">
+                        {done ? <CheckIcon size={14} /> : open ? <span className="text-lg leading-none">›</span> : <LockIcon size={13} />}
+                      </span>
+                    </button>
+                  </li>
+                )
+              })}
+            </ol>
+          </div>
+        )}
+        {remaining > 0 && <p className="px-0.5 text-xs text-ink-3">+ {remaining} dias pela frente</p>}
       </div>
     </section>
   )

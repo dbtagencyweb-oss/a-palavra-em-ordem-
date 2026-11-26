@@ -1,6 +1,7 @@
 import { defineConfig, devices } from '@playwright/test'
 
 const PORT = 5199
+const devUrl = process.env.PAO_E2E_URL
 
 export default defineConfig({
   testDir: './e2e',
@@ -8,7 +9,7 @@ export default defineConfig({
   expect: { timeout: 8000 },
   reporter: [['list']],
   use: {
-    baseURL: `http://localhost:${PORT}`,
+    baseURL: devUrl ?? `http://localhost:${PORT}`,
     // Reference width from CLAUDE.md: 390 px.
     ...devices['iPhone 13'],
     browserName: 'chromium',
@@ -16,7 +17,7 @@ export default defineConfig({
     trace: 'retain-on-failure',
     actionTimeout: 15_000,
   },
-  webServer: {
+  webServer: devUrl ? undefined : {
     command: `npm run dev -- --port ${PORT} --strictPort`,
     url: `http://localhost:${PORT}`,
     reuseExistingServer: false,

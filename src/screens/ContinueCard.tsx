@@ -16,29 +16,31 @@ interface Props {
   sub: string
   icon: ReactNode
   iconDone: boolean
+  docked?: boolean
   /** The day's own covers (best first). Without them, the era picture of `day`. */
   pictures?: Picture[]
   onClick(): void
 }
 
-export function ContinueCard({ day, eyebrow, title, sub, icon, iconDone, pictures, onClick }: Props) {
+export function ContinueCard({ day, eyebrow, title, sub, icon, iconDone, docked = false, pictures, onClick }: Props) {
   const era = eraOf(day)
   const sentinel = useRef<HTMLDivElement>(null)
-  const [floating, setFloating] = useState(true)
+  const [atFold, setAtFold] = useState(true)
+  const floating = !docked && atFold
   const [thumbOk, setThumbOk] = useState(true)
 
   // Floating = its own place in the page (marked by the sentinel just below it) is under the fold.
   useEffect(() => {
     const el = sentinel.current
-    if (!el || typeof IntersectionObserver === 'undefined') return
-    const io = new IntersectionObserver(([e]) => setFloating(!e.isIntersecting && e.boundingClientRect.top > 0))
+    if (docked || !el || typeof IntersectionObserver === 'undefined') return
+    const io = new IntersectionObserver(([e]) => setAtFold(!e.isIntersecting && e.boundingClientRect.top > 0))
     io.observe(el)
     return () => io.disconnect()
-  }, [])
+  }, [docked])
 
   return (
     <>
-      <div className={`continue-glow sticky bottom-4 z-[6] mx-7 -mt-11 rounded-card ${floating ? 'is-floating' : ''}`}>
+      <div className={`continue-glow mx-7 rounded-card ${docked ? 'mt-3' : 'sticky bottom-4 z-[6] -mt-11'} ${floating ? 'is-floating' : ''}`}>
         <button
           type="button"
           onClick={onClick}

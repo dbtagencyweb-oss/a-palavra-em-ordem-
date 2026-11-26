@@ -27,7 +27,7 @@ export function DiagnosisScreen({ initial, onBack, onNext }: Props) {
                 role="radio"
                 aria-checked={sel}
                 onClick={() => setSelected(o.id)}
-                className={`mb-2.5 flex w-full items-center gap-3.5 rounded-btn border-[1.5px] p-4 text-left text-[15px] font-medium transition-colors ${
+                className={`mb-2.5 flex w-full items-center gap-3.5 rounded-btn border-[1.5px] p-4 text-left text-[15px] font-medium shadow-[0_2px_7px_rgba(46,34,20,0.06)] transition-colors ${
                   sel ? 'border-ink bg-white' : 'border-line bg-card'
                 }`}
               >

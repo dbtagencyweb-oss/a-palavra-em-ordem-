@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { trilha } from '../content'
+import { eraOf } from '../ui/eras'
 import type { Dia } from '../content/types'
 import { SymbolEmblem } from '../media/SymbolEmblem'
 import { useProgress } from '../store/ProgressContext'
@@ -16,7 +17,7 @@ interface Props {
   onBack(): void
 }
 
-/** Symbols: unlocked ones in gold, the rest as silhouettes. Tapping opens the meaning. */
+/** Unlocked symbols use their era palette. Tapping opens the meaning. */
 export function CollectionScreen({ onBack }: Props) {
   const { progress } = useProgress()
   const toast = useToast()
@@ -54,7 +55,7 @@ export function CollectionScreen({ onBack }: Props) {
         {open && (
           <>
             <div className="mx-auto mb-4 w-fit">
-              <SymbolEmblem midia={open.simbolo.midia} unlocked size={112} />
+              <SymbolEmblem midia={open.simbolo.midia} unlocked size={112} era={eraOf(open.n)} />
             </div>
             <div className="eyebrow eyebrow-dark">
               Dia {open.n} · {open.lugar}
@@ -75,17 +76,23 @@ export function CollectionScreen({ onBack }: Props) {
 
 function Tile({ day, index, unlocked, onOpen, onLocked }: { day: Dia; index: number; unlocked: boolean; onOpen(): void; onLocked(): void }) {
   const m = useListItemMotion(index, 0.05)
+  const era = eraOf(day.n)
   return (
     <motion.li {...m}>
       <button
         type="button"
         onClick={unlocked ? onOpen : onLocked}
         aria-label={unlocked ? `${day.simbolo.nome}, Dia ${day.n}` : `Símbolo do Dia ${day.n}, bloqueado`}
-        className={`flex w-full flex-col items-center gap-3 rounded-card p-4 ${unlocked ? 'bg-ink text-paper' : 'border border-line bg-paper-2 text-ink-3'}`}
+        className={`flex w-full flex-col items-center gap-3 rounded-card border p-4 ${unlocked ? 'shadow-sm' : 'border-line bg-paper-2 text-ink-3'}`}
+        style={unlocked ? {
+          background: `linear-gradient(150deg, ${era.mid}70, transparent 78%), ${era.deep}`,
+          borderColor: `${era.mid}A6`,
+          color: era.light,
+        } : undefined}
       >
-        <SymbolEmblem midia={day.simbolo.midia} unlocked={unlocked} size={88} />
+        <SymbolEmblem midia={day.simbolo.midia} unlocked={unlocked} size={88} era={era} />
         <span className="text-center">
-          <small className={`block text-[10.5px] font-bold uppercase tracking-[0.12em] ${unlocked ? 'text-gold' : 'text-gold-ink'}`}>Dia {day.n}</small>
+          <small className={`block text-[10.5px] font-bold uppercase tracking-[0.12em] ${unlocked ? 'opacity-85' : 'text-gold-ink'}`}>Dia {day.n}</small>
           <strong className="mt-0.5 block font-display text-[15px] font-semibold">{unlocked ? day.simbolo.nome : '?'}</strong>
         </span>
       </button>

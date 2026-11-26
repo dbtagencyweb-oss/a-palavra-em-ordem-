@@ -83,7 +83,7 @@ test('Trilha 1 inteira, do Dia 1 ao Dia 7', async ({ page }) => {
   page.on('pageerror', (e) => errors.push(e.message))
   page.on('dialog', (d) => d.accept())
 
-  await page.goto('/')
+  await page.goto('/?mapa=classico')
   await page.getByRole('button', { name: 'Começar minha jornada' }).click()
   // First-time cinema intro (placeholder until intro-luz lands): skip it.
   await expect(page.getByTestId('intro')).toBeVisible()
