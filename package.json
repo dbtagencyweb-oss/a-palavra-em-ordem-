@@ -23,6 +23,7 @@
     "print:export": "node scripts/print-export.mjs",
     "print:upload": "node scripts/print-upload.mjs",
     "audio:generate": "node scripts/audio/generate.mjs",
+    "audio:bible": "node scripts/audio/bible.mjs",
     "audio:upload": "node scripts/audio/upload.mjs"
   },
   "dependencies": {

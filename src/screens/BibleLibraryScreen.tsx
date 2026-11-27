@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react'
 import biblioteca from '../../content/biblioteca.json'
-import { BookCard } from '../cards/BookCard'
+import { BookCard, BookNavigation, type BookPassage } from '../cards/BookCard'
 import { livros } from '../content'
 import { parseBibleLookup } from '../content/readingLink'
 import type { Livro } from '../content/types'
@@ -64,7 +64,7 @@ export function BibleLibraryScreen({ initialTab = 'ordem', onBack, onOpenDay, on
   const [tab, setTab] = useState<Tab>(initialTab)
   const [activeGroupId, setActiveGroupId] = useState(biblioteca.grupos[0].id)
   const [bookIndex, setBookIndex] = useState<number | null>(null)
-  const [readerOpen, setReaderOpen] = useState(false)
+  const [bookReading, setBookReading] = useState<{ passage?: BookPassage } | null>(null)
   const [query, setQuery] = useState('')
   const [passage, setPassage] = useState<ReturnType<typeof parseBibleLookup>>(null)
   const lookup = useMemo(() => parseBibleLookup(query), [query])
@@ -117,14 +117,12 @@ export function BibleLibraryScreen({ initialTab = 'ordem', onBack, onOpenDay, on
           <span className="text-[13px] font-semibold text-ink-3">Biblioteca da Bíblia</span>
         </header>
         <div className="px-5 pb-6 pt-2">
-          <BookCard livro={selectedBook} onRead={() => setReaderOpen(true)} />
-          <nav className="mt-6 grid grid-cols-[1fr_1.4fr_1fr] gap-2" aria-label="Navegação entre livros">
-            <button type="button" className="btn btn-ghost border-[1.5px] border-line" disabled={bookIndex === 0} onClick={() => goToBook(bookIndex - 1)} aria-label="Livro anterior">←</button>
-            <button type="button" className="btn" onClick={() => setBookIndex(null)}>Voltar à Biblioteca</button>
-            <button type="button" className="btn btn-ghost border-[1.5px] border-line" disabled={bookIndex === livros.length - 1} onClick={() => goToBook(bookIndex + 1)} aria-label="Próximo livro">→</button>
-          </nav>
+          <BookCard key={selectedBook.id} livro={selectedBook} onRead={(passage) => setBookReading({ passage })} />
+          <BookNavigation index={bookIndex} total={livros.length} onIndex={goToBook}
+            onClose={() => setBookIndex(null)} closeLabel="Voltar à Biblioteca" className="mt-6" />
         </div>
-        <BibleReader key={selectedBook.id} book={selectedBook} open={readerOpen} onClose={() => setReaderOpen(false)} />
+        <BibleReader key={selectedBook.id} book={selectedBook} open={!!bookReading}
+          onClose={() => setBookReading(null)} passage={bookReading?.passage} />
       </section>
     )
   }
@@ -153,7 +151,7 @@ export function BibleLibraryScreen({ initialTab = 'ordem', onBack, onOpenDay, on
 
       {tab === 'mapa' && (
         <div role="tabpanel" className="px-5 pb-6 pt-4">
-          <ProgressSummary books={exploredBooks.size} groups={exploredGroups.size} />
+          <p className="text-center text-xs font-semibold text-ink-2">{exploredGroups.size} de {biblioteca.grupos.length} grupos explorados</p>
 
           <div className="relative mx-auto mt-3 h-[350px] max-w-[350px]" aria-label="Mapa dos oito grupos de livros da Bíblia">
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
@@ -286,10 +284,7 @@ export function BibleLibraryScreen({ initialTab = 'ordem', onBack, onOpenDay, on
 
       {tab === 'progresso' && (
         <div role="tabpanel" className="pt-4">
-          <div className="px-5"><ProgressSummary books={exploredBooks.size} groups={exploredGroups.size} /></div>
-          <div className="mt-5 border-t border-line pt-5">
-            <BibliaScreen embedded onBack={onBack} onOpenDay={onOpenDay} onOffer={onOffer} />
-          </div>
+          <BibliaScreen embedded onBack={onBack} onOpenDay={onOpenDay} onOffer={onOffer} />
         </div>
       )}
 
@@ -310,19 +305,5 @@ function FilterButton({ active, onClick, children }: { active: boolean; onClick(
     <button type="button" aria-pressed={active} onClick={onClick} className={`min-h-11 flex-1 rounded-xl border px-2 text-[11px] font-bold leading-tight ${active ? 'border-ink bg-ink text-paper' : 'border-line bg-card text-ink-2'}`}>
       {children}
     </button>
-  )
-}
-
-function ProgressSummary({ books, groups }: { books: number; groups: number }) {
-  return (
-    <div className="rounded-card bg-card p-4 shadow-card" aria-label={`${books} de 66 livros explorados e ${groups} de 8 grupos explorados`}>
-      <div className="flex items-end justify-between gap-3">
-        <span><strong className="font-display text-[28px] leading-none">{books}</strong> <span className="text-[13px] text-ink-3">de 66 livros explorados</span></span>
-        <span className="text-[12px] font-semibold text-gold-ink">{groups}/8 grupos</span>
-      </div>
-      <div className="mt-3 h-2 overflow-hidden rounded-full bg-line" role="progressbar" aria-valuemin={0} aria-valuemax={66} aria-valuenow={books}>
-        <div className="h-full rounded-full bg-[linear-gradient(90deg,#B8893A,#E2C580)] transition-[width] duration-500" style={{ width: `${(books / 66) * 100}%` }} />
-      </div>
-    </div>
   )
 }

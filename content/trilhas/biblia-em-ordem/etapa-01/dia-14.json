@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 14,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 22",
@@ -11,5 +11,32 @@
       "ate": 22
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d14-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 22",
+      "texto": "Leia o episódio de Abraão e Isaque até o fim. Observe o momento em que Deus o interrompe e a provisão que muda o desfecho."
+    },
+    {
+      "id": "origens-d14-contexto",
+      "tipo": "contexto",
+      "texto": "Isaque é o filho esperado e o portador da promessa. É justamente por isso que a ordem dada a Abraão torna a cena tão difícil. O relato apresenta o episódio como uma prova, registra a interrupção do sacrifício e mostra um carneiro oferecido no lugar de Isaque."
+    },
+    {
+      "id": "origens-d14-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 22:7–14, Isaque pergunta pelo animal, Abraão fala em provisão e, mais adiante, o carneiro aparece. Observe como o nome que Abraão dá ao lugar guarda a memória daquele desfecho."
+    },
+    {
+      "id": "origens-d14-cristo",
+      "tipo": "cristo",
+      "texto": "Hebreus 11:17–19 entende a atitude de Abraão à luz de sua confiança no Deus que pode ressuscitar. Em Romanos 8:32, Paulo fala de Deus entregando seu próprio Filho por nós. As duas passagens ajudam a pensar no que Deus provê e no que a ressurreição torna possível."
+    },
+    {
+      "id": "origens-d14-pergunta",
+      "tipo": "pergunta",
+      "texto": "Qual ponto dessa história você achou mais difícil? Escreva a sua pergunta e uma observação do texto que você gostaria de guardar."
+    }
+  ]
 }

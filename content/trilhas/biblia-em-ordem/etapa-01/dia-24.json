@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 24,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 40–41",
@@ -11,5 +11,32 @@
       "ate": 41
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d24-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 40–41",
+      "texto": "Acompanhe os sonhos na prisão e depois os sonhos do faraó. Observe o que José faz com a interpretação que recebe."
+    },
+    {
+      "id": "origens-d24-contexto",
+      "tipo": "contexto",
+      "texto": "Na prisão, José interpreta os sonhos do copeiro e do padeiro, mas o copeiro se esquece dele. Dois anos depois, o faraó sonha, e José é chamado. Ele anuncia anos de fartura seguidos de fome e propõe um plano de armazenamento. O faraó confia a ele a administração dessa preparação."
+    },
+    {
+      "id": "origens-d24-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 41:25–36, diferencie a interpretação dos sonhos da resposta que José propõe. O que se sabe sobre o futuro? Que decisão ele recomenda tomar enquanto ainda há fartura?"
+    },
+    {
+      "id": "origens-d24-cristo",
+      "tipo": "cristo",
+      "texto": "Filipenses 2:5–11 apresenta Jesus assumindo a condição de servo e sendo exaltado por Deus depois de sua obediência até a cruz. José também passa de uma posição humilhante a outra de autoridade. Essa mudança de posição ajuda a perceber a força do movimento que Paulo descreve, centrado na entrega de Cristo."
+    },
+    {
+      "id": "origens-d24-pergunta",
+      "tipo": "pergunta",
+      "texto": "Que recurso você tem hoje e poderia organizar melhor para ajudar alguém mais adiante? Pense em algo prático que já esteja ao seu alcance."
+    }
+  ]
 }

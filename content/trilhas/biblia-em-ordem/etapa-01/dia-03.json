@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 3,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 4–5",
@@ -11,5 +11,32 @@
       "ate": 5
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d3-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 4–5",
+      "texto": "Comece pela história de Caim e Abel. Em seguida, leia a genealogia de Gênesis 5 e observe o que se repete e o que chama a atenção."
+    },
+    {
+      "id": "origens-d3-contexto",
+      "tipo": "contexto",
+      "texto": "Fora do Éden, a ruptura alcança a convivência entre irmãos. Deus fala com Caim antes que ele ataque Abel e volta a procurá-lo depois. Gênesis 5 acompanha outra linhagem, a de Sete, desde Adão até Noé. Assim o livro passa da primeira família para uma história que atravessa gerações."
+    },
+    {
+      "id": "origens-d3-observar",
+      "tipo": "observar",
+      "texto": "Na genealogia, muitas vidas terminam com a notícia da morte. Quando chegar a Enoque, observe como o narrador descreve sua relação com Deus e como encerra o relato de sua vida (Gênesis 5:21–24)."
+    },
+    {
+      "id": "origens-d3-cristo",
+      "tipo": "cristo",
+      "texto": "Hebreus 12:24 aproxima a morte de Abel da obra de Jesus. Em Gênesis, o sangue de Abel clama por justiça. Em Hebreus, o sangue de Jesus anuncia algo melhor e está ligado à nova aliança. A morte de Cristo dá lugar à esperança de perdão e de reconciliação com Deus."
+    },
+    {
+      "id": "origens-d3-pergunta",
+      "tipo": "pergunta",
+      "texto": "Em que momento uma irritação recente começou a crescer? Qual atitude poderia ajudar você a lidar com ela antes que machuque alguém?"
+    }
+  ]
 }

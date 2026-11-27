@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 5,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 10–11",
@@ -11,5 +11,32 @@
       "ate": 11
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d5-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 10–11",
+      "texto": "Leia a lista de povos e depois acompanhe a construção da cidade e da torre em Babel. Termine observando qual família aparece no fim do capítulo 11."
+    },
+    {
+      "id": "origens-d5-contexto",
+      "tipo": "contexto",
+      "texto": "Gênesis 10 apresenta famílias que se tornam povos em diferentes terras. Em Babel, uma comunidade busca fazer um nome para si e evitar a dispersão. Depois de contar como a construção é interrompida, o livro acompanha a família de Sem até chegar a Abrão. O próximo passo da história passa por essa família."
+    },
+    {
+      "id": "origens-d5-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 11:4, os construtores dizem o que desejam alcançar. Qual peso o nome e a segurança têm no projeto deles? Guarde essa pergunta para comparar com a promessa que Deus fará a Abrão em Gênesis 12:2."
+    },
+    {
+      "id": "origens-d5-cristo",
+      "tipo": "cristo",
+      "texto": "Em Atos 2:5–11, judeus vindos de muitas regiões ouvem os discípulos falar das obras de Deus em suas próprias línguas. A cena ajuda a enxergar o alcance da notícia sobre Jesus. Pessoas de origens diferentes conseguem ouvi-la sem ter de abandonar a língua que conhecem."
+    },
+    {
+      "id": "origens-d5-pergunta",
+      "tipo": "pergunta",
+      "texto": "Quando o desejo de manter o controle dificulta escutar outras pessoas? Que conversa você poderia conduzir de um jeito diferente esta semana?"
+    }
+  ]
 }

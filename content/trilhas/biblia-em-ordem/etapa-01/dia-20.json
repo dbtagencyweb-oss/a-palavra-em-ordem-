@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 20,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 32–33",
@@ -11,5 +11,32 @@
       "ate": 33
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d20-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 32–33",
+      "texto": "Leia a preparação de Jacó para encontrar Esaú, a luta durante a noite e o reencontro dos irmãos. Observe o que acontece com o medo de Jacó."
+    },
+    {
+      "id": "origens-d20-contexto",
+      "tipo": "contexto",
+      "texto": "Jacó está voltando à terra e precisa reencontrar o irmão que enganou. Ele ora, envia presentes e, durante a noite, luta com alguém que o abençoa e lhe dá o nome Israel. Ao amanhecer, carrega uma marca da luta. Depois de tanta apreensão, Esaú corre para abraçá-lo."
+    },
+    {
+      "id": "origens-d20-observar",
+      "tipo": "observar",
+      "texto": "Observe o contraste entre Gênesis 32:6–12, quando Jacó imagina o que pode acontecer, e Gênesis 33:3–11, quando os irmãos se aproximam. Note o que Jacó faz e o que Esaú oferece por iniciativa própria."
+    },
+    {
+      "id": "origens-d20-cristo",
+      "tipo": "cristo",
+      "texto": "Em Mateus 5:23–24, Jesus chama seus discípulos a procurar reconciliação quando lembram que alguém tem algo contra eles. O reencontro de Jacó e Esaú mostra como esse passo pode exigir coragem de quem reconhece o dano e abertura de quem o recebeu."
+    },
+    {
+      "id": "origens-d20-pergunta",
+      "tipo": "pergunta",
+      "texto": "Existe uma conversa para a qual você precisa se preparar com honestidade e cuidado? Que gesto respeitoso seria possível, mesmo que a resposta da outra pessoa seja incerta?"
+    }
+  ]
 }

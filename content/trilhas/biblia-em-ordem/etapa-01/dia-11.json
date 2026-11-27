@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 11,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 16–17",
@@ -11,5 +11,32 @@
       "ate": 17
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d11-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 16–17",
+      "texto": "Leia o que acontece quando Sarai entrega Agar a Abrão. Depois, veja o que a aliança acrescenta à história dos dois e dos filhos que terão."
+    },
+    {
+      "id": "origens-d11-contexto",
+      "tipo": "contexto",
+      "texto": "Abrão e Sarai ainda esperam um filho. A decisão de usar Agar para gerar um herdeiro termina em conflito e ela foge. No deserto, Deus a encontra e lhe fala sobre Ismael. No capítulo 17, Abrão e Sarai recebem novos nomes. Deus promete o nascimento de Isaque e dá a circuncisão como sinal da aliança."
+    },
+    {
+      "id": "origens-d11-observar",
+      "tipo": "observar",
+      "texto": "Observe Gênesis 16:7–13 do ponto de vista de Agar. Quais perguntas ela ouve no deserto? O que a passagem mostra sobre a atenção de Deus à mulher que estava fora das decisões de Abrão e Sarai?"
+    },
+    {
+      "id": "origens-d11-cristo",
+      "tipo": "cristo",
+      "texto": "Em Gálatas 3:26–29, Paulo diz que quem pertence a Cristo faz parte da descendência de Abraão e recebe parte na promessa. A aliança acompanha uma família em Gênesis. Em Jesus, essa promessa alcança pessoas de muitas origens."
+    },
+    {
+      "id": "origens-d11-pergunta",
+      "tipo": "pergunta",
+      "texto": "Quando a pressa para resolver uma situação pode fazer você ignorar quem será afetado? Quem você poderia escutar antes de tomar uma decisão?"
+    }
+  ]
 }

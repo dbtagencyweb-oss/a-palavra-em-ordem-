@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 17,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 27",
@@ -11,5 +11,32 @@
       "ate": 27
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d17-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 27",
+      "texto": "Acompanhe o plano de Rebeca e Jacó e observe o que acontece quando Esaú chega. Leia até a decisão de mandar Jacó para longe."
+    },
+    {
+      "id": "origens-d17-contexto",
+      "tipo": "contexto",
+      "texto": "Isaque pretende abençoar Esaú, mas Rebeca ouve a conversa e ajuda Jacó a se passar pelo irmão. Jacó recebe a bênção. Quando o engano vem à tona, Esaú sofre e planeja se vingar. Rebeca manda Jacó embora até que a situação se acalme, e a família se divide."
+    },
+    {
+      "id": "origens-d17-observar",
+      "tipo": "observar",
+      "texto": "Volte a Gênesis 25:23 e compare a promessa feita a Rebeca com o que ela e Jacó fazem em Gênesis 27. Observe especialmente o custo da estratégia que escolhem: Jacó consegue a bênção, mas precisa deixar a casa."
+    },
+    {
+      "id": "origens-d17-cristo",
+      "tipo": "cristo",
+      "texto": "Em Romanos 9:10–12, Paulo lembra que Deus falou a Rebeca antes de seus filhos nascerem. Sua iniciativa vem antes das ações dos dois irmãos. Isso ajuda a ler Gênesis com cuidado: a promessa de Deus e o engano praticado pela família têm papéis diferentes na história."
+    },
+    {
+      "id": "origens-d17-pergunta",
+      "tipo": "pergunta",
+      "texto": "Quando as coisas parecem depender inteiramente de você, que atalhos se tornam tentadores? Qual caminho mais honesto ainda está aberto?"
+    }
+  ]
 }

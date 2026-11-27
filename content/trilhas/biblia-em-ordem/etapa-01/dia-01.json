@@ -1,8 +1,10 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 1,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 1–2",
+  "base": "Gênesis 1–2",
+  "lugar": "Éden",
   "leitura": "Gênesis 1–2",
   "capitulos": [
     {
@@ -11,5 +13,32 @@
       "ate": 2
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d1-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 1–2",
+      "texto": "Comece pela criação do mundo em Gênesis 1. Ao passar para Gênesis 2, repare como o relato se aproxima da vida humana no jardim."
+    },
+    {
+      "id": "origens-d1-contexto",
+      "tipo": "contexto",
+      "texto": "A história bíblica começa com Deus criando o mundo e vendo que sua obra é boa. O sétimo dia, abençoado por Deus, marca o descanso depois da criação. No Éden, o ser humano recebe alimento, companhia e uma tarefa. Guarde esse começo: ele ajuda a entender o que muda no próximo capítulo."
+    },
+    {
+      "id": "origens-d1-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 1:26–28, homem e mulher são criados à imagem de Deus e recebem uma responsabilidade sobre a criação. Em Gênesis 2:15, essa responsabilidade aparece numa tarefa concreta: cultivar e guardar o jardim. Que diferença faz ler essas duas passagens juntas?"
+    },
+    {
+      "id": "origens-d1-cristo",
+      "tipo": "cristo",
+      "texto": "João abre seu Evangelho com um eco de Gênesis: ele volta ao princípio para apresentar Jesus como a Palavra por meio de quem tudo foi criado. A Palavra se fez humana e viveu entre nós. Assim, João liga a chegada de Jesus à obra de Deus desde a criação (João 1:1–3,14)."
+    },
+    {
+      "id": "origens-d1-pergunta",
+      "tipo": "pergunta",
+      "texto": "Que pessoa, lugar ou tarefa está sob seus cuidados hoje? Que gesto concreto você pode fazer para cuidar melhor do que recebeu?"
+    }
+  ]
 }

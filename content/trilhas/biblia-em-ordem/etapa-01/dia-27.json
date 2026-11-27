@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 27,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 46–47",
@@ -11,5 +11,32 @@
       "ate": 47
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d27-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 46–47",
+      "texto": "Acompanhe Jacó na viagem ao Egito e no reencontro com José. Depois, leia o que a longa fome muda para a população egípcia."
+    },
+    {
+      "id": "origens-d27-contexto",
+      "tipo": "contexto",
+      "texto": "Em Berseba, Deus encoraja Jacó a descer ao Egito e promete acompanhá-lo. A família chega e se estabelece em Gósen. Enquanto isso, a fome se agrava. A administração de José mantém o fornecimento de alimento, e o relato também mostra como as terras e a produção passam a depender mais do faraó."
+    },
+    {
+      "id": "origens-d27-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 46:1–4, repare no que Deus promete a Jacó sobre a ida, a presença no Egito e o retorno. A viagem resolve uma necessidade imediata e prepara o cenário em que a próxima geração da família vai viver."
+    },
+    {
+      "id": "origens-d27-cristo",
+      "tipo": "cristo",
+      "texto": "Em Mateus 2:13–15, a família de Jesus também vai para o Egito, dessa vez para fugir da ameaça de Herodes. As circunstâncias são diferentes. Ler as duas viagens lado a lado ajuda a perceber como o Egito aparece, em dois momentos, como lugar de refúgio."
+    },
+    {
+      "id": "origens-d27-pergunta",
+      "tipo": "pergunta",
+      "texto": "Que tipo de ajuda torna uma mudança difícil mais suportável? Pense em quem mudou de casa, cidade ou trabalho e no que você poderia oferecer."
+    }
+  ]
 }

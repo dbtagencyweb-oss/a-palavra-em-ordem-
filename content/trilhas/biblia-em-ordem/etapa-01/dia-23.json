@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 23,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 38–39",
@@ -11,5 +11,32 @@
       "ate": 39
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d23-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 38–39",
+      "texto": "Leia primeiro a história de Judá e Tamar. Depois, volte a acompanhar José no Egito, da casa de Potifar até a prisão."
+    },
+    {
+      "id": "origens-d23-contexto",
+      "tipo": "contexto",
+      "texto": "A narrativa faz uma pausa na história de José para acompanhar Judá e Tamar. Depois que Judá deixa de cumprir sua obrigação com ela, Tamar age para obter o que lhe havia sido negado. Judá reconhece sua responsabilidade. No capítulo 39, José resiste à pressão na casa de Potifar e é preso sob uma acusação falsa."
+    },
+    {
+      "id": "origens-d23-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 38:24–26 e 39:13–20, repare como objetos são usados para sustentar acusações ou revelar o que aconteceu. Em um caso, os objetos levam Judá a admitir sua responsabilidade. No outro, a roupa de José é usada para sustentar uma acusação falsa."
+    },
+    {
+      "id": "origens-d23-cristo",
+      "tipo": "cristo",
+      "texto": "Mateus 1:3 inclui Tamar na genealogia de Jesus. Vale reconhecer o nome depois de ler Gênesis 38. O Evangelho abre espaço para a memória de uma mulher que precisou agir diante de uma injustiça dentro da família de Judá."
+    },
+    {
+      "id": "origens-d23-pergunta",
+      "tipo": "pergunta",
+      "texto": "Em que situação você poderia ouvir melhor alguém antes de concluir o que aconteceu? Que pergunta ajudaria a esclarecer o caso?"
+    }
+  ]
 }

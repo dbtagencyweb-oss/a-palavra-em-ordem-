@@ -1,9 +1,37 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 30,
   "formato": "leitura-guiada",
   "titulo": "Revisão: o mapa de Gênesis",
+  "base": "Gênesis 1:26–31; 12:1–3; 50:19–21",
   "leitura": null,
   "capitulos": [],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d30-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 1:26–31; Gênesis 12:1–3; Gênesis 50:19–21",
+      "texto": "Releia três trechos curtos para lembrar o começo da criação, o chamado de Abrão e as palavras de José no Egito. Hoje esses trechos servem à revisão da etapa."
+    },
+    {
+      "id": "origens-d30-contexto",
+      "tipo": "contexto",
+      "texto": "Gênesis começa com Deus criando e confiando o cuidado do mundo ao ser humano. Depois da ruptura no jardim, o pecado se espalha e atinge famílias e povos. Deus chama Abraão e faz uma promessa para todas as famílias da terra. O livro termina no Egito, com os descendentes de Abraão preservados durante a fome."
+    },
+    {
+      "id": "origens-d30-observar",
+      "tipo": "observar",
+      "texto": "Tente contar Gênesis em quatro momentos: criação, ruptura, promessa a Abraão e família no Egito. Diga cada um com suas palavras. Depois relembre onde Jó entrou no roteiro e que pergunta sobre o sofrimento o livro acrescentou à etapa."
+    },
+    {
+      "id": "origens-d30-cristo",
+      "tipo": "cristo",
+      "texto": "João 1:1–3 liga Jesus à criação. Gálatas 3:8,14 liga Jesus à bênção prometida a Abraão. Coloque essas duas passagens ao lado da revisão de hoje: o Novo Testamento volta ao começo da Bíblia para explicar por que a boa notícia de Cristo alcança todos os povos."
+    },
+    {
+      "id": "origens-d30-pergunta",
+      "tipo": "pergunta",
+      "texto": "Se uma pessoa perguntasse por onde começa a história da Bíblia, como você explicaria Gênesis em três frases? Escreva do seu jeito e guarde uma pergunta para levar à próxima etapa."
+    }
+  ]
 }

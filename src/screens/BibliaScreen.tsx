@@ -1,9 +1,9 @@
 // A Bíblia em Ordem: the chronological plan in monthly stages (docs/07, Prompt 4).
-// Chapters read so far (of the whole Bible), a mini map with the book and era the person is in,
+// A mini map with the book and era the person is in,
 // the grid of stages (open ones and the ones coming, with their expected date) and the days of the
 // current stage. Without access: the plan is shown locked, with the Offer.
 import { useAccess } from '../access/AccessContext'
-import { BIBLIA, bibliaPlace, chaptersOfDay, ETAPAS, MAPA, TOTAL_CHAPTERS } from '../content/trails'
+import { BIBLIA, bibliaPlace, chaptersOfDay, ETAPAS, MAPA } from '../content/trails'
 import { completedOf, isDayCompleted, isDayUnlocked } from '../game/progress'
 import { imageSmallPath } from '../media/paths'
 import { useProgress } from '../store/ProgressContext'
@@ -26,7 +26,6 @@ export function BibliaScreen({ onBack, onOpenDay, onOffer, embedded = false }: P
   const toast = useToast()
   const access = podeAcessar('biblia-em-ordem')
   const completed = completedOf(progress, BIBLIA.id)
-  const read = BIBLIA.outline.filter((d) => completed[d.n]).reduce((s, d) => s + chaptersOfDay(d), 0)
   const next = BIBLIA.visible.find((d) => !completed[d.n]) ?? null
   const place = bibliaPlace(next?.n ?? BIBLIA.visible.at(-1)?.n ?? 1)
   const etapaAtual = ETAPAS.find((e) => e.dias.some((d) => d.n === next?.n)) ?? ETAPAS.find((e) => e.aberta) ?? ETAPAS[0]
@@ -47,19 +46,8 @@ export function BibliaScreen({ onBack, onOpenDay, onOffer, embedded = false }: P
         </button>
       </header>}
       <div className="px-5 pb-2">
-        {embedded ? <h3 className="text-[22px] leading-tight">Seu plano cronológico</h3> : <h2 className="text-[28px] leading-tight">{BIBLIA.titulo}</h2>}
-        <p className="mt-1 text-sm text-ink-2">{BIBLIA.subtitulo}.</p>
-      </div>
-
-      {/* Chapters read, of the whole Bible. */}
-      <div className="mx-5 mt-3 rounded-card bg-card p-4 shadow-card" role="group" aria-label="Capítulos lidos">
-        <div className="flex items-baseline justify-between">
-          <strong className="font-display text-[30px] leading-none">{read}</strong>
-          <span className="text-xs font-semibold text-ink-3">de {TOTAL_CHAPTERS.toLocaleString('pt-BR')} capítulos da Bíblia</span>
-        </div>
-        <div className="mt-3 h-2 overflow-hidden rounded-full bg-line" role="progressbar" aria-valuemin={0} aria-valuemax={TOTAL_CHAPTERS} aria-valuenow={read}>
-          <div className="h-full rounded-full bg-[linear-gradient(90deg,#B8893A,#E2C580)]" style={{ width: `${Math.max(read ? 1.5 : 0, (read / TOTAL_CHAPTERS) * 100)}%` }} />
-        </div>
+        {embedded ? <h3 className="text-[22px] leading-tight">Lições guiadas</h3> : <h2 className="text-[28px] leading-tight">{BIBLIA.titulo}</h2>}
+        <p className="mt-1 text-sm text-ink-2">Siga a leitura por etapas, com contexto e reflexão.</p>
       </div>
 
       {/* Mini map: the seven eras of the story, with where the reading is now. */}
@@ -83,6 +71,7 @@ export function BibliaScreen({ onBack, onOpenDay, onOffer, embedded = false }: P
           <span>{MAPA.outline[0]?.fase}</span>
           <span>{MAPA.outline.at(-1)?.fase}</span>
         </div>
+        {next && <p className="mt-3 border-t border-paper/15 pt-2.5 text-xs text-paper/85">Próximo dia · {next.titulo}</p>}
       </div>
 
       {/* Stages. */}
@@ -101,7 +90,7 @@ export function BibliaScreen({ onBack, onOpenDay, onOffer, embedded = false }: P
               <strong className="block font-display text-lg leading-tight text-ink">{e.nome}</strong>
               <span className="block text-[12px] leading-snug">{e.livros}</span>
               <span className="mt-2 block text-[12px] font-semibold">
-                {e.aberta ? `${done} de ${e.dias.length} dias` : e.previsao ? `Em breve · ${fmt(e.previsao)}` : 'Em breve'}
+                {e.aberta ? `${done} de ${e.dias.length} dias registrados` : e.previsao ? `Em breve · ${fmt(e.previsao)}` : 'Em breve'}
               </span>
             </li>
           )

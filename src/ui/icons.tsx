@@ -77,6 +77,12 @@ export const CloseIcon = ({ size = 20, className }: P) => (
   </Svg>
 )
 
+export const DownloadIcon = ({ size = 20, className }: P) => (
+  <Svg size={size} className={className}>
+    <path d="M12 3v11m-4-4 4 4 4-4M5 15v4a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-4" />
+  </Svg>
+)
+
 export const ArrowIcon = ({ size = 20, className = 'text-white' }: P) => (
   <Svg size={size} className={className} stroke={2.2}>
     <path d="M5 12h13.5M13 6.5l5.5 5.5-5.5 5.5" />
@@ -87,6 +93,12 @@ export const PlayIcon = ({ size = 20 }: P) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
     <path d="M8.5 6.3v11.4c0 .9 1 1.4 1.7.9l8.8-5.7c.7-.4.7-1.4 0-1.8l-8.8-5.7c-.7-.5-1.7 0-1.7.9z" />
   </svg>
+)
+
+export const PauseIcon = ({ size = 20 }: P) => (
+  <Svg size={size} stroke={2.8}>
+    <path d="M9 6v12m6-12v12" />
+  </Svg>
 )
 
 export const CheckIcon = ({ size = 26, className }: P) => (
@@ -192,11 +204,10 @@ export const NavDiary = ({ active }: NavP) => (
   </Svg>
 )
 
-/** A speech bubble with lines: conversation with the guide. */
-export const NavGuide = ({ active }: NavP) => (
+export const NavStudies = ({ active }: NavP) => (
   <Svg className="h-[22px] w-[22px]">
-    <path d="M5 4.5h14a1.5 1.5 0 0 1 1.5 1.5v9.5A1.5 1.5 0 0 1 19 17h-8.5l-4.5 3.5V17H5a1.5 1.5 0 0 1-1.5-1.5V6A1.5 1.5 0 0 1 5 4.5z" {...accent(active)} />
-    <path d="M8 9.3h8M8 12.6h5" />
+    <path d="M12 6.5C10.3 5.2 7.7 4.6 4 4.8v13c3.7-.2 6.3.4 8 1.7 1.7-1.3 4.3-1.9 8-1.7v-13c-3.7-.2-6.3.4-8 1.7z" {...accent(active)} />
+    <path d="M12 6.5v13" />
   </Svg>
 )
 

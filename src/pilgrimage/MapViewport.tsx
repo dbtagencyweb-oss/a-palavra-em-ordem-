@@ -35,6 +35,7 @@ type Props = {
   busy: boolean
   reduced: boolean
   onIncomingShown(): void
+  discoveries: ReactNode
   children: ReactNode
 }
 
@@ -42,9 +43,10 @@ const center = (size: Size): Point => [size.width / 2, size.height / 2]
 const distance = (a: Point, b: Point) => Math.hypot(a[0] - b[0], a[1] - b[1])
 const middle = (a: Point, b: Point): Point => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]
 
-export const MapViewport = forwardRef<MapControls, Props>(function MapViewport({ frame, incoming, busy, reduced, onIncomingShown, children }, ref) {
+export const MapViewport = forwardRef<MapControls, Props>(function MapViewport({ frame, incoming, busy, reduced, onIncomingShown, discoveries, children }, ref) {
   const root = useRef<HTMLDivElement>(null)
   const stage = useRef<HTMLDivElement>(null)
+  const discoveryLayer = useRef<HTMLDivElement>(null)
   const [size, setSize] = useState<Size>({ width: 1, height: 1 })
   const pose = useRef(frame.initial)
   const request = useRef(0)
@@ -63,6 +65,11 @@ export const MapViewport = forwardRef<MapControls, Props>(function MapViewport({
     el.style.transform = `translate3d(${actual.x}px,${actual.y}px,0) scale(${actual.camera.zoom})`
     const inverse = String(1 / actual.camera.zoom)
     if (el.style.getPropertyValue('--map-pin-inverse') !== inverse) el.style.setProperty('--map-pin-inverse', inverse)
+    const overlay = discoveryLayer.current
+    if (!overlay) return
+    overlay.style.transform = `translate3d(${actual.x}px,${actual.y}px,0)`
+    overlay.style.width = `${actual.width * actual.camera.zoom}px`
+    overlay.style.height = `${actual.height * actual.camera.zoom}px`
   }
 
   function paintNextFrame(camera: Camera) {
@@ -235,6 +242,9 @@ export const MapViewport = forwardRef<MapControls, Props>(function MapViewport({
       <div ref={stage} className="pilgrimage-stage" style={{ width, height }}>
         {size.width > 1 && <MapImage key={frame.asset.preview.path} asset={frame.asset} width={width} />}
         {!incoming && children}
+      </div>
+      <div ref={discoveryLayer} className="pilgrimage-discoveries">
+        {!incoming && discoveries}
       </div>
       {incoming && incomingSpace && (
         <div

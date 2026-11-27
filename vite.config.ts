@@ -48,9 +48,9 @@ export default defineConfig({
         // App shell + all lesson content (the JSON is bundled into the JS) work offline from the first visit.
         globPatterns: ['**/*.{js,css,html,png,svg,woff2}'],
         // The Supabase client is a lazy chunk: downloaded only when account features are used.
-        // Media stays on demand (runtime cache below); the 1024px symbol PNG masters are never precached.
+        // Large illustrations stay on demand, including the character portraits.
         // The landing page (/lp/) and its GSAP/Lenis chunks are not part of the app shell.
-        globIgnores: ['**/supabase-*.js', 'media/**', 'lp/**', '**/lp-*.js', '**/lp-*.css'],
+        globIgnores: ['**/supabase-*.js', 'media/**', 'persons/**', 'lp/**', '**/lp-*.js', '**/lp-*.css'],
         navigateFallback: '/index.html',
         navigateFallbackDenylist: [/^\/lp(\/|$)/],
         importScripts: ['/reminder-sw.js'],

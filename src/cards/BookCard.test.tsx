@@ -1,12 +1,12 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { getLivro } from '../content'
 import type { Livro } from '../content/types'
 import { BookCard } from './BookCard'
 
 describe('BookCard', () => {
   it('shows only filled fields (current data: name, block, chapters, map days)', () => {
-    render(<BookCard livro={getLivro('lv')!} />)
+    render(<BookCard livro={getLivro('lv')!} onRead={vi.fn()} />)
     expect(screen.getByRole('heading', { name: 'Levítico' })).toBeInTheDocument()
     expect(screen.getByText('27')).toBeInTheDocument()
     expect(screen.getAllByText(/Pentateuco/).length).toBeGreaterThan(0)
@@ -29,7 +29,8 @@ describe('BookCard', () => {
       personagens: ['Pessoa A', { nome: 'Pessoa B' }],
       curiosidades: ['Curiosidade de teste.'],
     }
-    render(<BookCard livro={livro} />)
+    const onRead = vi.fn()
+    render(<BookCard livro={livro} onRead={onRead} />)
     expect(screen.getByText('1213')).toBeInTheDocument()
     expect(screen.getByText('Texto de teste.')).toBeInTheDocument()
     expect(screen.getByText('Autor de teste')).toBeInTheDocument()
@@ -40,6 +41,10 @@ describe('BookCard', () => {
     expect(screen.queryByText('Resumo de teste.')).toBeNull()
     fireEvent.click(event)
     expect(screen.getByText('Resumo de teste.')).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /Abrir o texto/ })).toHaveAttribute('href', expect.stringContaining('EXO.3'))
+    fireEvent.click(screen.getByRole('button', { name: 'Abrir o texto' }))
+    expect(onRead).toHaveBeenCalledWith({
+      reference: 'Êxodo 3:1-10',
+      chapters: [{ book: getLivro('ex')!, chapter: 3, firstVerse: 1, lastVerse: 10 }],
+    })
   })
 })

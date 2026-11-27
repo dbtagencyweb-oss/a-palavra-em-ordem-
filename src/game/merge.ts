@@ -31,6 +31,7 @@ export function mergeProgress(local: Progress, remote: Progress): Progress {
     diagnosis: local.diagnosis ?? remote.diagnosis,
     completedDays,
     trails: mergeTrails(local.trails ?? {}, remote.trails ?? {}),
+    readChapters: union(remote.readChapters ?? [], local.readChapters ?? []),
     streak: lamp.streak,
     lastStreakDate: lamp.lastStreakDate,
     ...grace,

@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 25,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 42–43",
@@ -11,5 +11,32 @@
       "ate": 43
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d25-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 42–43",
+      "texto": "Leia as duas viagens ao Egito. Repare no que os irmãos recordam sobre José e em quem assume a responsabilidade por Benjamim."
+    },
+    {
+      "id": "origens-d25-contexto",
+      "tipo": "contexto",
+      "texto": "A fome leva os irmãos de José ao Egito em busca de alimento. José os reconhece, mas eles ainda não o identificam. A primeira visita termina com Simeão detido e com a exigência de trazer Benjamim. Quando a necessidade os obriga a voltar, Judá se compromete diante de Jacó a cuidar do irmão mais novo."
+    },
+    {
+      "id": "origens-d25-observar",
+      "tipo": "observar",
+      "texto": "Compare a conversa dos irmãos em Gênesis 42:21–22 com o compromisso de Judá em 43:8–10. Em um momento eles reconhecem o que fizeram com José. No outro, Judá se dispõe a responder pelo que acontecer com Benjamim."
+    },
+    {
+      "id": "origens-d25-cristo",
+      "tipo": "cristo",
+      "texto": "Em Lucas 3:8–16, João Batista prepara o caminho para Jesus pedindo atitudes que mostrem arrependimento. Quem ouve recebe exemplos que cabem no dia a dia. A história dos irmãos de José ajuda a acompanhar essa passagem do reconhecimento de uma culpa para a responsabilidade por outra pessoa."
+    },
+    {
+      "id": "origens-d25-pergunta",
+      "tipo": "pergunta",
+      "texto": "Qual seria um gesto verificável de mudança diante de um erro que você já reconheceu? Anote algo que possa ser percebido por quem foi afetado."
+    }
+  ]
 }

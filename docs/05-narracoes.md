@@ -149,3 +149,21 @@ Leia o CLAUDE.md e o docs/05-narracoes.md. Vamos integrar narração em voz no a
 1. `narr-d6-tumulo`: é a cena mais forte. Use para testar e escolher a voz.
 2. `narr-intro-luz` e `narr-d1-labirinto`: são as primeiras que todo mundo ouve.
 3. As outras cenas, a Conclusão e, por fim, a landing page e as orações.
+
+## 5 · Narração da Bíblia Livre no VoiceStudio
+
+Com o VoiceStudio aberto e o motor pronto em `127.0.0.1:3900`, rode na pasta do projeto:
+
+```powershell
+npm.cmd run audio:bible -- sl 117
+npm.cmd run audio:bible -- jo 1-3
+npm.cmd run audio:bible -- sl 117 --replace-verse 1
+```
+
+Use a sigla dos arquivos de `public/biblia-livre/2018` e um capítulo, um intervalo ou `all` para gerar o livro inteiro. O perfil padrão é **SENHOR**, com o modelo OmniVoice. Passe `--voice "Nome do perfil"` para selecionar outra voz salva no VoiceStudio.
+
+O script lê a edição de 2018 da Bíblia Livre exibida no leitor. Ele gera um MP3 por capítulo em `public/audio/bible/2018/<livro>/` e salva os tempos de início dos versículos em `content/bible-audio/<livro>.json`. Rode um lote por vez. Se a geração parar, repita o comando para continuar após os capítulos e versículos já gerados com a mesma voz, modelo e texto. O argumento `--replace-verse` refaz só o versículo indicado em um capítulo já gravado.
+
+O script usa a transcrição do VoiceStudio para sincronizar o destaque palavra por palavra. Para acrescentar os tempos a uma gravação existente, rode `npm.cmd run audio:bible -- jo 1 --align-only`. O leitor aproxima os tempos quando a gravação ainda tem apenas as marcações por versículo.
+
+No app, busque **Salmos 117** ou **Salmos 117:2** e toque no play para testar. O leitor usa os MP3 no endereço do app. Se os arquivos forem hospedados separadamente, defina `VITE_BIBLE_AUDIO_BASE` no build com a URL base do áudio, mantendo as pastas por livro e os nomes do catálogo. A API do VoiceStudio é usada apenas na geração local.

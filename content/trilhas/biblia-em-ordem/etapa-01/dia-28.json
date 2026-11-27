@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 28,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 48–49",
@@ -11,5 +11,32 @@
       "ate": 49
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d28-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 48–49",
+      "texto": "Leia como Jacó abençoa Efraim e Manassés. Em seguida, acompanhe suas palavras aos filhos e preste atenção ao que ele diz a Judá."
+    },
+    {
+      "id": "origens-d28-contexto",
+      "tipo": "contexto",
+      "texto": "Perto da morte, Jacó acolhe os filhos de José como seus. Ao abençoá-los, põe a mão direita sobre Efraim, o mais novo, mesmo com a objeção de José. Depois reúne os próprios filhos e dirige palavras diferentes a cada um. A família começa a aparecer como o povo que descenderá daqueles irmãos."
+    },
+    {
+      "id": "origens-d28-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 48:13–20, as mãos de Jacó surpreendem José. Depois, em 49:8–12, procure as imagens de autoridade na bênção de Judá. As duas cenas mostram que as expectativas da família e o rumo das bênçãos nem sempre coincidem."
+    },
+    {
+      "id": "origens-d28-cristo",
+      "tipo": "cristo",
+      "texto": "Gênesis 49:9 usa a imagem de um leão para Judá. Em Apocalipse 5:5–6, João ouve que o Leão da tribo de Judá venceu. Quando olha, vê um Cordeiro que foi morto. As duas imagens apontam para Jesus e ajudam a ler a sua vitória à luz da sua entrega."
+    },
+    {
+      "id": "origens-d28-pergunta",
+      "tipo": "pergunta",
+      "texto": "Que palavra de encorajamento você gostaria que alguém guardasse de você? Pense em quem precisa ouvi-la e diga algo específico sobre essa pessoa."
+    }
+  ]
 }

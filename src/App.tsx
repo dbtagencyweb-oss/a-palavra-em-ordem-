@@ -1,8 +1,8 @@
 import { AnimatePresence, MotionConfig, motion } from 'framer-motion'
-import { useCallback, useEffect, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { track } from './analytics/track'
 import { useAuth } from './auth/AuthContext'
-import { isDayCompleted, isDayUnlocked, type CompletionResult } from './game/progress'
+import { isDayCompleted, isDayUnlocked, nextDay, type CompletionResult } from './game/progress'
 import { needsIosInstallGuide } from './pwa/install'
 import { syncReminder } from './reminder/notifications'
 import { loadReminder, saveReminder, type ReminderPrefs } from './reminder/reminder'
@@ -12,7 +12,6 @@ import { CollectionScreen } from './screens/CollectionScreen'
 import { presetDiagnosis } from './analytics/publico'
 import { DiagnosisScreen } from './screens/DiagnosisScreen'
 import { DiaryScreen } from './screens/DiaryScreen'
-import { GuideScreen } from './screens/GuideScreen'
 import { ProfileScreen } from './screens/ProfileScreen'
 import { AccountScreen } from './screens/AccountScreen'
 import { ThankYouScreen } from './screens/ThankYouScreen'
@@ -45,13 +44,15 @@ import { OfferSheet } from './ui/OfferSheet'
 import { useScreenMotion } from './ui/motion'
 import { soundManager } from './sound/SoundManager'
 
+const GuideScreen = lazy(() => import('./screens/GuideScreen').then(({ GuideScreen }) => ({ default: GuideScreen })))
+
 type Route =
   | { name: 'welcome' }
   | { name: 'intro' }
   | { name: 'diag' }
   | { name: 'rec' }
   | { name: 'home' }
-  | { name: 'collection' }
+  | { name: 'collection'; fromGuide?: boolean }
   | { name: 'diary' }
   | { name: 'guide' }
   | { name: 'profile' }
@@ -59,16 +60,16 @@ type Route =
   | { name: 'ativar-conta' }
   | { name: 'recuperar-senha' }
   | { name: 'obrigado' }
-  | { name: 'biblia'; tab?: 'progresso' }
+  | { name: 'biblia'; tab?: 'progresso'; fromGuide?: boolean }
   | { name: 'downloads' }
-  | { name: 'estudos' }
+  | { name: 'estudos'; fromGuide?: boolean }
   | { name: 'grupo' }
   | { name: 'admin' }
   | { name: 'igreja'; codigo: string }
-  | { name: 'estudo'; id: string }
+  | { name: 'estudo'; id: string; fromGuide?: boolean }
   | { name: 'convite'; codigo: string }
-  | { name: 'lesson'; day: number; trail?: string }
-  | { name: 'done'; day: number; result: CompletionResult; trail?: string }
+  | { name: 'lesson'; day: number; trail?: string; fromGuide?: boolean }
+  | { name: 'done'; day: number; result: CompletionResult; trail?: string; fromGuide?: boolean }
 
 export function App() {
   const { progress, update, completeDay, today } = useProgress()
@@ -136,6 +137,12 @@ export function App() {
 
   // Founders hear about a new stage of A Bíblia em Ordem once, the next time the app opens.
   const founder = useFounder()
+  const jesusHeading = useRef<HTMLHeadingElement>(null)
+  const mapOverride = new URLSearchParams(window.location.search).get('mapa')
+  const pilgrimage = mapOverride === 'v2' || (mapOverride !== 'classico' && (
+    import.meta.env.VITE_PILGRIMAGE_V2 === 'true' || (import.meta.env.DEV && import.meta.env.VITE_PILGRIMAGE_V2 !== 'false')
+  ))
+  const onTrail2 = founder && nextDay(progress, MAPA.total) === null
   const toastMsg = useToast()
   useEffect(() => {
     if (!founder) return
@@ -152,19 +159,22 @@ export function App() {
   const go = (r: Route) => setRoute(r)
 
   // Where a lesson returns to: the plan, the study, or the journey.
-  const backFrom = (trail?: string): Route =>
-    trail === 'biblia-em-ordem' ? { name: 'biblia', tab: 'progresso' } : trail && isStudy(trail) ? { name: 'estudo', id: trail } : { name: 'home' }
+  function backFrom(trail?: string, fromGuide = false): Route {
+    if (trail === 'biblia-em-ordem') return { name: 'biblia', tab: 'progresso', fromGuide }
+    if (trail && isStudy(trail)) return { name: 'estudo', id: trail, fromGuide }
+    return { name: fromGuide ? 'guide' : 'home' }
+  }
 
-  function openDay(day: number, trail?: string) {
+  function openDay(day: number, trail?: string, fromGuide = false) {
     if (trail === JESUS.id && !paidAccess) {
       openOffer('jesus_em_ordem')
       return
     }
     track('day_start', { dia: day, revisao: isDayCompleted(progress, day, trail), trilha: trail })
-    go({ name: 'lesson', day, trail })
+    go({ name: 'lesson', day, trail, fromGuide })
   }
 
-  function continueWithJesus(origin: string) {
+  function continueWithJesus(origin: string, fromGuide = false) {
     if (!paidAccess) {
       openOffer(origin)
       return
@@ -178,13 +188,13 @@ export function App() {
       toastMsg('A próxima lição libera amanhã.')
       return
     }
-    openDay(next.n, JESUS.id)
+    openDay(next.n, JESUS.id, fromGuide)
   }
 
   // After the first lesson on an iPhone browser, teach "add to home screen" once.
   function goHomeAfterLesson() {
     // A reading of A Bíblia em Ordem returns to the plan; everything else to the journey.
-    go(route.name === 'done' ? backFrom(route.trail) : { name: 'home' })
+    go(route.name === 'done' ? backFrom(route.trail, route.fromGuide) : { name: 'home' })
     const KEY = 'pao:ios-guide-shown'
     try {
       if (needsIosInstallGuide() && !localStorage.getItem(KEY)) {
@@ -248,6 +258,9 @@ export function App() {
     case 'home':
       screen = (
         <HomeScreen
+          pilgrimage={pilgrimage}
+          onTrail2={onTrail2}
+          jesusHeadingRef={jesusHeading}
           onOpenDay={openDay}
           onOffer={openOffer}
           onContinueJesus={() => continueWithJesus('home')}
@@ -281,7 +294,7 @@ export function App() {
       )
       break
     case 'biblia':
-      screen = <BibleLibraryScreen initialTab={route.tab} onBack={() => go({ name: 'home' })} onOpenDay={(n) => openDay(n, 'biblia-em-ordem')} onOffer={openOffer} />
+      screen = <BibleLibraryScreen initialTab={route.tab} onBack={() => go({ name: route.fromGuide ? 'guide' : 'home' })} onOpenDay={(n) => openDay(n, 'biblia-em-ordem', route.fromGuide)} onOffer={openOffer} />
       break
     case 'admin':
       screen = (
@@ -320,23 +333,33 @@ export function App() {
         <StudiesScreen
           onBack={() => {
             if (window.location.pathname !== '/') window.history.replaceState(null, '', '/')
-            go({ name: 'home' })
+            go({ name: route.fromGuide ? 'guide' : 'home' })
           }}
-          onOpenStudy={(id) => go({ name: 'estudo', id })}
+          onOpenStudy={(id) => go({ name: 'estudo', id, fromGuide: route.fromGuide })}
         />
       )
       break
     case 'estudo':
-      screen = <StudyScreen id={route.id} onBack={() => go({ name: 'estudos' })} onOpenDay={(n) => openDay(n, route.id)} />
+      screen = <StudyScreen id={route.id} onBack={() => go({ name: 'estudos', fromGuide: route.fromGuide })} onOpenDay={(n) => openDay(n, route.id, route.fromGuide)} />
       break
     case 'collection':
-      screen = <CollectionScreen onBack={() => go({ name: 'home' })} />
+      screen = <CollectionScreen onBack={() => go({ name: route.fromGuide ? 'guide' : 'home' })} />
       break
     case 'diary':
       screen = <DiaryScreen />
       break
     case 'guide':
-      screen = <GuideScreen />
+      screen = (
+        <Suspense fallback={<p role="status" className="px-5 pt-6 text-sm text-ink-2">Carregando estudos…</p>}>
+          <GuideScreen
+            onOpenDay={(n) => openDay(n, undefined, true)}
+            onCollection={() => go({ name: 'collection', fromGuide: true })}
+            onBiblia={() => go({ name: 'biblia', fromGuide: true })}
+            onStudies={() => go({ name: 'estudos', fromGuide: true })}
+            onContinueJesus={() => continueWithJesus('guia_verbo', true)}
+          />
+        </Suspense>
+      )
       break
     case 'obrigado':
       screen = (
@@ -390,13 +413,13 @@ export function App() {
           key={`${route.trail ?? 'mapa'}-${route.day}`}
           dayN={route.day}
           trail={trailById(route.trail)}
-          onExit={() => go(backFrom(route.trail))}
+          onExit={() => go(backFrom(route.trail, route.fromGuide))}
           onOffer={openOffer}
-          onOpenDay={(n) => openDay(n, route.trail)}
+          onOpenDay={(n) => openDay(n, route.trail, route.fromGuide)}
           onFinish={(firstTries, early) => {
             const result = early ?? completeDay(route.day, firstTries, trailById(route.trail))
             track('day_complete', { dia: route.day, primeiraVez: result.firstTime, trilha: route.trail })
-            go({ name: 'done', day: route.day, result, trail: route.trail })
+            go({ name: 'done', day: route.day, result, trail: route.trail, fromGuide: route.fromGuide })
           }}
         />
       )
@@ -427,6 +450,14 @@ export function App() {
           current={route.name}
           onChange={(tab) => go({ name: tab })}
           onSearch={() => setBibleLookupOpen(true)}
+          onJesus={route.name === 'home' && pilgrimage && onTrail2 ? () => {
+            const heading = jesusHeading.current
+            heading?.focus({ preventScroll: true })
+            heading?.closest('section')?.scrollIntoView({
+              block: 'start',
+              behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+            })
+          } : undefined}
         />
       )}
       <BibleLookup open={bibleLookupOpen} onClose={() => setBibleLookupOpen(false)} onToday={() => {

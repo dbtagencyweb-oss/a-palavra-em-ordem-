@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 13,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 20–21",
@@ -11,5 +11,32 @@
       "ate": 21
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d13-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 20–21",
+      "texto": "Observe a repetição do medo de Abraão, o nascimento de Isaque e o que acontece com Agar e Ismael depois que deixam a casa."
+    },
+    {
+      "id": "origens-d13-contexto",
+      "tipo": "contexto",
+      "texto": "Abraão volta a apresentar Sara como sua irmã, agora diante de Abimeleque. Deus intervém antes que a situação avance. Em seguida, Isaque nasce e Sara celebra. A alegria do nascimento convive com a saída dolorosa de Agar e Ismael. No deserto, Deus ouve o menino e mostra a Agar onde encontrar água."
+    },
+    {
+      "id": "origens-d13-observar",
+      "tipo": "observar",
+      "texto": "Compare Gênesis 21:1–7 com 21:14–20. Abraão e Sara recebem o filho prometido, e Agar recebe ajuda para manter seu filho vivo. Observe como o narrador acompanha as duas famílias ao contar o que Deus faz."
+    },
+    {
+      "id": "origens-d13-cristo",
+      "tipo": "cristo",
+      "texto": "Em Gálatas 4:28, Paulo usa o nascimento de Isaque como imagem para falar a quem confia em Cristo. Assim como Isaque nasceu por causa da promessa de Deus, os cristãos recebem dela a sua identidade. Essa imagem leva o leitor de volta à espera de Abraão e Sara."
+    },
+    {
+      "id": "origens-d13-pergunta",
+      "tipo": "pergunta",
+      "texto": "Que motivo de alegria você pode reconhecer hoje? Quem, ao seu redor, precisa ser ouvido em meio à sua própria celebração?"
+    }
+  ]
 }

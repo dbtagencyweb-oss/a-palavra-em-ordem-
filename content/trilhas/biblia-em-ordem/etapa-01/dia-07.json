@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 7,
   "formato": "leitura-guiada",
   "titulo": "Jó 38–39",
@@ -11,5 +11,32 @@
       "ate": 39
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d7-leitura",
+      "tipo": "leitura",
+      "referencia": "Jó 38–39",
+      "texto": "Leia a resposta de Deus a Jó. Preste atenção nas imagens do mar, da manhã e dos animais. Elas ampliam pouco a pouco o cenário da conversa."
+    },
+    {
+      "id": "origens-d7-contexto",
+      "tipo": "contexto",
+      "texto": "Entre os capítulos 3 e 37, Jó lamenta e debate com seus amigos. Eles insistem em relacionar sua dor a uma culpa que ele deveria admitir. Jó defende sua integridade e pede uma resposta de Deus. Eliú se junta à conversa no fim. A partir do capítulo 38, é Deus quem toma a palavra."
+    },
+    {
+      "id": "origens-d7-observar",
+      "tipo": "observar",
+      "texto": "Em Jó 38:8–11 e 39:1–4, as perguntas vão dos limites do mar à vida de animais longe dos olhos humanos. Escolha uma dessas imagens. O que ela mostra sobre a diferença entre o que Jó consegue enxergar e o que o Criador conhece?"
+    },
+    {
+      "id": "origens-d7-cristo",
+      "tipo": "cristo",
+      "texto": "Em Marcos 4:35–41, os discípulos temem pela própria vida, e Jesus acalma a tempestade. A pergunta que fazem depois, sobre quem ele é, ecoa uma das imagens de Jó: o mar tem limites sob a autoridade de Deus. Leia a cena prestando atenção à surpresa dos discípulos."
+    },
+    {
+      "id": "origens-d7-pergunta",
+      "tipo": "pergunta",
+      "texto": "Que parte de uma situação difícil foge ao seu controle? O que você consegue fazer hoje e o que ainda pode apresentar a Deus em oração?"
+    }
+  ]
 }

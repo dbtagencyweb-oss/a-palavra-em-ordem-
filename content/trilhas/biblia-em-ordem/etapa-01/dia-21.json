@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 21,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 34–36",
@@ -11,5 +11,32 @@
       "ate": 36
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d21-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 34–36",
+      "texto": "Leia como a família reage à violência contra Diná. Depois, acompanhe o retorno a Betel e observe como o texto registra a família de Esaú."
+    },
+    {
+      "id": "origens-d21-contexto",
+      "tipo": "contexto",
+      "texto": "Gênesis 34 relata a violência contra Diná e a retaliação de seus irmãos. Em seguida, Deus chama Jacó a voltar a Betel e reafirma o nome Israel e a promessa. A etapa também registra perdas na família. O capítulo 36 acompanha os descendentes de Esaú e explica de onde vêm os edomitas."
+    },
+    {
+      "id": "origens-d21-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 34:25–31, os irmãos de Diná e Jacó falam a partir de preocupações diferentes. Acompanhe os efeitos da reação deles e repare em quem fica sem voz na conversa. Depois, observe a mudança de ritmo quando a família volta a Betel."
+    },
+    {
+      "id": "origens-d21-cristo",
+      "tipo": "cristo",
+      "texto": "Em Lucas 9:51–56, Tiago e João querem punir uma aldeia que não os recebe. Jesus repreende os dois e segue viagem. Essa passagem ajuda a distinguir o desejo de responder a uma ofensa da decisão de ferir outras pessoas por vingança."
+    },
+    {
+      "id": "origens-d21-pergunta",
+      "tipo": "pergunta",
+      "texto": "Como você pode defender alguém que sofreu uma injustiça e, ao mesmo tempo, cuidar para que sua reação não produza outro dano?"
+    }
+  ]
 }

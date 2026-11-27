@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 19,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 30–31",
@@ -11,5 +11,32 @@
       "ate": 31
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d19-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 30–31",
+      "texto": "Leia a disputa dentro da casa de Jacó e a tensão entre ele e Labão. Observe a despedida e o acordo feito antes que se separem."
+    },
+    {
+      "id": "origens-d19-contexto",
+      "tipo": "contexto",
+      "texto": "Os filhos de Jacó nascem em meio a rivalidades e acordos difíceis dentro da família. Ao mesmo tempo, surgem disputas sobre o trabalho e o pagamento de Jacó. Quando Deus o orienta a voltar para sua terra, ele parte com a família. Labão os alcança, mas os dois estabelecem um limite para o conflito."
+    },
+    {
+      "id": "origens-d19-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 31:38–42, Jacó recorda anos de trabalho e mudanças no pagamento. Leia então 31:44–54 e observe como a aliança marca um limite que ambos se comprometem a respeitar."
+    },
+    {
+      "id": "origens-d19-cristo",
+      "tipo": "cristo",
+      "texto": "Em Lucas 4:16–21, Jesus anuncia boas notícias aos pobres e liberdade aos oprimidos. A história de Jacó ajuda a prestar atenção às condições em que as pessoas trabalham. O anúncio de Jesus dá espaço, no centro de sua missão, a quem vive sob peso e opressão."
+    },
+    {
+      "id": "origens-d19-pergunta",
+      "tipo": "pergunta",
+      "texto": "Em que relação um limite claro e respeitoso ajudaria a evitar novos conflitos? Como você poderia expressá-lo com calma?"
+    }
+  ]
 }

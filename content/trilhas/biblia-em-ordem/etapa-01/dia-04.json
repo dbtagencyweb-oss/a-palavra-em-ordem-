@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 4,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 6–9",
@@ -11,5 +11,32 @@
       "ate": 9
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d4-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 6–9",
+      "texto": "Leia a história de Noé da construção da arca até a aliança após o dilúvio. No fim, repare para quem vale a promessa junto ao arco nas nuvens."
+    },
+    {
+      "id": "origens-d4-contexto",
+      "tipo": "contexto",
+      "texto": "A violência se espalha e Deus anuncia o dilúvio. Noé recebe instruções para construir a arca, onde sua família e os animais são preservados. Depois que as águas baixam, Noé oferece um sacrifício e Deus estabelece uma aliança que alcança sua família e os seres vivos."
+    },
+    {
+      "id": "origens-d4-observar",
+      "tipo": "observar",
+      "texto": "Compare Gênesis 6:5 com 8:21. O texto ainda reconhece a inclinação humana para o mal depois do dilúvio. Leia então Gênesis 9:8–17 e observe quem toma a iniciativa de firmar a aliança."
+    },
+    {
+      "id": "origens-d4-cristo",
+      "tipo": "cristo",
+      "texto": "Em 1 Pedro 3:20–22, Pedro recorda a família de Noé passando pelas águas. Ele usa essa imagem ao falar do batismo e liga a esperança cristã à ressurreição de Jesus. É em Cristo ressuscitado que a carta situa essa esperança."
+    },
+    {
+      "id": "origens-d4-pergunta",
+      "tipo": "pergunta",
+      "texto": "Que situação recente fez você perceber o valor de uma promessa cumprida? O que Gênesis 9 acrescenta à sua maneira de enxergar a fidelidade de Deus?"
+    }
+  ]
 }

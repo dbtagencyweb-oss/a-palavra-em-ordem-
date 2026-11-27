@@ -12,6 +12,7 @@ interface Props {
   tone?: 'light' | 'dark'
   className?: string
   backdropClassName?: string
+  centered?: boolean
   animateLayout?: boolean
   children: ReactNode
 }
@@ -23,7 +24,7 @@ const FOCUSABLE = 'button:not([disabled]), a[href], input:not([disabled]), texta
  * Keeps keyboard focus inside while open, closes on Esc or a tap on the backdrop,
  * and gives focus back to whatever opened it.
  */
-export function Sheet({ open, onClose, labelledBy, label, tone = 'light', className = '', backdropClassName = 'bg-[rgba(20,18,14,.5)]', animateLayout = false, children }: Props) {
+export function Sheet({ open, onClose, labelledBy, label, tone = 'light', className = '', backdropClassName = 'bg-[rgba(20,18,14,.5)]', centered = false, animateLayout = false, children }: Props) {
   const panel = useRef<HTMLDivElement>(null)
   const reducedMotion = useReducedMotion()
   const closeRef = useRef(onClose)
@@ -60,7 +61,7 @@ export function Sheet({ open, onClose, labelledBy, label, tone = 'light', classN
     return () => {
       window.clearTimeout(t)
       document.removeEventListener('keydown', onKey)
-      opener?.focus?.()
+      opener?.focus({ preventScroll: true })
     }
   }, [open])
 
@@ -69,7 +70,7 @@ export function Sheet({ open, onClose, labelledBy, label, tone = 'light', classN
     <AnimatePresence>
       {open && (
         <motion.div
-          className={`absolute inset-0 z-20 flex items-end ${backdropClassName}`}
+          className={`absolute inset-0 z-20 flex ${centered ? 'items-center justify-center' : 'items-end'} ${backdropClassName}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -82,12 +83,12 @@ export function Sheet({ open, onClose, labelledBy, label, tone = 'light', classN
             aria-modal="true"
             aria-labelledby={labelledBy}
             aria-label={labelledBy ? undefined : label}
-            className={`max-h-[88%] w-full overflow-y-auto rounded-t-[24px] px-6 pb-7 pt-[26px] ${
+            className={`w-full ${centered ? '' : 'max-h-[88%] overflow-y-auto rounded-t-[24px] px-6 pb-7 pt-[26px]'} ${
               tone === 'dark' ? 'bg-ink text-paper' : 'bg-paper'
             } ${className}`}
-            initial={{ y: '100%' }}
+            initial={{ y: centered ? (reducedMotion ? 0 : 12) : '100%' }}
             animate={{ y: 0 }}
-            exit={{ y: '100%' }}
+            exit={{ y: centered ? (reducedMotion ? 0 : 12) : '100%' }}
             transition={{ duration: 0.3, ease: [0.3, 0.8, 0.3, 1] }}
           >
             {children}

@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 15,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 23–24",
@@ -11,5 +11,32 @@
       "ate": 24
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d15-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 23–24",
+      "texto": "Leia o sepultamento de Sara e a busca por uma esposa para Isaque. Preste atenção ao que Rebeca faz e ao que ela mesma decide."
+    },
+    {
+      "id": "origens-d15-contexto",
+      "tipo": "contexto",
+      "texto": "A morte de Sara encerra uma etapa da vida de Abraão. Ele negocia um lugar para sepultá-la em Canaã. Depois envia um servo à terra de sua família em busca de uma esposa para Isaque. Rebeca aparece junto ao poço e se torna parte da geração que leva a história adiante."
+    },
+    {
+      "id": "origens-d15-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 24:15–20, Rebeca oferece água ao viajante e aos camelos. Leia também 24:55–61, quando lhe perguntam se quer partir. O encontro mostra sua hospitalidade e deixa espaço para sua resposta."
+    },
+    {
+      "id": "origens-d15-cristo",
+      "tipo": "cristo",
+      "texto": "Mateus 1:1–2 começa a genealogia de Jesus lembrando Abraão, Isaque e Jacó. A história de Isaque e Rebeca mostra a vida de família por trás desses nomes. É por gerações concretas, com decisões, viagens e perdas, que a promessa chega ao nascimento de Jesus."
+    },
+    {
+      "id": "origens-d15-pergunta",
+      "tipo": "pergunta",
+      "texto": "Que gesto simples de hospitalidade tornaria seu dia mais aberto a outra pessoa? Pense em algo que você realmente possa fazer."
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 10,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 14–15",
@@ -11,5 +11,32 @@
       "ate": 15
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d10-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 14–15",
+      "texto": "Acompanhe o resgate de Ló e o encontro com Melquisedeque. Em seguida, leia a conversa em que Abrão fala a Deus sobre a falta de um herdeiro."
+    },
+    {
+      "id": "origens-d10-contexto",
+      "tipo": "contexto",
+      "texto": "Abrão volta de uma batalha para resgatar Ló. Melquisedeque o abençoa, e Abrão recusa para si os bens oferecidos pelo rei de Sodoma. Em Gênesis 15, ele traz a Deus uma questão pessoal que a vitória não resolveu: ainda está sem filho. Deus reafirma a promessa e formaliza sua aliança."
+    },
+    {
+      "id": "origens-d10-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 15:2–6, repare na sequência. Abrão expõe sua dúvida, ouve a promessa e crê. Seus questionamentos fazem parte da conversa com Deus. Observe o que o conduz da pergunta à confiança."
+    },
+    {
+      "id": "origens-d10-cristo",
+      "tipo": "cristo",
+      "texto": "Romanos 4:18–25 retoma a fé de Abraão para falar da nossa confiança no Deus que ressuscitou Jesus. A ponte entre as duas histórias é a fidelidade de Deus, capaz de cumprir sua palavra diante de situações que parecem sem saída."
+    },
+    {
+      "id": "origens-d10-pergunta",
+      "tipo": "pergunta",
+      "texto": "Que promessa ou convicção é difícil lembrar quando a resposta demora? Como você pode falar dessa espera com Deus de forma sincera?"
+    }
+  ]
 }

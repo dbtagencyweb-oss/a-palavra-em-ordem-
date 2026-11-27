@@ -1,15 +1,23 @@
-import { useEffect, useState, type CSSProperties } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { trilha } from '../content'
-import { buildReadingLink } from '../content/readingLink'
+import { buildReadingLink, parsePassage, type PassageChapter } from '../content/readingLink'
 import type { Livro } from '../content/types'
 import { soundManager } from '../sound/SoundManager'
 import { BLOCK_COLORS, Bookshelf } from '../media/Bookshelf'
 import { Sheet } from '../ui/Sheet'
+import { BibleReader } from '../ui/BibleReader'
+import { BackIcon } from '../ui/icons'
 
 const has = (v: unknown) => v !== null && v !== undefined && v !== '' && !(Array.isArray(v) && v.length === 0)
 
 /** Book fact sheet. Shows only the fields already filled in content/livros.json. */
-export function BookCard({ livro, onRead }: { livro: Livro; onRead?(): void }) {
+export type BookPassage = { reference: string; chapters: PassageChapter[] }
+
+export function BookCard({ livro, onRead, firstChapter = false }: {
+  livro: Livro
+  onRead(passage?: BookPassage): void
+  firstChapter?: boolean
+}) {
   const [openEvent, setOpenEvent] = useState<number | null>(null)
   const numbers = [
     { label: 'capítulos', value: livro.capitulos },
@@ -20,7 +28,6 @@ export function BookCard({ livro, onRead }: { livro: Livro; onRead?(): void }) {
     has(livro.autorTradicional) && { label: 'Autor (tradição)', value: livro.autorTradicional! },
     has(livro.dataAproximada) && { label: 'Data aproximada', value: livro.dataAproximada! },
   ].filter(Boolean) as { label: string; value: string }[]
-  const firstChapterLink = buildReadingLink(`${livro.nome} 1`, trilha.linkLeitura.modelo)
 
   return (
     <article>
@@ -76,7 +83,8 @@ export function BookCard({ livro, onRead }: { livro: Livro; onRead?(): void }) {
         <Section title="Linha do tempo">
           <ol className="relative ml-2 border-l-2 border-line pl-4">
             {livro.eventos!.map((e, i) => {
-              const link = buildReadingLink(e.referencia, trilha.linkLeitura.modelo)
+              const chapters = parsePassage(e.referencia)
+              const link = chapters ? null : buildReadingLink(e.referencia, trilha.linkLeitura.modelo)
               const open = openEvent === i
               return (
                 <li key={e.titulo + e.referencia} className="relative pb-3">
@@ -93,7 +101,11 @@ export function BookCard({ livro, onRead }: { livro: Livro; onRead?(): void }) {
                   {open && (
                     <div className="px-3.5 pt-2 text-sm leading-normal text-ink-2">
                       {e.texto && <p>{e.texto}</p>}
-                      {link && (
+                      {chapters ? (
+                        <button type="button" className="mt-1 inline-flex min-h-[44px] items-center font-bold text-ember-ink" onClick={() => {
+                          onRead({ reference: e.referencia, chapters })
+                        }}>Abrir o texto</button>
+                      ) : link && (
                         <a href={link} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex min-h-[44px] items-center font-bold text-ember-ink">
                           Abrir o texto →
                         </a>
@@ -134,15 +146,9 @@ export function BookCard({ livro, onRead }: { livro: Livro; onRead?(): void }) {
         </Section>
       )}
 
-      {onRead ? (
-        <button type="button" onClick={onRead} className="btn library-read-button mt-2 w-full" style={{ '--book-color': BLOCK_COLORS[livro.bloco] } as CSSProperties}>
-          Abrir capítulo
-        </button>
-      ) : firstChapterLink && (
-        <a href={firstChapterLink} target="_blank" rel="noopener noreferrer" className="btn mt-2 w-full">
-          Abrir o capítulo 1
-        </a>
-      )}
+      <button type="button" aria-haspopup="dialog" onClick={() => onRead()} className="btn btn-ghost library-read-button mt-2 w-full">
+        {firstChapter ? 'Abrir o capítulo 1' : 'Abrir capítulo'}
+      </button>
     </article>
   )
 }
@@ -156,36 +162,68 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   )
 }
 
+export function BookNavigation({ index, total, onIndex, onClose, closeLabel = 'Fechar', className = 'mt-2', closeRef }: {
+  index: number
+  total: number
+  onIndex(index: number): void
+  onClose(): void
+  closeLabel?: string
+  className?: string
+  closeRef?: React.Ref<HTMLButtonElement>
+}) {
+  const arrowClass = 'grid h-11 w-11 place-items-center self-center justify-self-center rounded-full text-ink-2 transition-colors enabled:hover:bg-white/65 disabled:opacity-35'
+  return (
+    <nav className={`grid grid-cols-[1fr_1.6fr_1fr] gap-2 ${className}`} aria-label="Navegação entre livros">
+      <button type="button" className={arrowClass} disabled={index === 0} onClick={() => onIndex(index - 1)} aria-label="Livro anterior">
+        <BackIcon size={22} />
+      </button>
+      <button ref={closeRef} type="button" className="btn" onClick={onClose} data-autofocus>{closeLabel}</button>
+      <button type="button" className={arrowClass} disabled={index === total - 1} onClick={() => onIndex(index + 1)} aria-label="Próximo livro">
+        <BackIcon size={22} className="rotate-180" />
+      </button>
+    </nav>
+  )
+}
+
 /** Bottom sheet holding a BookCard. */
 export function BookSheet({ livros, index, onClose, onIndex }: { livros: Livro[]; index: number | null; onClose(): void; onIndex(i: number): void }) {
   const livro = index !== null ? livros[index] : null
+  const [reading, setReading] = useState<{ bookId: string; passage?: BookPassage } | null>(null)
+  const openReader = !!livro && reading?.bookId === livro.id
+  const closeButton = useRef<HTMLButtonElement>(null)
+  const restoreFocus = useRef(false)
+
+  function backToBook() {
+    restoreFocus.current = true
+    setReading(null)
+  }
+
+  useEffect(() => {
+    if (openReader || !restoreFocus.current) return
+    restoreFocus.current = false
+    closeButton.current?.focus({ preventScroll: true })
+  }, [openReader])
+
   useEffect(() => {
     if (livro) soundManager.play('offer_open')
   }, [livro])
+
   return (
-    <Sheet open={!!livro} onClose={onClose} label={livro ? `Ficha de ${livro.nome}` : 'Ficha do livro'} className="!pt-6 !pb-6">
-      {livro && index !== null && (
+    <Sheet
+      open={!!livro}
+      onClose={openReader ? backToBook : onClose}
+      label={livro ? (openReader ? `Leitor da Bíblia: ${livro.nome}` : `Ficha de ${livro.nome}`) : 'Ficha do livro'}
+      className={openReader ? '!flex h-[88%] flex-col !overflow-hidden !p-0' : '!pt-6 !pb-6'}
+      animateLayout
+    >
+      {livro && (openReader ? (
+        <BibleReader book={livro} open embedded onClose={backToBook} passage={reading?.passage} />
+      ) : index !== null && (
         <>
-          <BookCard key={livro.id} livro={livro} />
-          <div className="mt-2 flex gap-2">
-            <button type="button" className="btn btn-ghost flex-1 border-[1.5px] border-line" disabled={index === 0} onClick={() => onIndex(index - 1)} aria-label="Livro anterior">
-              ←
-            </button>
-            <button type="button" className="btn flex-[2]" onClick={onClose} data-autofocus>
-              Fechar
-            </button>
-            <button
-              type="button"
-              className="btn btn-ghost flex-1 border-[1.5px] border-line"
-              disabled={index === livros.length - 1}
-              onClick={() => onIndex(index + 1)}
-              aria-label="Próximo livro"
-            >
-              →
-            </button>
-          </div>
+          <BookCard key={livro.id} livro={livro} firstChapter onRead={(passage) => setReading({ bookId: livro.id, passage })} />
+          <BookNavigation index={index} total={livros.length} onIndex={onIndex} onClose={onClose} closeRef={closeButton} />
         </>
-      )}
+      ))}
     </Sheet>
   )
 }

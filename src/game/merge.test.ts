@@ -49,6 +49,11 @@ describe('mergeProgress (device + account)', () => {
     expect(m.steps).toBe(300)
   })
 
+  it('merges separately marked Bible chapters across devices', () => {
+    const m = mergeProgress(p({ readChapters: ['gn:1', 'gn:2'] }), p({ readChapters: ['gn:2', 'gn:3'] }))
+    expect(new Set(m.readChapters)).toEqual(new Set(['gn:1', 'gn:2', 'gn:3']))
+  })
+
   it('keeps a spent grace spent within the same week', () => {
     const local = p({ grace: 1, graceWeek: '2026-11-16' })
     const remote = p({ grace: 0, graceWeek: '2026-11-16' })

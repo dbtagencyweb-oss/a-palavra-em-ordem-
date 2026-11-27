@@ -1,10 +1,9 @@
 import { useState, type CSSProperties } from 'react'
-import { readingChapters, readingSections } from '../content/readingOrder'
+import { readBibleChapters, readingChapters, readingSections } from '../content/readingOrder'
 import type { Livro } from '../content/types'
 import { BLOCK_COLORS } from '../media/Bookshelf'
+import { useProgress } from '../store/ProgressContext'
 import { BibleReader } from '../ui/BibleReader'
-
-const STORAGE_KEY = 'pao:ordem-leitura:v1'
 
 function bookAccent(book: Livro): CSSProperties {
   return { '--book-color': BLOCK_COLORS[book.bloco] } as CSSProperties
@@ -19,23 +18,11 @@ function BookTag({ book }: { book: Livro }) {
   )
 }
 
-function loadReadChapters() {
-  try {
-    const value: unknown = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]')
-    if (Array.isArray(value)) {
-      const saved = new Set(value)
-      return new Set(readingChapters.filter(({ id }) => saved.has(id)).map(({ id }) => id))
-    }
-  } catch {
-    // Reading still works when storage is unavailable.
-  }
-  return new Set<string>()
-}
-
 export function ReadingOrder() {
-  const [read, setRead] = useState(loadReadChapters)
+  const { progress, update } = useProgress()
   const [active, setActive] = useState<(typeof readingChapters)[number] | null>(null)
   const [readerOpen, setReaderOpen] = useState(false)
+  const read = readBibleChapters(progress)
   const next = readingChapters.find(({ id }) => !read.has(id))
   const nextSection = next && readingSections.find(({ passages }) => passages.some(({ chapters }) => chapters.includes(next)))
   const afterActive = active
@@ -49,12 +36,10 @@ export function ReadingOrder() {
 
   function advance() {
     if (!active) return
-    const updated = new Set(read).add(active.id)
-    setRead(updated)
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify([...updated]))
-    } catch {
-      // Keep the current session usable even without storage.
+    if (!read.has(active.id)) {
+      update((current) => current.readChapters.includes(active.id)
+        ? current
+        : { ...current, readChapters: [...current.readChapters, active.id] })
     }
     if (afterActive) setActive(afterActive)
     else setReaderOpen(false)
@@ -72,12 +57,13 @@ export function ReadingOrder() {
           <>
             <p className="mt-1 text-sm leading-relaxed text-ink-2">Leia um capítulo por vez. Ao marcar como lido, o próximo abre na sequência.</p>
             <button type="button" onClick={() => openChapter(next)} className="btn mt-4">
-              {read.size ? 'Continuar leitura' : 'Começar por Gênesis 1'}
+              {read.size ? `Continuar em ${next.book.nome} ${next.chapter}` : 'Começar por Gênesis 1'}
             </button>
           </>
         )}
-        <p className="mt-3 text-xs text-ink-3">{read.size.toLocaleString('pt-BR')} de {readingChapters.length.toLocaleString('pt-BR')} capítulos lidos neste dispositivo</p>
-        <progress className="mt-2 block h-2 w-full accent-amber-700" aria-label="Progresso da ordem de leitura" value={read.size} max={readingChapters.length} />
+        <p className="mt-3 text-xs font-semibold text-ink-2">{read.size.toLocaleString('pt-BR')} de {readingChapters.length.toLocaleString('pt-BR')} capítulos lidos</p>
+        <progress className="mt-2 block h-2 w-full accent-amber-700" aria-label="Progresso da leitura da Bíblia" value={read.size} max={readingChapters.length} />
+        <p className="mt-1.5 text-xs text-ink-3">Inclui os capítulos registrados nas lições.</p>
       </div>
 
       <details className="mt-4 rounded-card border border-line bg-card">

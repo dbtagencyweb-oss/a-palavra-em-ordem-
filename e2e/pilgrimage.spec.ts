@@ -113,6 +113,41 @@ test('amplia por toque, teclado e botões sem exibir a travessia antes da conclu
   await expect.poll(() => cssTransform(page)).not.toBe(beforePinch)
 })
 
+test('abre a mesma cena pelo mapa geral e pela região, com arte ampliada e fundo desfocado', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 568 })
+  await openMap(page, 2)
+  const title = 'Acampamento de Abraão'
+  const discovery = map(page).getByRole('button', { name: title })
+  const dialog = page.getByRole('dialog', { name: title })
+
+  await expect(discovery.locator('img')).toBeInViewport()
+  await expect(discovery.getByText(title)).toBeHidden()
+  await discovery.click()
+  await expect(dialog.getByText('Gênesis 12:1–9')).toBeVisible()
+  const layout = await dialog.evaluate((panel) => {
+    const backdrop = panel.parentElement!
+    const device = backdrop.getBoundingClientRect()
+    const art = panel.querySelector('.pilgrimage-scene')!.getBoundingClientRect()
+    return {
+      heightFraction: art.height / device.height,
+      centerOffset: Math.abs((art.left + art.right - device.left - device.right) / 2),
+      blur: getComputedStyle(backdrop).backdropFilter,
+    }
+  })
+  expect(layout.heightFraction).toBeGreaterThan(0.7)
+  expect(layout.centerOffset).toBeLessThan(1)
+  expect(layout.blur).toContain('blur')
+  await page.keyboard.press('Escape')
+  await expect(dialog).toBeHidden()
+
+  await map(page).getByRole('button', { name: 'Explorar região' }).click()
+  await expect(map(page)).toHaveAttribute('data-level', 'region')
+  await expect(discovery.getByText(title)).toBeInViewport()
+  await expect(discovery.getByText('Gênesis 12:1–9')).toBeInViewport()
+  await discovery.click()
+  await expect(dialog.getByRole('img', { name: title })).toBeVisible()
+})
+
 test.describe('transições com movimento', () => {
   test.use({ reducedMotion: 'no-preference' })
 

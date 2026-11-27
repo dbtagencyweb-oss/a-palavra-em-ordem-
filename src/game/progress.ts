@@ -22,6 +22,8 @@ export interface Progress {
   completedDays: Record<number, DateKey>
   /** Other trails (e.g. jesus-em-ordem): trail id → day number → date of first completion. */
   trails: Record<string, Record<number, DateKey>>
+  /** Chapter ids marked individually in the reading order. Guided lessons use trails. */
+  readChapters: string[]
   streak: number
   /** Last calendar day covered by the lamp (a lesson or a grace). */
   lastStreakDate: DateKey | null
@@ -42,6 +44,7 @@ export function createProgress(): Progress {
     diagnosis: null,
     completedDays: {},
     trails: {},
+    readChapters: [],
     streak: 0,
     lastStreakDate: null,
     grace: MAX_GRACE,

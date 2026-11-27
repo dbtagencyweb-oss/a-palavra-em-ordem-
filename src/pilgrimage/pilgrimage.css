@@ -46,6 +46,7 @@
 
 .pilgrimage-viewport[data-dragging] { cursor: grabbing; }
 .pilgrimage-stage { position: absolute; inset: 0 auto auto 0; transform-origin: 0 0; will-change: transform; }
+.pilgrimage-discoveries { position: absolute; inset: 0 auto auto 0; pointer-events: none; }
 .pilgrimage-image { background: #37321f; pointer-events: none; }
 .pilgrimage-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .pilgrimage-image img[data-loaded] { opacity: 0; transition: opacity 210ms ease; }
@@ -94,8 +95,7 @@
   transform: scale(var(--map-pin-inverse, 1)) translate(-142%, -123%);
 }
 .pilgrimage[data-effects='false'] .oil-lamp-3d * { animation-duration: 0ms !important; }
-.pilgrimage-pin,
-.pilgrimage-hotspot {
+.pilgrimage-pin {
   position: absolute;
   transform: translate(-50%, -50%) scale(var(--map-pin-inverse, 1));
   transform-origin: center;
@@ -188,7 +188,6 @@
 .pilgrimage-pin-label small { margin-bottom: 2px; color: #5b482c; font-size: 9px; font-weight: 750; line-height: 1.2; }
 .pilgrimage-pin-label strong { font-size: 12px; font-weight: 700; line-height: 1.15; text-wrap: pretty; }
 
-.pilgrimage-hotspot,
 .pilgrimage-map-label,
 .pilgrimage-back,
 .pilgrimage-tool,
@@ -204,21 +203,51 @@
 }
 
 .pilgrimage-hotspot {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: max-content;
-  max-width: 168px;
-  min-height: 44px;
-  padding: 6px 12px;
-  border-radius: 13px;
-  box-shadow: 0 4px 18px #180e0880;
-  font-size: 13px;
-  line-height: 1.25;
-  font-weight: 650;
+  --discovery-size: 44px;
+  position: absolute;
+  display: grid;
+  width: var(--discovery-size);
+  height: var(--discovery-size);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
 }
+.pilgrimage[data-level='region'] .pilgrimage-hotspot { --discovery-size: 58px; }
+.pilgrimage-hotspot:focus-visible { outline: 2px solid #fff4db; outline-offset: 4px; }
+.pilgrimage-hotspot-thumb {
+  overflow: hidden;
+  border: 2px solid #e9c88b;
+  border-radius: inherit;
+  background: #484130;
+  box-shadow: 0 4px 14px #170e06b3;
+}
+.pilgrimage-hotspot-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 58%;
+}
+.pilgrimage-hotspot-label {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  translate: -50% 0;
+  width: max-content;
+  max-width: 140px;
+  padding: 5px 8px;
+  border: 1px solid var(--map-glass-edge);
+  border-radius: 9px;
+  color: #fff4e1;
+  background: rgb(27 27 29 / .88);
+  box-shadow: 0 4px 12px #170e0666;
+  text-align: center;
+  line-height: 1.15;
+}
+.pilgrimage-hotspot-label strong { display: block; font-size: 12px; font-weight: 700; }
+.pilgrimage-hotspot-label small { display: block; margin-top: 3px; color: #ecd09a; font-size: 10px; }
+.pilgrimage[data-level='world'] .pilgrimage-hotspot-label { display: none; }
 
-.pilgrimage-hotspot > :first-child,
 .pilgrimage-map-label > span { color: #f6cf8a; }
 
 .pilgrimage-top {
@@ -226,26 +255,33 @@
   inset: var(--map-overlay-top) 14px auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  gap: 6px;
   pointer-events: none;
 }
+.pilgrimage-top > .pilgrimage-tool { margin-inline-start: auto; }
 
 .pilgrimage-map-label,
+.pilgrimage-explore,
 .pilgrimage-back {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  width: max-content;
-  min-height: 38px;
-  padding: 0 12px;
+  min-height: 44px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 650;
   box-shadow: 0 4px 12px #170e064d;
 }
 
-.pilgrimage-back { min-height: 44px; pointer-events: auto; }
+.pilgrimage-map-label,
+.pilgrimage-explore {
+  width: min(146px, calc((100% - 56px) / 2));
+  justify-content: center;
+  padding-inline: 4px;
+  white-space: nowrap;
+}
+.pilgrimage-back { width: max-content; padding-inline: 12px; pointer-events: auto; }
+.pilgrimage-explore { pointer-events: auto; }
 
 .pilgrimage-tool {
   display: grid;
@@ -305,32 +341,73 @@
 }
 .pilgrimage-play:disabled { background-color: rgb(255 255 255 / .11); }
 
-.pilgrimage-shortcuts {
-  position: absolute;
-  inset: calc(var(--map-overlay-top) + 50px) 14px auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  pointer-events: none;
-}
-.pilgrimage-shortcuts > button { pointer-events: auto; }
-
-.pilgrimage-explore {
-  display: inline-flex;
-  min-height: 44px;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  padding-inline: 11px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
+@media (max-width: 360px) {
+  .pilgrimage-top { inset-inline: 10px; gap: 5px; }
+  .pilgrimage-map-label, .pilgrimage-explore { font-size: 12px; }
 }
 .pilgrimage-explore > span { color: #f9d395; }
 .pilgrimage button:disabled { cursor: default; opacity: .55; }
-.pilgrimage-more { min-height: 44px; padding: 0 11px; border-radius: 999px; font-size: 12px; font-weight: 650; }
+.pilgrimage-more {
+  position: absolute;
+  inset: calc(var(--map-overlay-top) + 50px) auto auto 14px;
+  min-height: 44px;
+  padding-inline: 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 650;
+}
 .pilgrimage-more span { margin-left: 4px; color: #ffd490; }
-.pilgrimage-scene { position: relative; margin-inline: auto; max-height: 52dvh; max-width: 100%; overflow: hidden; border-radius: 14px; }
+.pilgrimage-scene-backdrop {
+  background: rgb(14 14 19 / .72);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+.device .pilgrimage-scene-panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: clamp(8px, 1.5dvh, 14px);
+  width: calc(100% - 24px);
+  height: calc(100% - 38px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  margin-block: calc(10px + env(safe-area-inset-top)) env(safe-area-inset-bottom);
+  background: transparent;
+  color: #fbefda;
+}
+.pilgrimage-scene-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.pilgrimage-scene-header p { margin: 0 0 2px; color: #ecd09a; font-size: 11px; font-weight: 700; }
+.pilgrimage-scene-header h3 { margin: 0; font-size: clamp(20px, 5vw, 27px); line-height: 1.05; }
+.pilgrimage-scene-close {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgb(255 236 198 / .25);
+  border-radius: 50%;
+  background: rgb(255 255 255 / .11);
+}
+.pilgrimage-scene-frame {
+  display: grid;
+  place-items: center;
+  container-type: size;
+}
+.pilgrimage-scene {
+  position: relative;
+  width: min(100cqw, calc(100cqh * var(--scene-ratio)));
+  aspect-ratio: var(--scene-ratio);
+  overflow: hidden;
+  border: 1px solid rgb(255 230 183 / .23);
+  border-radius: 16px;
+  background: #24211c;
+  box-shadow: 0 5px 14px #08070a66, 0 15px 34px #08070ac2;
+}
+.pilgrimage-scene-caption { padding-inline: 4px; text-align: center; }
+.pilgrimage-scene-caption p { margin: 0; font-size: 13px; line-height: 1.35; }
+.pilgrimage-scene-caption button { min-height: 44px; padding-inline: 8px; color: #f7c57e; font-size: 13px; font-weight: 700; }
 .pilgrimage-loading { background: #34331e; }
 
 @media (max-height: 610px) {

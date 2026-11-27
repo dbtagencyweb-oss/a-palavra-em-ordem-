@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 9,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 12–13",
@@ -11,5 +11,32 @@
       "ate": 13
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d9-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 12–13",
+      "texto": "Volte a Gênesis e acompanhe Abrão na saída de sua terra. Depois, leia como ele e Ló decidem se separar sem prolongar o conflito entre seus grupos."
+    },
+    {
+      "id": "origens-d9-contexto",
+      "tipo": "contexto",
+      "texto": "Depois da história dos povos, Gênesis volta o olhar para a família de Abrão. Deus o chama a partir e faz uma promessa que alcança todas as famílias da terra. A viagem tem fome, medo e uma passagem pelo Egito. De volta a Canaã, Abrão e Ló precisam lidar com a falta de espaço para seus rebanhos."
+    },
+    {
+      "id": "origens-d9-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 13:8–12, Ló escolhe a região que lhe parece mais promissora. Observe a proposta de Abrão antes da escolha e o que Deus reafirma a ele depois da separação (13:14–17)."
+    },
+    {
+      "id": "origens-d9-cristo",
+      "tipo": "cristo",
+      "texto": "Em Gálatas 3:8,14, Paulo volta à promessa dada a Abraão para explicar por que o Evangelho alcança outros povos. Ele vê em Jesus Cristo o caminho pelo qual a bênção anunciada em Gênesis chega às nações."
+    },
+    {
+      "id": "origens-d9-pergunta",
+      "tipo": "pergunta",
+      "texto": "Abrão teve de dar um primeiro passo sem ter o caminho inteiro diante dos olhos. Que decisão no seu dia pede um primeiro passo claro, mesmo com perguntas em aberto?"
+    }
+  ]
 }

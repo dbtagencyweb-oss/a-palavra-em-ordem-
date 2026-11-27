@@ -2,14 +2,14 @@
 // ends, running to the bottom of the screen), gold icons, and a raised round button in a notch at
 // the center for quick Scripture lookup.
 import { motion, useReducedMotion } from 'framer-motion'
-import { FlameSearchIcon, NavDiary, NavGuide, NavJourney, NavProfile } from './icons'
+import { FlameSearchIcon, NavDiary, NavJourney, NavProfile, NavStudies } from './icons'
 
 export type Tab = 'home' | 'diary' | 'guide' | 'profile'
 
 const TABS: { id: Tab; label: string; icon: (active: boolean) => React.ReactNode }[] = [
   { id: 'home', label: 'Jornada', icon: (a) => <NavJourney active={a} /> },
   { id: 'diary', label: 'Diário', icon: (a) => <NavDiary active={a} /> },
-  { id: 'guide', label: 'GuiaVerbo', icon: (a) => <NavGuide active={a} /> },
+  { id: 'guide', label: 'Estudos', icon: (a) => <NavStudies active={a} /> },
   { id: 'profile', label: 'Perfil', icon: (a) => <NavProfile active={a} /> },
 ]
 
@@ -17,9 +17,10 @@ interface Props {
   current: Tab
   onChange(tab: Tab): void
   onSearch(): void
+  onJesus?(): void
 }
 
-export function BottomNav({ current, onChange, onSearch }: Props) {
+export function BottomNav({ current, onChange, onSearch, onJesus }: Props) {
   const reduced = useReducedMotion()
 
   const tab = (t: (typeof TABS)[number]) => {
@@ -67,6 +68,15 @@ export function BottomNav({ current, onChange, onSearch }: Props) {
           <FlameSearchIcon className="h-[42px] w-[42px]" />
         </motion.button>
       </div>
+      {onJesus && (
+        <button type="button" className="nav-jesus-shortcut" onClick={onJesus} aria-label="Ir para Jesus em Ordem" title="Jesus em Ordem">
+          <span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="m5 9 7 7 7-7" />
+            </svg>
+          </span>
+        </button>
+      )}
     </nav>
   )
 }

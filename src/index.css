@@ -526,12 +526,9 @@
 }
 
 .btn.library-read-button {
-  --book-button-light: color-mix(in srgb, var(--book-color, #8a8d98) 68%, #151811);
-  --book-button-dark: color-mix(in srgb, var(--book-color, #8a8d98) 56%, #151811);
-  background-color: var(--book-button-dark);
-  background-image: linear-gradient(155deg, var(--book-button-light), var(--book-button-dark));
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 28%), inset 0 -2px 0 rgb(0 0 0 / 18%), 0 10px 20px -12px var(--book-button-dark);
-  text-shadow: 0 1px 0 rgb(0 0 0 / 25%);
+  border: 1.5px solid #637144;
+  color: #475531;
+  background: transparent;
 }
 
 .btn:not(.btn-ghost)::after,
@@ -640,6 +637,39 @@
   border-radius: 3px 3px 0 0;
   background: linear-gradient(90deg, rgba(226, 197, 128, 0.45), #f1d58f, rgba(226, 197, 128, 0.45));
   box-shadow: 0 0 10px rgba(241, 213, 143, 0.8);
+}
+.nav-jesus-shortcut {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: env(safe-area-inset-bottom);
+  display: grid;
+  width: 54px;
+  height: 32px;
+  place-items: center;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-jesus-shortcut > span {
+  display: grid;
+  width: 42px;
+  height: 18px;
+  place-items: center;
+  align-self: end;
+  border: 1px solid #efb07569;
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(165deg, #d2773f, #a64b25 70%);
+  color: #ffe4a3;
+  box-shadow: 0 3px 8px #14101870;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .nav-jesus-shortcut svg { animation: nav-jesus-arrow 2s ease-in-out infinite; }
+}
+@keyframes nav-jesus-arrow {
+  0%, 55%, 100% { transform: translateY(-1px); }
+  24% { transform: translateY(2px); }
 }
 /* Dark glass button for Scripture lookup. */
 .nav-flame {
@@ -895,6 +925,14 @@
 .icon-3d-olive {
   --icon-drop: rgba(70, 82, 40, 0.7);
   background: linear-gradient(135deg, #8a9a5b 0%, #5d6b3b 55%, #46522c 100%);
+}
+.icon-3d-petrol {
+  --icon-drop: rgba(31, 63, 77, 0.7);
+  background: linear-gradient(135deg, #628f9e 0%, #3b697a 55%, #1f3f4d 100%);
+}
+.icon-3d-violet {
+  --icon-drop: rgba(74, 48, 92, 0.7);
+  background: linear-gradient(135deg, #a080ae 0%, #795589 55%, #4a305c 100%);
 }
 @media (prefers-reduced-motion: reduce) {
   .home-tile,

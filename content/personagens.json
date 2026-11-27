@@ -1,0 +1,182 @@
+[
+  {
+    "id": "adao", "nome": "Adão", "testamento": "AT", "era": "Origens", "dia": 2,
+    "descricao": "O primeiro homem na narrativa de Gênesis.",
+    "resumo": "Deus forma Adão da terra e o coloca no jardim do Éden para cultivá-lo e guardá-lo. Adão e Eva comem do fruto que Deus havia proibido e deixam o jardim.",
+    "passagens": [{ "referencia": "Gênesis 2:7-17", "titulo": "A criação e o jardim" }, { "referencia": "Gênesis 3:6-24", "titulo": "A desobediência e a saída do Éden" }]
+  },
+  {
+    "id": "eva", "nome": "Eva", "testamento": "AT", "era": "Origens", "dia": 2,
+    "descricao": "A primeira mulher na narrativa de Gênesis.",
+    "resumo": "Deus forma Eva e a apresenta a Adão. No Éden, ela ouve a serpente e come do fruto proibido. Adão também come, e os dois passam a conhecer as consequências da desobediência.",
+    "passagens": [{ "referencia": "Gênesis 2:18-25", "titulo": "A criação da mulher" }, { "referencia": "Gênesis 3:1-20", "titulo": "A serpente, o fruto e as consequências" }]
+  },
+  {
+    "id": "noe", "nome": "Noé", "testamento": "AT", "era": "Origens", "dia": 2,
+    "descricao": "Construiu a arca antes do dilúvio.",
+    "resumo": "Em meio à violência da sua geração, Noé recebe de Deus a instrução de construir uma arca. Depois do dilúvio, Deus estabelece uma aliança com Noé, sua família e os seres vivos. O arco nas nuvens é o sinal dessa aliança.",
+    "passagens": [{ "referencia": "Gênesis 6:9-22", "titulo": "A instrução para construir a arca" }, { "referencia": "Gênesis 9:8-17", "titulo": "A aliança depois do dilúvio" }]
+  },
+  {
+    "id": "abraao", "nome": "Abraão", "outrosNomes": ["Abrão"], "testamento": "AT", "era": "Patriarcas", "dia": 3,
+    "descricao": "Recebeu a promessa de abençoar todas as famílias da terra.",
+    "resumo": "Chamado ainda como Abrão, ele deixa sua terra rumo a Canaã. Deus muda seu nome para Abraão e promete fazer dele pai de muitas nações. Abraão e Sara têm um filho, Isaque.",
+    "passagens": [{ "referencia": "Gênesis 12:1-9", "titulo": "O chamado de Abrão" }, { "referencia": "Gênesis 17:1-8", "titulo": "O novo nome e a aliança" }]
+  },
+  {
+    "id": "sara", "nome": "Sara", "outrosNomes": ["Sarai"], "testamento": "AT", "era": "Patriarcas", "dia": 3,
+    "descricao": "Esposa de Abraão e mãe de Isaque.",
+    "resumo": "Conhecida primeiro como Sarai, recebe de Deus o nome Sara e a promessa de um filho. Isaque nasce quando Sara e Abraão já são idosos.",
+    "passagens": [{ "referencia": "Gênesis 17:15-19", "titulo": "A promessa feita a Sara" }, { "referencia": "Gênesis 21:1-7", "titulo": "O nascimento de Isaque" }]
+  },
+  {
+    "id": "isaque", "nome": "Isaque", "testamento": "AT", "era": "Patriarcas", "dia": 3,
+    "descricao": "Filho de Abraão e Sara, pai de Esaú e Jacó.",
+    "resumo": "Isaque nasce como o filho prometido a Abraão e Sara. Já adulto, casa-se com Rebeca e se torna pai dos gêmeos Esaú e Jacó.",
+    "passagens": [{ "referencia": "Gênesis 21:1-7", "titulo": "O filho da promessa" }, { "referencia": "Gênesis 25:19-26", "titulo": "A família de Isaque e Rebeca" }]
+  },
+  {
+    "id": "jaco", "nome": "Jacó", "outrosNomes": ["Israel"], "testamento": "AT", "era": "Patriarcas", "dia": 3,
+    "descricao": "Filho de Isaque e Rebeca, também chamado Israel.",
+    "resumo": "Irmão gêmeo de Esaú, Jacó cresce em meio a disputas familiares. Em seu retorno à terra, luta durante a noite e recebe o nome Israel. Seus filhos dão origem às tribos de Israel.",
+    "passagens": [{ "referencia": "Gênesis 32:22-32", "titulo": "A luta de Jacó e seu novo nome" }, { "referencia": "Gênesis 35:22-26", "titulo": "Os filhos de Jacó" }]
+  },
+  {
+    "id": "jose-egito", "nome": "José do Egito", "outrosNomes": ["José, filho de Jacó"], "testamento": "AT", "era": "Patriarcas", "dia": 3,
+    "descricao": "Filho de Jacó que se tornou governador no Egito.",
+    "resumo": "Vendido por seus irmãos, José é levado ao Egito. Lá interpreta os sonhos do faraó e administra a preparação para a fome. Quando seus irmãos o procuram por alimento, ele se revela e acolhe a família.",
+    "passagens": [{ "referencia": "Gênesis 37:23-28", "titulo": "José é vendido" }, { "referencia": "Gênesis 45:1-15", "titulo": "O reencontro com os irmãos" }]
+  },
+  {
+    "id": "moises", "nome": "Moisés", "testamento": "AT", "era": "Êxodo e deserto", "dia": 4,
+    "descricao": "Liderou a saída dos israelitas do Egito.",
+    "resumo": "Deus chama Moisés na sarça ardente e o envia ao faraó para tirar Israel da escravidão. Moisés guia o povo pelo deserto e recebe os mandamentos no Sinai.",
+    "passagens": [{ "referencia": "Êxodo 3:1-12", "titulo": "O chamado na sarça ardente" }, { "referencia": "Êxodo 20:1-17", "titulo": "Os Dez Mandamentos" }]
+  },
+  {
+    "id": "miria", "nome": "Miriã", "outrosNomes": ["Miriam"], "testamento": "AT", "era": "Êxodo e deserto", "dia": 4,
+    "descricao": "Profetisa e irmã de Moisés e Arão.",
+    "resumo": "Após a travessia do mar, Miriã lidera as mulheres em um cântico de celebração. Miqueias a menciona ao lado de Moisés e Arão entre os líderes enviados a Israel na saída do Egito.",
+    "passagens": [{ "referencia": "Êxodo 15:19-21", "titulo": "O cântico de Miriã" }, { "referencia": "Miqueias 6:3-4", "titulo": "Miriã lembrada como líder" }]
+  },
+  {
+    "id": "josue", "nome": "Josué", "testamento": "AT", "era": "Terra, juízes e reis",
+    "descricao": "Sucedeu Moisés e liderou Israel na entrada em Canaã.",
+    "resumo": "Depois da morte de Moisés, Deus encarrega Josué de conduzir Israel para atravessar o Jordão. Mais tarde, em Siquém, Josué chama o povo a renovar seu compromisso de servir ao Senhor.",
+    "passagens": [{ "referencia": "Josué 1:1-9", "titulo": "Josué assume a liderança" }, { "referencia": "Josué 24:14-18", "titulo": "O chamado para servir ao Senhor" }]
+  },
+  {
+    "id": "debora", "nome": "Débora", "testamento": "AT", "era": "Terra, juízes e reis",
+    "descricao": "Profetisa e juíza em Israel.",
+    "resumo": "Débora julga as causas do povo e convoca Baraque para enfrentar o exército de Sísera. Ela acompanha Baraque e, depois da vitória, os dois cantam sobre o que aconteceu.",
+    "passagens": [{ "referencia": "Juízes 4:4-10", "titulo": "Débora e o chamado de Baraque" }, { "referencia": "Juízes 5:1-9", "titulo": "O cântico de Débora e Baraque" }]
+  },
+  {
+    "id": "rute", "nome": "Rute", "testamento": "AT", "era": "Terra, juízes e reis",
+    "descricao": "Mulher moabita que acompanhou Noemi e entrou na família de Davi.",
+    "resumo": "Depois de ficar viúva, Rute decide acompanhar sua sogra, Noemi, até Belém. Ali conhece Boaz. Os dois se casam e têm Obede, que se torna avô do rei Davi.",
+    "passagens": [{ "referencia": "Rute 1:14-18", "titulo": "Rute decide ficar com Noemi" }, { "referencia": "Rute 4:13-22", "titulo": "A família de Rute e Boaz" }]
+  },
+  {
+    "id": "samuel", "nome": "Samuel", "testamento": "AT", "era": "Terra, juízes e reis",
+    "descricao": "Profeta que acompanhou o início da monarquia de Israel.",
+    "resumo": "Filho de Ana, Samuel serve desde menino sob os cuidados de Eli. Deus o chama, e ele se torna profeta. Na transição para a monarquia, Samuel unge Saul e, mais tarde, Davi.",
+    "passagens": [{ "referencia": "1 Samuel 3:1-10", "titulo": "O chamado de Samuel" }, { "referencia": "1 Samuel 16:1-13", "titulo": "Samuel unge Davi" }]
+  },
+  {
+    "id": "davi", "nome": "Davi", "testamento": "AT", "era": "Terra, juízes e reis",
+    "descricao": "Pastor que se tornou rei de Israel.",
+    "resumo": "Samuel unge Davi, o filho mais novo de Jessé. Depois de enfrentar Golias e atravessar anos de conflito com Saul, Davi reina sobre Israel. Deus lhe faz uma promessa sobre sua linhagem.",
+    "passagens": [{ "referencia": "1 Samuel 17:40-50", "titulo": "Davi enfrenta Golias" }, { "referencia": "2 Samuel 7:8-16", "titulo": "A promessa à casa de Davi" }]
+  },
+  {
+    "id": "salomao", "nome": "Salomão", "testamento": "AT", "era": "Terra, juízes e reis",
+    "descricao": "Rei conhecido pela sabedoria e pela construção do templo.",
+    "resumo": "Filho e sucessor de Davi, Salomão pede a Deus discernimento para governar. Durante seu reinado é construído o templo de Jerusalém. Mais tarde, o relato também registra que Salomão se afasta do Senhor.",
+    "passagens": [{ "referencia": "1 Reis 3:5-14", "titulo": "O pedido de sabedoria" }, { "referencia": "1 Reis 8:22-30", "titulo": "A oração na dedicação do templo" }, { "referencia": "1 Reis 11:1-10", "titulo": "O afastamento de Salomão" }]
+  },
+  {
+    "id": "elias", "nome": "Elias", "testamento": "AT", "era": "Terra, juízes e reis",
+    "descricao": "Profeta em Israel no tempo do rei Acabe.",
+    "resumo": "Elias confronta o culto a Baal no monte Carmelo. Mais tarde, ameaçado por Jezabel, foge até o Horebe, onde Deus volta a falar com ele e lhe dá novas instruções.",
+    "passagens": [{ "referencia": "1 Reis 18:20-39", "titulo": "O confronto no monte Carmelo" }, { "referencia": "1 Reis 19:9-18", "titulo": "O encontro com Deus no Horebe" }]
+  },
+  {
+    "id": "daniel", "nome": "Daniel", "outrosNomes": ["Beltessazar", "Beltesazar"], "testamento": "AT", "era": "Exílio e retorno", "dia": 5,
+    "descricao": "Judeu levado à Babilônia que serviu em cortes estrangeiras.",
+    "resumo": "Longe de Judá, Daniel vive na corte e recebe um nome babilônico. O livro acompanha sua fidelidade a Deus sob diferentes governantes, inclusive quando é lançado na cova dos leões por continuar orando.",
+    "passagens": [{ "referencia": "Daniel 1:1-17", "titulo": "Daniel chega à Babilônia" }, { "referencia": "Daniel 6:10-23", "titulo": "A oração e a cova dos leões" }]
+  },
+  {
+    "id": "ester", "nome": "Ester", "outrosNomes": ["Hadassa"], "testamento": "AT", "era": "Exílio e retorno",
+    "descricao": "Rainha que intercedeu pelo povo judeu na Pérsia.",
+    "resumo": "Criada por Mardoqueu, Ester se torna rainha da Pérsia. Quando o povo judeu é ameaçado, ela decide se apresentar ao rei e pede que a vida do seu povo seja preservada.",
+    "passagens": [{ "referencia": "Ester 2:5-17", "titulo": "De Hadassa à rainha Ester" }, { "referencia": "Ester 7:1-6", "titulo": "Ester faz seu pedido ao rei" }]
+  },
+  {
+    "id": "jesus", "nome": "Jesus Cristo", "outrosNomes": ["Jesus de Nazaré", "Messias"], "testamento": "NT", "era": "Jesus e os Evangelhos", "dia": 6,
+    "descricao": "O centro da história que os Evangelhos contam.",
+    "resumo": "Os Evangelhos apresentam Jesus como o Cristo, o Filho de Deus. Ele anuncia o Reino de Deus, chama discípulos, ensina e cuida das pessoas. Seu caminho passa pela morte na cruz e pela ressurreição.",
+    "passagens": [{ "referencia": "Marcos 1:14-20", "titulo": "Jesus anuncia o Reino e chama discípulos" }, { "referencia": "Lucas 24:1-12", "titulo": "As mulheres encontram o túmulo vazio" }]
+  },
+  {
+    "id": "maria-mae-de-jesus", "nome": "Maria, mãe de Jesus", "testamento": "NT", "era": "Jesus e os Evangelhos",
+    "descricao": "Recebeu o anúncio do nascimento de Jesus.",
+    "resumo": "Maria vive em Nazaré quando Gabriel lhe anuncia que ela seria mãe de Jesus. Ela acolhe a notícia e visita Isabel. Mais tarde, aparece entre as pessoas reunidas em oração com os discípulos após a ascensão.",
+    "passagens": [{ "referencia": "Lucas 1:26-38", "titulo": "O anúncio a Maria" }, { "referencia": "Atos 1:12-14", "titulo": "Maria ora com os discípulos" }]
+  },
+  {
+    "id": "jose-nazare", "nome": "José de Nazaré", "outrosNomes": ["José, marido de Maria"], "testamento": "NT", "era": "Jesus e os Evangelhos",
+    "descricao": "Marido de Maria, cuidou de Jesus na infância.",
+    "resumo": "Quando um anjo lhe fala em sonho, José acolhe Maria e dá ao menino o nome Jesus. Diante da ameaça de Herodes, leva Maria e Jesus ao Egito e, mais tarde, vai morar em Nazaré com a família.",
+    "passagens": [{ "referencia": "Mateus 1:18-25", "titulo": "O sonho de José" }, { "referencia": "Mateus 2:13-23", "titulo": "A ida ao Egito e a volta a Nazaré" }]
+  },
+  {
+    "id": "joao-batista", "nome": "João Batista", "outrosNomes": ["João, o Batista"], "testamento": "NT", "era": "Jesus e os Evangelhos",
+    "descricao": "Preparou o caminho para Jesus e o batizou.",
+    "resumo": "Filho de Zacarias e Isabel, João anuncia uma mudança de vida e batiza no Jordão. Ele aponta para aquele que viria depois dele e batiza Jesus.",
+    "passagens": [{ "referencia": "Lucas 1:57-66", "titulo": "O nascimento de João" }, { "referencia": "Mateus 3:1-17", "titulo": "A pregação de João e o batismo de Jesus" }]
+  },
+  {
+    "id": "pedro", "nome": "Pedro", "outrosNomes": ["Simão Pedro", "Simão", "Cefas"], "testamento": "NT", "era": "Jesus e os Evangelhos",
+    "descricao": "Pescador chamado por Jesus e testemunha na igreja primitiva.",
+    "resumo": "Jesus chama Simão, também conhecido como Pedro, enquanto ele trabalha como pescador. Pedro chega a negar que conhece Jesus, mas volta a assumir sua missão. Em Atos, fala publicamente sobre a ressurreição.",
+    "passagens": [{ "referencia": "Lucas 5:1-11", "titulo": "A pesca e o chamado de Pedro" }, { "referencia": "João 21:15-19", "titulo": "Jesus volta a confiar uma missão a Pedro" }, { "referencia": "Atos 2:29-36", "titulo": "Pedro anuncia a ressurreição" }]
+  },
+  {
+    "id": "joao-apostolo", "nome": "João, o apóstolo", "outrosNomes": ["João, filho de Zebedeu"], "testamento": "NT", "era": "Jesus e os Evangelhos",
+    "descricao": "Um dos Doze, irmão de Tiago e filho de Zebedeu.",
+    "resumo": "Jesus chama João e seu irmão Tiago quando trabalham com o pai. João acompanha Jesus entre os Doze e, em Atos, aparece ao lado de Pedro diante das autoridades em Jerusalém.",
+    "passagens": [{ "referencia": "Marcos 1:19-20", "titulo": "Jesus chama Tiago e João" }, { "referencia": "Atos 4:13-22", "titulo": "Pedro e João falam diante do conselho" }]
+  },
+  {
+    "id": "maria-madalena", "nome": "Maria Madalena", "outrosNomes": ["Maria de Magdala"], "testamento": "NT", "era": "Jesus e os Evangelhos",
+    "descricao": "Discípula de Jesus e testemunha da ressurreição.",
+    "resumo": "Lucas inclui Maria Madalena entre as mulheres que acompanhavam Jesus e apoiavam seu ministério. João narra seu encontro com Jesus ressuscitado e como ela leva a notícia aos discípulos.",
+    "passagens": [{ "referencia": "Lucas 8:1-3", "titulo": "As mulheres que acompanham Jesus" }, { "referencia": "João 20:11-18", "titulo": "Maria Madalena encontra Jesus ressuscitado" }]
+  },
+  {
+    "id": "mulher-samaritana", "nome": "Mulher samaritana", "outrosNomes": ["Samaritana do poço", "Mulher do poço"], "testamento": "NT", "era": "Jesus e os Evangelhos",
+    "descricao": "Conversou com Jesus junto ao poço de Jacó.",
+    "resumo": "João conta que Jesus pede água a uma mulher samaritana e conversa com ela sobre a água viva e a adoração. Ela volta à cidade e convida outras pessoas a conhecer Jesus.",
+    "passagens": [{ "referencia": "João 4:4-26", "titulo": "A conversa junto ao poço" }, { "referencia": "João 4:28-42", "titulo": "A mulher convida a cidade a conhecer Jesus" }]
+  },
+  {
+    "id": "marta", "nome": "Marta de Betânia", "outrosNomes": ["Marta"], "testamento": "NT", "era": "Jesus e os Evangelhos",
+    "descricao": "Irmã de Maria e Lázaro, recebeu Jesus em casa.",
+    "resumo": "Marta acolhe Jesus e se ocupa com o serviço da casa enquanto sua irmã Maria o escuta. Em Betânia, após a morte de Lázaro, Marta conversa com Jesus sobre a ressurreição e afirma sua fé nele.",
+    "passagens": [{ "referencia": "Lucas 10:38-42", "titulo": "Jesus visita Marta e Maria" }, { "referencia": "João 11:17-27", "titulo": "A conversa sobre a ressurreição" }]
+  },
+  {
+    "id": "estevao", "nome": "Estêvão", "testamento": "NT", "era": "Igreja primitiva",
+    "descricao": "Um dos sete escolhidos para servir a comunidade em Jerusalém.",
+    "resumo": "Estêvão é escolhido quando a comunidade precisa organizar o atendimento às viúvas. Levado diante do conselho, relembra a história de Israel e testemunha sobre Jesus. É morto por apedrejamento enquanto ora.",
+    "passagens": [{ "referencia": "Atos 6:1-8", "titulo": "A escolha dos sete" }, { "referencia": "Atos 7:54-60", "titulo": "O testemunho final de Estêvão" }]
+  },
+  {
+    "id": "paulo", "nome": "Paulo", "outrosNomes": ["Saulo", "Saulo de Tarso"], "testamento": "NT", "era": "Igreja primitiva",
+    "descricao": "De perseguidor dos cristãos a missionário entre as nações.",
+    "resumo": "Saulo perseguia os seguidores de Jesus até seu encontro com o Senhor no caminho de Damasco. Atos também o chama de Paulo. Ele viaja para anunciar o evangelho e escreve cartas a comunidades cristãs.",
+    "passagens": [{ "referencia": "Atos 9:1-19", "titulo": "O encontro no caminho de Damasco" }, { "referencia": "Atos 13:1-12", "titulo": "O envio de Barnabé e Saulo" }, { "referencia": "Romanos 1:1-7", "titulo": "Como Paulo apresenta sua missão" }]
+  }
+]

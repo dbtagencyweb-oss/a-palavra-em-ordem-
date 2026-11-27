@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 6,
   "formato": "leitura-guiada",
   "titulo": "Jó 1–2",
@@ -11,5 +11,32 @@
       "ate": 2
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d6-leitura",
+      "tipo": "leitura",
+      "referencia": "Jó 1–2",
+      "texto": "Hoje o roteiro abre uma pausa em Gênesis para ler Jó. Observe o que o narrador diz sobre seu caráter antes de contar suas perdas."
+    },
+    {
+      "id": "origens-d6-contexto",
+      "tipo": "contexto",
+      "texto": "O livro apresenta Jó como um homem íntegro. Ele perde bens, filhos e saúde. O leitor acompanha cenas que Jó desconhece, e o livro logo mostra que suas perdas não podem ser atribuídas a uma culpa secreta. Seus três amigos chegam, choram com ele e passam dias ao seu lado em silêncio."
+    },
+    {
+      "id": "origens-d6-observar",
+      "tipo": "observar",
+      "texto": "Leia Jó 2:11–13 com atenção. Antes de oferecer qualquer explicação, os amigos percebem a dor de Jó e ficam ao lado dele. O que esse primeiro gesto oferece a alguém que ainda está vivendo o choque da perda?"
+    },
+    {
+      "id": "origens-d6-cristo",
+      "tipo": "cristo",
+      "texto": "Em João 9:1–3, os discípulos querem atribuir a cegueira de um homem ao pecado dele ou de seus pais. Jesus desfaz essa associação para aquele caso e se volta para o que Deus faria ali. A cena ensina a ter cuidado ao explicar a dor de outra pessoa."
+    },
+    {
+      "id": "origens-d6-pergunta",
+      "tipo": "pergunta",
+      "texto": "Pense em alguém que está passando por um tempo difícil. Que gesto de presença ou ajuda seria possível sem tentar explicar o que aconteceu?"
+    }
+  ]
 }

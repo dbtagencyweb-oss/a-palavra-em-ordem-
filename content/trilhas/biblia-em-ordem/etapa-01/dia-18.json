@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 18,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 28–29",
@@ -11,5 +11,32 @@
       "ate": 29
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d18-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 28–29",
+      "texto": "Leia o sonho de Jacó em Betel e sua chegada à casa de Labão. Em seguida, acompanhe o início da vida de Lia e Raquel naquela família."
+    },
+    {
+      "id": "origens-d18-contexto",
+      "tipo": "contexto",
+      "texto": "Longe de casa, Jacó sonha com uma ligação entre a terra e o céu. Deus reafirma a promessa e diz que o acompanhará na viagem. Na casa de Labão, Jacó trabalha para se casar com Raquel, mas é enganado. O capítulo 29 termina prestando atenção a Lia, que sofre por ser menos amada."
+    },
+    {
+      "id": "origens-d18-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 28:15–17, observe a diferença entre o que Jacó esperava daquele lugar e o que ele percebe ao acordar. Em Gênesis 29:31–35, repare em quem recebe a atenção de Deus quando a família se concentra em outra pessoa."
+    },
+    {
+      "id": "origens-d18-cristo",
+      "tipo": "cristo",
+      "texto": "Em João 1:51, Jesus retoma a imagem dos anjos que sobem e descem, agora sobre o Filho do Homem. A imagem que Jacó viu em Betel ajuda a ler as palavras de Jesus: é nele que o encontro entre o céu e a terra ganha um rosto."
+    },
+    {
+      "id": "origens-d18-pergunta",
+      "tipo": "pergunta",
+      "texto": "Em que lugar comum da sua rotina você raramente para para notar o que acontece ao redor? Quem ou o que mereceria sua atenção ali?"
+    }
+  ]
 }

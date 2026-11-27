@@ -21,10 +21,19 @@ describe('LocalProgressStore', () => {
     expect(await new LocalProgressStore().load()).toEqual(createProgress())
   })
 
+  it('preserves earlier reading-order marks alongside saved progress', async () => {
+    const store = new LocalProgressStore()
+    localStorage.setItem('pao:ordem-leitura:v1', JSON.stringify(['gn:1', 'gn:2', 'gn:2', 3]))
+    expect((await store.load()).readChapters).toEqual(['gn:1', 'gn:2'])
+    await store.save({ ...createProgress(), readChapters: ['gn:2', 'gn:3'] })
+    expect((await store.load()).readChapters).toEqual(['gn:2', 'gn:3', 'gn:1'])
+  })
+
   it('resets', async () => {
     const store = new LocalProgressStore()
+    localStorage.setItem('pao:ordem-leitura:v1', JSON.stringify(['gn:1']))
     await store.save({ ...createProgress(), steps: 99 })
     await store.reset()
-    expect((await store.load()).steps).toBe(0)
+    expect(await store.load()).toEqual(createProgress())
   })
 })

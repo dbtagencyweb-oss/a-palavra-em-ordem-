@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 2,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 3",
@@ -11,5 +11,32 @@
       "ate": 3
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d2-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 3",
+      "texto": "Leia a conversa no jardim e acompanhe o que muda quando Adão e Eva comem do fruto. Repare como Deus volta a falar com os dois."
+    },
+    {
+      "id": "origens-d2-contexto",
+      "tipo": "contexto",
+      "texto": "A ruptura de Gênesis 3 só faz sentido à luz do jardim dos capítulos anteriores. Adão e Eva desconfiam da palavra de Deus, comem do fruto e se escondem. A conversa que se segue mostra a vergonha, a tentativa de passar a culpa adiante e as consequências da escolha. Antes de saírem do jardim, Deus lhes dá roupas."
+    },
+    {
+      "id": "origens-d2-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 3:8–13, Deus pergunta onde Adão está e o que aconteceu. Compare o que Adão diz com a resposta de Eva. Observe como é mais fácil apontar a escolha de outra pessoa do que assumir a própria."
+    },
+    {
+      "id": "origens-d2-cristo",
+      "tipo": "cristo",
+      "texto": "Paulo coloca Adão e Jesus lado a lado em Romanos 5:12–19. A desobediência de Adão ajuda a entender a entrada do pecado e da morte. A obediência de Cristo abre o caminho da graça e da vida. Esse contraste ajuda a entender por que o Evangelho é boa notícia."
+    },
+    {
+      "id": "origens-d2-pergunta",
+      "tipo": "pergunta",
+      "texto": "Quando você erra, o que costuma fazer primeiro? Que passo de honestidade você pode dar diante de Deus ou de alguém hoje?"
+    }
+  ]
 }

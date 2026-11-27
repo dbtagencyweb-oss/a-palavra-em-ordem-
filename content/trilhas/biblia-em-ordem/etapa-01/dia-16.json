@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 16,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 25–26",
@@ -11,5 +11,32 @@
       "ate": 26
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d16-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 25–26",
+      "texto": "Acompanhe a passagem de Abraão para Isaque e a chegada de Esaú e Jacó. Depois, repare em como Isaque reage às disputas pelos poços."
+    },
+    {
+      "id": "origens-d16-contexto",
+      "tipo": "contexto",
+      "texto": "Depois de registrar a morte de Abraão, o livro acompanha a família de Isaque. Esaú vende a Jacó seu direito de filho mais velho em troca de comida. Em outra cena, Isaque atravessa uma fome, recebe a reafirmação da promessa e enfrenta conflitos em torno da água."
+    },
+    {
+      "id": "origens-d16-observar",
+      "tipo": "observar",
+      "texto": "Nos poços de Gênesis 26:17–25, Isaque muda de lugar quando a disputa se repete. Mais adiante ele faz um acordo com Abimeleque (26:26–31). Compare os dois momentos. Que tipo de decisão contribui para a paz em cada um?"
+    },
+    {
+      "id": "origens-d16-cristo",
+      "tipo": "cristo",
+      "texto": "Em Mateus 5:9, Jesus chama de bem-aventurados os que promovem a paz. Na história de Isaque, buscar a paz envolve escolhas bem concretas: ceder espaço e, quando surge a oportunidade, conversar para estabelecer um acordo."
+    },
+    {
+      "id": "origens-d16-pergunta",
+      "tipo": "pergunta",
+      "texto": "Em que desacordo seria possível dar um passo em direção à paz? Identifique uma ação ao seu alcance, mesmo que a outra pessoa ainda não esteja pronta."
+    }
+  ]
 }

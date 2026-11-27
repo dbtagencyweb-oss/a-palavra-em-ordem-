@@ -2,11 +2,12 @@ import { useAccess } from '../access/AccessContext'
 import { isFounderSeat } from '../access/rules'
 import { FounderBadge } from '../ui/FounderBadge'
 import { Logo } from '../ui/Logo'
-import { lazy, Suspense, useEffect, useRef } from 'react'
+import { lazy, Suspense, useEffect, useRef, type RefObject } from 'react'
 import { TOTAL_DAYS, trilha, ui } from '../content'
 import { isDayCompleted, isDayUnlocked, nextDay } from '../game/progress'
 import { useProgress } from '../store/ProgressContext'
-import { ArrowIcon, CheckIcon, GraceIcon, LampIcon, LockIcon, PlayIcon, StarIcon, StepsIcon } from '../ui/icons'
+import { ArrowIcon, CheckIcon, GraceIcon, LampIcon, LockIcon, PlayIcon, StepsIcon } from '../ui/icons'
+import { StudyShortcuts } from '../ui/StudyShortcuts'
 import { useToast } from '../ui/Toast'
 import { useFounder } from '../auth/useFounder'
 import { soundManager } from '../sound/SoundManager'
@@ -23,6 +24,9 @@ const PilgrimageMap = lazy(() => import('../pilgrimage/PilgrimageMap').then((mod
 const JourneyMap = lazy(() => import('./JourneyMap').then((module) => ({ default: module.JourneyMap })))
 
 interface Props {
+  pilgrimage: boolean
+  onTrail2: boolean
+  jesusHeadingRef: RefObject<HTMLHeadingElement>
   onOpenDay(n: number, trail?: string): void
   onOffer(origem: string): void
   onContinueJesus(): void
@@ -36,17 +40,13 @@ function greeting(hour: number) {
   return hour < 12 ? 'Bom dia.' : hour < 18 ? 'Boa tarde.' : 'Boa noite.'
 }
 
-export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, onBiblia, onStudies, onGroup }: Props) {
+export function HomeScreen({ pilgrimage, onTrail2, jesusHeadingRef, onOpenDay, onOffer, onContinueJesus, onCollection, onBiblia, onStudies, onGroup }: Props) {
   const founder = useFounder()
   // The crowned badge is for the limited Founder seats (paid access without a seat shows no lock either).
   const seat = isFounderSeat(useAccess().entitlements)
   const { progress, today, pendingGrace, clearPendingGrace } = useProgress()
   const toast = useToast()
   const more = useRef<HTMLHeadingElement>(null)
-  const mapOverride = new URLSearchParams(window.location.search).get('mapa')
-  const pilgrimage = mapOverride === 'v2' || (mapOverride !== 'classico' && (
-    import.meta.env.VITE_PILGRIMAGE_V2 === 'true' || (import.meta.env.DEV && import.meta.env.VITE_PILGRIMAGE_V2 !== 'false')
-  ))
   useEffect(() => {
     if (pendingGrace > 0) {
       soundManager.play('grace_used')
@@ -63,8 +63,6 @@ export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, 
     isDayCompleted(progress, n) ? 'done' : isDayUnlocked(progress, n, today) ? 'open' : n === next ? 'tomorrow' : 'locked',
   )
 
-  // Trilha 2 continues the path for Founders who finished the 7-day map.
-  const onTrail2 = next === null && founder
   const t2Next = JESUS.visible.find((d) => !isDayCompleted(progress, d.n, JESUS.id))?.n ?? null
 
   // The round button tells what tapping does: play a lesson, see the next track, or wait for tomorrow.
@@ -102,7 +100,7 @@ export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, 
   }
 
   const jesusJourney = onTrail2 && (
-    <Trail2Path next={t2Next} onTapDay={tapTrail2Day} headingRef={pilgrimage ? more : undefined} autoScroll={!pilgrimage} />
+    <Trail2Path next={t2Next} onTapDay={tapTrail2Day} headingRef={jesusHeadingRef} autoScroll={!pilgrimage} />
   )
 
   return (
@@ -143,13 +141,11 @@ export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, 
           <PilgrimageMap
             current={next ?? TOTAL_DAYS}
             status={territoryStatus}
-            moreLabel={onTrail2 ? JESUS.titulo : undefined}
             onLesson={tapDay}
-            onMore={() => {
+            onMore={onTrail2 ? undefined : () => {
               const heading = more.current
               heading?.focus({ preventScroll: true })
-              const target = onTrail2 ? heading?.closest('section') : heading
-              target?.scrollIntoView({
+              heading?.scrollIntoView({
                 block: 'start',
                 behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
               })
@@ -161,7 +157,7 @@ export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, 
       {pilgrimage && jesusJourney}
 
       <div className="px-5 pb-1.5 pt-1">
-        <h2 ref={pilgrimage && onTrail2 ? undefined : more} tabIndex={-1} className={`text-2xl ${pilgrimage ? 'scroll-mt-4' : 'scroll-mt-[84px]'}`}>{greeting(new Date().getHours())}</h2>
+        <h2 ref={more} tabIndex={-1} className={`text-2xl ${pilgrimage ? 'scroll-mt-4' : 'scroll-mt-[84px]'}`}>{greeting(new Date().getHours())}</h2>
         <p className="mt-1 text-sm text-ink-2">Sua caminhada pela Palavra continua aqui.</p>
       </div>
 
@@ -199,56 +195,7 @@ export function HomeScreen({ onOpenDay, onOffer, onContinueJesus, onCollection, 
         />
       )}
 
-      <button
-        type="button"
-        onClick={onCollection}
-        className="mx-5 mb-3 flex items-center gap-3.5 home-tile rounded-btn border border-line bg-card p-3.5 text-left"
-      >
-        <span className="grid h-11 w-11 flex-none place-items-center icon-3d icon-3d-gold rounded-xl">
-          <StarIcon />
-        </span>
-        <span className="flex-1">
-          <strong className="block text-sm">Coleção de símbolos</strong>
-          <span className="text-xs text-ink-3">
-            {progress.symbols.length} de {TOTAL_DAYS} desbloqueados
-          </span>
-        </span>
-        <span className="text-ink-3" aria-hidden="true">›</span>
-      </button>
-
-      {/* A Bíblia em Ordem: the chronological plan, on its own screen. */}
-      <button
-        type="button"
-        onClick={onBiblia}
-        data-testid="abrir-biblia-em-ordem"
-        className="mx-5 mb-3 flex flex-none items-center gap-3.5 home-tile rounded-btn border border-line bg-card p-3.5 text-left"
-      >
-        <span className="grid h-11 w-11 flex-none place-items-center icon-3d icon-3d-ember rounded-xl">
-          <BookIcon />
-        </span>
-        <span className="flex-1">
-          <strong className="block text-sm">Biblioteca da Bíblia</strong>
-          <span className="text-xs text-ink-3">66 livros, mapa e plano cronológico</span>
-        </span>
-        <span className="text-ink-3" aria-hidden="true">›</span>
-      </button>
-
-      {/* Estudos por livro: the in-app store (docs/07, Prompt 9). */}
-      <button
-        type="button"
-        onClick={onStudies}
-        data-testid="abrir-loja-estudos"
-        className="mx-5 mb-3 flex flex-none items-center gap-3.5 home-tile rounded-btn border border-line bg-card p-3.5 text-left"
-      >
-        <span className="grid h-11 w-11 flex-none place-items-center icon-3d icon-3d-olive rounded-xl">
-          <BookIcon />
-        </span>
-        <span className="flex-1">
-          <strong className="block text-sm">Estudos por livro</strong>
-          <span className="text-xs text-ink-3">{founder ? 'Romanos, Salmos e Apocalipse · Preço de Fundador' : 'Romanos, Salmos e Apocalipse'}</span>
-        </span>
-        <span className="text-ink-3" aria-hidden="true">›</span>
-      </button>
+      <StudyShortcuts onCollection={onCollection} onBiblia={onBiblia} onStudies={onStudies} />
 
       {/* Direct access for subscribers who are still exploring the free map. */}
       {!onTrail2 && (
@@ -299,15 +246,5 @@ function Chip({ icon, value, label, className = '', onExplain }: { icon: React.R
       {icon}
       <span aria-hidden="true">{value}</span>
     </button>
-  )
-}
-
-
-function BookIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M12 6.5C10.3 5.2 7.7 4.6 4 4.8v13c3.7-.2 6.3.4 8 1.7 1.7-1.3 4.3-1.9 8-1.7v-13c-3.7-.2-6.3.4-8 1.7z" fill="currentColor" fillOpacity={0.18} />
-      <path d="M12 6.5v13" />
-    </svg>
   )
 }

@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 22,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 37",
@@ -11,5 +11,32 @@
       "ate": 37
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d22-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 37",
+      "texto": "Leia os sonhos de José, o encontro com os irmãos longe de casa e a forma como Jacó recebe a notícia. Observe o que cada pessoa sabe da história."
+    },
+    {
+      "id": "origens-d22-contexto",
+      "tipo": "contexto",
+      "texto": "José é alvo da hostilidade dos irmãos. O tratamento preferencial de Jacó e os sonhos de José aumentam a tensão. Longe de casa, os irmãos o jogam numa cisterna, e ele acaba vendido e levado ao Egito. Jacó fica com a túnica e acredita que perdeu o filho."
+    },
+    {
+      "id": "origens-d22-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 37:18–33, Rúben, Judá e os demais irmãos tomam decisões diferentes. Repare como o grupo passa da conversa para a ação e como a túnica leva Jacó a uma conclusão errada."
+    },
+    {
+      "id": "origens-d22-cristo",
+      "tipo": "cristo",
+      "texto": "Em Atos 7:9–10, Estêvão relembra que os patriarcas agiram por inveja, enquanto Deus acompanhou José. No mesmo discurso, ele denuncia a rejeição do Justo, Jesus (7:51–52). Estêvão conecta esses episódios ao mostrar como o povo pode resistir à obra de Deus."
+    },
+    {
+      "id": "origens-d22-pergunta",
+      "tipo": "pergunta",
+      "texto": "Quando a comparação com outra pessoa começou a mudar seu modo de tratá-la? Que atitude poderia interromper esse movimento hoje?"
+    }
+  ]
 }

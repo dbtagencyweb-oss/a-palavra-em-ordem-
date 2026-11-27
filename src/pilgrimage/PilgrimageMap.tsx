@@ -13,12 +13,12 @@ import { maps, territories, world, type Camera, type Point, type Territory } fro
 export type TerritoryStatus = 'done' | 'open' | 'tomorrow' | 'locked'
 
 type View = { kind: 'world' | 'region' | 'locality'; frame: MapFrame }
+type Hotspot = Territory['hotspots'][number]
 type Props = {
   current: number
   status: TerritoryStatus[]
-  moreLabel?: string
   onLesson(day: number): void
-  onMore(): void
+  onMore?(): void
 }
 
 const worldFrame = (camera: Camera): MapFrame => ({ id: 'mundo', asset: world, initial: camera })
@@ -38,14 +38,14 @@ function regionFrame(territory: Territory): MapFrame {
   }
 }
 
-export function PilgrimageMap({ current, status, moreLabel = 'Mais da jornada', onLesson, onMore }: Props) {
+export function PilgrimageMap({ current, status, onLesson, onMore }: Props) {
   const reduce = useReducedMotion()
   const [atmosphere, setAtmosphere] = useState(true)
   const [selected, setSelected] = useState(current)
   const [view, setView] = useState<View>(() => ({ kind: 'world', frame: worldFrame(centerTerritory(current)) }))
   const [incoming, setIncoming] = useState<MapFrame | null>(null)
   const [moving, setMoving] = useState(false)
-  const [scene, setScene] = useState<Territory['hotspots'][number] | null>(null)
+  const [scene, setScene] = useState<{ hotspot: Hotspot; day: number } | null>(null)
   const [notice, setNotice] = useState('')
   const [folded, setFolded] = useState(false)
   const controls = useRef<MapControls>(null)
@@ -174,17 +174,18 @@ export function PilgrimageMap({ current, status, moreLabel = 'Mais da jornada', 
     void transfer({ kind: 'world', frame }, { ...pose, zoom: Math.max(view.frame.minZoom ?? 1, pose.zoom / 1.25) })
   }
 
-  function openHotspot(hotspot: Territory['hotspots'][number]) {
-    if (!canOpen || changing.current) return
+  function openHotspot(hotspot: Hotspot, day: number) {
+    const access = status[day - 1]
+    if ((access !== 'done' && access !== 'open') || changing.current) return
     const asset = hotspot.locality && maps[hotspot.locality.asset]
-    if (hotspot.locality && asset) {
+    if (view.kind === 'region' && hotspot.locality && asset) {
       regionReturn.current = { ...view.frame, initial: controls.current?.camera() ?? view.frame.initial }
       void transfer({
         kind: 'locality',
         frame: { id: hotspot.id, asset, initial: hotspot.locality.camera },
       }, { point: hotspot.point, zoom: 1.7 })
     } else if (hotspot.scene && maps[hotspot.scene]) {
-      setScene(hotspot)
+      setScene({ hotspot, day })
     }
   }
 
@@ -195,7 +196,31 @@ export function PilgrimageMap({ current, status, moreLabel = 'Mais da jornada', 
     void controls.current?.fly(camera, reduced ? 0 : 440)
   }
 
-  const art = scene?.scene ? maps[scene.scene] : undefined
+  function locateDiscovery(point: Point) {
+    const map = controls.current
+    if (!map || changing.current) return
+    void map.fly({ point, zoom: map.camera().zoom }, reduced ? 0 : 360)
+  }
+
+  const sceneContent = scene?.hotspot
+  const art = sceneContent?.scene ? maps[sceneContent.scene] : undefined
+  const discoveryTerritories = view.kind === 'world' ? territories : view.kind === 'region' ? [region] : []
+  const discoveries = discoveryTerritories.flatMap((item) => {
+    const access = status[item.n - 1]
+    if (access !== 'done' && access !== 'open') return []
+    return item.hotspots
+      .filter((spot) => view.kind === 'region' || (spot.scene && maps[spot.scene]))
+      .map((spot) => (
+        <DiscoveryPin
+          key={spot.id}
+          spot={spot}
+          point={view.kind === 'world' ? spot.worldPoint : spot.point}
+          busy={moving}
+          onLocate={locateDiscovery}
+          onOpen={() => openHotspot(spot, item.n)}
+        />
+      ))
+  })
 
   return (
     <section ref={mapRoot} className="pilgrimage" aria-label="Peregrinação pela Bíblia" data-testid="pilgrimage-map" data-level={view.kind} data-effects={atmosphere}>
@@ -206,6 +231,7 @@ export function PilgrimageMap({ current, status, moreLabel = 'Mais da jornada', 
         busy={moving}
         reduced={reduced}
         onIncomingShown={() => finishFade.current?.()}
+        discoveries={discoveries}
       >
         {view.kind === 'world' && (
           <>
@@ -264,23 +290,18 @@ export function PilgrimageMap({ current, status, moreLabel = 'Mais da jornada', 
             })}
           </>
         )}
-        {view.kind === 'region' && region.hotspots.map((item) => {
-          const point = !region.asset && item.id === 'acampamento-de-abraao' ? ([0.29, 0.536] as const) : item.point
-          return (
-            <div key={item.id} className="pilgrimage-pin-anchor" style={position(point)}>
-              <button type="button" className="pilgrimage-hotspot" disabled={moving} onClick={() => openHotspot(item)}>
-                <span aria-hidden="true">✦</span><span>{item.title}</span>
-              </button>
-            </div>
-          )
-        })}
       </MapViewport>
 
       <div className="pilgrimage-haze" aria-hidden="true" />
 
       <div className="pilgrimage-top">
         {view.kind === 'world' ? (
-          <div className="pilgrimage-map-label"><span aria-hidden="true">✦</span> Mapa da jornada</div>
+          <>
+            <div className="pilgrimage-map-label"><span aria-hidden="true">✦</span> Mapa da jornada</div>
+            {!folded && (
+              <button type="button" className="pilgrimage-explore" onClick={explore} disabled={!canOpen || moving}>Explorar região <span aria-hidden="true">›</span></button>
+            )}
+          </>
         ) : (
           <button type="button" className="pilgrimage-back" onClick={back} disabled={moving}>
             <BackIcon size={16} /> {view.kind === 'locality' ? 'Voltar à região' : 'Voltar ao mapa'}
@@ -295,12 +316,9 @@ export function PilgrimageMap({ current, status, moreLabel = 'Mais da jornada', 
           title={atmosphere ? 'Desativar efeitos' : 'Ativar efeitos'}
         ><span aria-hidden="true">{atmosphere ? '✦' : '✧'}</span></button>
       </div>
-      <div className="pilgrimage-shortcuts">
-        {view.kind === 'world' && !folded && (
-          <button type="button" className="pilgrimage-explore" onClick={explore} disabled={!canOpen || moving}>Explorar região <span aria-hidden="true">›</span></button>
-        )}
-        <button type="button" className="pilgrimage-more" onClick={onMore}>{moreLabel} <span aria-hidden="true">↓</span></button>
-      </div>
+      {onMore && (
+        <button type="button" className="pilgrimage-more" onClick={onMore}>Mais da jornada <span aria-hidden="true">↓</span></button>
+      )}
 
       <div className="pilgrimage-overlays">
         <div className="pilgrimage-tools">
@@ -351,23 +369,78 @@ export function PilgrimageMap({ current, status, moreLabel = 'Mais da jornada', 
         </div>
       </div>
 
-      <Sheet open={!!scene && !!art} onClose={() => setScene(null)} label={scene?.title} tone="dark">
-        {scene && art && (
+      <Sheet
+        open={!!scene && !!art}
+        onClose={() => setScene(null)}
+        labelledBy="pilgrimage-scene-title"
+        tone="dark"
+        centered
+        className="pilgrimage-scene-panel"
+        backdropClassName="pilgrimage-scene-backdrop"
+      >
+        {scene && sceneContent && art && (
           <>
-            <div className="mb-4 flex items-center justify-between gap-3">
-              <h3 className="font-display text-[22px]">{scene.title}</h3>
-              <button type="button" onClick={() => setScene(null)} aria-label="Fechar cena" className="grid h-11 w-11 flex-none place-items-center rounded-full bg-white/10"><CloseIcon size={18} /></button>
+            <div className="pilgrimage-scene-header">
+              <div>
+                <p>{sceneContent.reference}</p>
+                <h3 id="pilgrimage-scene-title" className="font-display">{sceneContent.title}</h3>
+              </div>
+              <button type="button" onClick={() => setScene(null)} aria-label="Fechar cena" className="pilgrimage-scene-close"><CloseIcon size={18} /></button>
             </div>
-            <div className="pilgrimage-scene" style={{ aspectRatio: `${art.width} / ${art.height}` }}>
-              <MapImage asset={art} width={320} alt={scene.title} />
+            <div className="pilgrimage-scene-frame">
+              <div className="pilgrimage-scene" style={{ '--scene-ratio': art.width / art.height } as CSSProperties}>
+                <MapImage key={art.preview.path} asset={art} width={420} alt={sceneContent.title} />
+              </div>
             </div>
-            {scene.id === 'mar-vermelho' && (
-              <button type="button" className="btn mt-4" onClick={() => { setScene(null); onLesson(4) }}>Abrir a lição do Sinai</button>
-            )}
+            <div className="pilgrimage-scene-caption">
+              <p>{sceneContent.description}</p>
+              {sceneContent.lessonLabel && (
+                <button type="button" onClick={() => { setScene(null); onLesson(scene.day) }}>{sceneContent.lessonLabel} <span aria-hidden="true">›</span></button>
+              )}
+            </div>
           </>
         )}
       </Sheet>
     </section>
+  )
+}
+
+function DiscoveryPin({ spot, point, busy, onLocate, onOpen }: {
+  spot: Hotspot
+  point: Point
+  busy: boolean
+  onLocate(point: Point): void
+  onOpen(): void
+}) {
+  const art = (spot.scene && maps[spot.scene]) || (spot.locality && maps[spot.locality.asset])
+  if (!art) return null
+
+  return (
+    <div className="pilgrimage-pin-anchor pilgrimage-discovery-anchor" style={position(point)}>
+      <button
+        type="button"
+        className="pilgrimage-hotspot"
+        disabled={busy}
+        aria-label={spot.title}
+        onClick={onOpen}
+        onFocus={(event) => {
+          const button = event.currentTarget
+          const viewport = button.closest('.pilgrimage-viewport')?.getBoundingClientRect()
+          if (!viewport || !button.matches(':focus-visible')) return
+          const pin = button.getBoundingClientRect()
+          if (pin.top < viewport.top || pin.bottom > viewport.bottom ||
+              pin.left < viewport.left || pin.right > viewport.right) onLocate(point)
+        }}
+      >
+        <span className="pilgrimage-hotspot-thumb">
+          <img src={art.preview.path} alt="" loading="lazy" decoding="async" width={art.preview.width} height={art.preview.height} />
+        </span>
+        <span className="pilgrimage-hotspot-label">
+          <strong>{spot.title}</strong>
+          <small>{spot.reference}</small>
+        </span>
+      </button>
+    </div>
   )
 }
 

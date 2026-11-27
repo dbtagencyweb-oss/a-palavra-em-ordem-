@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 12,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 18–19",
@@ -11,5 +11,32 @@
       "ate": 19
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d12-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 18–19",
+      "texto": "Leia o anúncio do nascimento de Isaque, a oração de Abraão e a saída de Ló de Sodoma. Repare em como cada pessoa reage ao que ouve."
+    },
+    {
+      "id": "origens-d12-contexto",
+      "tipo": "contexto",
+      "texto": "Três visitantes chegam, e Abraão os recebe à mesa. Ali ele e Sara ouvem que terão um filho. Depois, Abraão pede que Deus considere os justos ao julgar Sodoma. O capítulo 19 acompanha Ló e sua família no momento de sair da cidade."
+    },
+    {
+      "id": "origens-d12-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 18:23–33, Abraão faz a mesma pergunta por vários ângulos. Note como ele reconhece a justiça de Deus e, ao mesmo tempo, apresenta seu pedido com insistência."
+    },
+    {
+      "id": "origens-d12-cristo",
+      "tipo": "cristo",
+      "texto": "Em Lucas 17:28–33, Jesus recorda os dias de Ló. O trabalho e os negócios da cidade seguiam normalmente até a chegada do juízo. Ao lembrar a saída de Sodoma, Jesus chama seus ouvintes a viver atentos e a reconhecer quando chegou a hora de agir."
+    },
+    {
+      "id": "origens-d12-pergunta",
+      "tipo": "pergunta",
+      "texto": "Por quem você poderia interceder hoje? Pense em uma pessoa ou comunidade e formule um pedido específico por ela."
+    }
+  ]
 }

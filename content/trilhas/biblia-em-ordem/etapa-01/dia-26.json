@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 26,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 44–45",
@@ -11,5 +11,32 @@
       "ate": 45
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d26-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 44–45",
+      "texto": "Leia o episódio do copo e o pedido de Judá. Em seguida, acompanhe o momento em que José conta aos irmãos quem ele é."
+    },
+    {
+      "id": "origens-d26-contexto",
+      "tipo": "contexto",
+      "texto": "O copo encontrado na bagagem de Benjamim põe os irmãos diante de uma escolha. Judá explica a José o que perder Benjamim significaria para Jacó e se oferece para ficar no lugar do irmão. Depois disso, José se revela e chama a família para viver perto dele durante a fome."
+    },
+    {
+      "id": "origens-d26-observar",
+      "tipo": "observar",
+      "texto": "Compare Judá em Gênesis 37:26–27 e 44:30–34. Na primeira cena, ele propõe vender José. Anos depois, oferece a própria liberdade por Benjamim. Observe como os dois episódios ajudam a enxergar a mudança de Judá."
+    },
+    {
+      "id": "origens-d26-cristo",
+      "tipo": "cristo",
+      "texto": "Em Marcos 10:42–45, Jesus descreve sua missão como serviço e entrega da própria vida em favor de muitos. A oferta de Judá, que se dispõe a ficar no lugar de Benjamim, ajuda a perceber o custo de se colocar no lugar de outra pessoa."
+    },
+    {
+      "id": "origens-d26-pergunta",
+      "tipo": "pergunta",
+      "texto": "Que responsabilidade você poderia assumir para aliviar o peso de outra pessoa? Pense num gesto de serviço que você consiga sustentar."
+    }
+  ]
 }

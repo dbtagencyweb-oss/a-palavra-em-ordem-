@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 29,
   "formato": "leitura-guiada",
   "titulo": "Gênesis 50",
@@ -11,5 +11,32 @@
       "ate": 50
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d29-leitura",
+      "tipo": "leitura",
+      "referencia": "Gênesis 50",
+      "texto": "Leia a despedida de Jacó, a conversa de José com os irmãos e o pedido que José deixa antes de morrer."
+    },
+    {
+      "id": "origens-d29-contexto",
+      "tipo": "contexto",
+      "texto": "Depois do sepultamento de Jacó, os irmãos temem que José ainda queira se vingar. Ele reconhece a intenção com que agiram e vê na preservação de muitas vidas a ação de Deus. Antes de morrer, José lembra a promessa da terra e pede que levem seus ossos quando Deus tirar a família do Egito."
+    },
+    {
+      "id": "origens-d29-observar",
+      "tipo": "observar",
+      "texto": "Em Gênesis 50:15–21, observe que José dá nome ao mal que sofreu e, ainda assim, oferece sustento aos irmãos. No fim do capítulo, seu pedido sobre os ossos faz o leitor olhar para além do Egito e da geração de José."
+    },
+    {
+      "id": "origens-d29-cristo",
+      "tipo": "cristo",
+      "texto": "Colossenses 3:12–15 pede que os cristãos pratiquem a misericórdia e perdoem como o Senhor os perdoou. José ajuda a dar forma concreta à ideia: ele fala com os irmãos sobre o que aconteceu e escolhe cuidar deles. Em Cristo, o perdão recebido se torna o motivo para tratar os outros com misericórdia."
+    },
+    {
+      "id": "origens-d29-pergunta",
+      "tipo": "pergunta",
+      "texto": "Em que situação você precisa dar nome ao que doeu antes de decidir como seguir? Que atitude de misericórdia seria possível sem esconder o que aconteceu?"
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "status": "rascunho",
+  "status": "em_revisao",
   "n": 8,
   "formato": "leitura-guiada",
   "titulo": "Jó 40–42",
@@ -11,5 +11,32 @@
       "ate": 42
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "origens-d8-leitura",
+      "tipo": "leitura",
+      "referencia": "Jó 40–42",
+      "texto": "Leia o fim da resposta de Deus e a reação de Jó. Chegue até o encontro final com os amigos e repare em quem intercede por eles."
+    },
+    {
+      "id": "origens-d8-contexto",
+      "tipo": "contexto",
+      "texto": "Nos debates anteriores, os amigos falavam como se pudessem deduzir a culpa de Jó a partir da sua dor. No fim do livro, Deus repreende esses amigos e orienta Jó a orar por eles. Depois da oração, Jó é restaurado. A narrativa termina contando esse desfecho; a experiência de Jó continua sendo a história particular daquele homem."
+    },
+    {
+      "id": "origens-d8-observar",
+      "tipo": "observar",
+      "texto": "Em Jó 42:7–10, a palavra de Deus muda o lugar dos personagens na conversa. Os que julgavam Jó precisam da oração dele. Observe o que Deus pede que os amigos façam e como Jó responde àquele pedido."
+    },
+    {
+      "id": "origens-d8-cristo",
+      "tipo": "cristo",
+      "texto": "Romanos 8:34 apresenta Jesus ressuscitado intercedendo por nós. A oração de Jó pelos amigos ajuda a entender o gesto de interceder: apresentar outra pessoa diante de Deus. No Evangelho, Cristo faz isso por nós."
+    },
+    {
+      "id": "origens-d8-pergunta",
+      "tipo": "pergunta",
+      "texto": "Qual pergunta honesta você gostaria de fazer a Deus sobre algo que ainda não entende? Escreva com as suas palavras, mesmo que por enquanto seja só uma frase."
+    }
+  ]
 }
